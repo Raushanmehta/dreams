@@ -33,18 +33,18 @@ export default function TestimonialCard({
       transition={{
         layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
       }}
-      className="group relative w-[290px] sm:w-[320px] md:w-[340px] rounded-[26px] p-[1.5px] bg-gradient-to-b from-white/40 via-white/12 to-[#2563EB]/35 hover:from-white/65 hover:via-[#2563EB]/45 hover:to-[#2563EB]/70 shadow-[0_18px_45px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.35)] hover:shadow-[0_22px_55px_rgba(37,99,235,0.25),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-500 flex-shrink-0 select-none self-start"
+      className="group relative w-[290px] sm:w-[320px] md:w-[340px] rounded-[26px] p-[1.5px] hover:from-white/65 hover:via-[#2563EB]/45 hover:to-[#2563EB]/70 shadow-[0_18px_45px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.35)] hover:shadow-[0_22px_55px_rgba(37,99,235,0.25),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-500 flex-shrink-0 select-none self-start"
     >
       {/* Inner Glossy Glass Container */}
-      <div className="relative w-full h-full rounded-[24.5px] p-6 sm:p-7 flex flex-col justify-between bg-gradient-to-b from-[#18181d]/95 via-[#121216]/95 to-[#0d0d10]/98 backdrop-blur-2xl overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.22),inset_0_0_24px_0_rgba(255,255,255,0.02)]">
+      <div className="relative w-full h-full rounded-[24.5px] p-6 sm:p-7 flex flex-col justify-between  backdrop-blur-2xl overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.22),inset_0_0_24px_0_rgba(255,255,255,0.02)]">
         {/* Specular Diagonal Glass Gloss Reflection */}
-        <div className="pointer-events-none absolute -top-16 -left-16 w-36 h-36 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-full blur-xl group-hover:from-white/30 transition-all duration-500" />
+        {/* <div className="pointer-events-none absolute -top-16 -left-16 w-36 h-36 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-full blur-xl group-hover:from-white/30 transition-all duration-500" /> */}
 
         {/* Ambient subtle top-right #2563EB glow inside card */}
-        <div className="pointer-events-none absolute -top-10 -right-10 w-28 h-28 bg-[#2563EB]/15 rounded-full blur-2xl group-hover:bg-[#2563EB]/25 transition-all duration-500" />
+        {/* <div className="pointer-events-none absolute -top-10 -right-10 w-28 h-28 bg-[#2563EB]/15 rounded-full blur-2xl group-hover:bg-[#2563EB]/25 transition-all duration-500" /> */}
 
         {/* Subtle diagonal glossy sheen across entire card surface */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#2563EB]/[0.03] opacity-80" />
+        {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#2563EB]/[0.03] opacity-80" /> */}
 
         <div className="relative z-10">
           {/* Top Row: Avatar and Star Rating */}

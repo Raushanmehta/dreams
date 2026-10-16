@@ -92,7 +92,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-6 md:px-12">
+    <footer id="contact" className="relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-6 md:px-12">
       {/* Ambient #2563EB radial background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(37,99,235,0.16),transparent)] pointer-events-none" />
 

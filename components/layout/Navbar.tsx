@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -11,17 +12,18 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Properties", href: "#properties" },
-  { label: "About", href: "#about" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Properties", href: "/properties" },
+  { label: "Team", href: "/team" },
+  { label: "Clients", href: "/clients" },
+  { label: "Blogs", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const pathname = usePathname();
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -39,10 +41,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // When scrolled to full width, 'Contact us' is displayed as the dedicated right-side CTA button.
-  // In the top notch capsule, all 6 items are displayed cleanly in the notch.
+  // Close mobile drawer whenever route changes
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [pathname]);
+
+  // When scrolled to full width, 'Contact us' shifts out of the center capsule into the dedicated right-side CTA button.
+  // In the top notch capsule (unscrolled), all items including 'Contact us' are displayed inside the capsule.
   const displayItems = isScrolled
-    ? navItems.filter((item) => item.href !== "#contact")
+    ? navItems.filter((item) => item.href !== "/contact")
     : navItems;
 
   return (
@@ -68,11 +75,11 @@ export default function Navbar() {
           },
         }}
         className={cn(
-          "pointer-events-auto relative hidden sm:flex items-center text-white",
+          "pointer-events-auto relative hidden md:flex items-center text-white",
           "transition-colors duration-300",
           isScrolled
-            ? "w-full rounded-none border-b border-white/10 border-x-0 bg-black/85 backdrop-blur-md px-6 md:px-12 py-3.5 shadow-lg shadow-black/40 justify-center"
-            : "w-auto rounded-b-[24px] md:rounded-b-[26px] border-b border-x border-white/10 bg-black px-7 md:px-9 py-2.5 md:py-3 shadow-[0_12px_36px_rgba(0,0,0,0.55)] backdrop-blur-md justify-center"
+            ? "w-full rounded-none border-b border-white/10 border-x-0 bg-black/85 backdrop-blur-md px-6 md:px-10 lg:px-12 py-3 shadow-lg shadow-black/40 justify-center"
+            : "w-auto max-w-[96vw] rounded-b-[24px] border-b border-x border-white/10 bg-black/95 px-5 md:px-6 lg:px-7 py-2 md:py-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.55)] backdrop-blur-md justify-center"
         )}
       >
         <motion.div
@@ -80,11 +87,11 @@ export default function Navbar() {
           className={cn(
             "flex items-center transition-all duration-300",
             isScrolled
-              ? "w-full max-w-7xl mx-auto justify-between"
-              : "w-auto justify-center gap-4 md:gap-6"
+              ? "w-full max-w-7xl mx-auto justify-between gap-4"
+              : "w-auto justify-center gap-3 lg:gap-5"
           )}
         >
-          {/* Left Side: Brand Logo (Always visible in navbar) */}
+          {/* Brand Logo */}
           <motion.div
             layout
             className={cn(
@@ -96,7 +103,7 @@ export default function Navbar() {
               href="/"
               className="group flex items-center gap-0.5 select-none focus:outline-none"
             >
-              <span className="font-bold text-[17px] md:text-[19px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
+              <span className="font-bold text-[17px] md:text-[18px] lg:text-[19px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
                 Dreams<span className="text-[#2563EB]">*</span>
               </span>
             </Link>
@@ -116,29 +123,31 @@ export default function Navbar() {
               layout
               className={cn(
                 "flex items-center m-0 p-0 list-none",
-                isScrolled ? "gap-5 md:gap-7 lg:gap-8" : "gap-4 md:gap-6"
+                isScrolled ? "gap-2 lg:gap-5" : "gap-1 md:gap-1.5 lg:gap-3"
               )}
             >
-              {displayItems.map((item, idx) => {
-                const isHovered = hoveredIdx === idx;
-                const isActive = activeIdx === idx;
+              {displayItems.map((item) => {
+                const isHovered = hoveredHref === item.href;
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
 
                 return (
                   <motion.li layout key={item.label} className="relative">
                     <Link
                       href={item.href}
-                      onClick={() => setActiveIdx(idx)}
-                      onMouseEnter={() => setHoveredIdx(idx)}
-                      onMouseLeave={() => setHoveredIdx(null)}
+                      onMouseEnter={() => setHoveredHref(item.href)}
+                      onMouseLeave={() => setHoveredHref(null)}
                       className={cn(
-                        "relative block px-2.5 py-1 text-[13px] md:text-[14px]",
-                        "font-normal tracking-[-0.01em] transition-colors duration-200 select-none whitespace-nowrap",
+                        "relative block px-2.5 lg:px-3 py-1 text-[12.5px] lg:text-[13.5px]",
+                        "tracking-[-0.01em] transition-colors duration-200 select-none whitespace-nowrap",
                         isActive
-                          ? "text-white font-medium"
-                          : "text-zinc-300 hover:text-white"
+                          ? "text-white font-semibold"
+                          : "text-zinc-300 hover:text-white font-normal"
                       )}
                     >
-                      {/* Subtle Framer Motion hover pill */}
+                      {/* Framer Motion hover pill */}
                       {isHovered && (
                         <motion.span
                           layoutId="navHoverBackground"
@@ -154,6 +163,19 @@ export default function Navbar() {
                         />
                       )}
 
+                      {/* Active indicator dot/pill */}
+                      {isActive && (
+                        <motion.span
+                          layoutId="navActiveIndicator"
+                          className="absolute -bottom-0.5 left-2.5 right-2.5 h-[2px] bg-[#2563EB] rounded-full"
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                          }}
+                        />
+                      )}
+
                       <span className="relative z-10">{item.label}</span>
                     </Link>
                   </motion.li>
@@ -162,7 +184,7 @@ export default function Navbar() {
             </motion.ul>
           </motion.div>
 
-          {/* Right Side: CTA Button (Only shown when navbar is full-width / scrolled) */}
+          {/* Right Side: CTA Button (Only shown when scrolled - shifts out of menu) */}
           <AnimatePresence>
             {isScrolled && (
               <motion.div
@@ -174,22 +196,23 @@ export default function Navbar() {
                 className="flex-1 flex items-center justify-end flex-shrink-0"
               >
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className={cn(
-                    "group relative inline-flex items-center justify-center gap-2",
-                    "pl-4 pr-1.5 py-2 rounded-full bg-white text-black text-[13px] md:text-[13.5px] font-medium",
-                    "transition-all duration-200 hover:bg-zinc-100 hover:shadow-md hover:scale-105 active:scale-95 select-none"
+                    "group relative inline-flex items-center justify-center gap-1.5 lg:gap-2",
+                    "pl-3.5 lg:pl-4 pr-1.5 py-1.5 lg:py-2 rounded-full bg-white text-black text-[12px] lg:text-[13px] font-semibold",
+                    "transition-all duration-200 hover:bg-zinc-100 hover:shadow-md hover:scale-105 active:scale-95 select-none",
+                    pathname === "/contact" && "ring-2 ring-[#2563EB]"
                   )}
                 >
                   <span>Contact us</span>
-                  <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
+                  <div className="w-5 h-5 lg:w-5.5 lg:h-5.5 rounded-full bg-black text-white flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
                     <svg
-                      width="11"
-                      height="11"
+                      width="10"
+                      height="10"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2.4"
+                      strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
@@ -206,8 +229,8 @@ export default function Navbar() {
       {/* Mobile Dynamic Island / Full-width bar on Scroll */}
       <div
         className={cn(
-          "pointer-events-auto sm:hidden w-full flex flex-col items-center transition-all duration-300",
-          isScrolled ? "px-0" : "px-4 pt-0"
+          "pointer-events-auto md:hidden w-full flex flex-col items-center transition-all duration-300",
+          isScrolled ? "px-0" : "px-3.5 pt-0"
         )}
       >
         <motion.div
@@ -222,21 +245,21 @@ export default function Navbar() {
             "relative text-white border-b transition-all duration-300",
             isScrolled
               ? "w-full rounded-none border-white/10 border-x-0 bg-black/90 backdrop-blur-md px-4 py-3 shadow-lg shadow-black/40"
-              : "w-full max-w-[360px] rounded-b-[22px] border-white/10 border-x bg-black px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+              : "w-full max-w-[390px] rounded-b-[22px] border-white/10 border-x bg-black px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
           )}
         >
-          <div className="flex items-center justify-between">
-            {/* Mobile Logo: Always shown */}
+          <div className="flex items-center justify-between gap-3">
+            {/* Mobile Logo */}
             <Link
               href="/"
-              className="flex items-center gap-0.5 select-none focus:outline-none group"
+              className="flex items-center gap-0.5 select-none focus:outline-none group flex-shrink-0"
             >
               <span className="font-bold text-[17px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
                 Dreams<span className="text-[#2563EB]">*</span>
               </span>
             </Link>
 
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               {/* Mobile CTA Button (Only shown when scrolled) */}
               <AnimatePresence>
                 {isScrolled && (
@@ -246,8 +269,11 @@ export default function Navbar() {
                     exit={{ opacity: 0, scale: 0.9 }}
                   >
                     <Link
-                      href="#contact"
-                      className="px-3 py-1 rounded-full bg-white text-black text-xs font-medium hover:bg-zinc-200 transition-colors"
+                      href="/contact"
+                      className={cn(
+                        "px-3 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-colors whitespace-nowrap",
+                        pathname === "/contact" && "ring-2 ring-[#2563EB]"
+                      )}
                     >
                       Contact us
                     </Link>
@@ -261,7 +287,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileOpen((prev) => !prev)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={isMobileOpen}
-                className="p-1 text-zinc-300 hover:text-white transition-colors focus:outline-none"
+                className="p-1.5 text-zinc-300 hover:text-white transition-colors focus:outline-none rounded-md"
               >
                 <div className="w-5 h-4 flex flex-col justify-between items-end">
                   <motion.span
@@ -305,44 +331,64 @@ export default function Navbar() {
                 transition={{ duration: 0.25, ease: "easeInOut" }}
                 className="overflow-hidden pt-3 border-t border-white/10 mt-3"
               >
-                <ul className="flex flex-col gap-2 p-0 m-0 list-none pb-1">
-                  {navItems.map((item, idx) => (
-                    <motion.li
-                      key={item.label}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.05 }}
-                    >
-                      <Link
-                        href={item.href}
-                        onClick={() => {
-                          setActiveIdx(idx);
-                          setIsMobileOpen(false);
-                        }}
-                        className={cn(
-                          "block py-2 px-3 rounded-lg text-sm transition-colors",
-                          activeIdx === idx
-                            ? "bg-white/10 text-white font-medium"
-                            : "text-zinc-300 hover:bg-white/5 hover:text-white"
-                        )}
+                <ul className="flex flex-col gap-1.5 p-0 m-0 list-none pb-2">
+                  {navItems.map((item, idx) => {
+                    const isActive =
+                      item.href === "/"
+                        ? pathname === "/"
+                        : pathname.startsWith(item.href);
+
+                    return (
+                      <motion.li
+                        key={item.label}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.04 }}
                       >
-                        {item.label}
-                      </Link>
-                    </motion.li>
-                  ))}
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsMobileOpen(false)}
+                          className={cn(
+                            "flex items-center justify-between py-2 px-3 rounded-lg text-sm transition-colors",
+                            isActive
+                              ? "bg-white/15 text-white font-semibold"
+                              : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                          )}
+                        >
+                          <span>{item.label}</span>
+                          {isActive && (
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                          )}
+                        </Link>
+                      </motion.li>
+                    );
+                  })}
+
                   {!isScrolled && (
                     <motion.li
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: navItems.length * 0.05 }}
-                      className="pt-2"
+                      transition={{ delay: navItems.length * 0.04 }}
+                      className="pt-2 border-t border-white/10 mt-1"
                     >
                       <Link
-                        href="#contact"
+                        href="/contact"
                         onClick={() => setIsMobileOpen(false)}
-                        className="block text-center py-2 px-4 rounded-full bg-white text-black text-sm font-medium hover:bg-zinc-200 transition-colors"
+                        className="flex items-center justify-center gap-2 text-center py-2.5 px-4 rounded-full bg-[#2563EB] text-white text-sm font-semibold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
                       >
-                        Contact us
+                        <span>Contact us</span>
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                       </Link>
                     </motion.li>
                   )}

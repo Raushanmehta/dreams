@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -109,7 +110,7 @@ export default function HeroSection() {
               and hunger to unlock potential through our unique perspectives.
             </motion.p>
 
-            {/* CTA Button: "Join the lab" with circle arrow badge */}
+            {/* CTA Button: Redirect to /enquiry-now with circle arrow badge */}
             <motion.div
               initial={{ opacity: 0, y: 25, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -119,14 +120,12 @@ export default function HeroSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <motion.a
-                href="#join"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className="group relative inline-flex items-center gap-3.5 pl-5 sm:pl-6 pr-1.5 py-1.5 rounded-full bg-white text-black font-medium text-[13.5px] sm:text-[14px] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-200 select-none cursor-pointer"
+              <Link
+                href="/enquiry-now"
+                className="group relative inline-flex items-center gap-3.5 pl-5 sm:pl-6 pr-1.5 py-1.5 rounded-full bg-white text-black font-medium text-[13.5px] sm:text-[14px] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-200 select-none cursor-pointer hover:scale-105 active:scale-95"
               >
                 <span className="tracking-[-0.01em] text-neutral-900 font-medium">
-                  Join the lab
+                  Enquire Now
                 </span>
                 <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
                   <svg
@@ -142,7 +141,7 @@ export default function HeroSection() {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
-              </motion.a>
+              </Link>
             </motion.div>
           </div>
         </div>

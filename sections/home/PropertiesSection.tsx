@@ -115,7 +115,6 @@ export default function PropertiesSection(): React.JSX.Element {
 
   return (
     <section
-      id="properties"
       className="relative w-full bg-[#0a0a0a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]"
     >
       {/* Background glow effects */}

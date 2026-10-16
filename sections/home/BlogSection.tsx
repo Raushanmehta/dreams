@@ -105,9 +105,7 @@ export default function BlogSection() {
     }, [api]);
 
     return (
-        <section
-            id="blog"
-            className="relative w-full isolate bg-[#f4f4f2] text-[#11131a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
+        <section className="relative w-full isolate bg-[#f4f4f2] text-[#11131a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
             style={{ backgroundColor: "#ffffff" }}
         >
             <div className="max-w-7xl mx-auto w-full">
