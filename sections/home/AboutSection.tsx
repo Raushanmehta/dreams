@@ -45,7 +45,7 @@ export default function AboutSection(): React.JSX.Element {
           variants={container}
           initial="hidden"
           animate="show"
-          className="relative z-10 mt-8 md:absolute md:left-0 md:top-0 md:mt-0 md:w-[48%]"
+          className="relative z-10 mt-8 md:absolute md:left-0 md:top-0 md:mt-0 w-full md:w-[48%]"
         >
 
           <div className="rounded-br-[28px] bg-[#f4f4f2] pb-5 pr-5 pt-1 md:pr-6">
