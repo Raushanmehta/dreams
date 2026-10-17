@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, MapPin, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { HouseIcon, StarIcon, BriefcaseIcon, ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
+import siteData from "@/data/site.json";
+import { teamAnimations } from "@/utils/animation/team.animation";
 
 export interface SocialLink {
   platform: "linkedin" | "instagram" | "twitter" | "email";
@@ -29,124 +32,25 @@ export interface TeamMember {
   socials: SocialLink[];
 }
 
-const TEAMS: TeamMember[] = [
-  {
-    id: "julian-vance",
-    name: "Julian Vance",
-    position: "Principal Estates Director",
-    image: "/images/review-sweater.jpg",
-    description:
-      "The sheer caliber of craftsmanship and discretion is unmatched. We curate private off-market sanctuaries for discerning global collectors.",
-    location: "Mayfair, London & Monaco",
-    stats: {
-      sold: "142",
-      rating: "4.9",
-      listings: "36",
-    },
-    socials: [
-      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
-      { platform: "twitter", href: "https://x.com", label: "X (Twitter)" },
-      { platform: "email", href: "mailto:julian@luxuryestates.com", label: "Direct Email" },
-    ],
-  },
-  {
-    id: "brian-hanley",
-    name: "Brian Hanley",
-    position: "Managing Partner — Acquisitions",
-    image: "/images/review-vneck.jpg",
-    description:
-      "Every acquisition is conducted with white-glove precision. We set the gold standard for premier architectural and residential masterworks.",
-    location: "Beverly Hills & Bel Air, CA",
-    stats: {
-      sold: "185",
-      rating: "4.9",
-      listings: "42",
-    },
-    socials: [
-      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
-      { platform: "twitter", href: "https://x.com", label: "X (Twitter)" },
-      { platform: "email", href: "mailto:brian@luxuryestates.com", label: "Direct Email" },
-    ],
-  },
-  {
-    id: "elena-rostova",
-    name: "Elena Rostova",
-    position: "Head of Private Wealth & Waterfront",
-    image: "/images/review-blue.jpg",
-    description:
-      "Curating access to private coastal havens and ultra-prime waterfront villas that never appear on public real estate listings.",
-    location: "Monaco & French Riviera",
-    stats: {
-      sold: "88",
-      rating: "5.0",
-      listings: "24",
-    },
-    socials: [
-      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
-      { platform: "twitter", href: "https://x.com", label: "X (Twitter)" },
-      { platform: "email", href: "mailto:elena@luxuryestates.com", label: "Direct Email" },
-    ],
-  },
-  {
-    id: "marcus-cole",
-    name: "Marcus Cole",
-    position: "Lead Architectural Designer",
-    image: "/images/review-marcus.jpg",
-    description:
-      "A true time-saver. I can focus on my core logic instead of pixel-pushing. Highly recommended.",
-    location: "Zurich, Switzerland",
-    stats: {
-      sold: "95",
-      rating: "4.8",
-      listings: "28",
-    },
-    socials: [
-      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
-      { platform: "twitter", href: "https://x.com", label: "X (Twitter)" },
-      { platform: "email", href: "mailto:marcus@luxuryestates.com", label: "Direct Email" },
-    ],
-  },
-  {
-    id: "sophia-laurent",
-    name: "Sophia Laurent",
-    position: "Chief Strategy & Heritage Officer",
-    image: "/images/testimonial-sarah.jpg",
-    description: "Exceptional market foresight paired with world-class architectural curation. Delivering extraordinary residential value across generations.",
-    location: "Paris & Lake Como, Italy",
-    stats: {
-      sold: "120",
-      rating: "4.9",
-      listings: "31",
-    },
-    socials: [
-      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
-      { platform: "twitter", href: "https://x.com", label: "X (Twitter)" },
-      { platform: "email", href: "mailto:sophia@luxuryestates.com", label: "Direct Email" },
-    ],
-  },
-];
-
 export default function TeamSection() {
+  const { team } = siteData;
+  const members = team.members as TeamMember[];
+
   // Start on index 3 (Marcus Cole, displaying '04 / 05' matching the design screenshot)
   const [currentIndex, setCurrentIndex] = useState<number>(3);
 
-  const current = TEAMS[currentIndex];
+  const current = members[currentIndex] || members[0];
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? TEAMS.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? members.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === TEAMS.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === members.length - 1 ? 0 : prev + 1));
   };
 
   // Get other team members for the bottom-left thumbnails
-  const thumbnails = TEAMS.filter((_, idx) => idx !== currentIndex).slice(0, 3);
+  const thumbnails = members.filter((_, idx) => idx !== currentIndex).slice(0, 3);
 
   return (
     <section
@@ -162,12 +66,12 @@ export default function TeamSection() {
               {/* Counter: e.g. 04 / 05 */}
               <div className="text-zinc-500 font-mono text-[13px] sm:text-[14px] tracking-[0.2em] font-medium select-none">
                 {String(currentIndex + 1).padStart(2, "0")} /{" "}
-                {String(TEAMS.length).padStart(2, "0")}
+                {String(members.length).padStart(2, "0")}
               </div>
 
               {/* Vertical Stacked "OUR TEAMS" Label */}
               <div className="hidden lg:flex flex-col items-center mt-12 select-none space-y-1">
-                {"OUR TEAMS".split("").map((letter, i) =>
+                {team.title.split("").map((letter, i) =>
                   letter === " " ? (
                     <span key={i} className="h-2.5 block" />
                   ) : (
@@ -185,7 +89,7 @@ export default function TeamSection() {
             {/* Thumbnail Previews */}
             <div className="flex items-center gap-2.5 sm:gap-3 mt-4 lg:mt-auto">
               {thumbnails.map((item) => {
-                const itemIndex = TEAMS.findIndex((r) => r.id === item.id);
+                const itemIndex = members.findIndex((r) => r.id === item.id);
                 return (
                   <button
                     key={item.id}
@@ -217,51 +121,50 @@ export default function TeamSection() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.id}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  variants={teamAnimations.portrait.variants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={teamAnimations.portrait.transition}
                   className="relative w-full h-full"
                 >
                   <Image
                     src={current.image}
                     alt={current.name}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover object-center"
                     priority
+                    sizes="(max-width: 640px) 380px, 420px"
+                    className="object-cover object-top"
                   />
-                  {/* Subtle edge vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
 
-          {/* Right Column: Location, Name, Position, Description, Stats, Button, Socials & Navigation */}
-          <div className="lg:col-span-5 flex flex-col justify-between h-full lg:h-[500px] py-1">
-            {/* Locked Content Container to eliminate any layout shift */}
-            <div className="w-full min-h-[385px] sm:min-h-[390px] flex flex-col justify-start">
+          {/* Right Column: Details, Quote, Key Stats & Action Buttons */}
+          <div className="lg:col-span-5 flex flex-col justify-between lg:h-[500px]">
+            <div>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  variants={teamAnimations.info.variants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={teamAnimations.info.transition}
                   className="flex flex-col items-start"
                 >
                   <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2  uppercase tracking-widest text-white  mb-4"
+                    initial={teamAnimations.eyebrow.initial}
+                    whileInView={teamAnimations.eyebrow.whileInView}
+                    viewport={teamAnimations.eyebrow.viewport}
+                    transition={teamAnimations.eyebrow.transition}
+                    className="inline-flex items-center gap-2 uppercase tracking-widest text-white mb-4"
                   >
                     <MapPin className="h-5 w-5 text-[#2563EB]" />
                     <span>{current.location}</span>
                   </motion.div>
-
 
                   {/* Team Member Name */}
                   <h3 className="text-3xl sm:text-4xl md:text-[36px] font-bold text-white tracking-tight">
@@ -288,18 +191,7 @@ export default function TeamSection() {
                     <div>
                       <div className="flex items-center gap-1.5">
                         <span className="flex items-center justify-center w-12 h-12 text-[#2563EB] flex-shrink-0">
-                          <svg
-                            className="w-10 h-10"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                            <polyline points="9 22 9 12 15 12 15 22" />
-                          </svg>
+                          <HouseIcon className="w-10 h-10" />
                         </span>
                         <p className="text-xl sm:text-2xl font-bold text-white tracking-tight font-sans">
                           {current.stats.sold}
@@ -314,12 +206,7 @@ export default function TeamSection() {
                     <div className="border-x border-white/10 px-3 sm:px-4">
                       <div className="flex items-center gap-1.5">
                         <span className="flex items-center justify-center w-12 h-12 text-amber-400 flex-shrink-0">
-                          <svg
-                            className="w-10 h-10 fill-amber-400"
-                            viewBox="0 0 24 24"
-                          >
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
+                          <StarIcon className="w-10 h-10 fill-amber-400" />
                         </span>
                         <p className="text-xl sm:text-2xl font-bold text-white tracking-tight font-sans">
                           {current.stats.rating}
@@ -334,18 +221,7 @@ export default function TeamSection() {
                     <div className="pl-1 sm:pl-0">
                       <div className="flex items-center gap-1.5">
                         <span className="flex items-center justify-center w-12 h-12 text-[#2563EB] flex-shrink-0">
-                          <svg
-                            className="w-10 h-10"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                          </svg>
+                          <BriefcaseIcon className="w-10 h-10" />
                         </span>
                         <p className="text-xl sm:text-2xl font-bold text-white tracking-tight font-sans">
                           {current.stats.listings}
@@ -374,21 +250,15 @@ export default function TeamSection() {
                 >
                   {/* Animated #2563EB background slide/glow fill with Framer Motion */}
                   <motion.span
-                    variants={{
-                      rest: { scaleY: 0, opacity: 0 },
-                      hover: { scaleY: 1, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                    variants={teamAnimations.buttonFill.variants}
+                    transition={teamAnimations.buttonFill.transition}
                     className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
                   />
 
                   {/* Framer Motion subtle shine sweep across button on hover */}
                   <motion.span
-                    variants={{
-                      rest: { x: "-120%", opacity: 0 },
-                      hover: { x: "160%", opacity: 0.3 },
-                    }}
-                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    variants={teamAnimations.buttonShine.variants}
+                    transition={teamAnimations.buttonShine.transition}
                     className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
                   />
 
@@ -399,26 +269,11 @@ export default function TeamSection() {
 
                   {/* Arrow container with spring translation */}
                   <motion.div
-                    variants={{
-                      rest: { x: 0 },
-                      hover: { x: 3 },
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    variants={teamAnimations.buttonArrow.variants}
+                    transition={teamAnimations.buttonArrow.transition}
                     className="relative z-10 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/15"
                   >
-                    <svg
-                      width="13"
-                      height="13"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
+                    <ArrowRightIcon className="w-3.5 h-3.5 text-white" />
                   </motion.div>
                 </motion.a>
 
@@ -470,33 +325,24 @@ export default function TeamSection() {
                 >
                   {/* Animated #2563EB background slide/glow fill */}
                   <motion.span
-                    variants={{
-                      rest: { scaleY: 0, opacity: 0 },
-                      hover: { scaleY: 1, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                    variants={teamAnimations.buttonFill.variants}
+                    transition={teamAnimations.buttonFill.transition}
                     className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
                   />
 
                   {/* Subtle shine sweep */}
                   <motion.span
-                    variants={{
-                      rest: { x: "-120%", opacity: 0 },
-                      hover: { x: "160%", opacity: 0.3 },
-                    }}
-                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    variants={teamAnimations.buttonShine.variants}
+                    transition={teamAnimations.buttonShine.transition}
                     className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
                   />
 
                   <motion.div
-                    variants={{
-                      rest: { x: 0 },
-                      hover: { x: -3 },
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    variants={teamAnimations.prevArrow.variants}
+                    transition={teamAnimations.prevArrow.transition}
                     className="relative z-10 flex items-center justify-center"
                   >
-                    <ArrowLeft className="h-5 w-5 text-white" />
+                    <ArrowLeftIcon className="h-5 w-5 text-white" />
                   </motion.div>
                 </motion.button>
 
@@ -512,33 +358,24 @@ export default function TeamSection() {
                 >
                   {/* Animated #2563EB background slide/glow fill */}
                   <motion.span
-                    variants={{
-                      rest: { scaleY: 0, opacity: 0 },
-                      hover: { scaleY: 1, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                    variants={teamAnimations.buttonFill.variants}
+                    transition={teamAnimations.buttonFill.transition}
                     className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
                   />
 
                   {/* Subtle shine sweep */}
                   <motion.span
-                    variants={{
-                      rest: { x: "-120%", opacity: 0 },
-                      hover: { x: "160%", opacity: 0.3 },
-                    }}
-                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    variants={teamAnimations.buttonShine.variants}
+                    transition={teamAnimations.buttonShine.transition}
                     className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
                   />
 
                   <motion.div
-                    variants={{
-                      rest: { x: 0 },
-                      hover: { x: 3 },
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    variants={teamAnimations.nextArrow.variants}
+                    transition={teamAnimations.nextArrow.transition}
                     className="relative z-10 flex items-center justify-center"
                   >
-                    <ArrowRight className="h-5 w-5 text-white" />
+                    <ArrowRightIcon className="h-5 w-5 text-white" />
                   </motion.div>
                 </motion.button>
               </div>
@@ -547,6 +384,6 @@ export default function TeamSection() {
 
         </div>
       </div>
-    </section >
+    </section>
   );
 }

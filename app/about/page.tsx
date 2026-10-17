@@ -6,7 +6,7 @@ import WhyChooseUsSection from "@/sections/home/WhyChooseUsSection";
 export default function AboutPage() {
     return (
         <main>
-            <BreadCrumb title="About Dreams" subtitle=" Pioneering extraordinary architecture and bespoke sanctuaries across global capitals." />
+            <BreadCrumb title="About Us" subtitle=" Pioneering extraordinary architecture and bespoke sanctuaries across global capitals." />
             <AboutSection />
             <TeamSection />
             <WhyChooseUsSection />

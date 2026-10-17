@@ -15,7 +15,7 @@ export interface BlogPost {
     isLatest?: boolean;
 }
 
-interface BlogCardProps {
+export interface BlogCardProps {
     post: BlogPost;
 }
 

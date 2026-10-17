@@ -1,55 +1,20 @@
 
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ChevronRight, Home } from "lucide-react";
 
-interface BreadCrumbProps {
+export interface BreadCrumbProps {
   title?: string;
   subtitle?: string;
 }
 
-const routeTitles: Record<string, { title: string; subtitle: string }> = {
-  "/about": {
-    title: "About Dreams",
-    subtitle: "Pioneering extraordinary architecture and bespoke sanctuaries across global capitals.",
-  },
-  "/properties": {
-    title: "Exclusive Properties",
-    subtitle: "Discover high-yield prime estates, modern penthouses, and private coastal waterfront retreats.",
-  },
-  "/gallery": {
-    title: "Architectural Gallery",
-    subtitle: "A visual curation of our timeless developments, interior mastery, and signature designs.",
-  },
-  "/team": {
-    title: "Our Advisory Team",
-    subtitle: "Meet the elite advisors, architects, and luxury property specialists guiding your journey.",
-  },
-  "/clients": {
-    title: "Client Testimonials & Partners",
-    subtitle: "Trusted by high-net-worth investors, visionaries, and discerning families worldwide.",
-  },
-  "/blog": {
-    title: "Market Insights & Journal",
-    subtitle: "In-depth intelligence on prime global real estate, architectural trends, and wealth preservation.",
-  },
-  "/contact": {
-    title: "Contact Concierge",
-    subtitle: "Direct access to our senior partners across Beverly Hills, Dubai, London, and Monaco.",
-  },
-  "/enquiry-now": {
-    title: "Private Enquiry",
-    subtitle: "Initiate your bespoke acquisition or confidential consultation with our private office.",
-  },
-};
-
-export default function BreadCrumb({ title, subtitle }: BreadCrumbProps) {
+function BreadCrumbInner({ title, subtitle }: BreadCrumbProps) {
   const pathname = usePathname();
-  const currentRoute = routeTitles[pathname] || {
+  const currentRoute = {
     title:
       title ||
       pathname
@@ -108,3 +73,11 @@ export default function BreadCrumb({ title, subtitle }: BreadCrumbProps) {
     </section>
   );
 }
+
+export default function BreadCrumb(props: BreadCrumbProps): React.JSX.Element {
+  return (
+    <Suspense fallback={<div className="w-full bg-black py-16" />}>
+      <BreadCrumbInner {...props} />
+    </Suspense>
+  );
+}

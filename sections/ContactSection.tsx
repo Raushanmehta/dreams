@@ -2,7 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, CheckCircle2, Phone, Mail, Globe, MapPin, ExternalLink } from "lucide-react";
+import { CheckCircle2, MapPin, ExternalLink, Sparkles } from "lucide-react";
+import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
+import siteData from "@/data/site.json";
 
 interface ContactFormData {
   name: string;
@@ -13,7 +15,16 @@ interface ContactFormData {
   message: string;
 }
 
+export interface ContactItem {
+  number: string;
+  title: string;
+  value: string;
+  href: string;
+}
+
 export default function ContactSection(): React.JSX.Element {
+  const contact = siteData.contact;
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -52,7 +63,7 @@ export default function ContactSection(): React.JSX.Element {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-16 sm:py-20 md:py-24 font-sans select-none border-t border-zinc-200/80">
+    <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto w-full">
         {/* ========================================================= */}
         {/* SECTION HEADER: Matches Dreams* Signature Brand Theme    */}
@@ -66,8 +77,8 @@ export default function ContactSection(): React.JSX.Element {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 text-xs sm:text-sm font-semibold"
           >
-            <Sparkles className="h-4 w-4 text-[#2563EB]" />
-            <span>Get In Touch</span>
+            <Sparkles className="h-5 w-5 text-[#2563EB]" />
+            <span>{contact.badgeText}</span>
           </motion.div>
 
           {/* Headline with skewed brand badge & rotating 4-point sparkle */}
@@ -79,28 +90,21 @@ export default function ContactSection(): React.JSX.Element {
             className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase"
           >
             <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-              <span>Private</span>
+              <span>{contact.headline.line1}</span>
               {/* Tilted Sliced Background Badge in #2563EB */}
               <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                 <span className="inline-block skew-x-14 md:skew-x-18">
-                  Concierge
+                  {contact.headline.line2Badge}
                 </span>
               </span>
-              <span>&amp; Advisory</span>
+              <span>{contact.headline.line2Suffix}</span>
               {/* Rotating 4-point star SVG icon */}
               <motion.span
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                 className="inline-flex items-center justify-center text-[#2563EB] drop-shadow-[0_0_12px_rgba(37,99,235,0.5)] ml-0.5 sm:ml-1"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563EB]"
-                >
-                  <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-                </svg>
+                <FourPointStarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563EB]" />
               </motion.span>
             </div>
           </motion.h2>
@@ -108,7 +112,6 @@ export default function ContactSection(): React.JSX.Element {
 
         {/* ========================================================= */}
         {/* MAIN SPLIT CARD: Luxury Obsidian Left + Crisp White Right */}
-        {/* Strict horizontal alignment matching the reference image */}
         {/* ========================================================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -126,100 +129,47 @@ export default function ContactSection(): React.JSX.Element {
             <div className="absolute -bottom-24 -right-24 w-60 h-60 rounded-full bg-[#2563EB]/10 blur-[80px] pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full justify-between">
-              {/* Header block (Height: 116px - exactly aligns with Right Column Header) */}
+              {/* Header block */}
               <div className="h-auto lg:h-[116px] flex flex-col justify-start">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
-                  Private Office
+                  {contact.privateOffice.title}
                 </h3>
                 <p className="text-zinc-400 text-xs sm:text-[13.5px] mt-1 leading-relaxed max-w-sm">
-                  White-glove real estate representation across Beverly Hills, London, Dubai &amp; Monaco.
+                  {contact.privateOffice.subtitle}
                 </p>
               </div>
 
-              {/* Row 1: Item 1 - Contact Number (Height: 48px + 16px gap = 64px) */}
-              <div className="h-auto lg:h-[64px] flex items-center gap-4 mb-5 lg:mb-0 group">
-                <div className="w-11 h-11 rounded-full bg-white text-[#2563EB] font-bold text-base flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] group-hover:bg-[#2563EB] group-hover:text-white group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                  1
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h4 className="text-white font-semibold text-[15.5px] tracking-tight leading-tight group-hover:text-[#3b82f6] transition-colors">
-                    Contact Number
-                  </h4>
-                  <a
-                    href="tel:+880123456789"
-                    className="text-zinc-400 text-[13.5px] font-normal leading-tight mt-1 hover:text-white transition-colors"
-                  >
-                    +880 123 456 789
-                  </a>
-                </div>
+              {/* Dynamic Contacts from JSON */}
+              <div className="flex flex-col gap-4 mb-5 lg:mb-0">
+                {(contact.contacts as ContactItem[]).map((item: ContactItem, index: number) => (
+                  <div key={index} className="h-auto lg:h-[64px] flex items-center gap-4 group">
+                    <div className="w-11 h-11 rounded-full bg-white text-[#2563EB] font-bold text-base flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] group-hover:bg-[#2563EB] group-hover:text-white group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                      {item.number}
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <h4 className="text-white font-semibold text-[15.5px] tracking-tight leading-tight group-hover:text-[#3b82f6] transition-colors">
+                        {item.title}
+                      </h4>
+                      <a
+                        href={item.href}
+                        className="text-zinc-400 text-[13.5px] font-normal leading-tight mt-1 hover:text-white transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {/* Row 2: Item 2 - Email (Height: 48px + 16px gap = 64px) */}
-              <div className="h-auto lg:h-[64px] flex items-center gap-4 mb-5 lg:mb-0 group">
-                <div className="w-11 h-11 rounded-full bg-white text-[#2563EB] font-bold text-base flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] group-hover:bg-[#2563EB] group-hover:text-white group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                  2
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h4 className="text-white font-semibold text-[15.5px] tracking-tight leading-tight group-hover:text-[#3b82f6] transition-colors">
-                    Email
-                  </h4>
-                  <a
-                    href="mailto:concierge@dreamsrealty.com"
-                    className="text-zinc-400 text-[13.5px] font-normal leading-tight mt-1 hover:text-white transition-colors"
-                  >
-                    concierge@dreamsrealty.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Row 3: Item 3 - Join On Our Page (Height: 48px + 16px gap = 64px) */}
-              <div className="h-auto lg:h-[64px] flex items-center gap-4 mb-5 lg:mb-0 group">
-                <div className="w-11 h-11 rounded-full bg-white text-[#2563EB] font-bold text-base flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] group-hover:bg-[#2563EB] group-hover:text-white group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                  3
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h4 className="text-white font-semibold text-[15.5px] tracking-tight leading-tight group-hover:text-[#3b82f6] transition-colors">
-                    Address
-                  </h4>
-                  <a
-                    href="https://telegram.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-400 text-[13.5px] font-normal leading-tight mt-1 hover:text-white transition-colors"
-                  >
-                    2715 Oxford Avenue, Los Angeles, CA 90001
-                  </a>
-                </div>
-              </div>
-              <div className="h-auto lg:h-[64px] flex items-center gap-4 mb-5 lg:mb-0 group">
-                <div className="w-11 h-11 rounded-full bg-white text-[#2563EB] font-bold text-base flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] group-hover:bg-[#2563EB] group-hover:text-white group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                  3
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h4 className="text-white font-semibold text-[15.5px] tracking-tight leading-tight group-hover:text-[#3b82f6] transition-colors">
-                    Join On Our Page
-                  </h4>
-                  <a
-                    href="https://telegram.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-400 text-[13.5px] font-normal leading-tight mt-1 hover:text-white transition-colors"
-                  >
-                    facebook/telegram.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Row 4: Description Paragraph (Height: 140px + 20px gap = 160px) */}
-              <div className="h-auto lg:h-[160px] flex flex-col justify-start pt-2 lg:pt-3 mb-6 lg:mb-0">
+              {/* Description Paragraph */}
+              <div className="h-auto lg:h-[120px] flex flex-col justify-start pt-2 lg:pt-3 mb-6 lg:mb-0">
                 <p className="text-zinc-400 text-[14px] leading-relaxed max-w-sm">
-                  Curating the world&apos;s most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.
+                  {siteData.site.description}
                 </p>
               </div>
 
-              {/* Row 5: 6 Social Icons (Height: 48px - exactly aligns with Submit Button) */}
+              {/* Social Icons */}
               <div className="h-auto lg:h-[48px] flex items-center gap-2.5 flex-wrap">
-                {/* 1. Facebook */}
                 <motion.a
                   href="https://facebook.com"
                   target="_blank"
@@ -234,78 +184,45 @@ export default function ContactSection(): React.JSX.Element {
                   </svg>
                 </motion.a>
 
-                {/* 2. Twitter / X */}
                 <motion.a
-                  href="https://twitter.com"
+                  href="https://x.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
+                  aria-label="X (Twitter)"
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2]"
                 >
                   <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z" />
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </motion.a>
 
-                {/* 3. Skype */}
                 <motion.a
-                  href="https://skype.com"
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Skype"
+                  aria-label="Instagram"
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#00AFF0] hover:text-white hover:border-[#00AFF0]"
+                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-gradient-to-tr hover:from-amber-500 hover:to-purple-600 hover:text-white hover:border-transparent"
                 >
                   <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                    <path d="M23.996 16.516c-.056 1.49-.607 2.898-1.558 3.987a7.712 7.712 0 01-3.69 2.378c-1.46.43-2.997.5-4.49.205a11.96 11.96 0 01-4.708-2.128 11.892 11.892 0 01-3.414-3.666 11.968 11.968 0 01-1.636-4.902c-.173-1.488-.002-3.003.504-4.417a7.716 7.716 0 012.44-3.553 7.822 7.822 0 013.902-1.42 7.755 7.755 0 014.545.666 11.964 11.964 0 014.568 2.385 11.91 11.91 0 013.256 3.805 11.954 11.954 0 011.458 4.96c.148 1.15.087 2.316-.177 3.435v-.016l.995 1.164-.995-2.88zM17.07 14.18c-.287-.417-.728-.718-1.248-.853-.518-.137-1.168-.25-1.952-.338l-1.076-.12c-.54-.06-.94-.143-1.196-.25-.257-.107-.386-.296-.386-.566 0-.306.147-.532.44-.678.293-.146.685-.22 1.176-.22.42 0 .805.066 1.154.198.348.132.68.35 1.002.656l1.206-1.503c-.49-.444-1.056-.757-1.696-.94-.64-.183-1.32-.275-2.038-.275-.89 0-1.68.163-2.368.49-.688.326-1.223.774-1.603 1.344-.38.57-.57 1.218-.57 1.944 0 .584.12 1.08.358 1.486.238.406.59.722 1.054.948.465.226 1.05.385 1.758.477l1.378.18c.638.082 1.096.2 1.373.354.277.153.416.385.416.696 0 .34-.16.592-.48.757-.32.164-.754.246-1.303.246-.57 0-1.1-.112-1.59-.336-.49-.224-.956-.576-1.398-1.056l-1.272 1.46c.646.666 1.378 1.135 2.196 1.408.818.272 1.666.408 2.544.408.97 0 1.83-.16 2.58-.48.75-.32 1.332-.767 1.745-1.34.413-.573.62-1.226.62-1.958 0-.687-.16-1.27-.478-1.75z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </motion.a>
 
-                {/* 4. Twitter / X */}
                 <motion.a
-                  href="https://twitter.com"
+                  href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
+                  aria-label="LinkedIn"
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2]"
+                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]"
                 >
                   <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z" />
-                  </svg>
-                </motion.a>
-
-                {/* 5. Facebook */}
-                <motion.a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]"
-                >
-                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                </motion.a>
-
-                {/* 6. Skype */}
-                <motion.a
-                  href="https://skype.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Skype"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-8.5 h-8.5 rounded-full bg-white/10 border border-white/15 text-zinc-300 flex items-center justify-center shadow-sm transition-all hover:bg-[#00AFF0] hover:text-white hover:border-[#00AFF0]"
-                >
-                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                    <path d="M23.996 16.516c-.056 1.49-.607 2.898-1.558 3.987a7.712 7.712 0 01-3.69 2.378c-1.46.43-2.997.5-4.49.205a11.96 11.96 0 01-4.708-2.128 11.892 11.892 0 01-3.414-3.666 11.968 11.968 0 01-1.636-4.902c-.173-1.488-.002-3.003.504-4.417a7.716 7.716 0 012.44-3.553 7.822 7.822 0 013.902-1.42 7.755 7.755 0 014.545.666 11.964 11.964 0 014.568 2.385 11.91 11.91 0 013.256 3.805 11.954 11.954 0 011.458 4.96c.148 1.15.087 2.316-.177 3.435v-.016l.995 1.164-.995-2.88zM17.07 14.18c-.287-.417-.728-.718-1.248-.853-.518-.137-1.168-.25-1.952-.338l-1.076-.12c-.54-.06-.94-.143-1.196-.25-.257-.107-.386-.296-.386-.566 0-.306.147-.532.44-.678.293-.146.685-.22 1.176-.22.42 0 .805.066 1.154.198.348.132.68.35 1.002.656l1.206-1.503c-.49-.444-1.056-.757-1.696-.94-.64-.183-1.32-.275-2.038-.275-.89 0-1.68.163-2.368.49-.688.326-1.223.774-1.603 1.344-.38.57-.57 1.218-.57 1.944 0 .584.12 1.08.358 1.486.238.406.59.722 1.054.948.465.226 1.05.385 1.758.477l1.378.18c.638.082 1.096.2 1.373.354.277.153.416.385.416.696 0 .34-.16.592-.48.757-.32.164-.754.246-1.303.246-.57 0-1.1-.112-1.59-.336-.49-.224-.956-.576-1.398-1.056l-1.272 1.46c.646.666 1.378 1.135 2.196 1.408.818.272 1.666.408 2.544.408.97 0 1.83-.16 2.58-.48.75-.32 1.332-.767 1.745-1.34.413-.573.62-1.226.62-1.958 0-.687-.16-1.27-.478-1.75z" />
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
                 </motion.a>
               </div>
@@ -316,19 +233,19 @@ export default function ContactSection(): React.JSX.Element {
           {/* RIGHT COLUMN: Architectural Pure White Area (#ffffff)     */}
           {/* ========================================================= */}
           <div className="lg:col-span-7 bg-white p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between">
-            {/* Header Block: Height is exactly 116px */}
+            {/* Header Block */}
             <div className="h-auto lg:h-[116px] flex flex-col justify-start">
               <h3 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-[#11131a] tracking-tight leading-tight mb-1.5">
-                Send Us a Suggestion<span className="text-[#2563EB]">*</span>
+                {contact.form.title}<span className="text-[#2563EB]">*</span>
               </h3>
               <p className="text-[#6b7280] text-[13.5px] sm:text-[14px] leading-relaxed max-w-xl">
-                Have a bespoke enquiry, acquisition proposal, or feedback? Share your message directly with our private advisory office.
+                {contact.form.subtitle}
               </p>
             </div>
 
-            {/* Form Block: 5 Rows matching Left Column height & baseline */}
+            {/* Form Block */}
             <form onSubmit={handleSubmit} className="flex flex-col">
-              {/* Row 1: Name and Email (Height: 48px + 16px gap = 64px) */}
+              {/* Row 1: Name and Email */}
               <div className="h-auto lg:h-[64px] grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
                 <input
                   type="text"
@@ -350,12 +267,12 @@ export default function ContactSection(): React.JSX.Element {
                 />
               </div>
 
-              {/* Row 2: Contact Number and Address (Height: 48px + 16px gap = 64px) */}
+              {/* Row 2: Contact Number and Address */}
               <div className="h-auto lg:h-[64px] grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
                 <input
                   type="tel"
                   name="contactNumber"
-                  placeholder="Your Contact Number"
+                  placeholder="+1 (555) 000-0000"
                   value={formData.contactNumber}
                   onChange={handleChange}
                   className="w-full h-12 px-4.5 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200"
@@ -363,102 +280,100 @@ export default function ContactSection(): React.JSX.Element {
                 <input
                   type="text"
                   name="address"
-                  placeholder="Your Address / Location"
+                  placeholder="Street / City / Country"
                   value={formData.address}
                   onChange={handleChange}
                   className="w-full h-12 px-4.5 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200"
                 />
               </div>
 
-              {/* Row 3: Message Subject (Height: 48px + 16px gap = 64px) */}
+              {/* Row 3: Subject */}
               <div className="h-auto lg:h-[64px] pb-4">
                 <input
                   type="text"
                   name="subject"
                   required
-                  placeholder="Your Message Subject"
+                  placeholder="Subject / Property Inquiry"
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full h-12 px-4.5 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200"
                 />
               </div>
 
-              {/* Row 4: Message Body (Height: 140px + 20px gap = 160px) */}
+              {/* Row 4: Message */}
               <div className="h-auto lg:h-[160px] pb-5">
                 <textarea
                   name="message"
                   required
-                  placeholder="Your Message Here"
+                  rows={4}
+                  placeholder="Share details of your inquiry or consultation requirements..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full h-[140px] p-4 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200 resize-none"
+                  className="w-full h-full min-h-[120px] lg:min-h-[140px] px-4.5 py-3 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200 resize-none"
                 />
               </div>
 
-              {/* Success confirmation toast */}
-              <AnimatePresence>
-                {submitted && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    className="p-3.5 mb-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-medium flex items-center gap-2"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>Thank you! Your message has been routed to our senior concierge advisory.</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {/* Row 5: Submit Button (Height: 48px - aligns with Left Column Social Icons) */}
-              <div className="h-auto lg:h-[48px] flex items-center">
+              {/* Row 5: Submit Button and Success Feedback */}
+              <div className="h-auto lg:h-[48px] flex items-center justify-between gap-4 pt-1">
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.02 }}
+                  initial="rest"
+                  whileHover="hover"
                   whileTap={{ scale: 0.98 }}
-                  className="relative group h-[48px] px-8 sm:px-10 rounded-full bg-[#11131a] hover:bg-[#2563EB] text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.16)] hover:shadow-[0_12px_28px_rgba(37,99,235,0.4)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2.5 cursor-pointer"
+                  className="relative group overflow-hidden rounded-full bg-[#11131a] px-8 sm:px-9 h-12 text-sm font-semibold tracking-wider text-white shadow-lg flex items-center gap-2.5 select-none cursor-pointer disabled:opacity-50"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <svg
-                        className="animate-spin h-4 w-4 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        />
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8v8H4z"
-                        />
-                      </svg>
-                      <span>SENDING...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>SUBMIT</span>
-                      <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white group-hover:text-[#2563EB]">
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </div>
-                    </>
-                  )}
+                  <motion.span
+                    variants={{
+                      rest: { scaleY: 0, opacity: 0 },
+                      hover: { scaleY: 1, opacity: 1 },
+                    }}
+                    transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
+                  />
+                  <motion.span
+                    variants={{
+                      rest: { x: "-120%", opacity: 0 },
+                      hover: { x: "160%", opacity: 0.3 },
+                    }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
+                  />
+                  <span className="relative z-10 flex items-center gap-2">
+                    {isSubmitting ? "Processing..." : contact.form.submitButton}
+                  </span>
+                  <motion.div
+                    variants={{
+                      rest: { x: 0 },
+                      hover: { x: 4 },
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
+                    className="relative z-10 flex items-center justify-center w-6 h-6 rounded-full bg-white/15"
+                  >
+                    <ArrowRightIcon className="w-3.5 h-3.5 text-white" />
+                  </motion.div>
                 </motion.button>
+
+                <AnimatePresence>
+                  {submitted && (
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      className="flex items-center gap-2 text-emerald-600 text-sm font-medium"
+                    >
+                      <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                      <span>Transmitted to Private Advisory Office</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </form>
           </div>
         </motion.div>
 
         {/* ========================================================= */}
-        {/* INTERACTIVE LOCATION MAP: Floating Glass Pill & Embed     */}
+        {/* INTERACTIVE LOCATION MAP                                  */}
         {/* ========================================================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

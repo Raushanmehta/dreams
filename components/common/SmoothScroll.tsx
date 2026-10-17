@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,7 +10,7 @@ interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
-export default function SmoothScroll({ children }: SmoothScrollProps) {
+function SmoothScrollInner({ children }: SmoothScrollProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
@@ -83,3 +83,20 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     </div>
   );
 }
+
+export default function SmoothScroll({ children }: SmoothScrollProps) {
+  return (
+    <Suspense
+      fallback={
+        <div id="smooth-wrapper" className="w-full">
+          <div id="smooth-content" className="w-full min-h-screen">
+            {children}
+          </div>
+        </div>
+      }
+    >
+      <SmoothScrollInner>{children}</SmoothScrollInner>
+    </Suspense>
+  );
+}
+

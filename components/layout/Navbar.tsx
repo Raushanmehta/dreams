@@ -1,31 +1,69 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Home, Info, Building2, Users, Award, BookOpen, Mail, ArrowRight, Phone, Compass, Sparkles, type LucideIcon, } from "lucide-react";
 import { cn } from "@/lib/utils";
+import siteData from "@/data/site.json";
+import { navbarAnimations } from "@/utils/animation/navbar.animation";
 
-interface NavItem {
-  label: string;
-  href: string;
+// Dynamic Icon registry supporting icon names configured in site.json
+const ICON_MAP: Record<string, LucideIcon> = {
+  Home,
+  Info,
+  Building2,
+  Users,
+  Award,
+  BookOpen,
+  Mail,
+  ArrowRight,
+  Phone,
+  Compass,
+  Sparkles,
+};
+
+function renderNavIcon(iconName?: string, className = "w-4 h-4"): React.JSX.Element | null {
+  if (!iconName) return null;
+  const IconComponent = ICON_MAP[iconName];
+  if (!IconComponent) return null;
+  return <IconComponent className={className} />;
 }
 
-const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Properties", href: "/properties" },
-  { label: "Team", href: "/team" },
-  { label: "Clients", href: "/clients" },
-  { label: "Blogs", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
-];
+export interface NavItemConfig {
+  label: string;
+  href: string;
+  icon?: string;
+}
 
-export default function Navbar() {
+export interface LogoConfig {
+  text: string;
+  highlight: string;
+  image?: string;
+  alt?: string;
+  href?: string;
+}
+
+export interface CtaConfig {
+  label: string;
+  href: string;
+  icon?: string;
+}
+
+function NavbarContent(): React.JSX.Element {
   const pathname = usePathname();
   const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  // All Navbar data driven completely from data/site.json
+  const { logo, navItems, cta } = siteData.navbar as {
+    logo: LogoConfig;
+    navItems: NavItemConfig[];
+    cta: CtaConfig;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,10 +84,10 @@ export default function Navbar() {
     setIsMobileOpen(false);
   }, [pathname]);
 
-  // When scrolled to full width, 'Contact us' shifts out of the center capsule into the dedicated right-side CTA button.
-  // In the top notch capsule (unscrolled), all items including 'Contact us' are displayed inside the capsule.
+  // When scrolled to full width, the CTA item shifts out of the center capsule into the dedicated right-side CTA button.
+  // In the top notch capsule (unscrolled), all items are displayed inside the capsule.
   const displayItems = isScrolled
-    ? navItems.filter((item) => item.href !== "/contact")
+    ? navItems.filter((item) => item.href !== cta.href)
     : navItems;
 
   return (
@@ -58,22 +96,10 @@ export default function Navbar() {
       <motion.nav
         layout
         aria-label="Main Navigation"
-        initial={{ y: -60, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          layout: {
-            type: "spring",
-            stiffness: 240,
-            damping: 28,
-            mass: 0.8,
-          },
-          y: {
-            type: "spring",
-            stiffness: 280,
-            damping: 24,
-            mass: 0.8,
-          },
-        }}
+        variants={navbarAnimations.desktop.variants}
+        initial="hidden"
+        animate="visible"
+        transition={navbarAnimations.desktop.transition}
         className={cn(
           "pointer-events-auto relative hidden md:flex items-center text-white",
           "transition-colors duration-300",
@@ -91,7 +117,7 @@ export default function Navbar() {
               : "w-auto justify-center gap-3 lg:gap-5"
           )}
         >
-          {/* Brand Logo */}
+          {/* Brand Logo from JSON */}
           <motion.div
             layout
             className={cn(
@@ -100,12 +126,24 @@ export default function Navbar() {
             )}
           >
             <Link
-              href="/"
-              className="group flex items-center gap-0.5 select-none focus:outline-none"
+              href={logo.href || "/"}
+              className="group flex items-center gap-1.5 select-none focus:outline-none"
             >
-              <span className="font-bold text-[17px] md:text-[18px] lg:text-[19px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
-                Dreams<span className="text-[#2563EB]">*</span>
-              </span>
+              {logo.image ? (
+                <Image
+                  src={logo.image}
+                  alt={logo.alt || logo.text}
+                  width={120}
+                  height={32}
+                  className="h-7 w-auto object-contain"
+                  priority
+                />
+              ) : (
+                <span className="font-bold text-[17px] md:text-[18px] lg:text-[19px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
+                  {logo.text}
+                  <span className="text-[#2563EB]">{logo.highlight}</span>
+                </span>
+              )}
             </Link>
           </motion.div>
 
@@ -114,7 +152,7 @@ export default function Navbar() {
             <div className="w-[1px] h-3.5 bg-white/20 select-none pointer-events-none" />
           )}
 
-          {/* Center: Nav Items */}
+          {/* Center: Nav Items from JSON */}
           <motion.div
             layout
             className="flex items-center justify-center flex-shrink-0"
@@ -152,14 +190,11 @@ export default function Navbar() {
                         <motion.span
                           layoutId="navHoverBackground"
                           className="absolute inset-0 -z-10 rounded-full bg-white/[0.12]"
-                          initial={{ opacity: 0, scale: 0.95 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.95 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 30,
-                          }}
+                          variants={navbarAnimations.pill.variants}
+                          initial="initial"
+                          animate="animate"
+                          exit="exit"
+                          transition={navbarAnimations.pill.transition}
                         />
                       )}
 
@@ -168,11 +203,7 @@ export default function Navbar() {
                         <motion.span
                           layoutId="navActiveIndicator"
                           className="absolute -bottom-0.5 left-2.5 right-2.5 h-[2px] bg-[#2563EB] rounded-full"
-                          transition={{
-                            type: "spring",
-                            stiffness: 380,
-                            damping: 30,
-                          }}
+                          transition={navbarAnimations.activeIndicator.transition}
                         />
                       )}
 
@@ -184,40 +215,32 @@ export default function Navbar() {
             </motion.ul>
           </motion.div>
 
-          {/* Right Side: CTA Button (Only shown when scrolled - shifts out of menu) */}
+          {/* Right Side: CTA Button from JSON (Only shown when scrolled - shifts out of menu) */}
           <AnimatePresence>
             {isScrolled && (
               <motion.div
                 key="desktop-contact"
-                initial={{ opacity: 0, x: 20, filter: "blur(4px)" }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, x: 20, filter: "blur(4px)" }}
-                transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                variants={navbarAnimations.desktopCta.variants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={navbarAnimations.desktopCta.transition}
                 className="flex-1 flex items-center justify-end flex-shrink-0"
               >
                 <Link
-                  href="/contact"
+                  href={cta.href}
                   className={cn(
                     "group relative inline-flex items-center justify-center gap-1.5 lg:gap-2",
                     "pl-3.5 lg:pl-4 pr-1.5 py-1.5 lg:py-2 rounded-full bg-white text-black text-[12px] lg:text-[13px] font-semibold",
                     "transition-all duration-200 hover:bg-zinc-100 hover:shadow-md hover:scale-105 active:scale-95 select-none",
-                    pathname === "/contact" && "ring-2 ring-[#2563EB]"
+                    pathname === cta.href && "ring-2 ring-[#2563EB]"
                   )}
                 >
-                  <span>Contact us</span>
+                  <span>{cta.label}</span>
                   <div className="w-5 h-5 lg:w-5.5 lg:h-5.5 rounded-full bg-black text-white flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                    {renderNavIcon(cta.icon, "w-2.5 h-2.5 lg:w-3 lg:h-3 stroke-[2.5]") || (
+                      <ArrowRight className="w-2.5 h-2.5 stroke-[2.5]" />
+                    )}
                   </div>
                 </Link>
               </motion.div>
@@ -226,7 +249,7 @@ export default function Navbar() {
         </motion.div>
       </motion.nav>
 
-      {/* Mobile Dynamic Island / Full-width bar on Scroll */}
+      {/* Mobile Navigation */}
       <div
         className={cn(
           "pointer-events-auto md:hidden w-full flex flex-col items-center transition-all duration-300",
@@ -235,12 +258,10 @@ export default function Navbar() {
       >
         <motion.div
           layout
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            layout: { type: "spring", stiffness: 240, damping: 28 },
-            y: { type: "spring", stiffness: 300, damping: 25 },
-          }}
+          variants={navbarAnimations.mobile.variants}
+          initial="hidden"
+          animate="visible"
+          transition={navbarAnimations.mobile.transition}
           className={cn(
             "relative text-white border-b transition-all duration-300",
             isScrolled
@@ -249,33 +270,46 @@ export default function Navbar() {
           )}
         >
           <div className="flex items-center justify-between gap-3">
-            {/* Mobile Logo */}
+            {/* Mobile Logo from JSON */}
             <Link
-              href="/"
-              className="flex items-center gap-0.5 select-none focus:outline-none group flex-shrink-0"
+              href={logo.href || "/"}
+              className="flex items-center gap-1.5 select-none focus:outline-none group flex-shrink-0"
             >
-              <span className="font-bold text-[17px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
-                Dreams<span className="text-[#2563EB]">*</span>
-              </span>
+              {logo.image ? (
+                <Image
+                  src={logo.image}
+                  alt={logo.alt || logo.text}
+                  width={100}
+                  height={28}
+                  className="h-6 w-auto object-contain"
+                  priority
+                />
+              ) : (
+                <span className="font-bold text-[17px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
+                  {logo.text}
+                  <span className="text-[#2563EB]">{logo.highlight}</span>
+                </span>
+              )}
             </Link>
 
             <div className="flex items-center gap-2">
-              {/* Mobile CTA Button (Only shown when scrolled) */}
+              {/* Mobile CTA Button from JSON (Only shown when scrolled) */}
               <AnimatePresence>
                 {isScrolled && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    variants={navbarAnimations.mobile.cta}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
                   >
                     <Link
-                      href="/contact"
+                      href={cta.href}
                       className={cn(
                         "px-3 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-colors whitespace-nowrap",
-                        pathname === "/contact" && "ring-2 ring-[#2563EB]"
+                        pathname === cta.href && "ring-2 ring-[#2563EB]"
                       )}
                     >
-                      Contact us
+                      {cta.label}
                     </Link>
                   </motion.div>
                 )}
@@ -287,32 +321,24 @@ export default function Navbar() {
                 onClick={() => setIsMobileOpen((prev) => !prev)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={isMobileOpen}
-                className="p-1.5 text-zinc-300 hover:text-white transition-colors focus:outline-none rounded-md"
+                className="p-1.5 text-zinc-300 hover:text-white transition-colors focus:outline-none rounded-md cursor-pointer"
               >
                 <div className="w-5 h-4 flex flex-col justify-between items-end">
                   <motion.span
-                    animate={{
-                      rotate: isMobileOpen ? 45 : 0,
-                      y: isMobileOpen ? 6.5 : 0,
-                      width: isMobileOpen ? 20 : 20,
-                    }}
+                    variants={navbarAnimations.hamburger.top}
+                    animate={isMobileOpen ? "open" : "closed"}
                     transition={{ duration: 0.2 }}
                     className="h-[2px] bg-white rounded-full block origin-center"
                   />
                   <motion.span
-                    animate={{
-                      opacity: isMobileOpen ? 0 : 1,
-                      width: 14,
-                    }}
+                    variants={navbarAnimations.hamburger.middle}
+                    animate={isMobileOpen ? "open" : "closed"}
                     transition={{ duration: 0.15 }}
                     className="h-[2px] bg-white rounded-full block"
                   />
                   <motion.span
-                    animate={{
-                      rotate: isMobileOpen ? -45 : 0,
-                      y: isMobileOpen ? -6.5 : 0,
-                      width: isMobileOpen ? 20 : 20,
-                    }}
+                    variants={navbarAnimations.hamburger.bottom}
+                    animate={isMobileOpen ? "open" : "closed"}
                     transition={{ duration: 0.2 }}
                     className="h-[2px] bg-white rounded-full block origin-center"
                   />
@@ -321,14 +347,15 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Animated Mobile Dropdown */}
+          {/* Animated Mobile Dropdown from JSON */}
           <AnimatePresence>
             {isMobileOpen && (
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
+                variants={navbarAnimations.dropdown.variants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                transition={navbarAnimations.dropdown.transition}
                 className="overflow-hidden pt-3 border-t border-white/10 mt-3"
               >
                 <ul className="flex flex-col gap-1.5 p-0 m-0 list-none pb-2">
@@ -341,9 +368,10 @@ export default function Navbar() {
                     return (
                       <motion.li
                         key={item.label}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.04 }}
+                        custom={idx}
+                        variants={navbarAnimations.dropdown.item}
+                        initial="initial"
+                        animate="animate"
                       >
                         <Link
                           href={item.href}
@@ -355,7 +383,10 @@ export default function Navbar() {
                               : "text-zinc-300 hover:bg-white/5 hover:text-white"
                           )}
                         >
-                          <span>{item.label}</span>
+                          <div className="flex items-center gap-2.5">
+                            {renderNavIcon(item.icon, "w-4 h-4 text-zinc-400")}
+                            <span>{item.label}</span>
+                          </div>
                           {isActive && (
                             <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                           )}
@@ -366,29 +397,21 @@ export default function Navbar() {
 
                   {!isScrolled && (
                     <motion.li
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: navItems.length * 0.04 }}
+                      custom={navItems.length}
+                      variants={navbarAnimations.dropdown.item}
+                      initial="initial"
+                      animate="animate"
                       className="pt-2 border-t border-white/10 mt-1"
                     >
                       <Link
-                        href="/contact"
+                        href={cta.href}
                         onClick={() => setIsMobileOpen(false)}
                         className="flex items-center justify-center gap-2 text-center py-2.5 px-4 rounded-full bg-[#2563EB] text-white text-sm font-semibold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
                       >
-                        <span>Contact us</span>
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                        <span>{cta.label}</span>
+                        {renderNavIcon(cta.icon, "w-3.5 h-3.5 stroke-[2.5]") || (
+                          <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                        )}
                       </Link>
                     </motion.li>
                   )}
@@ -399,5 +422,13 @@ export default function Navbar() {
         </motion.div>
       </div>
     </header>
+  );
+}
+
+export default function Navbar(): React.JSX.Element {
+  return (
+    <Suspense fallback={null}>
+      <NavbarContent />
+    </Suspense>
   );
 }

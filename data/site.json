@@ -1,0 +1,1906 @@
+{
+  "site": {
+    "name": "Dreams Luxury Real Estate",
+    "tagline": "Curating the world's most prestigious residential sanctuaries",
+    "description": "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.",
+    "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow"
+  },
+  "navbar": {
+    "logo": {
+      "text": "Dreams",
+      "highlight": "*",
+      "image": "",
+      "alt": "Dreams Luxury Real Estate",
+      "href": "/"
+    },
+    "navItems": [
+      {
+        "label": "Home",
+        "href": "/",
+        "icon": "Home"
+      },
+      {
+        "label": "About",
+        "href": "/about",
+        "icon": "Info"
+      },
+      {
+        "label": "Properties",
+        "href": "/properties",
+        "icon": "Building2"
+      },
+      {
+        "label": "Team",
+        "href": "/team",
+        "icon": "Users"
+      },
+      {
+        "label": "Clients",
+        "href": "/clients",
+        "icon": "Award"
+      },
+      {
+        "label": "Blogs",
+        "href": "/blog",
+        "icon": "BookOpen"
+      },
+      {
+        "label": "Contact Us",
+        "href": "/contact",
+        "icon": "Mail"
+      }
+    ],
+    "cta": {
+      "label": "Contact us",
+      "href": "/contact",
+      "icon": "ArrowRight"
+    }
+  },
+  "hero": {
+    "backgroundImage": "/images/hero-banners.png",
+    "backgroundAlt": "Luxury modern architectural residence with illuminated pool",
+    "headline": {
+      "prefix": "Book",
+      "badge": "Your",
+      "main": "Dreams",
+      "badgeIcon": "FourPointStar",
+      "mainIcon": "Asterisk"
+    },
+    "description": "Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives.",
+    "cta": {
+      "label": "Enquire Now",
+      "href": "/enquiry-now",
+      "icon": "ArrowRight"
+    }
+  },
+  "about": {
+    "badgeText": "About Us",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1": "ABOUT OUR",
+      "line2Prefix": "BOOK",
+      "line2Badge": "PRESTIGIOUS",
+      "line3": "RESIDENCES",
+      "icon": "FourPointStar"
+    },
+    "description": "We represent the world’s most distinguished residential estates, private waterfront sanctuaries, and prime architectural masterworks.",
+    "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
+    "imageAlt": "Luxury living room with sculpted chairs and a stone coffee table",
+    "stats": [
+      {
+        "value": "$2.8B+",
+        "label": "Volume Sold"
+      },
+      {
+        "value": "450+",
+        "label": "Estates"
+      },
+      {
+        "value": "15+ Yrs",
+        "label": "Advisory"
+      }
+    ],
+    "cta": {
+      "label": "EXPLORE PORTFOLIO",
+      "href": "/properties",
+      "icon": "ArrowRight"
+    }
+  },
+  "blog": {
+    "pageTitle": "Our Blog",
+    "pageSubtitle": "In-depth intelligence on prime global real estate, architectural trends, and wealth preservation.",
+    "badgeText": "Our Blog",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "prefix": "Featured",
+      "badge": "Articles",
+      "icon": "FourPointStar"
+    },
+    "description": "Explore our curated archive of design perspectives, market intelligence, and creative visions engineered to inspire and inform.",
+    "posts": [
+      {
+        "id": "post-1",
+        "title": "Architectural Trends Defining Luxury Living in 2025",
+        "excerpt": "Discover how organic biophilic architecture, zero-carbon construction, and private wellness pavilions are shaping ultra-luxury estates.",
+        "category": "Architecture",
+        "date": "18 Oct 2024",
+        "readTime": "4 min read",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": false
+      },
+      {
+        "id": "post-2",
+        "title": "Prime Waterfront Estates: Navigating Global Coastal Investments",
+        "excerpt": "A strategic guide to acquiring high-yield waterfront sanctuaries across the French Riviera, Amalfi Coast, and Miami Biscayne Bay.",
+        "category": "Market Insights",
+        "date": "24 Nov 2024",
+        "readTime": "5 min read",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": true
+      },
+      {
+        "id": "post-3",
+        "title": "The Rise of High-Rise Penthouses in Urban Epicenters",
+        "excerpt": "How panoramic skyline terraces, private elevator foyers, and bespoke hotel-tier concierge amenities are redefining metropolis penthouses.",
+        "category": "Urban Living",
+        "date": "12 Nov 2024",
+        "readTime": "3 min read",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": false
+      },
+      {
+        "id": "post-4",
+        "title": "Sustainable Sanctuaries: Net-Zero Mansions of Tomorrow",
+        "excerpt": "Exploring how geothermal climate engineering and solar glass integration elevate ecological residential design to an art form.",
+        "category": "Sustainability",
+        "date": "04 Nov 2024",
+        "readTime": "4 min read",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": false
+      },
+      {
+        "id": "post-5",
+        "title": "Curating Private Sanctuaries: The Art of Smart Home Living",
+        "excerpt": "From ambient biological circadian lighting to AI-driven security vaults, step inside the next generation of intelligent luxury retreats.",
+        "category": "Smart Estates",
+        "date": "28 Oct 2024",
+        "readTime": "3 min read",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": false
+      },
+      {
+        "id": "post-6",
+        "title": "Heritage Restorations: Reviving Historic European Châteaux",
+        "excerpt": "Balancing centuries-old stone craftsmanship with state-of-the-art contemporary lifestyle technology across France and Tuscany.",
+        "category": "Heritage",
+        "date": "15 Oct 2024",
+        "readTime": "5 min read",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+        "isLatest": false
+      }
+    ]
+  },
+  "properties": {
+    "pageTitle": "Our Properties",
+    "pageSubtitle": "Curated portfolios of iconic estates and architectural landmarks across global capitals.",
+    "badgeText": "Featured Properties",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1": "Exclusive Estates &",
+      "line2Prefix": "Luxury",
+      "line2Badge": "Properties",
+      "icon": "FourPointStar"
+    },
+    "description": "Explore our handpicked collection of premier architectural sanctuaries, waterfront estates, and prestigious luxury properties worldwide.",
+    "propertiesList": [
+      {
+        "id": "beverly-hills-villa",
+        "title": "Beverly Hills Modern Villa",
+        "price": "$1,450,000",
+        "priceNumeric": 1450000,
+        "location": "Beverly Hills, CA 90210, USA",
+        "countryCode": "US",
+        "propertiesCount": "148",
+        "estatesCount": "24",
+        "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Luxury modern architectural villa with infinity pool in Beverly Hills",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "bh-1",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Luxury master bathroom with contemporary oval sink vanity"
+          },
+          {
+            "id": "bh-2",
+            "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Panoramic master bedroom overlooking waterfront terrace"
+          },
+          {
+            "id": "bh-3",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Modern designer guest bedroom with ambient lighting"
+          },
+          {
+            "id": "bh-4",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Spacious open concept living room with plush seating"
+          },
+          {
+            "id": "bh-5",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Architectural sunlit lounge and bespoke fireplace"
+          },
+          {
+            "id": "bh-6",
+            "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Master suite overlooking illuminated infinity pool"
+          },
+          {
+            "id": "bh-7",
+            "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Chef kitchen with marble island and premium fixtures"
+          },
+          {
+            "id": "bh-8",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Waterfront private dock and exterior sunset view"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "3",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "4",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "2",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "4530",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "The very best waterfront location in Harbor Islands complete with private dock and amazing water frontage! Offering panoramic water views, this spacious home has volume ceilings and offers a rarely available ground floor master bedroom suite. The modern kitchen has been completely updated, leading to entertainment and family rooms that open to fabulous back yard and swimming pool overlooking the waterways. Must be seen!",
+        "commonNote": "This is a common note that can be displayed on all properties but controlled from one simple option.",
+        "features": [
+          "2 Stories",
+          "Central Cooling",
+          "Dual Sinks",
+          "Electric Range",
+          "Fire Place",
+          "Laundry Room",
+          "Lawn",
+          "Swimming Pool"
+        ],
+        "attachments": [
+          {
+            "id": "att-1",
+            "title": "Ultra Demo Word File",
+            "size": "12.13 kb",
+            "type": "word",
+            "url": "#"
+          },
+          {
+            "id": "att-2",
+            "title": "Ultra Demo PDF File",
+            "size": "18.57 kb",
+            "type": "pdf",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Nathan James",
+          "role": "Senior Estates Director — Beverly Hills",
+          "avatar": "/images/agent-nathan.png",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "1-222-333-4444",
+            "mobile": "1-234-458-7893",
+            "fax": "1-333-444-5555",
+            "whatsapp": "1-222-333-4433",
+            "email": "robot@inspirythemes.com"
+          }
+        }
+      },
+      {
+        "id": "dubai-sky-penthouse",
+        "title": "Dubai Marina Sky Penthouse",
+        "price": "$2,850,000",
+        "priceNumeric": 2850000,
+        "location": "Marina Bay, Dubai, UAE",
+        "countryCode": "AE",
+        "propertiesCount": "320",
+        "estatesCount": "42",
+        "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Skyline luxury penthouse with glass terrace overlooking Dubai Marina",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "db-1",
+            "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Panoramic skyline terrace overlooking Dubai Marina"
+          },
+          {
+            "id": "db-2",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Double-height living lounge with floor-to-ceiling glass"
+          },
+          {
+            "id": "db-3",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Master penthouse suite overlooking Palm Jumeirah"
+          },
+          {
+            "id": "db-4",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Italian marble spa bathroom with sky view"
+          },
+          {
+            "id": "db-5",
+            "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private sky terrace infinity pool"
+          },
+          {
+            "id": "db-6",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Bespoke Poggenpohl chef kitchen with marble island"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "4",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "5",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "3",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "6800",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "Perched across the top floors of Dubai Marina, this extraordinary duplex sky penthouse commands 360-degree vistas over Palm Jumeirah and the Arabian Gulf. Complete with private sky infinity pool, floor-to-ceiling soundproof acoustic glass, Italian marble flooring, and private high-speed elevator foyer.",
+        "commonNote": "Off-market private viewings available exclusively for registered VIP buyers with 24-hour advance confirmation.",
+        "features": [
+          "Private Sky Pool",
+          "Panoramic Marina View",
+          "Private Helipad Access",
+          "Biometric Elevator",
+          "Italian Calacatta Marble",
+          "Sauna & Steam Suite",
+          "24/7 Butler Concierge",
+          "Temperature-Controlled Cellar"
+        ],
+        "attachments": [
+          {
+            "id": "att-db-1",
+            "title": "Dubai Marina Penthouse Brochure",
+            "size": "24.60 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-db-2",
+            "title": "Architectural Floorplans Specification",
+            "size": "15.80 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Tariq Al-Mansoor",
+          "role": "Senior Penthouse Specialist — Middle East",
+          "avatar": "/images/review-vneck.jpg",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+971 4 321 8899",
+            "mobile": "+971 50 123 4567",
+            "fax": "+971 4 321 8890",
+            "whatsapp": "+971 50 123 4567",
+            "email": "tariq@dreamsluxury.com"
+          }
+        }
+      },
+      {
+        "id": "monaco-waterfront-estate",
+        "title": "Monaco Waterfront Estate",
+        "price": "$4,200,000",
+        "priceNumeric": 4200000,
+        "location": "Port Hercules, Monaco",
+        "countryCode": "MC",
+        "propertiesCount": "96",
+        "estatesCount": "18",
+        "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Ultra-luxury modern waterfront villa with private yacht dock in Monaco",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "mc-1",
+            "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Monaco waterfront facade overlooking Mediterranean blue"
+          },
+          {
+            "id": "mc-2",
+            "url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Port Hercules harbor-view grand salon terrace"
+          },
+          {
+            "id": "mc-3",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Sunset terrace with heated saltwater infinity pool"
+          },
+          {
+            "id": "mc-4",
+            "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Grand reception salon with custom crystal chandelier"
+          },
+          {
+            "id": "mc-5",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Sea-facing royal master suite and private balcony"
+          },
+          {
+            "id": "mc-6",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Onyx bathroom retreat with jacuzzi overlooking yacht marina"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "5",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "6",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "4",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "8900",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "A rare multi-level waterfront estate situated directly facing the superyacht harbor of Port Hercules. Architecturally designed with cascading sea-view terraces, heated saltwater pool, private wine tasting vault, and direct superyacht tender mooring privileges.",
+        "commonNote": "Exclusive waterfront residency advisory and Monaco tax structuring assistance provided on acquisition.",
+        "features": [
+          "Superyacht Mooring Dock",
+          "Cascading Sea Terraces",
+          "Saltwater Infinity Pool",
+          "Wine Tasting Vault",
+          "Subterranean Quad Garage",
+          "Bulletproof Security Glazing",
+          "Private Staff Quarters",
+          "High-Speed Glass Elevator"
+        ],
+        "attachments": [
+          {
+            "id": "att-mc-1",
+            "title": "Port Hercules Estate Portfolio",
+            "size": "32.10 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-mc-2",
+            "title": "Superyacht Berth Lease Documentation",
+            "size": "19.40 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Elena Rostova",
+          "role": "Head of Private Wealth & Monaco Waterfront",
+          "avatar": "/images/review-blue.jpg",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+377 98 97 12 34",
+            "mobile": "+33 6 12 34 56 78",
+            "fax": "+377 98 97 12 35",
+            "whatsapp": "+377 98 97 12 34",
+            "email": "elena@luxuryestates.com"
+          }
+        }
+      },
+      {
+        "id": "mayfair-heritage-residence",
+        "title": "Mayfair Heritage Residence",
+        "price": "£3,100,000",
+        "priceNumeric": 3100000,
+        "location": "Mayfair, London, UK",
+        "countryCode": "UK",
+        "propertiesCount": "185",
+        "estatesCount": "35",
+        "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Prestigious illuminated heritage estate and modern residence in Mayfair",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "mf-1",
+            "url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Georgian classical facade in prime Mayfair London"
+          },
+          {
+            "id": "mf-2",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Grand reception drawing room with high ceilings"
+          },
+          {
+            "id": "mf-3",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Formal dining hall with restored antique fireplace"
+          },
+          {
+            "id": "mf-4",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Master bedroom suite with original sash windows"
+          },
+          {
+            "id": "mf-5",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Freestanding copper bathtub in marble ensuite"
+          },
+          {
+            "id": "mf-6",
+            "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private landscaped mews courtyard garden"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "4",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "4",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "2",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "5600",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "A Grade-II listed Mayfair townhouse restoration blending Georgian architectural grandeur with cutting-edge bespoke amenities, private mews courtyard, temperature-controlled library, and private passenger lift accessing all six floors.",
+        "commonNote": "Freehold tenure with approved English Heritage modern extension documentation.",
+        "features": [
+          "Grade II Listed Georgian Architecture",
+          "Private Secondary Mews House",
+          "Internal 6-Stop Passenger Lift",
+          "Landscaped Private Courtyard",
+          "Bespoke Walnut Library",
+          "Lutron Homeworks Smart Lighting",
+          "Sommelier Wine Cellar",
+          "Underfloor Zoned Heating"
+        ],
+        "attachments": [
+          {
+            "id": "att-mf-1",
+            "title": "Mayfair Townhouse Historical Dossier",
+            "size": "28.50 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-mf-2",
+            "title": "Architectural Conservation Floorplans",
+            "size": "16.90 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Julian Vance",
+          "role": "Principal Estates Director — London & Mayfair",
+          "avatar": "/images/review-sweater.jpg",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+44 20 7946 0912",
+            "mobile": "+44 7700 900143",
+            "fax": "+44 20 7946 0910",
+            "whatsapp": "+44 7700 900143",
+            "email": "julian@luxuryestates.com"
+          }
+        }
+      },
+      {
+        "id": "lake-como-grand-palazzo",
+        "title": "Lake Como Grand Palazzo",
+        "price": "€2,650,000",
+        "priceNumeric": 2650000,
+        "location": "Bellagio, Lake Como, Italy",
+        "countryCode": "IT",
+        "propertiesCount": "112",
+        "estatesCount": "16",
+        "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Historic palazzo and contemporary villa overlooking Lake Como Italy",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "lc-1",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Neoclassical lakeside villa and botanical gardens on Lake Como"
+          },
+          {
+            "id": "lc-2",
+            "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private boathouse and stone pier facing Bellagio"
+          },
+          {
+            "id": "lc-3",
+            "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Lakeside infinity pool facing Alpine peaks"
+          },
+          {
+            "id": "lc-4",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Restored grand reception salon with frescoed ceilings"
+          },
+          {
+            "id": "lc-5",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Lake-facing master suite with antique balcony"
+          },
+          {
+            "id": "lc-6",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Carrara marble master bath with panoramic lake view"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "6",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "7",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "3",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "9800",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "Majestic neoclassical villa on the Bellagio shore of Lake Como with botanical Italian gardens, private boathouse, century-old cypress trees, and breathtaking vistas of the Alpine foothills. Includes restored frescoed salons, detached guest house, and private stone dock.",
+        "commonNote": "Includes historic Italian heritage preservation certification and private water rights.",
+        "features": [
+          "Private Boathouse & Dock",
+          "Botanical Italian Gardens",
+          "Original Frescoed Ceilings",
+          "Lakeside Infinity Pool",
+          "Detached Guest House Villa",
+          "Antique Stone Sun Terraces",
+          "Underground Wine Cellar",
+          "Private Helicopter Landing Lawn"
+        ],
+        "attachments": [
+          {
+            "id": "att-lc-1",
+            "title": "Lake Como Palazzo Heritage Presentation",
+            "size": "34.20 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-lc-2",
+            "title": "Private Boathouse & Pier Specifications",
+            "size": "14.50 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Sophia Laurent",
+          "role": "Chief Strategy & European Heritage Partner",
+          "avatar": "/images/testimonial-sarah.jpg",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+39 031 950 123",
+            "mobile": "+39 340 123 4567",
+            "fax": "+39 031 950 120",
+            "whatsapp": "+39 340 123 4567",
+            "email": "sophia@luxuryestates.com"
+          }
+        }
+      },
+      {
+        "id": "st-moritz-alpine-chalet",
+        "title": "St. Moritz Alpine Chalet",
+        "price": "CHF 3,900,000",
+        "priceNumeric": 3900000,
+        "location": "Via Serlas, St. Moritz, Switzerland",
+        "countryCode": "CH",
+        "propertiesCount": "74",
+        "estatesCount": "12",
+        "imageUrl": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Architectural alpine chalet with panoramic mountain glass walls in St. Moritz",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "sm-1",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Alpine timber and granite chalet overlooking St. Moritz valley"
+          },
+          {
+            "id": "sm-2",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Exposed larch timber lounge with central roaring fireplace"
+          },
+          {
+            "id": "sm-3",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Alpine master suite with panoramic snow mountain terrace"
+          },
+          {
+            "id": "sm-4",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Nordic cedar spa and heated indoor Jacuzzi"
+          },
+          {
+            "id": "sm-5",
+            "url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Dining salon with panoramic glass overlooking Engadin valley"
+          },
+          {
+            "id": "sm-6",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private ski-in ski-out access and evening sunset deck"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "5",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "5",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "3",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "6900",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "Exceptional ski-in / ski-out timber and stone chalet in prestigious St. Moritz with soaring timber beams, panoramic Engadin valley views, private heated ski room, and indoor Nordic wellness spa. Masterfully engineered with geothermal climate systems.",
+        "commonNote": "Full Lex Koller authorization for non-Swiss international purchasers.",
+        "features": [
+          "Direct Ski-In / Ski-Out",
+          "Indoor Nordic Spa & Sauna",
+          "Heated Ski & Gear Room",
+          "Central Alpine Fireplace",
+          "Geothermal Eco-Heating",
+          "Panoramic Mountain Glass",
+          "Wine Tasting Vault",
+          "Triple Heated Garage"
+        ],
+        "attachments": [
+          {
+            "id": "att-sm-1",
+            "title": "St. Moritz Ski Chalet Presentation",
+            "size": "26.30 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-sm-2",
+            "title": "Swiss Geothermal Specs & Floorplans",
+            "size": "17.10 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Marcus Cole",
+          "role": "Lead Architectural Designer & Alpine Specialist",
+          "avatar": "/images/review-marcus.jpg",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+41 81 833 4455",
+            "mobile": "+41 79 123 4567",
+            "fax": "+41 81 833 4450",
+            "whatsapp": "+41 79 123 4567",
+            "email": "marcus@luxuryestates.com"
+          }
+        }
+      },
+      {
+        "id": "french-riviera-sunset-villa",
+        "title": "French Riviera Sunset Villa",
+        "price": "€3,400,000",
+        "priceNumeric": 3400000,
+        "location": "Cap d'Antibes, French Riviera, France",
+        "countryCode": "FR",
+        "propertiesCount": "135",
+        "estatesCount": "22",
+        "imageUrl": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Bespoke contemporary hillside sanctuary overlooking the Mediterranean sea",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "fr-1",
+            "url": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Contemporary Cap d'Antibes villa facade at sunset"
+          },
+          {
+            "id": "fr-2",
+            "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Heated infinity pool edge floating above Mediterranean sea"
+          },
+          {
+            "id": "fr-3",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Minimalist sunlit living salon with sea panorama"
+          },
+          {
+            "id": "fr-4",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Master bedroom suite opening to pool terrace"
+          },
+          {
+            "id": "fr-5",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Contemporary bathroom with panoramic ocean sunset view"
+          },
+          {
+            "id": "fr-6",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private cliffside garden gazebo and olive trees"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "4",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "5",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "2",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "5800",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "Perched on the prime crest of Cap d'Antibes, this sun-drenched architectural villa offers uninterrupted Mediterranean sunset horizons, minimalist floor-to-ceiling glass walls, expansive pool deck, and centuries-old private olive groves.",
+        "commonNote": "Offered fully furnished with custom designer French and Italian bespoke furniture.",
+        "features": [
+          "Unobstructed Sunset Views",
+          "Infinity Edge Heated Pool",
+          "Ancient Olive Groves",
+          "Open-Air Summer Kitchen",
+          "Private Security Gate",
+          "Bespoke Master Suite",
+          "Automated Solar Sunshades",
+          "Direct Beach Trail"
+        ],
+        "attachments": [
+          {
+            "id": "att-fr-1",
+            "title": "Cap d Antibes Villa Dossier",
+            "size": "27.80 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-fr-2",
+            "title": "Architectural Plot & Survey Certificate",
+            "size": "15.30 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Camille Laurent",
+          "role": "Côte d'Azur Luxury Specialist",
+          "avatar": "/images/team-ana.png",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+33 4 93 61 22 33",
+            "mobile": "+33 6 88 99 00 11",
+            "fax": "+33 4 93 61 22 30",
+            "whatsapp": "+33 6 88 99 00 11",
+            "email": "camille@dreamsluxury.com"
+          }
+        }
+      },
+      {
+        "id": "tokyo-imperial-sky-haven",
+        "title": "Tokyo Imperial Sky Haven",
+        "price": "¥420,000,000",
+        "priceNumeric": 420000000,
+        "location": "Roppongi Hills, Tokyo, Japan",
+        "countryCode": "JP",
+        "propertiesCount": "88",
+        "estatesCount": "14",
+        "imageUrl": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Biophilic architectural penthouse overlooking Tokyo skyline",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "tk-1",
+            "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Biophilic Japanese penthouse terrace overlooking Tokyo skyline"
+          },
+          {
+            "id": "tk-2",
+            "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Sunlit minimalist salon with Tokyo Tower panorama"
+          },
+          {
+            "id": "tk-3",
+            "url": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Modern Japanese master bedroom with natural cedar accents"
+          },
+          {
+            "id": "tk-4",
+            "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Authentic Hinoki cypress onsen soaking tub with skyline view"
+          },
+          {
+            "id": "tk-5",
+            "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Custom tatami tea room and rare Japanese whiskey bar"
+          },
+          {
+            "id": "tk-6",
+            "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Private rooftop zen garden with Mount Fuji vista"
+          }
+        ],
+        "specs": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "3",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "3",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "2",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "4600",
+            "unit": "sq ft",
+            "icon": "Maximize2"
+          }
+        ],
+        "description": "Sophisticated triplex residence towering above Roppongi Hills with private Japanese rooftop zen rock garden, unobstructed views of Tokyo Tower and Mount Fuji, Hinoki wood onsen tub, and discreet multi-tier biometric security.",
+        "commonNote": "Full bilingual concierge service and secure subterranean robotic parking included.",
+        "features": [
+          "Rooftop Zen Rock Garden",
+          "Tokyo Tower & Mt. Fuji Views",
+          "Biometric Private Lift",
+          "Hinoki Wood Onsen Tub",
+          "Custom Tatami Tea Room",
+          "Japanese Whiskey Bar",
+          "Sub-Zero Chef Kitchen",
+          "24/7 Bilingual Concierge"
+        ],
+        "attachments": [
+          {
+            "id": "att-tk-1",
+            "title": "Tokyo Penthouse Architectural Spec",
+            "size": "29.40 kb",
+            "type": "pdf",
+            "url": "#"
+          },
+          {
+            "id": "att-tk-2",
+            "title": "Roppongi Hills Concierge Amenities Guide",
+            "size": "18.10 kb",
+            "type": "word",
+            "url": "#"
+          }
+        ],
+        "agent": {
+          "name": "Kenji Takahashi",
+          "role": "Tokyo Metropolis Realty Director",
+          "avatar": "/images/team-darko.png",
+          "isVerified": true,
+          "listingsUrl": "/properties",
+          "contacts": {
+            "office": "+81 3 5555 0142",
+            "mobile": "+81 90 1234 5678",
+            "fax": "+81 3 5555 0140",
+            "whatsapp": "+81 90 1234 5678",
+            "email": "kenji@dreamsluxury.com"
+          }
+        }
+      }
+    ],
+    "sectionTitles": {
+      "overview": "Overview",
+      "description": "Description",
+      "commonNote": "Properties Common Note",
+      "features": "Features",
+      "attachments": "Property Attachments"
+    },
+    "inquiryForm": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone",
+      "messagePrefix": "Hello, I am interested in",
+      "gdprLabel": "GDPR Agreement *",
+      "gdprText": "I consent to having this website store my submitted information so they can respond to my inquiry.",
+      "submitButtonText": "Send Message",
+      "successMessage": "Thank you! Agent Nathan James will contact you shortly regarding this property."
+    },
+    "agent": {
+      "name": "Nathan James",
+      "role": "Agent",
+      "avatar": "/images/agent-nathan.png",
+      "isVerified": true,
+      "listingsUrl": "/properties",
+      "contacts": {
+        "office": "1-222-333-4444",
+        "mobile": "1-234-458-7893",
+        "fax": "1-333-444-5555",
+        "whatsapp": "1-222-333-4433",
+        "email": "robot@inspirythemes.com"
+      }
+    }
+  },
+  "services": {
+    "badgeText": "Our Services",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "prefix": "Architectural",
+      "badge": "Services",
+      "icon": "FourPointStar"
+    },
+    "servicesList": [
+      {
+        "id": "service-1",
+        "title": "DESIGNING THE FUTURE OF LIVING",
+        "lines": [
+          "DESIGNING",
+          "THE FUTURE",
+          "OF LIVING"
+        ],
+        "subtitle": "Architectural Masterworks",
+        "image": "/images/service-isometric-1.png"
+      },
+      {
+        "id": "service-2",
+        "title": "BESPOKE LUXURY VILLA ARCHITECTURE",
+        "lines": [
+          "BESPOKE",
+          "LUXURY VILLA",
+          "ARCHITECTURE"
+        ],
+        "subtitle": "Custom Residence Design",
+        "image": "/images/service-isometric-2.png"
+      },
+      {
+        "id": "service-3",
+        "title": "WATERFRONT SANCTUARY LIVING",
+        "lines": [
+          "WATERFRONT",
+          "SANCTUARY",
+          "LIVING"
+        ],
+        "subtitle": "Private Yacht Marinas",
+        "image": "/images/service-isometric-3.png"
+      },
+      {
+        "id": "service-4",
+        "title": "SKYLINE PENTHOUSE PORTFOLIO",
+        "lines": [
+          "SKYLINE",
+          "PENTHOUSE",
+          "PORTFOLIO"
+        ],
+        "subtitle": "Metropolitan Towers",
+        "image": "/images/service-isometric-4.png"
+      },
+      {
+        "id": "service-5",
+        "title": "HIGH-DENSITY RESIDENTIAL TOWERS",
+        "lines": [
+          "HIGH-DENSITY",
+          "RESIDENTIAL",
+          "TOWERS"
+        ],
+        "subtitle": "Urban Master Development",
+        "image": "/images/service-isometric-5.png"
+      },
+      {
+        "id": "service-6",
+        "title": "JAPANESE ZEN SANCTUARY MINIMALISM",
+        "lines": [
+          "JAPANESE",
+          "ZEN SANCTUARY",
+          "MINIMALISM"
+        ],
+        "subtitle": "Biophilic Balance",
+        "image": "/images/service-isometric-6.png"
+      }
+    ]
+  },
+  "team": {
+    "title": "OUR TEAMS",
+    "clientRatingIcon": "Star",
+    "members": [
+      {
+        "id": "julian-vance",
+        "name": "Julian Vance",
+        "position": "Principal Estates Director",
+        "image": "/images/review-sweater.jpg",
+        "description": "The sheer caliber of craftsmanship and discretion is unmatched. We curate private off-market sanctuaries for discerning global collectors.",
+        "location": "Mayfair, London & Monaco",
+        "stats": {
+          "sold": "142",
+          "rating": "4.9",
+          "listings": "36"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://linkedin.com",
+            "label": "LinkedIn"
+          },
+          {
+            "platform": "instagram",
+            "href": "https://instagram.com",
+            "label": "Instagram"
+          },
+          {
+            "platform": "twitter",
+            "href": "https://x.com",
+            "label": "X (Twitter)"
+          },
+          {
+            "platform": "email",
+            "href": "mailto:julian@luxuryestates.com",
+            "label": "Direct Email"
+          }
+        ]
+      },
+      {
+        "id": "brian-hanley",
+        "name": "Brian Hanley",
+        "position": "Managing Partner — Acquisitions",
+        "image": "/images/review-vneck.jpg",
+        "description": "Every acquisition is conducted with white-glove precision. We set the gold standard for premier architectural and residential masterworks.",
+        "location": "Beverly Hills & Bel Air, CA",
+        "stats": {
+          "sold": "185",
+          "rating": "4.9",
+          "listings": "42"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://linkedin.com",
+            "label": "LinkedIn"
+          },
+          {
+            "platform": "instagram",
+            "href": "https://instagram.com",
+            "label": "Instagram"
+          },
+          {
+            "platform": "twitter",
+            "href": "https://x.com",
+            "label": "X (Twitter)"
+          },
+          {
+            "platform": "email",
+            "href": "mailto:brian@luxuryestates.com",
+            "label": "Direct Email"
+          }
+        ]
+      },
+      {
+        "id": "elena-rostova",
+        "name": "Elena Rostova",
+        "position": "Head of Private Wealth & Waterfront",
+        "image": "/images/review-blue.jpg",
+        "description": "Curating access to private coastal havens and ultra-prime waterfront villas that never appear on public real estate listings.",
+        "location": "Monaco & French Riviera",
+        "stats": {
+          "sold": "88",
+          "rating": "5.0",
+          "listings": "24"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://linkedin.com",
+            "label": "LinkedIn"
+          },
+          {
+            "platform": "instagram",
+            "href": "https://instagram.com",
+            "label": "Instagram"
+          },
+          {
+            "platform": "twitter",
+            "href": "https://x.com",
+            "label": "X (Twitter)"
+          },
+          {
+            "platform": "email",
+            "href": "mailto:elena@luxuryestates.com",
+            "label": "Direct Email"
+          }
+        ]
+      },
+      {
+        "id": "marcus-cole",
+        "name": "Marcus Cole",
+        "position": "Lead Architectural Designer",
+        "image": "/images/review-marcus.jpg",
+        "description": "A true time-saver. I can focus on my core logic instead of pixel-pushing. Highly recommended.",
+        "location": "Zurich, Switzerland",
+        "stats": {
+          "sold": "95",
+          "rating": "4.8",
+          "listings": "28"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://linkedin.com",
+            "label": "LinkedIn"
+          },
+          {
+            "platform": "instagram",
+            "href": "https://instagram.com",
+            "label": "Instagram"
+          },
+          {
+            "platform": "twitter",
+            "href": "https://x.com",
+            "label": "X (Twitter)"
+          },
+          {
+            "platform": "email",
+            "href": "mailto:marcus@luxuryestates.com",
+            "label": "Direct Email"
+          }
+        ]
+      },
+      {
+        "id": "sophia-laurent",
+        "name": "Sophia Laurent",
+        "position": "Chief Strategy & Heritage Officer",
+        "image": "/images/testimonial-sarah.jpg",
+        "description": "Exceptional market foresight paired with world-class architectural curation. Delivering extraordinary residential value across generations.",
+        "location": "Paris & Lake Como, Italy",
+        "stats": {
+          "sold": "120",
+          "rating": "4.9",
+          "listings": "31"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://linkedin.com",
+            "label": "LinkedIn"
+          },
+          {
+            "platform": "instagram",
+            "href": "https://instagram.com",
+            "label": "Instagram"
+          },
+          {
+            "platform": "twitter",
+            "href": "https://x.com",
+            "label": "X (Twitter)"
+          },
+          {
+            "platform": "email",
+            "href": "mailto:sophia@luxuryestates.com",
+            "label": "Direct Email"
+          }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "pageTitle": "Our Clients",
+    "pageSubtitle": "Discreetly representing HNWIs, royal families, and multinational corporations across 21 global markets.",
+    "badgeText": "Our Clients",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1": "Loved By The",
+      "line2Prefix": "Prestige",
+      "line2Badge": "Clients",
+      "icon": "FourPointStar"
+    },
+    "description": "A few words from the founders, marketers, and private homeowners we have curated sanctuaries with.",
+    "testimonialsList": [
+      {
+        "id": "sarah-anderson",
+        "name": "Sarah Anderson",
+        "role": "VP of Marketing",
+        "avatar": "/images/testimonial-sarah.jpg",
+        "rating": 5,
+        "bgColor": "#FEF3B4",
+        "quote": "“From the very first meeting the team understood our vision and turned it into a brand that feels exactly like us. The attention to detail was incredible.”"
+      },
+      {
+        "id": "michael-carter",
+        "name": "Michael Carter",
+        "role": "Founder & CEO",
+        "avatar": "/images/testimonial-michael.jpg",
+        "rating": 4.5,
+        "bgColor": "#DCF2DE",
+        "quote": "“Scaling our product design system seemed daunting, but their strategic approach and execution blew us away. Truly a world-class team that delivered beyond our expectations.”"
+      },
+      {
+        "id": "emily-thompson",
+        "name": "Emily Thompson",
+        "role": "Head of Brand",
+        "avatar": "/images/testimonial-emily.jpg",
+        "rating": 5,
+        "bgColor": "#E7DBF9",
+        "quote": "“They didn't just deliver a website; they redefined how our global audience perceives our luxury brand identity. Invaluable partners for our long-term growth.”"
+      },
+      {
+        "id": "daniel-wilson",
+        "name": "Daniel Wilson",
+        "role": "Product Director",
+        "avatar": "/images/testimonial-daniel.jpg",
+        "rating": 5,
+        "bgColor": "#F8DECB",
+        "quote": "“The turnaround time and architectural technical execution were unmatched. Our user retention and conversion metrics jumped significantly right after the relaunch.”"
+      },
+      {
+        "id": "sophia-martinez",
+        "name": "Sophia Martinez",
+        "role": "Chief Strategy Officer",
+        "avatar": "/images/testimonial-sarah.jpg",
+        "rating": 5,
+        "bgColor": "#DEF0FA",
+        "quote": "“Working with this team elevated our digital presence into an elite tier. Every single milestone was executed with uncompromising precision and creative flair.”"
+      },
+      {
+        "id": "alex-rivera",
+        "name": "Alex Rivera",
+        "role": "Head of Growth",
+        "avatar": "/images/testimonial-michael.jpg",
+        "rating": 4.5,
+        "bgColor": "#FDE6E6",
+        "quote": "“From day one, their communication and creative insights set a new benchmark for agency partnerships. Exceptional work and reliable collaboration throughout.”"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "badgeText": "Why Choose Us",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1Prefix": "Curating",
+      "line1Badge": "Sanctuarie",
+      "line2": "Of Distinction",
+      "icon": "FourPointStar"
+    },
+    "description": "We bridge the gap between discerning collectors and rare off-market architectural masterworks with unmatched confidentiality.",
+    "image": "/images/why-choose-uss.jpg",
+    "imageAlt": "Architectural luxury villa showcasing precision design and natural balance",
+    "statsBadge": {
+      "number": "18+",
+      "label": "Years Experience"
+    },
+    "features": [
+      {
+        "id": "private-tours",
+        "title": "Private Tours",
+        "description": "Curated walkthroughs and VIP viewings at your personal convenience.",
+        "icon": "PrivateTours"
+      },
+      {
+        "id": "high-yield",
+        "title": "High Yield",
+        "description": "Proven asset appreciation and prime market efficiency for elite portfolios.",
+        "icon": "HighYield"
+      },
+      {
+        "id": "prime-locations",
+        "title": "Prime Locations",
+        "description": "Sanctuaries situated in the world's most sought-after and secure enclaves.",
+        "icon": "PrimeLocations"
+      },
+      {
+        "id": "bespoke-luxury",
+        "title": "Bespoke Luxury",
+        "description": "Architectural mastery engineered for privacy and timeless presence.",
+        "icon": "BespokeLuxury"
+      }
+    ]
+  },
+  "contact": {
+    "badgeText": "Get In Touch",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1": "Private",
+      "line2Badge": "Concierge",
+      "line2Suffix": "& Advisory",
+      "icon": "FourPointStar"
+    },
+    "privateOffice": {
+      "title": "Private Office",
+      "subtitle": "White-glove real estate representation across Beverly Hills, London, Dubai & Monaco."
+    },
+    "contacts": [
+      {
+        "number": "1",
+        "title": "Contact Number",
+        "value": "+1 000000000",
+        "href": "tel:+1000000000"
+      },
+      {
+        "number": "2",
+        "title": "Email",
+        "value": "info@xyz.com",
+        "href": "mailto:info@xyz.com"
+      },
+      {
+        "number": "3",
+        "title": "Website",
+        "value": "dreams-luxury.com",
+        "href": "https://dreams-luxury.com"
+      },
+      {
+        "number": "4",
+        "title": "Location",
+        "value": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
+        "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
+      }
+    ],
+    "form": {
+      "title": "Direct Advisory Inquiry",
+      "subtitle": "Submit your private inquiry. Our Managing Partners will respond discreetly within 24 hours.",
+      "submitButton": "Transmit Confidential Request"
+    }
+  },
+  "enquiryNow": {
+    "badgeText": "Private Acquisition",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "line1": "Exclusive",
+      "line2Badge": "Enquiry",
+      "line2Suffix": "& Advisory",
+      "icon": "FourPointStar"
+    },
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+    "imageAlt": "Ultra-luxury modern architectural mansion with illuminated infinity pool",
+    "curatedBadge": "Curated Masterwork",
+    "estateTitle": "The Bel Air Modernist Promontory",
+    "estateLocation": "Bel Air & Beverly Hills, CA",
+    "form": {
+      "title": "Direct Private Inquiry",
+      "subtitle": "Fill out your acquisition details below. Our senior estate directors will get in touch with discreet speed.",
+      "submitButton": "Submit Private Enquiry"
+    },
+    "countries": [
+      {
+        "code": "US",
+        "name": "United States",
+        "dialCode": "+1",
+        "flag": "🇺🇸"
+      },
+      {
+        "code": "GB",
+        "name": "United Kingdom",
+        "dialCode": "+44",
+        "flag": "🇬🇧"
+      },
+      {
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "dialCode": "+971",
+        "flag": "🇦🇪"
+      },
+      {
+        "code": "FR",
+        "name": "France",
+        "dialCode": "+33",
+        "flag": "🇫🇷"
+      },
+      {
+        "code": "MC",
+        "name": "Monaco",
+        "dialCode": "+377",
+        "flag": "🇲🇨"
+      },
+      {
+        "code": "IN",
+        "name": "India",
+        "dialCode": "+91",
+        "flag": "🇮🇳"
+      },
+      {
+        "code": "CH",
+        "name": "Switzerland",
+        "dialCode": "+41",
+        "flag": "🇨🇭"
+      },
+      {
+        "code": "CA",
+        "name": "Canada",
+        "dialCode": "+1",
+        "flag": "🇨🇦"
+      },
+      {
+        "code": "AU",
+        "name": "Australia",
+        "dialCode": "+61",
+        "flag": "🇦🇺"
+      },
+      {
+        "code": "DE",
+        "name": "Germany",
+        "dialCode": "+49",
+        "flag": "🇩🇪"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Curated Private",
+    "badgeText": "Architectural Real Estate",
+    "badgeIcon": "Sparkles",
+    "highlightWord": "Masterworks",
+    "headlineIcon": "FourPointStar",
+    "items": [
+      {
+        "id": "manhattan-penthouse",
+        "title": "The Manhattan Pinnacle",
+        "subtitle": "Duplex sky residence with private glass terrace",
+        "location": "Billionaires' Row, New York",
+        "creator": "Vance Architectural Group",
+        "year": "2026",
+        "description": "An elevated duplex penthouse commanding 360-degree panoramic skyline vistas across Central Park with private elevator access, double-height ceilings, and bronze-framed thermal glass.",
+        "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Luxury high-rise residential penthouse overlooking metropolitan skyline at sunset",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[400px] lg:h-[450px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[220px] sm:h-[260px]"
+      },
+      {
+        "id": "beverly-hills-villa",
+        "title": "Beverly Hills Modernist Villa",
+        "subtitle": "Architectural estate with infinity cantilever pool",
+        "location": "Bel Air & Beverly Hills, CA",
+        "creator": "Hanley & Partners Studio",
+        "year": "2026",
+        "description": "Sleek geometric lines, automated zero-edge glass facades, and a cascading cantilevered infinity pool overlooking the Los Angeles basin with private gated motor court.",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Contemporary luxury architectural villa with illuminated infinity pool at dusk",
+        "colSpanDesktop": "md:col-span-2",
+        "heightDesktop": "md:h-[400px] lg:h-[450px]",
+        "colSpanMobile": "col-span-2",
+        "heightMobile": "h-[270px] sm:h-[320px]"
+      },
+      {
+        "id": "alpine-chalet",
+        "title": "St. Moritz Alpine Glass Chalet",
+        "subtitle": "Tri-level timber & thermal glass ski sanctuary",
+        "location": "St. Moritz, Engadin Valley",
+        "creator": "Alpine Modernist Atelier",
+        "year": "2026",
+        "description": "Curated for private mountain sanctuary living with ski-in access, hand-carved local timber beams, radiant slate flooring, and floor-to-ceiling glass framing snowy glacial peaks.",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Modern architectural alpine chalet surrounded by snow and pine trees",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[400px] lg:h-[450px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[220px] sm:h-[260px]"
+      },
+      {
+        "id": "mayfair-heritage",
+        "title": "Mayfair Contemporary Mansion",
+        "subtitle": "Illuminated Georgian courtyard & private gallery",
+        "location": "Mayfair, London W1",
+        "creator": "Heritage Restoration Guild",
+        "year": "2025",
+        "description": "A masterful fusion of classical limestone heritage and cutting-edge subterranean wellness suites, bespoke wine cellars, and landscaped light-well courtyards.",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Illuminated luxury modern brick and glass mansion at twilight",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[200px] sm:h-[230px]"
+      },
+      {
+        "id": "monaco-waterfront",
+        "title": "Cap d'Antibes Coastal Villa",
+        "subtitle": "Private waterfront estate with superyacht mooring",
+        "location": "French Riviera & Monaco",
+        "creator": "Rostova Waterfront Group",
+        "year": "2026",
+        "description": "Set upon a private Mediterranean promontory, offering direct private beach access, sculpted marble terraces, private helipad, and uninterrupted turquoise sea horizons.",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+        "alt": "White contemporary coastal estate villa with infinity pool overlooking ocean",
+        "colSpanDesktop": "md:col-span-2",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-2",
+        "heightMobile": "h-[220px] sm:h-[250px]"
+      },
+      {
+        "id": "lake-como-villa",
+        "title": "Lake Como Historic Villa",
+        "subtitle": "Palazzo with private botanical waterfront park",
+        "location": "Tremezzo, Lake Como",
+        "creator": "Italian Heritage Curators",
+        "year": "2025",
+        "description": "Centuries-old cypress avenues leading to a restored neoclassical palazzo with private boat dock, frescoed salon ceilings, and contemporary glass guest pavilions.",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Classic lakeside luxury estate with landscaped terrace and Italian architecture",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[200px] sm:h-[230px]"
+      },
+      {
+        "id": "dubai-sky-penthouse",
+        "title": "Dubai Marina Horizon Penthouse",
+        "subtitle": "Triplex sky mansion with panoramic plunge pool",
+        "location": "Dubai Marina, United Arab Emirates",
+        "creator": "Mirage Architectural Guild",
+        "year": "2026",
+        "description": "Rising 70 storeys above the Arabian Gulf, featuring 30-foot ceilings, automated smart home automation, and an infinity plunge pool overlooking the superyacht marina.",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Skyline luxury penthouse with glass terrace and city views",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[200px] sm:h-[230px]"
+      },
+      {
+        "id": "aspen-salon",
+        "title": "Aspen Great Room & Living Salon",
+        "subtitle": "Double-height interior with marble hearth",
+        "location": "Red Mountain, Aspen, Colorado",
+        "creator": "Cole Spatial Interiors",
+        "year": "2026",
+        "description": "Monumental book-matched Calacatta marble hearth, custom acoustic timber millwork, and double-height glass framing majestic views of snowy pine peaks.",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Double-height luxury living room with fireplace and floor-to-ceiling windows",
+        "colSpanDesktop": "md:col-span-1",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-1",
+        "heightMobile": "h-[200px] sm:h-[230px]"
+      },
+      {
+        "id": "mallorca-cliffside",
+        "title": "Mallorca Cliffside Masterwork",
+        "subtitle": "Cantilevered stone & glass promontory villa",
+        "location": "Port d'Andratx, Balearic Islands",
+        "creator": "Balearic Architectural Studio",
+        "year": "2026",
+        "description": "Seamlessly sculpted into the sea cliffs, capturing the golden hour sunset across the Mediterranean with multi-tiered infinity decks and submerged viewing suites.",
+        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Sprawling white contemporary architectural villa overlooking the sea at sunset",
+        "colSpanDesktop": "md:col-span-2",
+        "heightDesktop": "md:h-[260px] lg:h-[300px]",
+        "colSpanMobile": "col-span-2",
+        "heightMobile": "h-[220px] sm:h-[250px]"
+      }
+    ]
+  },
+  "footer": {
+    "logo": {
+      "text": "Dreams",
+      "highlight": "*",
+      "image": "",
+      "alt": "Dreams Luxury Real Estate",
+      "href": "/"
+    },
+    "description": "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.",
+    "about": {
+      "title": "Navigation",
+      "links": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About Us",
+          "href": "/about"
+        },
+        {
+          "label": "Featured Properties",
+          "href": "/properties"
+        },
+        {
+          "label": "Our Team",
+          "href": "/team"
+        },
+        {
+          "label": "Our Clients",
+          "href": "/clients"
+        }
+      ]
+    },
+    "helpful": {
+      "title": "Quick Links",
+      "links": [
+        {
+          "label": "Blogs & Insights",
+          "href": "/blog"
+        },
+        {
+          "label": "Architecture Gallery",
+          "href": "/gallery"
+        },
+        {
+          "label": "Private Acquisition",
+          "href": "/enquiry-now",
+          "isLive": true
+        },
+        {
+          "label": "Contact Us",
+          "href": "/contact"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "items": [
+        {
+          "icon": "Mail",
+          "text": "info@xyz.com",
+          "href": "mailto:info@xyz.com"
+        },
+        {
+          "icon": "Phone",
+          "text": "+1 000000000",
+          "href": "tel:+1000000000"
+        },
+        {
+          "icon": "MapPin",
+          "text": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
+          "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
+        }
+      ]
+    },
+    "socialLinks": [
+      {
+        "platform": "Facebook",
+        "href": "https://facebook.com",
+        "icon": "Facebook"
+      },
+      {
+        "platform": "Instagram",
+        "href": "https://instagram.com",
+        "icon": "Instagram"
+      },
+      {
+        "platform": "Twitter",
+        "href": "https://twitter.com",
+        "icon": "Twitter"
+      },
+      {
+        "platform": "Dribbble",
+        "href": "https://dribbble.com",
+        "icon": "Dribbble"
+      },
+      {
+        "platform": "Website",
+        "href": "#home",
+        "icon": "Globe"
+      }
+    ],
+    "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow",
+    "watermark": "DREAMS"
+  }
+}

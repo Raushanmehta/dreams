@@ -3,27 +3,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, CheckCircle2, ChevronDown, MapPin, Building2 } from "lucide-react";
+import { CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
+import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
+import siteData from "@/data/site.json";
 
-interface CountryOption {
+export interface CountryOption {
   code: string;
   name: string;
   dialCode: string;
   flag: string;
 }
-
-const COUNTRIES: CountryOption[] = [
-  { code: "US", name: "United States", dialCode: "+1", flag: "🇺🇸" },
-  { code: "GB", name: "United Kingdom", dialCode: "+44", flag: "🇬🇧" },
-  { code: "AE", name: "United Arab Emirates", dialCode: "+971", flag: "🇦🇪" },
-  { code: "FR", name: "France", dialCode: "+33", flag: "🇫🇷" },
-  { code: "MC", name: "Monaco", dialCode: "+377", flag: "🇲🇨" },
-  { code: "IN", name: "India", dialCode: "+91", flag: "🇮🇳" },
-  { code: "CH", name: "Switzerland", dialCode: "+41", flag: "🇨🇭" },
-  { code: "CA", name: "Canada", dialCode: "+1", flag: "🇨🇦" },
-  { code: "AU", name: "Australia", dialCode: "+61", flag: "🇦🇺" },
-  { code: "DE", name: "Germany", dialCode: "+49", flag: "🇩🇪" },
-];
 
 export interface EnquiryFormData {
   firstName: string;
@@ -34,6 +23,9 @@ export interface EnquiryFormData {
 }
 
 export default function EnquiryNowSection(): React.JSX.Element {
+  const { enquiryNow } = siteData;
+  const countries = enquiryNow.countries as CountryOption[];
+
   const [formData, setFormData] = useState<EnquiryFormData>({
     firstName: "",
     lastName: "",
@@ -42,7 +34,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
     message: "",
   });
 
-  const [selectedCountry, setSelectedCountry] = useState<CountryOption>(COUNTRIES[0]);
+  const [selectedCountry, setSelectedCountry] = useState<CountryOption>(countries[0]);
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -93,7 +85,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
         {/* ========================================================= */}
         {/* SECTION HEADER: Matches Dreams* Brand Theme               */}
         {/* ========================================================= */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-8 sm:mb-10">
           {/* Eyebrow badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -102,8 +94,8 @@ export default function EnquiryNowSection(): React.JSX.Element {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 text-xs sm:text-sm font-semibold"
           >
-            <Sparkles className="h-4 w-4 text-[#2563EB]" />
-            <span>Private Acquisition</span>
+            <Sparkles className="h-5 w-5 text-[#2563EB]" />
+            <span>{enquiryNow.badgeText}</span>
           </motion.div>
 
           {/* Stepped Headline with signature tilted sliced blue badge */}
@@ -115,27 +107,20 @@ export default function EnquiryNowSection(): React.JSX.Element {
             className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase"
           >
             <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-              <span>Exclusive</span>
+              <span>{enquiryNow.headline.line1}</span>
               <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                 <span className="inline-block skew-x-14 md:skew-x-18">
-                  Enquiry
+                  {enquiryNow.headline.line2Badge}
                 </span>
               </span>
-              <span>&amp; Advisory</span>
+              <span>{enquiryNow.headline.line2Suffix}</span>
               {/* Rotating 4-point star SVG */}
               <motion.span
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                 className="inline-flex items-center justify-center text-[#2563EB] drop-shadow-[0_0_12px_rgba(37,99,235,0.5)] ml-0.5 sm:ml-1"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563EB]"
-                >
-                  <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-                </svg>
+                <FourPointStarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563EB]" />
               </motion.span>
             </div>
           </motion.h2>
@@ -149,22 +134,33 @@ export default function EnquiryNowSection(): React.JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-1 lg:grid-cols-12 bg-white  border border-black/[0.08] overflow-hidden rounded-[28px] sm:rounded-[32px]"
+          className="grid grid-cols-1 lg:grid-cols-12 bg-white border border-black/[0.08] overflow-hidden rounded-[28px] sm:rounded-[32px]"
         >
           {/* ========================================================= */}
           {/* LEFT COLUMN: Ultra-Luxury Architectural Real Estate Villa */}
           {/* ========================================================= */}
           <div className="relative lg:col-span-6 min-h-[360px] sm:min-h-[460px] lg:min-h-full w-full overflow-hidden group">
             <Image
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85"
-              alt="Ultra-luxury modern architectural mansion with illuminated infinity pool"
+              src={enquiryNow.image}
+              alt={enquiryNow.imageAlt}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center transition-transform duration-700 ease-out "
+              className="object-cover object-center transition-transform duration-700 ease-out"
             />
             {/* Cinematic Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#2563EB] mb-2 shadow-sm">
+                {enquiryNow.curatedBadge}
+              </span>
+              <h4 className="text-xl sm:text-2xl font-bold tracking-tight">
+                {enquiryNow.estateTitle}
+              </h4>
+              <p className="text-zinc-300 text-xs sm:text-sm mt-0.5">
+                {enquiryNow.estateLocation}
+              </p>
+            </div>
           </div>
 
           {/* ========================================================= */}
@@ -175,10 +171,10 @@ export default function EnquiryNowSection(): React.JSX.Element {
               {/* Header Block */}
               <div className="mb-6 sm:mb-8">
                 <h3 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-[#11131a] tracking-tight leading-tight mb-2">
-                  Enquire about Mayna<span className="text-[#2563EB]">*</span>
+                  {enquiryNow.form.title}<span className="text-[#2563EB]">*</span>
                 </h3>
                 <p className="text-[#6b7280] text-[13.5px] sm:text-[14px] leading-relaxed max-w-lg">
-                  Please share your details below and a member of our senior advisory team will get in touch within 24 hours.
+                  {enquiryNow.form.subtitle}
                 </p>
               </div>
 
@@ -256,7 +252,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                         transition={{ duration: 0.15 }}
                         className="absolute top-[calc(100%+6px)] left-0 z-50 w-64 max-h-56 overflow-y-auto bg-white border border-zinc-200 rounded-xl shadow-xl py-1 text-xs"
                       >
-                        {COUNTRIES.map((country) => (
+                        {countries.map((country) => (
                           <button
                             key={country.code}
                             type="button"
@@ -340,9 +336,9 @@ export default function EnquiryNowSection(): React.JSX.Element {
                       </>
                     ) : (
                       <>
-                        <span>SEND ENQUIRY</span>
+                        <span>{enquiryNow.form.submitButton}</span>
                         <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white group-hover:text-[#2563EB]">
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <ArrowRightIcon className="w-3.5 h-3.5" />
                         </div>
                       </>
                     )}

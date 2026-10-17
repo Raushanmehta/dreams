@@ -5,7 +5,7 @@ export default function EnquiryNowPage() {
     return (
         <main>
             <BreadCrumb
-                title="Enquire About Mayna"
+                title="Enquiry Now"
                 subtitle="Please share your details below and a member of our team will get in touch within 24 hours."
             />
             <EnquiryNowSection />
