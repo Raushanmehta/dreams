@@ -112,7 +112,7 @@ export default function BlogSection() {
             className="w-full"
           >
             <CarouselContent className="-ml-4 sm:-ml-5 md:-ml-6">
-              {(blog.posts as BlogPost[]).map((post) => (
+              {((blog.blogPosts || []) as BlogPost[]).map((post) => (
                 <CarouselItem
                   key={post.id}
                   className="pl-4 sm:pl-5 md:pl-6 basis-full md:basis-1/2"

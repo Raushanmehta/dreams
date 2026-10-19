@@ -11,7 +11,7 @@ import { blogAnimations } from "@/utils/animation/blog.animation";
 
 export default function BlogsPage() {
     const { blog } = siteData;
-    const posts = blog.posts as BlogPost[];
+    const posts = (blog.blogPosts || []) as BlogPost[];
 
     return (
         <main>

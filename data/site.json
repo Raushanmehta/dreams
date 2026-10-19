@@ -116,8 +116,8 @@
       "badge": "Articles",
       "icon": "FourPointStar"
     },
-    "description": "Explore our curated archive of design perspectives, market intelligence, and creative visions engineered to inspire and inform.",
-    "posts": [
+    "description": "Explore our curated archive of market intelligence, engineered to inspire and inform.",
+    "blogPosts": [
       {
         "id": "post-1",
         "title": "Architectural Trends Defining Luxury Living in 2025",
@@ -126,7 +126,43 @@
         "date": "18 Oct 2024",
         "readTime": "4 min read",
         "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": false
+        "isLatest": false,
+        "badgeText": "Architecture • Insights",
+        "headlinePrefix": "Architectural",
+        "headlineBadge": "Trends",
+        "headlineSuffix": "Defining Luxury Living in 2025",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "4 min read • Market Intelligence",
+        "quote": {
+          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+        },
+        "sections": [
+          {
+            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+            "paragraphs": [
+              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+            ]
+          },
+          {
+            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+            "paragraphs": [
+              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+            ]
+          },
+          {
+            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+            "paragraphs": [
+              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+            ]
+          }
+        ],
+        "slug": "architectural-trends-defining-luxury-living-in-2025"
       },
       {
         "id": "post-2",
@@ -136,7 +172,44 @@
         "date": "24 Nov 2024",
         "readTime": "5 min read",
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": true
+        "isLatest": true,
+        "badgeText": "Market Insights • Prime Waterfront",
+        "headlinePrefix": "Prime",
+        "headlineBadge": "Waterfront",
+        "headlineSuffix": "Estates & Global Coastal Investments",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "5 min read • Market Intelligence",
+        "quote": {
+          "text": "Waterfront real estate remains the quintessential store of generational value—geography dictates scarcity, while architecture defines prestige.",
+          "author": "Alistair Croft, Head of Prime Global Acquisitions at Dreams"
+        },
+        "sections": [
+          {
+            "subheading": "Strategic Coastal Acquisitions Across Monaco & The French Riviera",
+            "paragraphs": [
+              "Prime waterfront real estate continues to outperform the broader luxury residential market by significant margins. In tier-one maritime enclaves—from the cliffside villas of Cap d’Antibes to the private moorings of Monaco’s Port Hercules—constrained geographic supply meets escalating international wealth migration.",
+              "Investors seeking prime coastal assets prioritize deep-water dockage, multi-tiered security parameters, and unrestricted Mediterranean or Caribbean vistas. These trophy properties function not merely as lifestyle havens, but as cornerstone liquid capital reserves."
+            ]
+          },
+          {
+            "subheading": "Evaluating Long-Term Yield & Capital Appreciation in Coastal Sanctuaries",
+            "paragraphs": [
+              "A rigorous analysis of global coastal transactions demonstrates that bespoke architectural residences with direct beach access experience annualized appreciation rates exceeding standard inland luxury by 30 to 45 percent. Waterfront properties in micro-markets like Miami’s Indian Creek or the Amalfi Coast rarely enter open-market listings, trading through private broker syndicates.",
+              "Our advisory team leverages direct relationships with private trust offices to secure off-market titles before public marketing commences."
+            ]
+          },
+          {
+            "subheading": "Climate Resilient Engineering & Architectural Permanence",
+            "paragraphs": [
+              "Today’s prime waterfront buyers demand cutting-edge marine engineering alongside peerless aesthetic splendor. Reinforced seawall architecture, marine-grade corrosion-resistant alloys, and autonomous off-grid backup systems ensure coastal masterworks remain resilient for centuries.",
+              "Investing in prime waterfront sanctuaries demands specialized due diligence spanning coastal easement rights, sovereign tax treaty positioning, and architectural adaptability. Dreams provides confidential guidance from initial identification through post-settlement management."
+            ]
+          }
+        ],
+        "slug": "prime-waterfront-estates-navigating-global-coastal-investments"
       },
       {
         "id": "post-3",
@@ -146,7 +219,43 @@
         "date": "12 Nov 2024",
         "readTime": "3 min read",
         "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": false
+        "isLatest": false,
+        "badgeText": "Urban Living • Insights",
+        "headlinePrefix": "The",
+        "headlineBadge": "Rise",
+        "headlineSuffix": "of High-Rise Penthouses in Urban Epicenters",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "3 min read • Market Intelligence",
+        "quote": {
+          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+        },
+        "sections": [
+          {
+            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+            "paragraphs": [
+              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+            ]
+          },
+          {
+            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+            "paragraphs": [
+              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+            ]
+          },
+          {
+            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+            "paragraphs": [
+              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+            ]
+          }
+        ],
+        "slug": "the-rise-of-high-rise-penthouses-in-urban-epicenters"
       },
       {
         "id": "post-4",
@@ -156,7 +265,43 @@
         "date": "04 Nov 2024",
         "readTime": "4 min read",
         "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": false
+        "isLatest": false,
+        "badgeText": "Sustainability • Insights",
+        "headlinePrefix": "Sustainable",
+        "headlineBadge": "Sanctuaries:",
+        "headlineSuffix": "Net-Zero Mansions of Tomorrow",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "4 min read • Market Intelligence",
+        "quote": {
+          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+        },
+        "sections": [
+          {
+            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+            "paragraphs": [
+              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+            ]
+          },
+          {
+            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+            "paragraphs": [
+              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+            ]
+          },
+          {
+            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+            "paragraphs": [
+              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+            ]
+          }
+        ],
+        "slug": "sustainable-sanctuaries-net-zero-mansions-of-tomorrow"
       },
       {
         "id": "post-5",
@@ -166,7 +311,43 @@
         "date": "28 Oct 2024",
         "readTime": "3 min read",
         "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": false
+        "isLatest": false,
+        "badgeText": "Smart Estates • Insights",
+        "headlinePrefix": "Curating",
+        "headlineBadge": "Private",
+        "headlineSuffix": "Sanctuaries: The Art of Smart Home Living",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "3 min read • Market Intelligence",
+        "quote": {
+          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+        },
+        "sections": [
+          {
+            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+            "paragraphs": [
+              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+            ]
+          },
+          {
+            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+            "paragraphs": [
+              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+            ]
+          },
+          {
+            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+            "paragraphs": [
+              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+            ]
+          }
+        ],
+        "slug": "curating-private-sanctuaries-the-art-of-smart-home-living"
       },
       {
         "id": "post-6",
@@ -176,9 +357,64 @@
         "date": "15 Oct 2024",
         "readTime": "5 min read",
         "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-        "isLatest": false
+        "isLatest": false,
+        "badgeText": "Heritage • Insights",
+        "headlinePrefix": "Heritage",
+        "headlineBadge": "Restorations:",
+        "headlineSuffix": "Reviving Historic European Châteaux",
+        "author": {
+          "name": "Marcus Vance",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+        },
+        "commentsCountText": "5 min read • Market Intelligence",
+        "quote": {
+          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+        },
+        "sections": [
+          {
+            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+            "paragraphs": [
+              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+            ]
+          },
+          {
+            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+            "paragraphs": [
+              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+            ]
+          },
+          {
+            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+            "paragraphs": [
+              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+            ]
+          }
+        ],
+        "slug": "heritage-restorations-reviving-historic-european-chteaux"
       }
-    ]
+    ],
+    "author": {
+      "name": "Erin Carter",
+      "role": "Senior Real Estate Advisor & Curator",
+      "bio": "Meet Erin Carter, an esteemed luxury property advisor and design curator at Dreams. With over 14 years of advisory experience across prime international waterfront sanctuaries, she helps discerning clients acquire generational architectural masterworks.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "signatureText": "Carter",
+      "socials": {
+        "facebook": "https://facebook.com",
+        "twitter": "https://twitter.com",
+        "linkedin": "https://linkedin.com"
+      }
+    },
+    "promotionalBanner": {
+      "badge": "Exclusive Sanctuaries",
+      "title": "Discover Curated\nLuxury Waterfront\nEstates & Villas",
+      "description": "Access off-market private residences, prime waterfront penthouses, and architectural masterworks.",
+      "buttonText": "Explore Properties",
+      "buttonHref": "/properties"
+    }
   },
   "properties": {
     "pageTitle": "Our Properties",
@@ -1554,12 +1790,6 @@
       },
       {
         "number": "3",
-        "title": "Website",
-        "value": "dreams-luxury.com",
-        "href": "https://dreams-luxury.com"
-      },
-      {
-        "number": "4",
         "title": "Location",
         "value": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
         "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"

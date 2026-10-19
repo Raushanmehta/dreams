@@ -4,8 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import Link from "next/link";
+
 export interface BlogPost {
     id: string;
+    slug?: string;
     title: string;
     excerpt: string;
     category: string;
@@ -20,11 +23,13 @@ export interface BlogCardProps {
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
+    const slug = post.slug || post.id;
     return (
-        <motion.article
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative w-full h-[300px] sm:h-[340px] md:h-[380px] rounded-[24px] sm:rounded-[28px] overflow-hidden select-none border border-black/[0.08] bg-zinc-100 flex flex-col justify-end cursor-pointer"
-        >
+        <Link href={`/blog/${slug}`} className="block w-full">
+            <motion.article
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative w-full h-[300px] sm:h-[340px] md:h-[380px] rounded-[24px] sm:rounded-[28px] overflow-hidden select-none border border-black/[0.08] bg-zinc-100 flex flex-col justify-end cursor-pointer"
+            >
             {/* Background Artwork Image */}
             <div className="absolute inset-0 w-full h-full">
                 <Image
@@ -111,5 +116,6 @@ export default function BlogCard({ post }: BlogCardProps) {
                 </div>
             </div>
         </motion.article>
+        </Link>
     );
 }
