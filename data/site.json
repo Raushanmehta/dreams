@@ -30,11 +30,6 @@
         "icon": "Building2"
       },
       {
-        "label": "Team",
-        "href": "/team",
-        "icon": "Users"
-      },
-      {
         "label": "Clients",
         "href": "/clients",
         "icon": "Award"
@@ -51,8 +46,8 @@
       }
     ],
     "cta": {
-      "label": "Contact us",
-      "href": "/contact",
+      "label": "Enquiry Now",
+      "href": "/enquiry-now",
       "icon": "ArrowRight"
     }
   },
@@ -1651,9 +1646,13 @@
     ]
   },
   "testimonials": {
-    "pageTitle": "Our Clients",
+    "breadcrumb": {
+      "title": "Client Testimonials",
+      "subtitle": "Discover how our bespoke acquisitions and architectural sanctuaries inspire our distinguished patrons."
+    },
+    "pageTitle": "Client Testimonials",
     "pageSubtitle": "Discreetly representing HNWIs, royal families, and multinational corporations across 21 global markets.",
-    "badgeText": "Our Clients",
+    "badgeText": "Client Testimonials",
     "badgeIcon": "Sparkles",
     "headline": {
       "line1": "Loved By The",
@@ -1666,56 +1665,56 @@
       {
         "id": "sarah-anderson",
         "name": "Sarah Anderson",
-        "role": "VP of Marketing",
+        "role": "Villa Collector & Patron",
         "avatar": "/images/testimonial-sarah.jpg",
         "rating": 5,
         "bgColor": "#FEF3B4",
-        "quote": "“From the very first meeting the team understood our vision and turned it into a brand that feels exactly like us. The attention to detail was incredible.”"
+        "quote": "From the very first private viewing, Dreams understood our architectural vision and secured an extraordinary waterfront villa in Kyoto. The discretion was exemplary."
       },
       {
         "id": "michael-carter",
         "name": "Michael Carter",
-        "role": "Founder & CEO",
+        "role": "Real Estate Investor",
         "avatar": "/images/testimonial-michael.jpg",
-        "rating": 4.5,
+        "rating": 5,
         "bgColor": "#DCF2DE",
-        "quote": "“Scaling our product design system seemed daunting, but their strategic approach and execution blew us away. Truly a world-class team that delivered beyond our expectations.”"
+        "quote": "Acquiring prime off-market penthouses across global capitals seemed daunting, but their advisory team delivered flawlessly under strict confidentiality."
       },
       {
         "id": "emily-thompson",
         "name": "Emily Thompson",
-        "role": "Head of Brand",
+        "role": "Private Estate Owner",
         "avatar": "/images/testimonial-emily.jpg",
         "rating": 5,
         "bgColor": "#E7DBF9",
-        "quote": "“They didn't just deliver a website; they redefined how our global audience perceives our luxury brand identity. Invaluable partners for our long-term growth.”"
+        "quote": "They did not simply broker an estate; they curated an enduring architectural legacy for our family. Invaluable partners in global luxury real estate."
       },
       {
         "id": "daniel-wilson",
         "name": "Daniel Wilson",
-        "role": "Product Director",
+        "role": "Family Office Director",
         "avatar": "/images/testimonial-daniel.jpg",
         "rating": 5,
         "bgColor": "#F8DECB",
-        "quote": "“The turnaround time and architectural technical execution were unmatched. Our user retention and conversion metrics jumped significantly right after the relaunch.”"
+        "quote": "Their due diligence, structural auditing, and discreet international escrow management set a global gold standard for high-net-worth property acquisitions."
       },
       {
         "id": "sophia-martinez",
         "name": "Sophia Martinez",
-        "role": "Chief Strategy Officer",
+        "role": "Bespoke Residence Owner",
         "avatar": "/images/testimonial-sarah.jpg",
         "rating": 5,
         "bgColor": "#DEF0FA",
-        "quote": "“Working with this team elevated our digital presence into an elite tier. Every single milestone was executed with uncompromising precision and creative flair.”"
+        "quote": "Entrusting our Swiss alpine retreat to Dreams resulted in an effortless acquisition. Every milestone was executed with uncompromising precision."
       },
       {
         "id": "alex-rivera",
         "name": "Alex Rivera",
-        "role": "Head of Growth",
+        "role": "Private Wealth Principal",
         "avatar": "/images/testimonial-michael.jpg",
         "rating": 4.5,
         "bgColor": "#FDE6E6",
-        "quote": "“From day one, their communication and creative insights set a new benchmark for agency partnerships. Exceptional work and reliable collaboration throughout.”"
+        "quote": "From day one, their market intelligence and private network opened access to sanctuaries unavailable anywhere else. Exceptional collaboration throughout."
       }
     ]
   },
@@ -2048,16 +2047,20 @@
           "href": "/about"
         },
         {
-          "label": "Featured Properties",
+          "label": "Properties",
           "href": "/properties"
-        },
-        {
-          "label": "Our Team",
-          "href": "/team"
         },
         {
           "label": "Our Clients",
           "href": "/clients"
+        },
+        {
+          "label": "Testimonials",
+          "href": "/testimonials"
+        },
+        {
+          "label": "Our Team",
+          "href": "/team"
         }
       ]
     },
@@ -2065,15 +2068,19 @@
       "title": "Quick Links",
       "links": [
         {
-          "label": "Blogs & Insights",
-          "href": "/blog"
-        },
-        {
-          "label": "Architecture Gallery",
+          "label": "Gallery",
           "href": "/gallery"
         },
         {
-          "label": "Private Acquisition",
+          "label": "Blogs",
+          "href": "/blog"
+        },
+        {
+          "label": "FAQs",
+          "href": "/faqs"
+        },
+        {
+          "label": "Enquiry Now",
           "href": "/enquiry-now",
           "isLive": true
         },
@@ -2088,17 +2095,17 @@
       "items": [
         {
           "icon": "Mail",
-          "text": "info@xyz.com",
-          "href": "mailto:info@xyz.com"
+          "text": "concierge@dreamsluxury.com",
+          "href": "mailto:concierge@dreamsluxury.com"
         },
         {
           "icon": "Phone",
-          "text": "+1 000000000",
-          "href": "tel:+1000000000"
+          "text": "+1 (800) 555-DREAM",
+          "href": "tel:+18005553732"
         },
         {
           "icon": "MapPin",
-          "text": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
+          "text": "3170 Rosewood Lane Unit 200, Beverly Hills, CA 90210",
           "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
         }
       ]
@@ -2120,17 +2127,153 @@
         "icon": "Twitter"
       },
       {
-        "platform": "Dribbble",
-        "href": "https://dribbble.com",
-        "icon": "Dribbble"
-      },
-      {
-        "platform": "Website",
-        "href": "#home",
-        "icon": "Globe"
+        "platform": "LinkedIn",
+        "href": "https://linkedin.com",
+        "icon": "LinkedIn"
       }
     ],
     "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow",
     "watermark": "DREAMS"
+  },
+  "thankYou": {
+    "badgeText": "CONFIRMATION RECEIVED",
+    "headline": {
+      "line1": "Thank You",
+      "line2Badge": "Confirmed",
+      "line2Suffix": "& Received"
+    },
+    "subtitle": "Your inquiry has been successfully registered. A dedicated luxury portfolio advisor will connect with you shortly.",
+    "actionButtons": [
+      {
+        "label": "Explore Residences",
+        "href": "/properties",
+        "primary": true
+      },
+      {
+        "label": "Return to Home",
+        "href": "/",
+        "primary": false
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "badgeText": "ARCHITECTURAL VOID",
+    "headline": {
+      "line1": "Sanctuary",
+      "line2Badge": "Not Found",
+      "line2Suffix": "In Our World"
+    },
+    "subtitle": "The architectural sanctuary, masterwork residence, or private dossier you are seeking cannot be located or is held in private escrow.",
+    "actionButtons": [
+      {
+        "label": "Browse Prime Estates",
+        "href": "/properties",
+        "primary": true
+      },
+      {
+        "label": "Return to Home",
+        "href": "/",
+        "primary": false
+      }
+    ]
+  },
+  "clients": {
+    "badgeText": "ESTEEMED PARTNERS",
+    "headline": {
+      "line1": "Institutional",
+      "line2Badge": "Partners",
+      "line2Suffix": "& Collaborators"
+    },
+    "description": "We take pride in our enduring relationships with premier global enterprises, institutional developers, and leading real estate networks.",
+    "clientsList": [
+      {
+        "id": 1,
+        "name": "Knight Frank",
+        "logo": "/images/clients/knight-Frank.png"
+      },
+      {
+        "id": 2,
+        "name": "Adani Realty",
+        "logo": "/images/clients/adani.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Apex Group",
+        "logo": "/images/clients/apex.png"
+      },
+      {
+        "id": 4,
+        "name": "DLF Luxury",
+        "logo": "/images/clients/dfl.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Ashiana Housing",
+        "logo": "/images/clients/ashiana.jpg"
+      },
+      {
+        "id": 6,
+        "name": "ERA Real Estate",
+        "logo": "/images/clients/era.jpg"
+      },
+      {
+        "id": 7,
+        "name": "I-Thum World",
+        "logo": "/images/clients/i-thum.png"
+      },
+      {
+        "id": 8,
+        "name": "Vision Group",
+        "logo": "/images/clients/vision.webp"
+      }
+    ]
+  },
+  "faqs": {
+    "badgeText": "FAQS & REAL ESTATE ADVISORY",
+    "headline": {
+      "line1": "Frequently",
+      "line2Badge": "Asked",
+      "line2Suffix": "Questions"
+    },
+    "bookingCard": {
+      "avatar": "/images/team-brian.png",
+      "title": "Book a 15 min call",
+      "description": "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
+      "buttonText": "Book a Free Call",
+      "buttonHref": "/enquiry-now"
+    },
+    "items": [
+      {
+        "id": 1,
+        "question": "What types of luxury properties does Dreams curate?",
+        "answer": "We curate ultra-prime residential sanctuaries including private waterfront villas, secluded mountain chalets, high-rise penthouses, and bespoke architectural estates across premier global destinations."
+      },
+      {
+        "id": 2,
+        "question": "Do you facilitate confidential off-market acquisitions?",
+        "answer": "Yes, a significant portion of our portfolio consists of discreet, off-market private listings available exclusively to registered buyers under strict non-disclosure agreements."
+      },
+      {
+        "id": 3,
+        "question": "Can international buyers purchase properties through Dreams?",
+        "answer": "Absolutely. Our cross-border legal and wealth advisory partners guide international clients through local title regulations, foreign investment compliance, tax structuring, and residency pathways."
+      },
+      {
+        "id": 4,
+        "question": "How does the private viewing and estate tour process work?",
+        "answer": "We arrange private, discreet on-site tours or high-fidelity immersive virtual walkthroughs accompanied by your personal senior acquisitions advisor at your preferred time."
+      },
+      {
+        "id": 5,
+        "question": "What due diligence is conducted prior to listing an estate?",
+        "answer": "Every sanctuary undergoes rigorous structural audits, environmental assessments, clear title verification, zoning scrutiny, and independent valuation checks before inclusion in our portfolio."
+      },
+      {
+        "id": 6,
+        "question": "Can Dreams oversee property management and escrow after purchase?",
+        "answer": "Yes. Our private concierge desk provides comprehensive asset management, security oversight, architectural maintenance, and turnkey leasing services for all acquired estates."
+      }
+    ]
   }
 }

@@ -8,35 +8,61 @@ import TestimonialCard, { type Testimonial } from "@/components/cards/Testimonia
 import siteData from "@/data/site.json";
 import { testimonialAnimations } from "@/utils/animation/testimonial.animation";
 
-export default function TestimonialSection() {
-  const { testimonials } = siteData;
-  const testimonialsList = testimonials.testimonialsList as Testimonial[];
+export interface TestimonialsSectionData {
+  breadcrumb?: {
+    title: string;
+    subtitle: string;
+  };
+  pageTitle?: string;
+  pageSubtitle?: string;
+  badgeText: string;
+  badgeIcon?: string;
+  headline: {
+    line1: string;
+    line2Prefix?: string;
+    line2Badge: string;
+    icon?: string;
+  };
+  description: string;
+  testimonialsList: Testimonial[];
+}
 
-  // Create 3 duplicated sets for truly seamless, infinite smooth marquee looping
+export interface TestimonialSectionProps {
+  data?: TestimonialsSectionData;
+}
+
+export default function TestimonialSection({
+  data = siteData.testimonials,
+}: TestimonialSectionProps): React.JSX.Element {
+  const testimonials = data || siteData.testimonials;
+  const testimonialsList = (testimonials.testimonialsList || []) as Testimonial[];
+
+  // Duplicate list items
   const INFINITE_TESTIMONIALS = [
     ...testimonialsList.map((t) => ({ ...t, uniqueKey: `${t.id}-set1` })),
     ...testimonialsList.map((t) => ({ ...t, uniqueKey: `${t.id}-set2` })),
     ...testimonialsList.map((t) => ({ ...t, uniqueKey: `${t.id}-set3` })),
   ];
 
+  // Scroll reference
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Smooth continuous infinite auto-scroll loop
+  // Auto scroll loop
   useEffect(() => {
     let animationFrameId: number;
 
     const autoScroll = () => {
       const container = scrollRef.current;
       if (container && !isPaused) {
-        // Silky smooth constant movement
+        // Continuous scroll movement
         container.scrollLeft += 0.75;
 
-        // Calculate single batch width
+        // Calculate batch width
         const singleSetWidth = container.scrollWidth / 3;
 
-        // When scrolled past the 2nd set, wrap back smoothly by singleSetWidth
+        // Loop back smoothly
         if (container.scrollLeft >= singleSetWidth * 2) {
           container.scrollLeft -= singleSetWidth;
         }
@@ -53,15 +79,15 @@ export default function TestimonialSection() {
 
   return (
     <section className="relative w-full bg-[#0a0a0a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
-      {/* Background glow effects matching ServiceSection */}
+      {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 -z-10 h-[450px] w-[450px] rounded-full bg-blue-950/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-emerald-950/20 blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl w-full">
-        {/* Section Header: Aligned identically to ServiceSection */}
+        {/* Section header container */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-8">
           <div>
-            {/* Eyebrow */}
+            {/* Eyebrow badge */}
             <motion.div
               initial={testimonialAnimations.eyebrow.initial}
               whileInView={testimonialAnimations.eyebrow.whileInView}
@@ -73,7 +99,7 @@ export default function TestimonialSection() {
               <span>{testimonials.badgeText}</span>
             </motion.div>
 
-            {/* Stepped Headline matching ServiceSection & AboutSection typography */}
+            {/* Stepped headline */}
             <motion.h2
               initial={testimonialAnimations.headline.initial}
               whileInView={testimonialAnimations.headline.whileInView}
@@ -86,12 +112,13 @@ export default function TestimonialSection() {
               </div>
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                 <span>{testimonials.headline.line2Prefix}</span>
+                {/* Tilted badge */}
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.5)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
                     {testimonials.headline.line2Badge}
                   </span>
                 </span>
-                {/* SVG Sparkle Icon placed OUTSIDE the blue badge on the right side */}
+                {/* Rotating star */}
                 <motion.span
                   animate={testimonialAnimations.spin.animate}
                   transition={testimonialAnimations.spin.transition}
@@ -103,7 +130,7 @@ export default function TestimonialSection() {
             </motion.h2>
           </div>
 
-          {/* Right Column: Paragraph matching ServiceSection */}
+          {/* Description container */}
           <motion.div
             initial={testimonialAnimations.description.initial}
             whileInView={testimonialAnimations.description.whileInView}
@@ -117,13 +144,13 @@ export default function TestimonialSection() {
           </motion.div>
         </div>
 
-        {/* Cards Slider Track with Infinite Continuous Scroll */}
+        {/* Carousel container */}
         <div className="relative w-full">
-          {/* Soft Left & Right Vignette Shadows */}
+          {/* Vignette shadows */}
           <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent z-10" />
 
-          {/* Infinite Scrollable Track with Pause on Hover/Touch */}
+          {/* Scrolling track */}
           <div
             ref={scrollRef}
             onMouseEnter={() => setIsPaused(true)}
@@ -133,7 +160,7 @@ export default function TestimonialSection() {
               if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
               resumeTimeoutRef.current = setTimeout(() => setIsPaused(false), 2000);
             }}
-            className="flex items-stretch gap-5 sm:gap-6 overflow-x-auto no-scrollbar pb-6 pt-1"
+            className="flex items-stretch gap-4 sm:gap-5 md:gap-5 overflow-x-auto no-scrollbar pb-6 pt-1"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {INFINITE_TESTIMONIALS.map((item) => (

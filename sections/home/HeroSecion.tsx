@@ -48,9 +48,9 @@ export default function HeroSection(): React.JSX.Element {
   const hero = siteData.hero as HeroData;
 
   return (
-    <section className="relative w-full min-h-screen bg-black p-2.5 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none">
+    <section className="relative w-full min-h-[75vh] sm:min-h-[85vh] md:min-h-[90vh] lg:min-h-screen bg-black p-2.5 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none">
       {/* Framed Hero Canvas with Rounded Corners */}
-      <div className="relative w-full h-[calc(100vh-1.25rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+      <div className="relative w-full h-[calc(75vh-1.25rem)] sm:h-[calc(90vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
         {/* Background Image from JSON */}
         <motion.div
           variants={heroAnimations.background.variants}

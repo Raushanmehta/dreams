@@ -46,7 +46,6 @@ export default function WhyChooseUsSection(): React.JSX.Element {
 
   return (
     <section
-      id="why-choose-us"
       className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-neutral-900 select-none overflow-hidden border-t border-black/[0.08]"
     >
       {/* Ambient background accent */}

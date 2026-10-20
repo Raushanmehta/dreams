@@ -2,14 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
-  Heart,
-  SlidersHorizontal,
-  Printer,
-  Share2,
   Bed,
   Bath,
   Car,
@@ -19,7 +14,6 @@ import {
   CheckCircle2,
   FileText,
   Download,
-  Check,
 } from "lucide-react";
 import siteData from "@/data/site.json";
 import { propertiesDetailAnimations } from "@/utils/animation/properties-detail.animation";

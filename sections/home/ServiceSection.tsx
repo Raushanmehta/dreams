@@ -13,7 +13,6 @@ export default function ServiceSection(): React.JSX.Element {
 
   return (
     <section
-      id="services"
       className="relative w-full isolate text-[#11131a] bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
     >
       <div className="max-w-7xl mx-auto w-full">
@@ -59,7 +58,7 @@ export default function ServiceSection(): React.JSX.Element {
         </div>
 
         {/* 3 columns on desktop, 2 on tablet, 1 on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-5 w-full">
           {(services.servicesList as ServiceItem[]).map((service, index) => (
             <ServiceCard
               key={service.id}

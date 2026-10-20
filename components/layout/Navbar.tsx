@@ -5,12 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Info, Building2, Users, Award, BookOpen, Mail, ArrowRight, Phone, Compass, Sparkles, type LucideIcon, } from "lucide-react";
+import {
+  Home,
+  Info,
+  Building2,
+  Users,
+  Award,
+  BookOpen,
+  Mail,
+  ArrowRight,
+  Phone,
+  Compass,
+  Sparkles,
+  type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import siteData from "@/data/site.json";
 import { navbarAnimations } from "@/utils/animation/navbar.animation";
 
-// Dynamic Icon registry supporting icon names configured in site.json
+// Dynamic icon registry
 const ICON_MAP: Record<string, LucideIcon> = {
   Home,
   Info,
@@ -32,12 +45,14 @@ function renderNavIcon(iconName?: string, className = "w-4 h-4"): React.JSX.Elem
   return <IconComponent className={className} />;
 }
 
+// NavItem configuration interface
 export interface NavItemConfig {
   label: string;
   href: string;
   icon?: string;
 }
 
+// Logo configuration interface
 export interface LogoConfig {
   text: string;
   highlight: string;
@@ -46,25 +61,27 @@ export interface LogoConfig {
   href?: string;
 }
 
+// CTA configuration interface
 export interface CtaConfig {
   label: string;
   href: string;
   icon?: string;
 }
 
+// Navbar content component
 function NavbarContent(): React.JSX.Element {
   const pathname = usePathname();
   const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  // All Navbar data driven completely from data/site.json
   const { logo, navItems, cta } = siteData.navbar as {
     logo: LogoConfig;
     navItems: NavItemConfig[];
     cta: CtaConfig;
   };
 
+  // Scroll handler effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
@@ -79,20 +96,17 @@ function NavbarContent(): React.JSX.Element {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile drawer whenever route changes
+  // Route change effect
   useEffect(() => {
     setIsMobileOpen(false);
   }, [pathname]);
 
-  // When scrolled to full width, the CTA item shifts out of the center capsule into the dedicated right-side CTA button.
-  // In the top notch capsule (unscrolled), all items are displayed inside the capsule.
-  const displayItems = isScrolled
-    ? navItems.filter((item) => item.href !== cta.href)
-    : navItems;
+  // Active navigation items
+  const displayItems = navItems;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
-      {/* Desktop & Tablet Navigation */}
+      {/* Desktop navigation bar */}
       <motion.nav
         layout
         aria-label="Main Navigation"
@@ -108,6 +122,7 @@ function NavbarContent(): React.JSX.Element {
             : "w-auto max-w-[96vw] rounded-b-[24px] border-b border-x border-white/10 bg-black/95 px-5 md:px-6 lg:px-7 py-2 md:py-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.55)] backdrop-blur-md justify-center"
         )}
       >
+        {/* Flex layout container */}
         <motion.div
           layout
           className={cn(
@@ -117,7 +132,7 @@ function NavbarContent(): React.JSX.Element {
               : "w-auto justify-center gap-3 lg:gap-5"
           )}
         >
-          {/* Brand Logo from JSON */}
+          {/* Brand logo container */}
           <motion.div
             layout
             className={cn(
@@ -139,7 +154,7 @@ function NavbarContent(): React.JSX.Element {
                   priority
                 />
               ) : (
-                <span className="font-bold text-[17px] md:text-[18px] lg:text-[19px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
+                <span className="font-bold text-[17px] md:text-[18px] lg:text-[22px] tracking-tight text-white group-hover:text-[#2563EB] transition-colors">
                   {logo.text}
                   <span className="text-[#2563EB]">{logo.highlight}</span>
                 </span>
@@ -147,16 +162,17 @@ function NavbarContent(): React.JSX.Element {
             </Link>
           </motion.div>
 
-          {/* Subtle divider in capsule mode */}
+          {/* Capsule divider element */}
           {!isScrolled && (
             <div className="w-[1px] h-3.5 bg-white/20 select-none pointer-events-none" />
           )}
 
-          {/* Center: Nav Items from JSON */}
+          {/* Navigation links container */}
           <motion.div
             layout
             className="flex items-center justify-center flex-shrink-0"
           >
+            {/* Navigation links list */}
             <motion.ul
               layout
               className={cn(
@@ -172,6 +188,7 @@ function NavbarContent(): React.JSX.Element {
                     : pathname.startsWith(item.href);
 
                 return (
+                  // Navigation link item
                   <motion.li layout key={item.label} className="relative">
                     <Link
                       href={item.href}
@@ -185,7 +202,7 @@ function NavbarContent(): React.JSX.Element {
                           : "text-zinc-300 hover:text-white font-normal"
                       )}
                     >
-                      {/* Framer Motion hover pill */}
+                      {/* Hover pill effect */}
                       {isHovered && (
                         <motion.span
                           layoutId="navHoverBackground"
@@ -198,7 +215,7 @@ function NavbarContent(): React.JSX.Element {
                         />
                       )}
 
-                      {/* Active indicator dot/pill */}
+                      {/* Active link indicator */}
                       {isActive && (
                         <motion.span
                           layoutId="navActiveIndicator"
@@ -215,11 +232,11 @@ function NavbarContent(): React.JSX.Element {
             </motion.ul>
           </motion.div>
 
-          {/* Right Side: CTA Button from JSON (Only shown when scrolled - shifts out of menu) */}
+          {/* CTA button wrapper */}
           <AnimatePresence>
             {isScrolled && (
               <motion.div
-                key="desktop-contact"
+                key="desktop-cta"
                 variants={navbarAnimations.desktopCta.variants}
                 initial="hidden"
                 animate="visible"
@@ -249,13 +266,14 @@ function NavbarContent(): React.JSX.Element {
         </motion.div>
       </motion.nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile navigation wrapper */}
       <div
         className={cn(
           "pointer-events-auto md:hidden w-full flex flex-col items-center transition-all duration-300",
           isScrolled ? "px-0" : "px-3.5 pt-0"
         )}
       >
+        {/* Mobile header bar */}
         <motion.div
           layout
           variants={navbarAnimations.mobile.variants}
@@ -270,7 +288,7 @@ function NavbarContent(): React.JSX.Element {
           )}
         >
           <div className="flex items-center justify-between gap-3">
-            {/* Mobile Logo from JSON */}
+            {/* Mobile logo wrapper */}
             <Link
               href={logo.href || "/"}
               className="flex items-center gap-1.5 select-none focus:outline-none group flex-shrink-0"
@@ -292,36 +310,15 @@ function NavbarContent(): React.JSX.Element {
               )}
             </Link>
 
+            {/* Mobile controls wrapper */}
             <div className="flex items-center gap-2">
-              {/* Mobile CTA Button from JSON (Only shown when scrolled) */}
-              <AnimatePresence>
-                {isScrolled && (
-                  <motion.div
-                    variants={navbarAnimations.mobile.cta}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    <Link
-                      href={cta.href}
-                      className={cn(
-                        "px-3 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-colors whitespace-nowrap",
-                        pathname === cta.href && "ring-2 ring-[#2563EB]"
-                      )}
-                    >
-                      {cta.label}
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {/* Hamburger Toggle */}
+              {/* Hamburger toggle button */}
               <button
                 type="button"
                 onClick={() => setIsMobileOpen((prev) => !prev)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={isMobileOpen}
-                className="p-1.5 text-zinc-300 hover:text-white transition-colors focus:outline-none rounded-md cursor-pointer"
+                className=" text-zinc-300 hover:text-white transition-colors focus:outline-none rounded-md cursor-pointer"
               >
                 <div className="w-5 h-4 flex flex-col justify-between items-end">
                   <motion.span
@@ -347,7 +344,7 @@ function NavbarContent(): React.JSX.Element {
             </div>
           </div>
 
-          {/* Animated Mobile Dropdown from JSON */}
+          {/* Mobile dropdown menu */}
           <AnimatePresence>
             {isMobileOpen && (
               <motion.div
@@ -358,6 +355,7 @@ function NavbarContent(): React.JSX.Element {
                 transition={navbarAnimations.dropdown.transition}
                 className="overflow-hidden pt-3 border-t border-white/10 mt-3"
               >
+                {/* Mobile links list */}
                 <ul className="flex flex-col gap-1.5 p-0 m-0 list-none pb-2">
                   {navItems.map((item, idx) => {
                     const isActive =
@@ -366,6 +364,7 @@ function NavbarContent(): React.JSX.Element {
                         : pathname.startsWith(item.href);
 
                     return (
+                      // Mobile link item
                       <motion.li
                         key={item.label}
                         custom={idx}
@@ -395,26 +394,25 @@ function NavbarContent(): React.JSX.Element {
                     );
                   })}
 
-                  {!isScrolled && (
-                    <motion.li
-                      custom={navItems.length}
-                      variants={navbarAnimations.dropdown.item}
-                      initial="initial"
-                      animate="animate"
-                      className="pt-2 border-t border-white/10 mt-1"
+                  {/* Mobile CTA item */}
+                  <motion.li
+                    custom={navItems.length}
+                    variants={navbarAnimations.dropdown.item}
+                    initial="initial"
+                    animate="animate"
+                    className="pt-2 border-t border-white/10 mt-1"
+                  >
+                    <Link
+                      href={cta.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className="flex items-center justify-center gap-2 text-center py-2.5 px-4 rounded-full bg-[#2563EB] text-white text-sm font-semibold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
                     >
-                      <Link
-                        href={cta.href}
-                        onClick={() => setIsMobileOpen(false)}
-                        className="flex items-center justify-center gap-2 text-center py-2.5 px-4 rounded-full bg-[#2563EB] text-white text-sm font-semibold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
-                      >
-                        <span>{cta.label}</span>
-                        {renderNavIcon(cta.icon, "w-3.5 h-3.5 stroke-[2.5]") || (
-                          <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                        )}
-                      </Link>
-                    </motion.li>
-                  )}
+                      <span>{cta.label}</span>
+                      {renderNavIcon(cta.icon, "w-3.5 h-3.5 stroke-[2.5]") || (
+                        <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                      )}
+                    </Link>
+                  </motion.li>
                 </ul>
               </motion.div>
             )}
@@ -425,6 +423,7 @@ function NavbarContent(): React.JSX.Element {
   );
 }
 
+// Navbar root export
 export default function Navbar(): React.JSX.Element {
   return (
     <Suspense fallback={null}>

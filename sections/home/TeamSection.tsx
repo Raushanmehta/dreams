@@ -54,7 +54,6 @@ export default function TeamSection() {
 
   return (
     <section
-      id="team"
       className="relative w-full bg-[#0a0a0a] text-white px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-900"
     >
       <div className="max-w-7xl mx-auto w-full">

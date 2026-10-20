@@ -10,6 +10,9 @@ export { default as StarIcon } from "./StarIcon";
 export { default as HouseIcon } from "./HouseIcon";
 export { default as BriefcaseIcon } from "./BriefcaseIcon";
 export { default as SparklesIcon } from "./SparklesIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as InstagramIcon } from "./InstagramIcon";
+export { default as TwitterIcon } from "./TwitterIcon";
+export { default as LinkedInIcon } from "./LinkedInIcon";
 export { Sparkles } from "lucide-react";
 export type { IconProps } from "./FourPointStarIcon";
-

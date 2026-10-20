@@ -1,85 +1,50 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
-import gsap from "gsap";
+import { FacebookIcon, InstagramIcon, TwitterIcon, LinkedInIcon, } from "@/components/icons";
 import siteData from "@/data/site.json";
 
-function renderFooterIcon(iconName: string, className = "w-4 h-4"): React.JSX.Element | null {
-  switch (iconName.toLowerCase()) {
-    case "mail":
-      return <Mail className={className} />;
-    case "phone":
-      return <Phone className={className} />;
-    case "mappin":
-    case "map-pin":
-    case "location":
-      return <MapPin className={className} />;
-    case "facebook":
-      return (
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-        </svg>
-      );
-    case "instagram":
-      return (
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
-      );
-    case "twitter":
-    case "x":
-      return (
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-        </svg>
-      );
-    case "dribbble":
-      return (
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-          <circle cx="12" cy="12" r="10" />
-          <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
-          <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
-          <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
-        </svg>
-      );
-    case "globe":
-    case "website":
-      return (
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      );
-    default:
-      return null;
-  }
-}
+// Social icon map
+const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  twitter: TwitterIcon,
+  linkedin: LinkedInIcon,
+};
 
+// Contact icon map
+const CONTACT_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  mail: Mail,
+  phone: Phone,
+  mappin: MapPin,
+};
+
+// Footer link interface
 export interface FooterLink {
   label: string;
   href: string;
   isLive?: boolean;
 }
 
+// Footer contact interface
 export interface FooterContactItem {
   icon: string;
   text: string;
   href: string;
 }
 
+// Footer social interface
 export interface FooterSocialLink {
   platform: string;
   href: string;
   icon: string;
 }
 
+// Footer data interface
 export interface FooterData {
   logo: {
     text: string;
@@ -106,77 +71,26 @@ export interface FooterData {
   watermark: string;
 }
 
+// Footer component export
 export default function Footer(): React.JSX.Element {
-  const watermarkRef = useRef<HTMLDivElement | null>(null);
-  const textRef = useRef<SVGTextElement | null>(null);
-  const isInView = useInView(watermarkRef, { once: true, amount: 0.15 });
-
-  // 3D Perspective Tilt on Mouse Movement via Framer Motion
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 180 };
-  const smoothMouseX = useSpring(mouseX, springConfig);
-  const smoothMouseY = useSpring(mouseY, springConfig);
-
-  const rotateX = useTransform(smoothMouseY, [-0.5, 0.5], [7, -7]);
-  const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], [-9, 9]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!watermarkRef.current) return;
-    const rect = watermarkRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
-  // Silky Smooth Scroll Reveal: Laser stroke draw-in with zero blinking
-  useEffect(() => {
-    if (!textRef.current || !isInView) return;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        textRef.current,
-        {
-          strokeDashoffset: 2600,
-          opacity: 0,
-        },
-        {
-          strokeDashoffset: 0,
-          opacity: 0.85,
-          duration: 2.5,
-          ease: "power2.out",
-        }
-      );
-    }, watermarkRef);
-
-    return () => ctx.revert();
-  }, [isInView]);
-
-  // Load all Footer data dynamically from data/site.json
   const footer = siteData.footer as FooterData;
 
   return (
-    <footer id="contact" className="relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-6 md:px-12">
-      {/* Ambient #2563EB radial background glow */}
+    // Footer container element
+    <footer className="relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-4 md:px-8">
+      {/* Background ambient glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(37,99,235,0.16),transparent)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        {/* Top 4-Column Grid */}
+        {/* Four column grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 pb-14"
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-14"
         >
-          {/* Column 1: Brand & Bio from JSON */}
+          {/* Brand bio column */}
           <div className="flex flex-col items-start gap-4">
             <Link
               href={footer.logo.href || "/"}
@@ -202,9 +116,9 @@ export default function Footer(): React.JSX.Element {
             </p>
           </div>
 
-          {/* Column 2: About Us from JSON */}
+          {/* Navigation links column */}
           <div className="flex flex-col items-start">
-            <h3 className="text-white text-base font-semibold mb-5 tracking-tight flex items-center gap-2">
+            <h3 className="text-white text-lg font-semibold mb-5 tracking-tight flex items-center gap-2">
               {footer.about.title}
             </h3>
             <ul className="flex flex-col gap-3 p-0 m-0 list-none text-sm text-zinc-400">
@@ -221,9 +135,9 @@ export default function Footer(): React.JSX.Element {
             </ul>
           </div>
 
-          {/* Column 3: Helpful Links from JSON */}
+          {/* Quick links column */}
           <div className="flex flex-col items-start relative">
-            <h3 className="text-white text-base font-semibold mb-5 tracking-tight flex items-center gap-2">
+            <h3 className="text-white text-lg font-semibold mb-5 tracking-tight flex items-center gap-2">
               {footer.helpful.title}
             </h3>
             <ul className="flex flex-col gap-3 p-0 m-0 list-none text-sm text-zinc-400">
@@ -246,81 +160,78 @@ export default function Footer(): React.JSX.Element {
             </ul>
           </div>
 
-          {/* Column 4: Contact Us from JSON */}
+          {/* Contact details column */}
           <div className="flex flex-col items-start">
-            <h3 className="text-white text-base font-semibold mb-5 tracking-tight flex items-center gap-2">
+            <h3 className="text-white text-lg font-semibold mb-5 tracking-tight flex items-center gap-2">
               {footer.contact.title}
             </h3>
             <ul className="flex flex-col gap-3.5 p-0 m-0 list-none text-sm text-zinc-300">
-              {footer.contact.items.map((item, idx) => (
-                <li key={idx}>
-                  <a
-                    href={item.href}
-                    className="flex items-start gap-3 hover:text-white transition-colors duration-200 group py-0.5"
-                  >
-                    <span className="transition-transform duration-200 group-hover:scale-110 mt-0.5 flex-shrink-0">
-                      {renderFooterIcon(item.icon, "w-6 h-6 text-[#2563EB] flex-shrink-0")}
-                    </span>
-                    <span className="text-zinc-300 group-hover:text-[#2563EB] transition-colors leading-relaxed">
-                      {item.text}
-                    </span>
-                  </a>
-                </li>
-              ))}
+              {footer.contact.items.map((item, idx) => {
+                const IconComp = CONTACT_ICONS[item.icon.toLowerCase()] || Mail;
+                return (
+                  <li key={idx}>
+                    <a
+                      href={item.href}
+                      className="flex items-start gap-3 hover:text-white transition-colors duration-200 group py-0.5"
+                    >
+                      <span className="transition-transform duration-200 group-hover:scale-110 mt-0.5 flex-shrink-0">
+                        <IconComp className="w-5 h-5 text-[#2563EB] flex-shrink-0" />
+                      </span>
+                      <span className="text-zinc-300 group-hover:text-[#2563EB] transition-colors leading-relaxed">
+                        {item.text}
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </motion.div>
 
-        {/* Divider Line */}
+        {/* Horizontal divider line */}
         <div className="w-full border-t border-zinc-800/80 mb-6" />
 
-        {/* Middle Row: Social Media Links (Left) & Copyright (Right) from JSON */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-2"
-        >
-          {/* Social Icons from JSON */}
+        {/* Social copyright row */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-2">
+          {/* Social media links */}
           <div className="flex items-center gap-5 text-zinc-400">
-            {footer.socialLinks.map((social) => (
-              <motion.a
-                key={social.platform}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.platform}
-                whileHover={{ scale: 1.15, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="hover:text-[#2563EB] transition-colors"
-              >
-                {renderFooterIcon(social.icon, "w-6 h-6")}
-              </motion.a>
-            ))}
+            {footer.socialLinks.map((social) => {
+              const IconComponent =
+                SOCIAL_ICONS[social.platform.toLowerCase()] ||
+                SOCIAL_ICONS[social.icon.toLowerCase()] ||
+                FacebookIcon;
+
+              return (
+                // Social icon link
+                <motion.a
+                  key={social.platform}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.platform}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="hover:text-[#2563EB] transition-colors"
+                >
+                  <IconComponent className="w-5 h-5" />
+                </motion.a>
+              );
+            })}
           </div>
 
-          {/* Copyright Text from JSON */}
+          {/* Copyright notice text */}
           <p className="text-zinc-400 text-sm font-normal">
             {footer.copyright}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Bottom Giant Outlined Watermark from JSON with Smooth Scroll Reveal & Framer Motion Tilt */}
+        {/* Watermark SVG container */}
         <motion.div
-          ref={watermarkRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          style={{
-            perspective: 1000,
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-          }}
-          initial={{ opacity: 0, y: 35 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full flex justify-center overflow-hidden pt-4 pb-2 cursor-pointer relative select-none"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 0.85, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="w-full flex justify-center overflow-hidden pt-4 pb-2 relative select-none"
         >
           <svg
             viewBox="0 0 1200 240"
@@ -337,7 +248,6 @@ export default function Footer(): React.JSX.Element {
               </filter>
             </defs>
             <text
-              ref={textRef}
               x="50%"
               y="78%"
               textAnchor="middle"
@@ -346,11 +256,6 @@ export default function Footer(): React.JSX.Element {
               strokeWidth="2.2"
               filter="url(#neon-glow-smooth)"
               className="font-black tracking-[0.08em] text-[230px] font-sans"
-              style={{
-                strokeDasharray: "2600",
-                strokeDashoffset: "2600",
-                opacity: 0,
-              }}
             >
               {footer.watermark}
             </text>
