@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export interface PropertyDestination {
     id?: string;
     title?: string;
-    countryCode?: string;
+    location?: string;
     propertiesCount?: string | number;
     estatesCount?: string | number;
     subtitle?: string;
@@ -31,7 +31,7 @@ export default function PropertiesCard({
     property,
     index,
     title = property?.title || "Beverly Hills Modern Villa",
-    countryCode = property?.countryCode || "US",
+    location = property?.location,
     propertiesCount = property?.propertiesCount,
     estatesCount = property?.estatesCount,
     subtitle = property?.subtitle,
@@ -49,7 +49,7 @@ export default function PropertiesCard({
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
-                "group relative w-full h-[350px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-[28px] sm:rounded-[32px]",
+                "group relative w-full h-[400px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-[28px] sm:rounded-[32px]",
                 "border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)] select-none cursor-pointer",
                 className
             )}
@@ -67,16 +67,6 @@ export default function PropertiesCard({
                 />
                 {/* Cinematic Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-            </div>
-
-            {/* Country Pill Flag Badge */}
-            <div className="absolute top-5 left-5 sm:top-6 sm:left-6 z-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 backdrop-blur-md px-3.5 py-1.5 shadow-lg">
-                    <span className="text-xs font-semibold tracking-wider text-white">
-                        {countryCode}
-                    </span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB] shadow-[0_0_8px_rgba(37,99,235,0.8)]" />
-                </div>
             </div>
 
             {/* Bottom Content Area */}

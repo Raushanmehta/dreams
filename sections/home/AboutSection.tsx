@@ -8,12 +8,13 @@ import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
 import { Sparkles } from "lucide-react";
 import siteData from "@/data/site.json";
 import { aboutAnimations } from "@/utils/animation/about.animation";
+import StatCounter from "@/components/common/StatCounter";
 
 export default function AboutSection(): React.JSX.Element {
   const { about } = siteData;
 
   return (
-    <section className="bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-[#1a1a1a] select-none">
+    <section className="bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-[#1a1a1a] select-none">
       <div className="relative mx-auto max-w-7xl w-full">
         {/* Image panel */}
         <motion.div
@@ -38,7 +39,7 @@ export default function AboutSection(): React.JSX.Element {
           variants={aboutAnimations.container}
           initial="hidden"
           animate="show"
-          className="relative z-10 mt-8 md:absolute md:left-0 md:top-0 md:mt-0 w-full md:w-[48%]"
+          className="relative z-10 mt-4  md:absolute md:left-0 md:top-0 md:mt-0 w-full md:w-[70%] lg:w-[50%]"
         >
           <div className="rounded-br-[28px] bg-[#f4f4f2] pb-5 pr-5 pt-1 md:pr-6">
             <motion.div
@@ -52,7 +53,7 @@ export default function AboutSection(): React.JSX.Element {
               <Sparkles className="h-5 w-5 text-[#2563EB]" />
               <span>{about.badgeText}</span>
             </motion.div>
-            <h2 className="text-4xl font-medium leading-[1.18] tracking-tight md:text-[56px] text-[#1a1a1a]">
+            <h2 className="text-4xl font-medium leading-[1.18] tracking-tight md:text-[45px] lg:text-[56px] text-[#1a1a1a]">
               <motion.span variants={aboutAnimations.rise} className="block">
                 {about.headline.line1}
               </motion.span>
@@ -79,7 +80,7 @@ export default function AboutSection(): React.JSX.Element {
             </h2>
           </div>
 
-          <div className="max-w-[400px] md:mt-2">
+          <div className=" md:max-w-[250px] lg:max-w-[400px] lg:mt-2">
             <motion.div variants={aboutAnimations.rise} className="mb-3 h-px w-full bg-black/15" />
 
             <div className="min-h-[85px]">
@@ -98,7 +99,9 @@ export default function AboutSection(): React.JSX.Element {
             >
               {about.stats.map((stat, i) => (
                 <div key={i}>
-                  <p className="text-lg sm:text-xl font-bold text-black tracking-tight">{stat.value}</p>
+                  <p className="text-lg sm:text-xl font-bold text-black tracking-tight">
+                    <StatCounter value={stat.value} delay={i * 0.15} />
+                  </p>
                   <p className="text-[10px] sm:text-[11px] text-black/55 font-medium uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}

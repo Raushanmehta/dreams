@@ -1,18 +1,11 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
 import siteData from "@/data/site.json";
-
-export interface CountryOption {
-  code: string;
-  name: string;
-  dialCode: string;
-  flag: string;
-}
 
 export interface EnquiryFormData {
   firstName: string;
@@ -24,7 +17,6 @@ export interface EnquiryFormData {
 
 export default function EnquiryNowSection(): React.JSX.Element {
   const { enquiryNow } = siteData;
-  const countries = enquiryNow.countries as CountryOption[];
 
   const [formData, setFormData] = useState<EnquiryFormData>({
     firstName: "",
@@ -33,27 +25,8 @@ export default function EnquiryNowSection(): React.JSX.Element {
     phoneNumber: "",
     message: "",
   });
-
-  const [selectedCountry, setSelectedCountry] = useState<CountryOption>(countries[0]);
-  const [isCountryOpen, setIsCountryOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  const countryDropdownRef = useRef<HTMLDivElement>(null);
-
-  // Close country dropdown on click outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        countryDropdownRef.current &&
-        !countryDropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsCountryOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -80,7 +53,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none border-t border-zinc-200/80">
+    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto w-full">
         {/* ========================================================= */}
         {/* SECTION HEADER: Matches Dreams* Brand Theme               */}
@@ -92,7 +65,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 text-xs sm:text-sm font-semibold"
+            className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 font-semibold"
           >
             <Sparkles className="h-5 w-5 text-[#2563EB]" />
             <span>{enquiryNow.badgeText}</span>
@@ -113,7 +86,6 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   {enquiryNow.headline.line2Badge}
                 </span>
               </span>
-              <span>{enquiryNow.headline.line2Suffix}</span>
               {/* Rotating 4-point star SVG */}
               <motion.span
                 animate={{ rotate: 360 }}
@@ -148,25 +120,13 @@ export default function EnquiryNowSection(): React.JSX.Element {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center transition-transform duration-700 ease-out"
             />
-            {/* Cinematic Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
-              <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#2563EB] mb-2 shadow-sm">
-                {enquiryNow.curatedBadge}
-              </span>
-              <h4 className="text-xl sm:text-2xl font-bold tracking-tight">
-                {enquiryNow.estateTitle}
-              </h4>
-              <p className="text-zinc-300 text-xs sm:text-sm mt-0.5">
-                {enquiryNow.estateLocation}
-              </p>
-            </div>
+
           </div>
 
           {/* ========================================================= */}
           {/* RIGHT COLUMN: Pure White Luxury Enquiry Form Panel        */}
           {/* ========================================================= */}
-          <div className="lg:col-span-6 bg-white p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center">
+          <div className="lg:col-span-6 bg-white p-6 sm:p-6 lg:p-10 xl:p-10 flex flex-col justify-center">
             <div className="w-full">
               {/* Header Block */}
               <div className="mb-6 sm:mb-8">
@@ -215,63 +175,16 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   />
                 </div>
 
-                {/* Row 3: Phone Number with Country Flag Dropdown */}
-                <div
-                  ref={countryDropdownRef}
-                  className="relative flex items-center h-12 bg-zinc-50/60 border border-zinc-200/90 rounded-xl focus-within:bg-white focus-within:border-[#2563EB] focus-within:ring-4 focus-within:ring-[#2563EB]/10 transition-all duration-200"
-                >
-                  {/* Flag and Dial Code Button */}
-                  <button
-                    type="button"
-                    onClick={() => setIsCountryOpen(!isCountryOpen)}
-                    aria-label="Select Country Code"
-                    className="h-full px-3.5 flex items-center gap-2 border-r border-zinc-200 hover:bg-black/[0.03] transition-colors focus:outline-none select-none flex-shrink-0 cursor-pointer"
-                  >
-                    <span className="text-base leading-none">{selectedCountry.flag}</span>
-                    <span className="text-xs sm:text-sm text-[#11131a] font-medium">{selectedCountry.dialCode}</span>
-                    <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />
-                  </button>
-
-                  {/* Phone Input Field */}
+                {/* Row 3: Phone Number */}
+                <div>
                   <input
                     type="tel"
                     name="phoneNumber"
-                    placeholder="201-555-0123"
+                    placeholder="PHONE NUMBER"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full h-full px-4 bg-transparent border-0 text-sm text-[#11131a] placeholder:text-zinc-400 focus:outline-none"
+                    className="w-full h-12 px-4.5 border border-zinc-200/90 rounded-xl text-sm text-[#11131a] placeholder:text-zinc-400 bg-zinc-50/60 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-all duration-200"
                   />
-
-                  {/* Country Dropdown Menu */}
-                  <AnimatePresence>
-                    {isCountryOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 5 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-[calc(100%+6px)] left-0 z-50 w-64 max-h-56 overflow-y-auto bg-white border border-zinc-200 rounded-xl shadow-xl py-1 text-xs"
-                      >
-                        {countries.map((country) => (
-                          <button
-                            key={country.code}
-                            type="button"
-                            onClick={() => {
-                              setSelectedCountry(country);
-                              setIsCountryOpen(false);
-                            }}
-                            className="w-full px-3.5 py-2.5 text-left flex items-center justify-between hover:bg-zinc-50 transition-colors text-[#11131a] cursor-pointer"
-                          >
-                            <span className="flex items-center gap-2.5">
-                              <span className="text-base">{country.flag}</span>
-                              <span className="font-medium">{country.name}</span>
-                            </span>
-                            <span className="text-zinc-400 font-mono text-[11px]">{country.dialCode}</span>
-                          </button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
 
                 {/* Row 4: Message Textarea */}

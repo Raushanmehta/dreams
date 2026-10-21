@@ -78,7 +78,7 @@ export default function ContactDetailsCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className={`bg-[#eaf4fd] rounded-[26px] border border-[#d2e8fc] p-5 sm:p-6 shadow-[0_8px_30px_rgba(37,99,235,0.06)] ${className}`}
+      className={`bg-[#eaf4fd] rounded-[26px] border border-[#d2e8fc] p-4 sm:p-5 shadow-[0_8px_30px_rgba(37,99,235,0.06)] ${className}`}
     >
       <form onSubmit={handleSubmit} className="space-y-3.5">
         {/* 1. Name Field */}
@@ -138,29 +138,6 @@ export default function ContactDetailsCard({
             }
             className="w-full bg-white border border-blue-100/90 rounded-2xl pl-11 pr-4 py-3 text-sm text-zinc-800 placeholder-zinc-400 shadow-[0_2px_8px_rgba(37,99,235,0.03)] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all resize-none"
           />
-        </div>
-
-        {/* 5. GDPR Agreement */}
-        <div className="pt-1">
-          <span className="block text-xs font-bold text-zinc-700 mb-1.5">
-            {inquiryConfig.gdprLabel || "GDPR Agreement *"}
-          </span>
-          <label className="flex items-start gap-2.5 text-[11px] sm:text-xs text-zinc-600 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              required
-              checked={formData.gdprConsent}
-              onChange={(e) => {
-                setFormData({ ...formData, gdprConsent: e.target.checked });
-                if (errorMessage) setErrorMessage("");
-              }}
-              className="mt-0.5 w-4 h-4 rounded border-zinc-300 text-[#2563EB] focus:ring-[#2563EB] accent-[#2563EB] shrink-0"
-            />
-            <span className="leading-tight">
-              {inquiryConfig.gdprText ||
-                "I consent to having this website store my submitted information so they can respond to my inquiry."}
-            </span>
-          </label>
         </div>
 
         {/* Error message if consent missed */}

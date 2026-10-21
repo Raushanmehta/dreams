@@ -44,9 +44,7 @@ export default function PropertiesSection(): React.JSX.Element {
   }, [api]);
 
   return (
-    <section
-      className="relative w-full bg-[#0a0a0a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]"
-    >
+    <section className="relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
       {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 -z-10 h-[450px] w-[450px] rounded-full bg-emerald-950/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-blue-950/20 blur-[120px] pointer-events-none" />
@@ -74,9 +72,6 @@ export default function PropertiesSection(): React.JSX.Element {
               className="text-4xl sm:text-5xl md:text-[56px] font-medium tracking-tight text-[#EBE7DC] leading-[1.15] uppercase"
             >
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-                <span>{properties.headline.line1}</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                 <span>{properties.headline.line2Prefix}</span>
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.5)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
@@ -100,12 +95,8 @@ export default function PropertiesSection(): React.JSX.Element {
             whileInView={propertiesAnimations.description.whileInView}
             viewport={{ once: true }}
             transition={propertiesAnimations.description.transition}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+            className="hidden sm:flex items-center"
           >
-            <p className="text-zinc-400 text-sm sm:text-base max-w-sm leading-relaxed">
-              {properties.description}
-            </p>
-
             {/* Custom Carousel Navigation Buttons with Framer Motion Hover */}
             <div className="flex items-center gap-3">
               <motion.button
@@ -176,7 +167,7 @@ export default function PropertiesSection(): React.JSX.Element {
         </div>
 
         {/* Shadcn Embla Carousel */}
-        <div className="relative w-full py-4">
+        <div className="relative w-full ">
           <Carousel
             setApi={setApi}
             opts={{
@@ -185,11 +176,11 @@ export default function PropertiesSection(): React.JSX.Element {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 sm:-ml-5 md:-ml-6">
+            <CarouselContent className="-ml-4 sm:-ml-5 md:-ml-5">
               {propertiesList.map((property, index) => (
                 <CarouselItem
                   key={property.id || index}
-                  className="pl-4 sm:pl-5 md:pl-6 basis-full sm:basis-1/2 lg:basis-1/3"
+                  className="pl-4 sm:pl-5 md:pl-5 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
                   <PropertiesCard property={property} index={index} />
                 </CarouselItem>
@@ -199,18 +190,17 @@ export default function PropertiesSection(): React.JSX.Element {
         </div>
 
         {/* Carousel Pagination indicator dots with interactive click */}
-        <div className="flex items-center justify-center gap-2.5 mt-8">
+        <div className="flex items-center justify-center gap-2.5 mt-6 md:mt-8">
           {Array.from({ length: count }).map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => api?.scrollTo(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${
-                current === i + 1
-                  ? "w-8 bg-[#2563EB] shadow-[0_0_12px_rgba(37,99,235,0.7)]"
-                  : "w-2 bg-white/25 hover:bg-white/50"
-              }`}
+              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${current === i + 1
+                ? "w-8 bg-[#2563EB] shadow-[0_0_12px_rgba(37,99,235,0.7)]"
+                : "w-2 bg-white/25 hover:bg-white/50"
+                }`}
             />
           ))}
         </div>

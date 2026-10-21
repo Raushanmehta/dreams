@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
@@ -18,9 +17,8 @@ export interface PromotionalBannerCardProps {
 export default function PromotionalBannerCard({
   badge = "Exclusive Sanctuaries",
   title = "Discover Curated\nLuxury Waterfront\nEstates & Villas",
-  description = "Access off-market private residences, prime waterfront penthouses, and architectural masterworks.",
-  buttonText = "Explore Properties",
-  buttonHref = "/properties",
+  buttonText = "Enquiry Now",
+  buttonHref = "/enquiry-now",
   className = "",
 }: PromotionalBannerCardProps) {
   return (
@@ -29,7 +27,7 @@ export default function PromotionalBannerCard({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className={`relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#5b2df6] via-[#4d1de0] to-[#3407bf] p-6 sm:p-7 text-white shadow-[0_12px_36px_rgba(77,29,224,0.32)] select-none ${className}`}
+      className={`relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#5b2df6] via-[#4d1de0] to-[#3407bf] p-4 sm:p-5 text-white shadow-[0_12px_36px_rgba(77,29,224,0.32)] select-none ${className}`}
       aria-label="Real Estate Promotional Announcement"
     >
       {/* Ambient background glows */}
@@ -53,11 +51,6 @@ export default function PromotionalBannerCard({
       <h3 className="relative z-10 text-2xl sm:text-[27px] font-extrabold leading-[1.18] tracking-tight mb-2.5 whitespace-pre-line max-w-[240px]">
         {title}
       </h3>
-
-      {/* Brief Real Estate Tagline */}
-      <p className="relative z-10 text-xs sm:text-[13px] text-white/80 leading-relaxed max-w-[270px] mb-5">
-        {description}
-      </p>
 
       {/* CTA Button */}
       <motion.div

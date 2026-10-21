@@ -55,14 +55,14 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
+    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
       {/* Background ambient glow */}
       <div className="absolute top-1/4 left-1/6 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left column */}
-          <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8 lg:sticky lg:top-28">
+          <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8 lg:sticky lg:top-0">
             <div>
               {/* Eyebrow badge */}
               <motion.div
@@ -70,9 +70,9 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-semibold text-[#11131a] mb-4"
+                className="inline-flex items-center gap-2 uppercase tracking-widest  font-semibold text-[#11131a] mb-3"
               >
-                <Sparkles className="h-4 w-4 text-[#2563EB]" />
+                <Sparkles className="h-5 w-5 text-[#2563EB]" />
                 <span>{data.badgeText}</span>
               </motion.div>
 
@@ -159,11 +159,10 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.05 }}
-                  className={`bg-white rounded-2xl sm:rounded-3xl border transition-all duration-300 overflow-hidden ${
-                    isOpen
-                      ? "border-blue-200/90 shadow-md ring-1 ring-blue-500/10"
-                      : "border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-zinc-300"
-                  }`}
+                  className={`bg-white rounded-2xl sm:rounded-3xl border transition-all duration-300 overflow-hidden ${isOpen
+                    ? "border-blue-200/90 shadow-md ring-1 ring-blue-500/10"
+                    : "border-zinc-200/80 shadow-2xs hover:shadow-md hover:border-zinc-300"
+                    }`}
                 >
                   {/* Accordion trigger button */}
                   <button
@@ -173,20 +172,18 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                   >
                     {/* Real estate question */}
                     <span
-                      className={`text-sm sm:text-base md:text-[17px] font-semibold leading-snug transition-colors pt-0.5 ${
-                        isOpen ? "text-[#2563EB]" : "text-[#1a1a1a]"
-                      }`}
+                      className={`text-sm sm:text-base md:text-[17px] font-semibold leading-snug transition-colors pt-0.5 ${isOpen ? "text-[#2563EB]" : "text-[#1a1a1a]"
+                        }`}
                     >
                       {item.question}
                     </span>
 
                     {/* Toggle button icon */}
                     <span
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
-                        isOpen
-                          ? "bg-[#2563EB] text-white shadow-xs"
-                          : "bg-[#f4f4f2] text-zinc-600 hover:bg-blue-50 hover:text-[#2563EB]"
-                      }`}
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${isOpen
+                        ? "bg-[#2563EB] text-white shadow-xs"
+                        : "bg-[#f4f4f2] text-zinc-600 hover:bg-blue-50 hover:text-[#2563EB]"
+                        }`}
                     >
                       {isOpen ? (
                         <X className="w-4 h-4 stroke-[2.2]" />

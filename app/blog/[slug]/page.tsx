@@ -27,7 +27,7 @@ async function BlogDetailContent({ params }: BlogDetailPageProps) {
         <>
             <BreadCrumb
                 title="Blog Details"
-                subtitle={siteData.blog.description}
+                subtitle={siteData.blog.pageSubtitle}
             />
             <BlogDetailSection postSlug={slug} />
         </>

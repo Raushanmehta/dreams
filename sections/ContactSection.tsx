@@ -63,19 +63,19 @@ export default function ContactSection(): React.JSX.Element {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none border-t border-zinc-200/80">
+    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto w-full">
         {/* ========================================================= */}
         {/* SECTION HEADER: Matches Dreams* Signature Brand Theme    */}
         {/* ========================================================= */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-8 sm:mb-10">
           {/* Eyebrow badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 text-xs sm:text-sm font-semibold"
+            className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] mb-3 font-semibold"
           >
             <Sparkles className="h-5 w-5 text-[#2563EB]" />
             <span>{contact.badgeText}</span>
@@ -97,7 +97,6 @@ export default function ContactSection(): React.JSX.Element {
                   {contact.headline.line2Badge}
                 </span>
               </span>
-              <span>{contact.headline.line2Suffix}</span>
               {/* Rotating 4-point star SVG icon */}
               <motion.span
                 animate={{ rotate: 360 }}
@@ -123,7 +122,7 @@ export default function ContactSection(): React.JSX.Element {
           {/* ========================================================= */}
           {/* LEFT COLUMN: Luxury Obsidian Dark Panel (#0c0d12)         */}
           {/* ========================================================= */}
-          <div className="lg:col-span-5 bg-[#0c0d12] text-white p-8 sm:p-10 lg:p-12 xl:p-14 relative flex flex-col justify-between overflow-hidden">
+          <div className="lg:col-span-5 bg-[#0c0d12] text-white p-6 sm:p-6 lg:p-10 xl:p-10 relative flex flex-col justify-between overflow-hidden">
             {/* Ambient royal blue glow overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(37,99,235,0.22),transparent_70%)] pointer-events-none" />
             <div className="absolute -bottom-24 -right-24 w-60 h-60 rounded-full bg-[#2563EB]/10 blur-[80px] pointer-events-none" />
@@ -232,7 +231,7 @@ export default function ContactSection(): React.JSX.Element {
           {/* ========================================================= */}
           {/* RIGHT COLUMN: Architectural Pure White Area (#ffffff)     */}
           {/* ========================================================= */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white p-6 sm:p-6 lg:p-10 xl:p-10 flex flex-col justify-between">
             {/* Header Block */}
             <div className="h-auto lg:h-[116px] flex flex-col justify-start">
               <h3 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-[#11131a] tracking-tight leading-tight mb-1.5">
@@ -363,7 +362,7 @@ export default function ContactSection(): React.JSX.Element {
                       className="flex items-center gap-2 text-emerald-600 text-sm font-medium"
                     >
                       <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                      <span>Transmitted to Private Advisory Office</span>
+                      <span>Submitted</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -382,44 +381,10 @@ export default function ContactSection(): React.JSX.Element {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="mt-8 sm:mt-10 md:mt-12 relative w-full rounded-[28px] sm:rounded-[32px] overflow-hidden bg-zinc-900"
         >
-          {/* Floating Glassmorphic Location Info Capsule */}
-          <div className="absolute top-5 left-5 sm:top-6 sm:left-6 z-20 max-w-sm w-[calc(100%-2.5rem)] sm:w-auto bg-[#0c0d12]/85 backdrop-blur-md border border-white/15 text-white p-4 sm:p-5 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] select-none">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#2563EB] text-white flex items-center justify-center flex-shrink-0 shadow-[0_4px_16px_rgba(37,99,235,0.4)]">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[11px] font-bold tracking-widest text-[#3b82f6] uppercase">
-                    Headquarters
-                  </span>
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                </div>
-                <h4 className="text-white font-semibold text-base tracking-tight leading-snug">
-                  Dreams Global Advisory
-                </h4>
-                <p className="text-zinc-300 text-xs sm:text-[13px] leading-relaxed mt-1">
-                  9405 Wilshire Blvd, Beverly Hills, CA 90212
-                </p>
-                <div className="mt-3 flex items-center gap-3 pt-2.5 border-t border-white/10">
-                  <a
-                    href="https://maps.google.com/?q=9405+Wilshire+Blvd,+Beverly+Hills,+CA+90212"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3b82f6] hover:text-white transition-colors group"
-                  >
-                    <span>Get Directions</span>
-                    <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                  <span className="text-zinc-500 text-xs">•</span>
-                  <span className="text-zinc-400 text-xs">Mon – Sat (9AM – 8PM)</span>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           {/* Google Maps Interactive Embed iframe */}
-          <div className="w-full h-[360px] sm:h-[420px] md:h-[480px] relative">
+          <div className="w-full h-[360px] sm:h-[400px] md:h-[420px] relative">
             <iframe
               title="Dreams Real Estate Global Headquarters Location"
               src="https://maps.google.com/maps?q=9405+Wilshire+Blvd,+Beverly+Hills,+CA+90212&t=&z=14&ie=UTF8&iwloc=&output=embed"

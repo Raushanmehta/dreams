@@ -74,7 +74,7 @@
     "headline": {
       "line1": "ABOUT OUR",
       "line2Prefix": "BOOK",
-      "line2Badge": "PRESTIGIOUS",
+      "line2Badge": "PRESTIGIOU",
       "line3": "RESIDENCES",
       "icon": "FourPointStar"
     },
@@ -96,22 +96,21 @@
       }
     ],
     "cta": {
-      "label": "EXPLORE PORTFOLIO",
-      "href": "/properties",
+      "label": "ABOUT US",
+      "href": "/about",
       "icon": "ArrowRight"
     }
   },
   "blog": {
-    "pageTitle": "Our Blog",
+    "pageTitle": "Our Blogs",
     "pageSubtitle": "In-depth intelligence on prime global real estate, architectural trends, and wealth preservation.",
-    "badgeText": "Our Blog",
+    "badgeText": "Our Blogs",
     "badgeIcon": "Sparkles",
     "headline": {
       "prefix": "Featured",
-      "badge": "Articles",
+      "badge": "Article",
       "icon": "FourPointStar"
     },
-    "description": "Explore our curated archive of market intelligence, engineered to inspire and inform.",
     "blogPosts": [
       {
         "id": "post-1",
@@ -122,9 +121,9 @@
         "readTime": "4 min read",
         "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
         "isLatest": false,
-        "badgeText": "Architecture • Insights",
+        "badgeText": "Architecture • Insight",
         "headlinePrefix": "Architectural",
-        "headlineBadge": "Trends",
+        "headlineBadge": "Trend",
         "headlineSuffix": "Defining Luxury Living in 2025",
         "author": {
           "name": "Marcus Vance",
@@ -391,24 +390,11 @@
         "slug": "heritage-restorations-reviving-historic-european-chteaux"
       }
     ],
-    "author": {
-      "name": "Erin Carter",
-      "role": "Senior Real Estate Advisor & Curator",
-      "bio": "Meet Erin Carter, an esteemed luxury property advisor and design curator at Dreams. With over 14 years of advisory experience across prime international waterfront sanctuaries, she helps discerning clients acquire generational architectural masterworks.",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-      "signatureText": "Carter",
-      "socials": {
-        "facebook": "https://facebook.com",
-        "twitter": "https://twitter.com",
-        "linkedin": "https://linkedin.com"
-      }
-    },
     "promotionalBanner": {
       "badge": "Exclusive Sanctuaries",
       "title": "Discover Curated\nLuxury Waterfront\nEstates & Villas",
-      "description": "Access off-market private residences, prime waterfront penthouses, and architectural masterworks.",
-      "buttonText": "Explore Properties",
-      "buttonHref": "/properties"
+      "buttonText": "Enquiry Now",
+      "buttonHref": "/enquiry-now"
     }
   },
   "properties": {
@@ -419,7 +405,7 @@
     "headline": {
       "line1": "Exclusive Estates &",
       "line2Prefix": "Luxury",
-      "line2Badge": "Properties",
+      "line2Badge": "Propertie",
       "icon": "FourPointStar"
     },
     "description": "Explore our handpicked collection of premier architectural sanctuaries, waterfront estates, and prestigious luxury properties worldwide.",
@@ -427,10 +413,7 @@
       {
         "id": "beverly-hills-villa",
         "title": "Beverly Hills Modern Villa",
-        "price": "$1,450,000",
-        "priceNumeric": 1450000,
         "location": "Beverly Hills, CA 90210, USA",
-        "countryCode": "US",
         "propertiesCount": "148",
         "estatesCount": "24",
         "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
@@ -479,7 +462,7 @@
             "alt": "Waterfront private dock and exterior sunset view"
           }
         ],
-        "specs": [
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -507,55 +490,76 @@
           }
         ],
         "description": "The very best waterfront location in Harbor Islands complete with private dock and amazing water frontage! Offering panoramic water views, this spacious home has volume ceilings and offers a rarely available ground floor master bedroom suite. The modern kitchen has been completely updated, leading to entertainment and family rooms that open to fabulous back yard and swimming pool overlooking the waterways. Must be seen!",
-        "commonNote": "This is a common note that can be displayed on all properties but controlled from one simple option.",
-        "features": [
-          "2 Stories",
-          "Central Cooling",
-          "Dual Sinks",
-          "Electric Range",
-          "Fire Place",
-          "Laundry Room",
-          "Lawn",
-          "Swimming Pool"
+        "amenities": [
+          "Private Heated Infinity Pool",
+          "Dual Custom Marble Sinks",
+          "Sub-Zero Culinary Appliances",
+          "Architectural Fireplace",
+          "Private Elevator Access",
+          "Smart Climate Automation",
+          "Lush Biophilic Landscaping",
+          "24/7 Monitored Security",
+          "Temperature-Controlled Wine Cellar"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-ground",
+          "name": "Ground Level",
+          "size": "2,450 sq ft",
+          "bedrooms": 2,
+          "bathrooms": 2.5,
+          "ceilingHeight": "13.0 ft",
+          "image": "https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+          "description": "Grand foyer, formal living salon, open culinary suite, and guest quarters."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-1",
-            "title": "Ultra Demo Word File",
-            "size": "12.13 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-airport",
+            "name": "International Private Airport",
+            "category": "Airport",
+            "distance": "14.2 miles",
+            "time": "18 mins drive"
           },
           {
-            "id": "att-2",
-            "title": "Ultra Demo PDF File",
-            "size": "18.57 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Waterfront Yacht Marina",
+            "category": "Marina",
+            "distance": "2.5 miles",
+            "time": "6 mins drive"
+          },
+          {
+            "id": "np-dining",
+            "name": "Michelin Star Dining",
+            "category": "Dining",
+            "distance": "1.2 miles",
+            "time": "4 mins walk"
+          },
+          {
+            "id": "np-school",
+            "name": "Elite International Academy",
+            "category": "Education",
+            "distance": "3.8 miles",
+            "time": "8 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Haute Couture Shopping District",
+            "category": "Shopping",
+            "distance": "0.9 miles",
+            "time": "3 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Private Health & Country Club",
+            "category": "Wellness",
+            "distance": "2.1 miles",
+            "time": "5 mins drive"
           }
-        ],
-        "agent": {
-          "name": "Nathan James",
-          "role": "Senior Estates Director — Beverly Hills",
-          "avatar": "/images/agent-nathan.png",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "1-222-333-4444",
-            "mobile": "1-234-458-7893",
-            "fax": "1-333-444-5555",
-            "whatsapp": "1-222-333-4433",
-            "email": "robot@inspirythemes.com"
-          }
-        }
+        ]
       },
       {
         "id": "dubai-sky-penthouse",
         "title": "Dubai Marina Sky Penthouse",
-        "price": "$2,850,000",
-        "priceNumeric": 2850000,
         "location": "Marina Bay, Dubai, UAE",
-        "countryCode": "AE",
         "propertiesCount": "320",
         "estatesCount": "42",
         "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
@@ -594,7 +598,8 @@
             "alt": "Bespoke Poggenpohl chef kitchen with marble island"
           }
         ],
-        "specs": [
+        "description": "Perched across the top floors of Dubai Marina, this extraordinary duplex sky penthouse commands 360-degree vistas over Palm Jumeirah and the Arabian Gulf. Complete with private sky infinity pool, floor-to-ceiling soundproof acoustic glass, Italian marble flooring, and private high-speed elevator foyer.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -621,9 +626,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "Perched across the top floors of Dubai Marina, this extraordinary duplex sky penthouse commands 360-degree vistas over Palm Jumeirah and the Arabian Gulf. Complete with private sky infinity pool, floor-to-ceiling soundproof acoustic glass, Italian marble flooring, and private high-speed elevator foyer.",
-        "commonNote": "Off-market private viewings available exclusively for registered VIP buyers with 24-hour advance confirmation.",
-        "features": [
+        "amenities": [
           "Private Sky Pool",
           "Panoramic Marina View",
           "Private Helipad Access",
@@ -633,44 +636,65 @@
           "24/7 Butler Concierge",
           "Temperature-Controlled Cellar"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-dubai-penthouse",
+          "name": "Sky Duplex Penthouse",
+          "size": "6,800 sq ft",
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "ceilingHeight": "16.0 ft",
+          "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+          "description": "Double-height living pavilion, private sky terrace infinity pool, and master penthouse suite."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-db-1",
-            "title": "Dubai Marina Penthouse Brochure",
-            "size": "24.60 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Dubai International Airport",
+            "category": "Airport",
+            "distance": "16.5 miles",
+            "time": "20 mins drive"
           },
           {
-            "id": "att-db-2",
-            "title": "Architectural Floorplans Specification",
-            "size": "15.80 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Dubai Marina Yacht Club",
+            "category": "Marina",
+            "distance": "0.4 miles",
+            "time": "5 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "Pier 7 Fine Dining",
+            "category": "Dining",
+            "distance": "0.6 miles",
+            "time": "7 mins walk"
+          },
+          {
+            "id": "np-school",
+            "name": "Emirates International School",
+            "category": "Education",
+            "distance": "3.2 miles",
+            "time": "8 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Dubai Marina Mall",
+            "category": "Shopping",
+            "distance": "0.5 miles",
+            "time": "6 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "The Ritz-Carlton Spa",
+            "category": "Wellness",
+            "distance": "1.1 miles",
+            "time": "4 mins drive"
           }
-        ],
-        "agent": {
-          "name": "Tariq Al-Mansoor",
-          "role": "Senior Penthouse Specialist — Middle East",
-          "avatar": "/images/review-vneck.jpg",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+971 4 321 8899",
-            "mobile": "+971 50 123 4567",
-            "fax": "+971 4 321 8890",
-            "whatsapp": "+971 50 123 4567",
-            "email": "tariq@dreamsluxury.com"
-          }
-        }
+        ]
       },
       {
         "id": "monaco-waterfront-estate",
         "title": "Monaco Waterfront Estate",
-        "price": "$4,200,000",
-        "priceNumeric": 4200000,
         "location": "Port Hercules, Monaco",
-        "countryCode": "MC",
         "propertiesCount": "96",
         "estatesCount": "18",
         "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
@@ -709,7 +733,8 @@
             "alt": "Onyx bathroom retreat with jacuzzi overlooking yacht marina"
           }
         ],
-        "specs": [
+        "description": "A rare multi-level waterfront estate situated directly facing the superyacht harbor of Port Hercules. Architecturally designed with cascading sea-view terraces, heated saltwater pool, private wine tasting vault, and direct superyacht tender mooring privileges.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -736,9 +761,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "A rare multi-level waterfront estate situated directly facing the superyacht harbor of Port Hercules. Architecturally designed with cascading sea-view terraces, heated saltwater pool, private wine tasting vault, and direct superyacht tender mooring privileges.",
-        "commonNote": "Exclusive waterfront residency advisory and Monaco tax structuring assistance provided on acquisition.",
-        "features": [
+        "amenities": [
           "Superyacht Mooring Dock",
           "Cascading Sea Terraces",
           "Saltwater Infinity Pool",
@@ -748,44 +771,65 @@
           "Private Staff Quarters",
           "High-Speed Glass Elevator"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-monaco-waterfront",
+          "name": "Waterfront Triplex Villa",
+          "size": "8,900 sq ft",
+          "bedrooms": 5,
+          "bathrooms": 6,
+          "ceilingHeight": "14.5 ft",
+          "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+          "description": "Cascading sea-view terraces, private yacht tender dock, and wine tasting vault."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-mc-1",
-            "title": "Port Hercules Estate Portfolio",
-            "size": "32.10 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Monaco Heliport",
+            "category": "Airport",
+            "distance": "1.2 miles",
+            "time": "4 mins drive"
           },
           {
-            "id": "att-mc-2",
-            "title": "Superyacht Berth Lease Documentation",
-            "size": "19.40 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Port Hercules Yacht Marina",
+            "category": "Marina",
+            "distance": "0.1 miles",
+            "time": "2 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "Le Louis XV Alain Ducasse",
+            "category": "Dining",
+            "distance": "0.8 miles",
+            "time": "3 mins drive"
+          },
+          {
+            "id": "np-school",
+            "name": "International School of Monaco",
+            "category": "Education",
+            "distance": "1.5 miles",
+            "time": "5 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Carré d'Or Luxury Boutiques",
+            "category": "Shopping",
+            "distance": "0.7 miles",
+            "time": "8 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Thermes Marins Monte-Carlo",
+            "category": "Wellness",
+            "distance": "0.6 miles",
+            "time": "3 mins drive"
           }
-        ],
-        "agent": {
-          "name": "Elena Rostova",
-          "role": "Head of Private Wealth & Monaco Waterfront",
-          "avatar": "/images/review-blue.jpg",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+377 98 97 12 34",
-            "mobile": "+33 6 12 34 56 78",
-            "fax": "+377 98 97 12 35",
-            "whatsapp": "+377 98 97 12 34",
-            "email": "elena@luxuryestates.com"
-          }
-        }
+        ]
       },
       {
         "id": "mayfair-heritage-residence",
         "title": "Mayfair Heritage Residence",
-        "price": "£3,100,000",
-        "priceNumeric": 3100000,
         "location": "Mayfair, London, UK",
-        "countryCode": "UK",
         "propertiesCount": "185",
         "estatesCount": "35",
         "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
@@ -824,7 +868,8 @@
             "alt": "Private landscaped mews courtyard garden"
           }
         ],
-        "specs": [
+        "description": "A Grade-II listed Mayfair townhouse restoration blending Georgian architectural grandeur with cutting-edge bespoke amenities, private mews courtyard, temperature-controlled library, and private passenger lift accessing all six floors.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -851,9 +896,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "A Grade-II listed Mayfair townhouse restoration blending Georgian architectural grandeur with cutting-edge bespoke amenities, private mews courtyard, temperature-controlled library, and private passenger lift accessing all six floors.",
-        "commonNote": "Freehold tenure with approved English Heritage modern extension documentation.",
-        "features": [
+        "amenities": [
           "Grade II Listed Georgian Architecture",
           "Private Secondary Mews House",
           "Internal 6-Stop Passenger Lift",
@@ -863,44 +906,65 @@
           "Sommelier Wine Cellar",
           "Underfloor Zoned Heating"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-mayfair-townhouse",
+          "name": "Six-Floor Georgian Townhouse",
+          "size": "5,600 sq ft",
+          "bedrooms": 4,
+          "bathrooms": 4,
+          "ceilingHeight": "13.5 ft",
+          "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+          "description": "Restored Georgian reception rooms, private internal elevator, and secluded mews courtyard garden."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-mf-1",
-            "title": "Mayfair Townhouse Historical Dossier",
-            "size": "28.50 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "London City Airport",
+            "category": "Airport",
+            "distance": "9.8 miles",
+            "time": "30 mins drive"
           },
           {
-            "id": "att-mf-2",
-            "title": "Architectural Conservation Floorplans",
-            "size": "16.90 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Hyde Park Boating Lake",
+            "category": "Marina",
+            "distance": "0.5 miles",
+            "time": "7 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "The Connaught Dining",
+            "category": "Dining",
+            "distance": "0.3 miles",
+            "time": "4 mins walk"
+          },
+          {
+            "id": "np-school",
+            "name": "Westminster School",
+            "category": "Education",
+            "distance": "2.1 miles",
+            "time": "12 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Bond Street Luxury Shopping",
+            "category": "Shopping",
+            "distance": "0.2 miles",
+            "time": "3 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "The Lansdowne Private Club",
+            "category": "Wellness",
+            "distance": "0.4 miles",
+            "time": "5 mins walk"
           }
-        ],
-        "agent": {
-          "name": "Julian Vance",
-          "role": "Principal Estates Director — London & Mayfair",
-          "avatar": "/images/review-sweater.jpg",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+44 20 7946 0912",
-            "mobile": "+44 7700 900143",
-            "fax": "+44 20 7946 0910",
-            "whatsapp": "+44 7700 900143",
-            "email": "julian@luxuryestates.com"
-          }
-        }
+        ]
       },
       {
         "id": "lake-como-grand-palazzo",
         "title": "Lake Como Grand Palazzo",
-        "price": "€2,650,000",
-        "priceNumeric": 2650000,
         "location": "Bellagio, Lake Como, Italy",
-        "countryCode": "IT",
         "propertiesCount": "112",
         "estatesCount": "16",
         "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
@@ -939,7 +1003,8 @@
             "alt": "Carrara marble master bath with panoramic lake view"
           }
         ],
-        "specs": [
+        "description": "Majestic neoclassical villa on the Bellagio shore of Lake Como with botanical Italian gardens, private boathouse, century-old cypress trees, and breathtaking vistas of the Alpine foothills. Includes restored frescoed salons, detached guest house, and private stone dock.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -966,9 +1031,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "Majestic neoclassical villa on the Bellagio shore of Lake Como with botanical Italian gardens, private boathouse, century-old cypress trees, and breathtaking vistas of the Alpine foothills. Includes restored frescoed salons, detached guest house, and private stone dock.",
-        "commonNote": "Includes historic Italian heritage preservation certification and private water rights.",
-        "features": [
+        "amenities": [
           "Private Boathouse & Dock",
           "Botanical Italian Gardens",
           "Original Frescoed Ceilings",
@@ -978,44 +1041,65 @@
           "Underground Wine Cellar",
           "Private Helicopter Landing Lawn"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-lake-como-palazzo",
+          "name": "Neoclassical Palazzo & Boathouse",
+          "size": "9,800 sq ft",
+          "bedrooms": 6,
+          "bathrooms": 7,
+          "ceilingHeight": "15.0 ft",
+          "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+          "description": "Frescoed grand reception hall, detached lakeside guest villa, and private covered stone boathouse."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-lc-1",
-            "title": "Lake Como Palazzo Heritage Presentation",
-            "size": "34.20 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Milan Malpensa Airport",
+            "category": "Airport",
+            "distance": "48 miles",
+            "time": "55 mins drive"
           },
           {
-            "id": "att-lc-2",
-            "title": "Private Boathouse & Pier Specifications",
-            "size": "14.50 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Bellagio Private Stone Pier",
+            "category": "Marina",
+            "distance": "0.2 miles",
+            "time": "3 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "Mistral Michelin Restaurant",
+            "category": "Dining",
+            "distance": "0.9 miles",
+            "time": "12 mins walk"
+          },
+          {
+            "id": "np-school",
+            "name": "International School of Como",
+            "category": "Education",
+            "distance": "18 miles",
+            "time": "30 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Via Garibaldi Artisan Boutiques",
+            "category": "Shopping",
+            "distance": "0.8 miles",
+            "time": "10 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Villa d'Este Wellness Spa",
+            "category": "Wellness",
+            "distance": "12 miles",
+            "time": "20 mins boat"
           }
-        ],
-        "agent": {
-          "name": "Sophia Laurent",
-          "role": "Chief Strategy & European Heritage Partner",
-          "avatar": "/images/testimonial-sarah.jpg",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+39 031 950 123",
-            "mobile": "+39 340 123 4567",
-            "fax": "+39 031 950 120",
-            "whatsapp": "+39 340 123 4567",
-            "email": "sophia@luxuryestates.com"
-          }
-        }
+        ]
       },
       {
         "id": "st-moritz-alpine-chalet",
         "title": "St. Moritz Alpine Chalet",
-        "price": "CHF 3,900,000",
-        "priceNumeric": 3900000,
         "location": "Via Serlas, St. Moritz, Switzerland",
-        "countryCode": "CH",
         "propertiesCount": "74",
         "estatesCount": "12",
         "imageUrl": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
@@ -1054,7 +1138,8 @@
             "alt": "Private ski-in ski-out access and evening sunset deck"
           }
         ],
-        "specs": [
+        "description": "Exceptional ski-in / ski-out timber and stone chalet in prestigious St. Moritz with soaring timber beams, panoramic Engadin valley views, private heated ski room, and indoor Nordic wellness spa. Masterfully engineered with geothermal climate systems.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -1081,9 +1166,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "Exceptional ski-in / ski-out timber and stone chalet in prestigious St. Moritz with soaring timber beams, panoramic Engadin valley views, private heated ski room, and indoor Nordic wellness spa. Masterfully engineered with geothermal climate systems.",
-        "commonNote": "Full Lex Koller authorization for non-Swiss international purchasers.",
-        "features": [
+        "amenities": [
           "Direct Ski-In / Ski-Out",
           "Indoor Nordic Spa & Sauna",
           "Heated Ski & Gear Room",
@@ -1093,44 +1176,65 @@
           "Wine Tasting Vault",
           "Triple Heated Garage"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-st-moritz-chalet",
+          "name": "Ski-In Ski-Out Timber Chalet",
+          "size": "6,900 sq ft",
+          "bedrooms": 5,
+          "bathrooms": 5,
+          "ceilingHeight": "14.0 ft",
+          "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+          "description": "Exposed timber beams, central alpine fireplace, heated ski room, and indoor Nordic cedar spa."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-sm-1",
-            "title": "St. Moritz Ski Chalet Presentation",
-            "size": "26.30 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Samedan Private Jet Airport",
+            "category": "Airport",
+            "distance": "4.5 miles",
+            "time": "10 mins drive"
           },
           {
-            "id": "att-sm-2",
-            "title": "Swiss Geothermal Specs & Floorplans",
-            "size": "17.10 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Corviglia Ski Lift Terminal",
+            "category": "Marina",
+            "distance": "0.1 miles",
+            "time": "2 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "Badrutt's Palace Dining",
+            "category": "Dining",
+            "distance": "0.8 miles",
+            "time": "4 mins drive"
+          },
+          {
+            "id": "np-school",
+            "name": "Lyceum Alpinum Zuoz",
+            "category": "Education",
+            "distance": "9.2 miles",
+            "time": "15 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Via Serlas Luxury Shopping",
+            "category": "Shopping",
+            "distance": "0.7 miles",
+            "time": "8 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Palace Wellness & Spa",
+            "category": "Wellness",
+            "distance": "0.8 miles",
+            "time": "4 mins drive"
           }
-        ],
-        "agent": {
-          "name": "Marcus Cole",
-          "role": "Lead Architectural Designer & Alpine Specialist",
-          "avatar": "/images/review-marcus.jpg",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+41 81 833 4455",
-            "mobile": "+41 79 123 4567",
-            "fax": "+41 81 833 4450",
-            "whatsapp": "+41 79 123 4567",
-            "email": "marcus@luxuryestates.com"
-          }
-        }
+        ]
       },
       {
         "id": "french-riviera-sunset-villa",
         "title": "French Riviera Sunset Villa",
-        "price": "€3,400,000",
-        "priceNumeric": 3400000,
         "location": "Cap d'Antibes, French Riviera, France",
-        "countryCode": "FR",
         "propertiesCount": "135",
         "estatesCount": "22",
         "imageUrl": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
@@ -1169,7 +1273,8 @@
             "alt": "Private cliffside garden gazebo and olive trees"
           }
         ],
-        "specs": [
+        "description": "Perched on the prime crest of Cap d'Antibes, this sun-drenched architectural villa offers uninterrupted Mediterranean sunset horizons, minimalist floor-to-ceiling glass walls, expansive pool deck, and centuries-old private olive groves.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -1196,9 +1301,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "Perched on the prime crest of Cap d'Antibes, this sun-drenched architectural villa offers uninterrupted Mediterranean sunset horizons, minimalist floor-to-ceiling glass walls, expansive pool deck, and centuries-old private olive groves.",
-        "commonNote": "Offered fully furnished with custom designer French and Italian bespoke furniture.",
-        "features": [
+        "amenities": [
           "Unobstructed Sunset Views",
           "Infinity Edge Heated Pool",
           "Ancient Olive Groves",
@@ -1208,44 +1311,65 @@
           "Automated Solar Sunshades",
           "Direct Beach Trail"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-french-riviera-villa",
+          "name": "Cap d'Antibes Hillside Sanctuary",
+          "size": "6,200 sq ft",
+          "bedrooms": 4,
+          "bathrooms": 4.5,
+          "ceilingHeight": "13.0 ft",
+          "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+          "description": "Cantilevered infinity deck, floor-to-ceiling glass pavilions, and private Mediterranean olive grove."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-fr-1",
-            "title": "Cap d Antibes Villa Dossier",
-            "size": "27.80 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Nice Côte d'Azur Airport",
+            "category": "Airport",
+            "distance": "12.5 miles",
+            "time": "22 mins drive"
           },
           {
-            "id": "att-fr-2",
-            "title": "Architectural Plot & Survey Certificate",
-            "size": "15.30 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Port Vauban Yacht Marina",
+            "category": "Marina",
+            "distance": "2.1 miles",
+            "time": "6 mins drive"
+          },
+          {
+            "id": "np-dining",
+            "name": "Eden-Roc Restaurant",
+            "category": "Dining",
+            "distance": "0.9 miles",
+            "time": "3 mins drive"
+          },
+          {
+            "id": "np-school",
+            "name": "Centre International de Valbonne",
+            "category": "Education",
+            "distance": "6.4 miles",
+            "time": "14 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Boulevard de la Croisette",
+            "category": "Shopping",
+            "distance": "6.8 miles",
+            "time": "15 mins drive"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Cap d'Antibes Tennis Club",
+            "category": "Wellness",
+            "distance": "0.8 miles",
+            "time": "2 mins drive"
           }
-        ],
-        "agent": {
-          "name": "Camille Laurent",
-          "role": "Côte d'Azur Luxury Specialist",
-          "avatar": "/images/team-ana.png",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+33 4 93 61 22 33",
-            "mobile": "+33 6 88 99 00 11",
-            "fax": "+33 4 93 61 22 30",
-            "whatsapp": "+33 6 88 99 00 11",
-            "email": "camille@dreamsluxury.com"
-          }
-        }
+        ]
       },
       {
         "id": "tokyo-imperial-sky-haven",
         "title": "Tokyo Imperial Sky Haven",
-        "price": "¥420,000,000",
-        "priceNumeric": 420000000,
         "location": "Roppongi Hills, Tokyo, Japan",
-        "countryCode": "JP",
         "propertiesCount": "88",
         "estatesCount": "14",
         "imageUrl": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
@@ -1284,7 +1408,8 @@
             "alt": "Private rooftop zen garden with Mount Fuji vista"
           }
         ],
-        "specs": [
+        "description": "Sophisticated triplex residence towering above Roppongi Hills with private Japanese rooftop zen rock garden, unobstructed views of Tokyo Tower and Mount Fuji, Hinoki wood onsen tub, and discreet multi-tier biometric security.",
+        "OverView": [
           {
             "id": "bedrooms",
             "label": "Bedrooms",
@@ -1311,9 +1436,7 @@
             "icon": "Maximize2"
           }
         ],
-        "description": "Sophisticated triplex residence towering above Roppongi Hills with private Japanese rooftop zen rock garden, unobstructed views of Tokyo Tower and Mount Fuji, Hinoki wood onsen tub, and discreet multi-tier biometric security.",
-        "commonNote": "Full bilingual concierge service and secure subterranean robotic parking included.",
-        "features": [
+        "amenities": [
           "Rooftop Zen Rock Garden",
           "Tokyo Tower & Mt. Fuji Views",
           "Biometric Private Lift",
@@ -1323,44 +1446,183 @@
           "Sub-Zero Chef Kitchen",
           "24/7 Bilingual Concierge"
         ],
-        "attachments": [
+        "floorPlans": {
+          "id": "fp-tokyo-haven",
+          "name": "Roppongi Hills Triplex Penthouse",
+          "size": "5,400 sq ft",
+          "bedrooms": 3,
+          "bathrooms": 3.5,
+          "ceilingHeight": "12.5 ft",
+          "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
+          "description": "Rooftop zen rock garden, private cypress onsen bath, and panoramic vistas of Tokyo Tower and Mount Fuji."
+        },
+        "nearbyPlaces": [
           {
-            "id": "att-tk-1",
-            "title": "Tokyo Penthouse Architectural Spec",
-            "size": "29.40 kb",
-            "type": "pdf",
-            "url": "#"
+            "id": "np-airport",
+            "name": "Haneda International Airport",
+            "category": "Airport",
+            "distance": "11.2 miles",
+            "time": "18 mins drive"
           },
           {
-            "id": "att-tk-2",
-            "title": "Roppongi Hills Concierge Amenities Guide",
-            "size": "18.10 kb",
-            "type": "word",
-            "url": "#"
+            "id": "np-beach",
+            "name": "Tokyo Bay Yacht Terminal",
+            "category": "Marina",
+            "distance": "4.2 miles",
+            "time": "12 mins drive"
+          },
+          {
+            "id": "np-dining",
+            "name": "Sukiyabashi Jiro Dining",
+            "category": "Dining",
+            "distance": "2.4 miles",
+            "time": "8 mins drive"
+          },
+          {
+            "id": "np-school",
+            "name": "The American School in Japan",
+            "category": "Education",
+            "distance": "7.5 miles",
+            "time": "20 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Ginza Luxury Shopping District",
+            "category": "Shopping",
+            "distance": "2.1 miles",
+            "time": "7 mins drive"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Aman Spa Tokyo",
+            "category": "Wellness",
+            "distance": "2.8 miles",
+            "time": "9 mins drive"
+          }
+        ]
+      },
+      {
+        "id": "santorini-cliff-sanctuary",
+        "title": "Santorini Aegean Cliff Sanctuary",
+        "location": "Oia, Santorini 847 02, Greece",
+        "propertiesCount": "112",
+        "estatesCount": "18",
+        "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Whitewashed luxury Aegean cliffside villa in Santorini with caldera views",
+        "ctaText": "Explore Property",
+        "mainImage": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=85",
+        "galleryImages": [
+          {
+            "id": "st-1",
+            "url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Santorini caldera infinity pool terrace overlooking the Aegean sea"
+          },
+          {
+            "id": "st-2",
+            "url": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+            "alt": "Whitewashed minimalist cliffside lounge with ambient sea breeze"
           }
         ],
-        "agent": {
-          "name": "Kenji Takahashi",
-          "role": "Tokyo Metropolis Realty Director",
-          "avatar": "/images/team-darko.png",
-          "isVerified": true,
-          "listingsUrl": "/properties",
-          "contacts": {
-            "office": "+81 3 5555 0142",
-            "mobile": "+81 90 1234 5678",
-            "fax": "+81 3 5555 0140",
-            "whatsapp": "+81 90 1234 5678",
-            "email": "kenji@dreamsluxury.com"
+        "description": "Perched dramatically above the azure waters of the Santorini caldera, this Cycladic architectural marvel features private cave suites, heated infinity hydrotherapy pool, unobstructed sunset vistas, and secluded cliffside helicopter landing privileges.",
+        "OverView": [
+          {
+            "id": "bedrooms",
+            "label": "Bedrooms",
+            "value": "4",
+            "icon": "Bed"
+          },
+          {
+            "id": "bathrooms",
+            "label": "Bathrooms",
+            "value": "5",
+            "icon": "Bath"
+          },
+          {
+            "id": "garage",
+            "label": "Garage",
+            "value": "2",
+            "icon": "Car"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "value": "5100",
+            "unit": "sq ft",
+            "icon": "Maximize2"
           }
-        }
+        ],
+        "amenities": [
+          "Caldera Sunset Panorama",
+          "Private Heated Infinity Pool",
+          "Cave Suite Master Bedroom",
+          "Cycladic Vaulted Ceilings",
+          "Private Heliport Access",
+          "Temperature-Controlled Wine Cellar",
+          "Al Fresco Cliffside Dining",
+          "24/7 Dedicated Butler"
+        ],
+        "floorPlans": {
+          "id": "fp-santorini-cliff",
+          "name": "Caldera Cliffside Cave Villa",
+          "size": "5,100 sq ft",
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "ceilingHeight": "11.5 ft",
+          "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80",
+          "description": "Vaulted whitewashed cave suites, heated infinity hydrotherapy pool, and private sunset observation lounge."
+        },
+        "nearbyPlaces": [
+          {
+            "id": "np-airport",
+            "name": "Santorini International Airport",
+            "category": "Airport",
+            "distance": "10.5 miles",
+            "time": "20 mins drive"
+          },
+          {
+            "id": "np-beach",
+            "name": "Ammoudi Bay Yacht Pier",
+            "category": "Marina",
+            "distance": "0.6 miles",
+            "time": "8 mins walk"
+          },
+          {
+            "id": "np-dining",
+            "name": "1800-Floga Caldera Dining",
+            "category": "Dining",
+            "distance": "0.2 miles",
+            "time": "3 mins walk"
+          },
+          {
+            "id": "np-school",
+            "name": "International Academy of Thira",
+            "category": "Education",
+            "distance": "6.8 miles",
+            "time": "15 mins drive"
+          },
+          {
+            "id": "np-shopping",
+            "name": "Oia Marble Walking Promenade",
+            "category": "Shopping",
+            "distance": "0.1 miles",
+            "time": "2 mins walk"
+          },
+          {
+            "id": "np-wellness",
+            "name": "Canaves Spa Sanctuary",
+            "category": "Wellness",
+            "distance": "0.4 miles",
+            "time": "5 mins walk"
+          }
+        ]
       }
     ],
     "sectionTitles": {
       "overview": "Overview",
       "description": "Description",
-      "commonNote": "Properties Common Note",
-      "features": "Features",
-      "attachments": "Property Attachments"
+      "amenities": "Amenities & Features",
+      "floorPlans": "Floor Plans",
+      "location": "Location & Nearby Places"
     },
     "inquiryForm": {
       "namePlaceholder": "Name",
@@ -1371,20 +1633,6 @@
       "gdprText": "I consent to having this website store my submitted information so they can respond to my inquiry.",
       "submitButtonText": "Send Message",
       "successMessage": "Thank you! Agent Nathan James will contact you shortly regarding this property."
-    },
-    "agent": {
-      "name": "Nathan James",
-      "role": "Agent",
-      "avatar": "/images/agent-nathan.png",
-      "isVerified": true,
-      "listingsUrl": "/properties",
-      "contacts": {
-        "office": "1-222-333-4444",
-        "mobile": "1-234-458-7893",
-        "fax": "1-333-444-5555",
-        "whatsapp": "1-222-333-4433",
-        "email": "robot@inspirythemes.com"
-      }
     }
   },
   "services": {
@@ -1398,74 +1646,77 @@
     "servicesList": [
       {
         "id": "service-1",
-        "title": "DESIGNING THE FUTURE OF LIVING",
+        "title": "Designing The Future Of Living",
         "lines": [
-          "DESIGNING",
-          "THE FUTURE",
-          "OF LIVING"
+          "DESIGNING THE FUTURE OF LIVING"
         ],
-        "subtitle": "Architectural Masterworks",
-        "image": "/images/service-isometric-1.png"
+        "subtitle": "Architectural Masterworks & Sustainable Sanctuaries",
+        "year": "2026",
+        "image": "/images/service-villa.jpg"
       },
       {
         "id": "service-2",
-        "title": "BESPOKE LUXURY VILLA ARCHITECTURE",
+        "title": "Luxury Villa Architecture",
         "lines": [
-          "BESPOKE",
-          "LUXURY VILLA",
-          "ARCHITECTURE"
+          "LUXURY VILLA ARCHITECTURE"
         ],
-        "subtitle": "Custom Residence Design",
-        "image": "/images/service-isometric-2.png"
+        "subtitle": "Custom Residence Design & Structural Mastery",
+        "year": "2026",
+        "image": "/images/service-chalet.jpg"
       },
       {
         "id": "service-3",
-        "title": "WATERFRONT SANCTUARY LIVING",
+        "title": "Waterfront Sanctuary Living",
         "lines": [
-          "WATERFRONT",
-          "SANCTUARY",
-          "LIVING"
+          "WATERFRONT SANCTUARY LIVING"
         ],
-        "subtitle": "Private Yacht Marinas",
-        "image": "/images/service-isometric-3.png"
+        "subtitle": "Private Yacht Marinas & Coastal Estates",
+        "year": "2026",
+        "image": "/images/service-waterfront.jpg"
       },
       {
         "id": "service-4",
-        "title": "SKYLINE PENTHOUSE PORTFOLIO",
+        "title": "Skyline Penthouse Portfolio",
         "lines": [
-          "SKYLINE",
-          "PENTHOUSE",
-          "PORTFOLIO"
+          "SKYLINE PENTHOUSE PORTFOLIO"
         ],
-        "subtitle": "Metropolitan Towers",
-        "image": "/images/service-isometric-4.png"
+        "subtitle": "Metropolitan Towers & Panoramic Terraces",
+        "year": "2026",
+        "image": "/images/service-penthouse.jpg"
       },
       {
         "id": "service-5",
-        "title": "HIGH-DENSITY RESIDENTIAL TOWERS",
+        "title": "High-Density Residential Towers",
         "lines": [
-          "HIGH-DENSITY",
-          "RESIDENTIAL",
-          "TOWERS"
+          "HIGH RESIDENTIAL TOWERS"
         ],
-        "subtitle": "Urban Master Development",
-        "image": "/images/service-isometric-5.png"
+        "subtitle": "Urban Master Development & Landmark Arenas",
+        "year": "2026",
+        "image": "/images/service-mansion.jpg"
       },
       {
         "id": "service-6",
-        "title": "JAPANESE ZEN SANCTUARY MINIMALISM",
+        "title": "Japanese Zen Minimalism",
         "lines": [
-          "JAPANESE",
-          "ZEN SANCTUARY",
-          "MINIMALISM"
+          "JAPANESE ZEN MINIMALISM"
         ],
-        "subtitle": "Biophilic Balance",
-        "image": "/images/service-isometric-6.png"
+        "subtitle": "Biophilic Balance & Meditative Courtyards",
+        "year": "2026",
+        "image": "/images/service-japan.jpg"
       }
     ]
   },
   "team": {
     "title": "OUR TEAMS",
+    "badgeText": "Our Teams",
+    "badgeIcon": "Sparkles",
+    "headline": {
+      "prefix": "Meet Our",
+      "badge": "Curators",
+      "icon": "FourPointStar"
+    },
+    "connectButtonText": "Connect",
+    "connectButtonHref": "/contact",
     "clientRatingIcon": "Star",
     "members": [
       {
@@ -1655,12 +1906,10 @@
     "badgeText": "Client Testimonials",
     "badgeIcon": "Sparkles",
     "headline": {
-      "line1": "Loved By The",
-      "line2Prefix": "Prestige",
+      "line2Prefix": "Loved By",
       "line2Badge": "Clients",
       "icon": "FourPointStar"
     },
-    "description": "A few words from the founders, marketers, and private homeowners we have curated sanctuaries with.",
     "testimonialsList": [
       {
         "id": "sarah-anderson",
@@ -1767,7 +2016,6 @@
     "headline": {
       "line1": "Private",
       "line2Badge": "Concierge",
-      "line2Suffix": "& Advisory",
       "icon": "FourPointStar"
     },
     "privateOffice": {
@@ -1797,7 +2045,7 @@
     "form": {
       "title": "Direct Advisory Inquiry",
       "subtitle": "Submit your private inquiry. Our Managing Partners will respond discreetly within 24 hours.",
-      "submitButton": "Transmit Confidential Request"
+      "submitButton": "Submit"
     }
   },
   "enquiryNow": {
@@ -1806,85 +2054,19 @@
     "headline": {
       "line1": "Exclusive",
       "line2Badge": "Enquiry",
-      "line2Suffix": "& Advisory",
       "icon": "FourPointStar"
     },
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
     "imageAlt": "Ultra-luxury modern architectural mansion with illuminated infinity pool",
-    "curatedBadge": "Curated Masterwork",
-    "estateTitle": "The Bel Air Modernist Promontory",
-    "estateLocation": "Bel Air & Beverly Hills, CA",
     "form": {
       "title": "Direct Private Inquiry",
       "subtitle": "Fill out your acquisition details below. Our senior estate directors will get in touch with discreet speed.",
-      "submitButton": "Submit Private Enquiry"
-    },
-    "countries": [
-      {
-        "code": "US",
-        "name": "United States",
-        "dialCode": "+1",
-        "flag": "🇺🇸"
-      },
-      {
-        "code": "GB",
-        "name": "United Kingdom",
-        "dialCode": "+44",
-        "flag": "🇬🇧"
-      },
-      {
-        "code": "AE",
-        "name": "United Arab Emirates",
-        "dialCode": "+971",
-        "flag": "🇦🇪"
-      },
-      {
-        "code": "FR",
-        "name": "France",
-        "dialCode": "+33",
-        "flag": "🇫🇷"
-      },
-      {
-        "code": "MC",
-        "name": "Monaco",
-        "dialCode": "+377",
-        "flag": "🇲🇨"
-      },
-      {
-        "code": "IN",
-        "name": "India",
-        "dialCode": "+91",
-        "flag": "🇮🇳"
-      },
-      {
-        "code": "CH",
-        "name": "Switzerland",
-        "dialCode": "+41",
-        "flag": "🇨🇭"
-      },
-      {
-        "code": "CA",
-        "name": "Canada",
-        "dialCode": "+1",
-        "flag": "🇨🇦"
-      },
-      {
-        "code": "AU",
-        "name": "Australia",
-        "dialCode": "+61",
-        "flag": "🇦🇺"
-      },
-      {
-        "code": "DE",
-        "name": "Germany",
-        "dialCode": "+49",
-        "flag": "🇩🇪"
-      }
-    ]
+      "submitButton": "Submit "
+    }
   },
   "gallery": {
-    "title": "Curated Private",
-    "badgeText": "Architectural Real Estate",
+    "title": "Architectural",
+    "badgeText": "Real Estate",
     "badgeIcon": "Sparkles",
     "highlightWord": "Masterworks",
     "headlineIcon": "FourPointStar",
@@ -2181,11 +2363,9 @@
   "clients": {
     "badgeText": "ESTEEMED PARTNERS",
     "headline": {
-      "line1": "Institutional",
-      "line2Badge": "Partners",
-      "line2Suffix": "& Collaborators"
+      "line1": "Our",
+      "line2Badge": "Partners"
     },
-    "description": "We take pride in our enduring relationships with premier global enterprises, institutional developers, and leading real estate networks.",
     "clientsList": [
       {
         "id": 1,
@@ -2238,9 +2418,9 @@
     },
     "bookingCard": {
       "avatar": "/images/team-brian.png",
-      "title": "Book a 15 min call",
+      "title": "Book Appointment",
       "description": "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
-      "buttonText": "Book a Free Call",
+      "buttonText": "Enquiry Now",
       "buttonHref": "/enquiry-now"
     },
     "items": [

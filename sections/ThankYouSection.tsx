@@ -39,7 +39,7 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
   ];
 
   return (
-    <section className="relative w-full min-h-[80vh] bg-[#f4f4f2] px-6 md:px-12 py-16 sm:py-20 md:py-24 font-sans select-none flex items-center justify-center">
+    <section className="relative w-full min-h-[80vh] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none flex items-center justify-center">
       {/* Background ambient glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_25%,rgba(37,99,235,0.08),transparent)] pointer-events-none" />
 

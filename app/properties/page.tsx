@@ -19,15 +19,13 @@ export default function PropertiesPage() {
                 title={properties.pageTitle || properties.badgeText}
                 subtitle={properties.pageSubtitle || properties.description}
             />
-            <section
-                className="relative w-full bg-[#f4f4f2] text-[#11131a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
-            >
+            <section className="relative w-full text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200">
                 {/* Subtle ambient light glow */}
                 <div className="absolute top-0 right-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
                 <div className="relative mx-auto max-w-7xl w-full">
                     {/* Section Header */}
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-8">
+                    <div className="mb-8 sm:mb-10">
                         <div>
                             <motion.div
                                 initial={propertiesAnimations.eyebrow.initial}
@@ -48,9 +46,6 @@ export default function PropertiesPage() {
                                 className="text-4xl sm:text-5xl md:text-[56px] font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase"
                             >
                                 <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-                                    <span>{properties.headline.line1}</span>
-                                </div>
-                                <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                                     <span>{properties.headline.line2Prefix}</span>
                                     <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.35)] select-none">
                                         <span className="inline-block skew-x-14 md:skew-x-18">
@@ -68,28 +63,17 @@ export default function PropertiesPage() {
                                 </div>
                             </motion.h2>
                         </div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
-                        >
-                            <p className="text-[#52525b] text-sm sm:text-base max-w-sm leading-relaxed">
-                                {properties.description}
-                            </p>
-                        </motion.div>
                     </div>
 
                     {/* Properties Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-5">
                         {propertiesList.map((property) => (
                             <PropertiesCard
                                 key={property.id}
+                                property={property}
                                 id={property.id}
                                 title={property.title}
-                                countryCode={property.countryCode}
+                                location={property.location}
                                 propertiesCount={property.propertiesCount}
                                 estatesCount={property.estatesCount}
                                 imageUrl={property.imageUrl}

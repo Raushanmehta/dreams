@@ -8,7 +8,6 @@ export default function AboutPage() {
         <main>
             <BreadCrumb title="About Us" subtitle=" Pioneering extraordinary architecture and bespoke sanctuaries across global capitals." />
             <AboutSection />
-            <TeamSection />
             <WhyChooseUsSection />
         </main>
     );

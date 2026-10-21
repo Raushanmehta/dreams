@@ -46,12 +46,12 @@ export default function WhyChooseUsSection(): React.JSX.Element {
 
   return (
     <section
-      className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-neutral-900 select-none overflow-hidden border-t border-black/[0.08]"
+      className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20  font-sans text-neutral-900 select-none overflow-hidden border-t border-black/[0.08]"
     >
       {/* Ambient background accent */}
       <div className="absolute top-1/4 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         {/* Left Column: Asymmetrical Rounded Image with 3D Offset Cross */}
         <motion.div
           variants={whyChooseUsAnimations.image.variants}
@@ -61,7 +61,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
           transition={whyChooseUsAnimations.image.transition}
           className="lg:col-span-5 relative flex justify-center lg:justify-start"
         >
-          <div className="relative w-full max-w-[420px] aspect-[3.7/4.6]">
+          <div className="relative w-full max-w-[430px] md:max-w-full lg:max-w-[465px] aspect-[3.7/4.5]">
             {/* Main Rounded Photo */}
             <div className="relative h-full w-full overflow-hidden rounded-tl-[80px] sm:rounded-tl-[100px] rounded-br-[80px] sm:rounded-br-[100px] rounded-tr-2xl rounded-bl-2xl shadow-[0_24px_60px_rgba(0,0,0,0.14)] border border-black/[0.06]">
               <Image

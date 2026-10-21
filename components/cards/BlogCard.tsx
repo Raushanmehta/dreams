@@ -13,7 +13,7 @@ export interface BlogPost {
     excerpt: string;
     category: string;
     date: string;
-    readTime: string;
+    readTime?: string;
     image: string;
     isLatest?: boolean;
 }
@@ -95,9 +95,9 @@ export default function BlogCard({ post }: BlogCardProps) {
                             {post.category}
                         </span>
 
-                        {/* Date & Read Time */}
+                        {/* Date */}
                         <span className="text-[11px] sm:text-xs text-[#71717a] font-medium tracking-tight whitespace-nowrap">
-                            {post.date} &bull; {post.readTime}
+                            {post.date}
                         </span>
                     </div>
 

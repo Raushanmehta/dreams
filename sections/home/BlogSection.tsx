@@ -41,12 +41,12 @@ export default function BlogSection() {
 
   return (
     <section
-      className="relative w-full isolate bg-[#f4f4f2] text-[#11131a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
+      className="relative w-full isolate bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
       style={{ backgroundColor: "#ffffff" }}
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header: Styled cleanly on white background */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 ">
           <div>
             {/* Eyebrow */}
             <motion.div
@@ -86,19 +86,6 @@ export default function BlogSection() {
               </div>
             </motion.h2>
           </div>
-
-          {/* Right Column: Paragraph matching the reference image */}
-          <motion.div
-            initial={blogAnimations.description.initial}
-            whileInView={blogAnimations.description.whileInView}
-            viewport={blogAnimations.description.viewport}
-            transition={blogAnimations.description.transition}
-            className="max-w-md"
-          >
-            <p className="text-[#52525b] text-sm sm:text-base leading-relaxed">
-              {blog.description}
-            </p>
-          </motion.div>
         </div>
 
         {/* Shadcn Embla Carousel: Smooth 2-card sliding on desktop, 1-card on mobile */}
@@ -134,9 +121,8 @@ export default function BlogSection() {
             whileHover={canScrollPrev ? blogAnimations.prevHover : {}}
             whileTap={canScrollPrev ? blogAnimations.tap : {}}
             aria-label="Previous articles"
-            className={`group flex items-center gap-0 select-none cursor-pointer py-3 transition-opacity ${
-              canScrollPrev ? "opacity-100" : "opacity-35 cursor-not-allowed"
-            }`}
+            className={`group flex items-center gap-0 select-none cursor-pointer py-3 transition-opacity ${canScrollPrev ? "opacity-100" : "opacity-35 cursor-not-allowed"
+              }`}
           >
             {/* Arrow Head */}
             <ArrowLeftIcon className="w-5 h-5 text-zinc-900 group-hover:text-[#2563EB] transition-colors transition-transform group-hover:-translate-x-1.5" />
@@ -152,9 +138,8 @@ export default function BlogSection() {
             whileHover={canScrollNext ? blogAnimations.nextHover : {}}
             whileTap={canScrollNext ? blogAnimations.tap : {}}
             aria-label="Next articles"
-            className={`group flex items-center gap-0 select-none cursor-pointer py-3 transition-opacity ${
-              canScrollNext ? "opacity-100" : "opacity-35 cursor-not-allowed"
-            }`}
+            className={`group flex items-center gap-0 select-none cursor-pointer py-3 transition-opacity ${canScrollNext ? "opacity-100" : "opacity-35 cursor-not-allowed"
+              }`}
           >
             {/* Long Horizontal Extension Line */}
             <span className="w-16 sm:w-24 md:w-28 h-[1.5px] bg-zinc-300 group-hover:bg-[#2563EB] transition-colors" />

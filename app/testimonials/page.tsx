@@ -21,13 +21,13 @@ export default function TestimonialsPage(): React.JSX.Element {
             />
 
             {/* Testimonials section */}
-            <section className="relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
+            <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
                 {/* Background ambient glow */}
                 <div className="absolute top-1/4 left-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
                 <div className="relative mx-auto max-w-7xl w-full">
                     {/* Section header container */}
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-8">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10">
                         <div>
                             {/* Eyebrow badge */}
                             <motion.div
@@ -35,9 +35,9 @@ export default function TestimonialsPage(): React.JSX.Element {
                                 whileInView={testimonialAnimations.eyebrow.whileInView}
                                 viewport={testimonialAnimations.eyebrow.viewport}
                                 transition={testimonialAnimations.eyebrow.transition}
-                                className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-semibold text-[#11131a] mb-4"
+                                className="inline-flex items-center gap-2 uppercase tracking-widest font-semibold text-[#11131a] mb-3"
                             >
-                                <Sparkles className="h-4 w-4 text-[#2563EB]" />
+                                <Sparkles className="h-5 w-5 text-[#2563EB]" />
                                 <span>{testimonials.badgeText}</span>
                             </motion.div>
 
@@ -49,9 +49,11 @@ export default function TestimonialsPage(): React.JSX.Element {
                                 transition={testimonialAnimations.headline.transition}
                                 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1a1a1a] leading-[1.15] uppercase"
                             >
-                                <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-                                    <span>{testimonials.headline.line1}</span>
-                                </div>
+                                {(testimonials.headline as { line1?: string }).line1 && (
+                                    <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
+                                        <span>{(testimonials.headline as { line1?: string }).line1}</span>
+                                    </div>
+                                )}
                                 <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                                     <span>{testimonials.headline.line2Prefix}</span>
                                     {/* Tilted badge */}
@@ -73,17 +75,19 @@ export default function TestimonialsPage(): React.JSX.Element {
                         </div>
 
                         {/* Description container */}
-                        <motion.div
-                            initial={testimonialAnimations.description.initial}
-                            whileInView={testimonialAnimations.description.whileInView}
-                            viewport={testimonialAnimations.description.viewport}
-                            transition={testimonialAnimations.description.transition}
-                            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
-                        >
-                            <p className="text-zinc-600 text-sm sm:text-base max-w-sm leading-relaxed">
-                                {testimonials.description}
-                            </p>
-                        </motion.div>
+                        {(testimonials as { description?: string }).description && (
+                            <motion.div
+                                initial={testimonialAnimations.description.initial}
+                                whileInView={testimonialAnimations.description.whileInView}
+                                viewport={testimonialAnimations.description.viewport}
+                                transition={testimonialAnimations.description.transition}
+                                className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                            >
+                                <p className="text-zinc-600 text-sm sm:text-base max-w-sm leading-relaxed">
+                                    {(testimonials as { description?: string }).description}
+                                </p>
+                            </motion.div>
+                        )}
                     </div>
 
                     {/* Testimonials grid */}

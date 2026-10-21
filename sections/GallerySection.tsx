@@ -107,7 +107,7 @@ export default function GallerySection({
   return (
     <section
       className={cn(
-        "relative w-full bg-[#f4f4f2] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80",
+        "relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80",
         className
       )}
     >
@@ -115,7 +115,7 @@ export default function GallerySection({
         {/* ========================================================= */}
         {/* SECTION HEADER: Matches Dreams* Signature Brand Theme    */}
         {/* ========================================================= */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10">
           <div>
             {/* Eyebrow */}
             <motion.div
@@ -139,9 +139,6 @@ export default function GallerySection({
             >
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
                 <span>{title}</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-2.5">
-                <span>Architecture &amp;</span>
                 {/* Tilted Sliced Background Badge in #2563EB */}
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">

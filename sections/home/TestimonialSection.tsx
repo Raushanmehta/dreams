@@ -18,12 +18,12 @@ export interface TestimonialsSectionData {
   badgeText: string;
   badgeIcon?: string;
   headline: {
-    line1: string;
+    line1?: string;
     line2Prefix?: string;
     line2Badge: string;
     icon?: string;
   };
-  description: string;
+  description?: string;
   testimonialsList: Testimonial[];
 }
 
@@ -78,14 +78,14 @@ export default function TestimonialSection({
   }, [isPaused]);
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] px-6 md:px-12 py-14 sm:py-18 md:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
+    <section className="relative w-full bg-[#0a0a0a]  px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
       {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 -z-10 h-[450px] w-[450px] rounded-full bg-blue-950/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-emerald-950/20 blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl w-full">
         {/* Section header container */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 ">
           <div>
             {/* Eyebrow badge */}
             <motion.div
@@ -129,19 +129,6 @@ export default function TestimonialSection({
               </div>
             </motion.h2>
           </div>
-
-          {/* Description container */}
-          <motion.div
-            initial={testimonialAnimations.description.initial}
-            whileInView={testimonialAnimations.description.whileInView}
-            viewport={testimonialAnimations.description.viewport}
-            transition={testimonialAnimations.description.transition}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
-          >
-            <p className="text-zinc-400 text-sm sm:text-base max-w-sm leading-relaxed">
-              {testimonials.description}
-            </p>
-          </motion.div>
         </div>
 
         {/* Carousel container */}

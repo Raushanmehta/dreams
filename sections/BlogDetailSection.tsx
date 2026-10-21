@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, MessageSquare, Sparkles } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { FourPointStarIcon } from "@/components/icons";
-import AuthorAboutCard, { type AuthorProfile } from "@/components/cards/AuthorAboutCard";
 import YouMayLikeGrid, { type RelatedPost } from "@/components/cards/YouMayLikeGrid";
 import PromotionalBannerCard from "@/components/cards/PromotionalBannerCard";
 import { blogDetailAnimations } from "@/utils/animation/blog-detail.animation";
@@ -52,9 +54,14 @@ export interface BlogSiteSchema {
     badge: string;
     icon: string;
   };
-  description: string;
+  description?: string;
   blogPosts?: BlogDetailArticleData[];
-  author?: AuthorProfile;
+  author?: {
+    name?: string;
+    role?: string;
+    bio?: string;
+    avatar?: string;
+  };
   promotionalBanner?: {
     badge?: string;
     title?: string;
@@ -67,14 +74,12 @@ export interface BlogSiteSchema {
 export interface BlogDetailSectionProps {
   postSlug?: string;
   customArticle?: Partial<BlogDetailArticleData>;
-  customAuthorProfile?: AuthorProfile;
   customRelatedPosts?: RelatedPost[];
 }
 
 export default function BlogDetailSection({
   postSlug,
   customArticle,
-  customAuthorProfile,
   customRelatedPosts,
 }: BlogDetailSectionProps) {
   // Extract all data directly from site.json
@@ -107,7 +112,7 @@ export default function BlogDetailSection({
     ...customArticle,
   };
 
-  // Build related posts for sidebar directly from site.json blogPosts
+  // Build recent posts for sidebar directly from site.json blogPosts
   const relatedPosts: RelatedPost[] = customRelatedPosts || allBlogPosts
     .filter((p) => p.id !== article.id && p.slug !== postSlug)
     .slice(0, 5)
@@ -115,43 +120,98 @@ export default function BlogDetailSection({
       id: p.id,
       title: p.title,
       category: p.category,
+      date: p.date,
       categoryBadgeClass:
         idx % 3 === 0
           ? "bg-[#FFF3E0] text-[#D97706]"
           : idx % 3 === 1
-          ? "bg-[#FEEAE6] text-[#EA580C]"
-          : "bg-[#FEF2F2] text-[#E11D48]",
+            ? "bg-[#FEEAE6] text-[#EA580C]"
+            : "bg-[#FEF2F2] text-[#E11D48]",
       image: p.image,
       href: `/blog/${p.slug || p.id}`,
     }));
 
-  // Build author profile from site.json
-  const authorProfile: AuthorProfile = customAuthorProfile || blogData.author || {
-    name: "Erin Carter",
-    role: "Senior Real Estate Advisor & Curator",
-    bio: "Meet Erin Carter, an esteemed luxury property advisor and design curator at Dreams.",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    signatureText: "Carter",
-  };
 
   // Build promotional banner from site.json
   const promotionalBanner = blogData.promotionalBanner || {};
 
+  // References for sticky column pinning with GSAP ScrollSmoother
+  const mainColRef = useRef<HTMLDivElement | null>(null);
+  const sidebarContainerRef = useRef<HTMLDivElement | null>(null);
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    let pinTrigger: ScrollTrigger | null = null;
+    const mm = gsap.matchMedia();
+
+    const setupPin = () => {
+      mm.add("(min-width: 1024px)", () => {
+        if (!sidebarRef.current || !mainColRef.current) return;
+
+        if (pinTrigger) {
+          pinTrigger.kill();
+          pinTrigger = null;
+        }
+
+        const smoother = ScrollSmoother.get();
+        const hasSmoothContent = Boolean(document.querySelector("#smooth-content"));
+
+        pinTrigger = ScrollTrigger.create({
+          trigger: sidebarRef.current,
+          start: "top 90px",
+          end: () => {
+            if (!mainColRef.current || !sidebarRef.current) return "+=0";
+            const diff = mainColRef.current.offsetHeight - sidebarRef.current.offsetHeight;
+            return `+=${Math.max(0, diff)}`;
+          },
+          pin: true,
+          pinSpacing: false,
+          pinType: (smoother || hasSmoothContent) ? "transform" : "fixed",
+          invalidateOnRefresh: true,
+        });
+
+        return () => {
+          if (pinTrigger) {
+            pinTrigger.kill();
+            pinTrigger = null;
+          }
+        };
+      });
+
+      ScrollTrigger.refresh();
+    };
+
+    // Small delay ensures ScrollSmoother in parent layout is fully initialized
+    const timer = setTimeout(setupPin, 120);
+    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 500);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(refreshTimer);
+      if (pinTrigger) pinTrigger.kill();
+      mm.revert();
+    };
+  }, []);
+
   return (
-    <section className="relative w-full isolate bg-[#f4f4f2] text-[#11131a] px-6 md:px-12 py-12 sm:py-16 md:py-20 font-sans select-none border-t border-zinc-200">
+    <section className="relative w-full isolate  text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200">
       <div className="max-w-7xl mx-auto w-full">
         {/* Main 2-Column Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* ============================================================== */}
           {/* LEFT COLUMN: Main Blog Post Content (8 Cols)                   */}
           {/* ============================================================== */}
-          <main className="lg:col-span-8 flex flex-col">
+          <main ref={mainColRef} className="lg:col-span-8 flex flex-col">
             {/* Eyebrow Badge matching site theme */}
             <motion.div
               variants={blogDetailAnimations.fadeUp}
               initial="hidden"
               animate="visible"
-              className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] font-semibold text-xs sm:text-sm mb-3.5"
+              className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] font-semibold  mb-3.5"
             >
               <Sparkles className="h-5 w-5 text-[#2563EB]" />
               <span>{article.badgeText}</span>
@@ -162,7 +222,7 @@ export default function BlogDetailSection({
               variants={blogDetailAnimations.fadeUp}
               initial="hidden"
               animate="visible"
-              className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase mb-5 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase mb-3 sm:mb-4"
             >
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
                 <span>{article.headlinePrefix}</span>
@@ -191,7 +251,7 @@ export default function BlogDetailSection({
               variants={blogDetailAnimations.fadeUp}
               initial="hidden"
               animate="visible"
-              className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-zinc-200/80 mb-4 sm:mb-5 bg-zinc-100"
+              className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-zinc-200/80  bg-zinc-100"
             >
               <Image
                 src={article.image}
@@ -204,49 +264,8 @@ export default function BlogDetailSection({
               />
             </motion.figure>
 
-            {/* 3. Meta Information Bar (Author, Date, Comments) */}
-            <motion.div
-              variants={blogDetailAnimations.fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="flex items-center gap-5 sm:gap-6 text-xs sm:text-[13px] text-zinc-500 pb-5 mb-7 sm:mb-8 border-b border-zinc-200/80"
-            >
-              {/* Author Avatar + Name */}
-              <div className="flex items-center gap-2.5">
-                <div className="relative h-7 w-7 rounded-full overflow-hidden border border-zinc-300 shadow-xs flex-shrink-0">
-                  <Image
-                    src={article.author?.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"}
-                    alt={article.author?.name || "Author"}
-                    fill
-                    sizes="28px"
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
-                <span className="font-bold text-[#11131a] text-sm">
-                  {article.author?.name}
-                </span>
-              </div>
-
-              {/* Date */}
-              <div className="flex items-center gap-1.5 text-zinc-500 font-medium">
-                <Calendar className="h-3.5 w-3.5 text-zinc-400" />
-                <time dateTime={article.date}>
-                  {article.date}
-                </time>
-              </div>
-
-              {/* Comments / Read Time */}
-              <div className="flex items-center gap-1.5 text-zinc-500 font-medium">
-                <MessageSquare className="h-3.5 w-3.5 text-zinc-400" />
-                <span>
-                  {article.commentsCountText}
-                </span>
-              </div>
-            </motion.div>
-
-            {/* 4. Article Body Content - Dynamic sections from site.json */}
-            <article className="prose prose-zinc max-w-none text-[#52525b] text-[15px] sm:text-[15.5px] leading-[1.8]">
+            {/* 3. Article Body Content - Dynamic sections from site.json */}
+            <article className="prose prose-zinc max-w-none text-[#52525b] text-[15px] sm:text-[15.5px] leading-[1.8] mt-3">
               {article.sections && article.sections.length > 0 ? (
                 article.sections.map((sec, idx) => (
                   <React.Fragment key={idx}>
@@ -257,11 +276,11 @@ export default function BlogDetailSection({
                       viewport={{ once: true }}
                       className={idx > 0 ? "pt-1" : ""}
                     >
-                      <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#11131a] tracking-tight mb-3 mt-6">
+                      <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#11131a] tracking-tight mb-3 mt-3">
                         {sec.subheading}
                       </h2>
                       {sec.paragraphs.map((para, pIdx) => (
-                        <p key={pIdx} className="mb-4">
+                        <p key={pIdx} className="">
                           {para}
                         </p>
                       ))}
@@ -274,7 +293,7 @@ export default function BlogDetailSection({
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="my-7 sm:my-8 rounded-2xl bg-white p-6 sm:p-8 md:p-9 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-zinc-200/80 relative not-italic"
+                        className="my-3 sm:my-4 rounded-2xl bg-white p-6 sm:p-8 md:p-9 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-zinc-200/80 relative not-italic"
                       >
                         <p className="text-base sm:text-lg lg:text-[19px] font-semibold text-[#11131a] leading-relaxed mb-3">
                           &ldquo;{article.quote.text}&rdquo;
@@ -293,17 +312,16 @@ export default function BlogDetailSection({
           </main>
 
           {/* ============================================================== */}
-          {/* RIGHT COLUMN: Sidebar (4 Cols)                                 */}
+          {/* RIGHT COLUMN: Sidebar (4 Cols) - STICKY                        */}
           {/* ============================================================== */}
-          <aside className="lg:col-span-4 flex flex-col gap-8 sm:gap-9 lg:sticky lg:top-24">
-            {/* 1. Author About Profile Card (From site.json blog.author) */}
-            <AuthorAboutCard author={authorProfile} />
+          <aside ref={sidebarContainerRef} className="lg:col-span-4 relative self-start w-full">
+            <div ref={sidebarRef} className="w-full flex flex-col gap-4 sm:gap-6 lg:sticky lg:top-0">
+              {/* 2. Recent Posts Grid (From site.json blog.blogPosts) */}
+              <YouMayLikeGrid title="Recent Posts" posts={relatedPosts} />
 
-            {/* 2. You May Like Grid (From site.json blog.blogPosts) */}
-            <YouMayLikeGrid posts={relatedPosts} />
-
-            {/* 3. Promotional Content Gradient Banner (From site.json blog.promotionalBanner) */}
-            <PromotionalBannerCard {...promotionalBanner} />
+              {/* 3. Promotional Content Gradient Banner (From site.json blog.promotionalBanner) */}
+              <PromotionalBannerCard {...promotionalBanner} />
+            </div>
           </aside>
         </div>
       </div>
@@ -311,4 +329,4 @@ export default function BlogDetailSection({
   );
 }
 
-export { AuthorAboutCard, YouMayLikeGrid, PromotionalBannerCard };
+export { YouMayLikeGrid, YouMayLikeGrid as RecentPostsGrid, PromotionalBannerCard };
