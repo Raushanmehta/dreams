@@ -162,7 +162,6 @@ function NavbarContent(): React.JSX.Element {
             </Link>
           </motion.div>
 
-          {/* Capsule divider element */}
           {!isScrolled && (
             <div className="w-[1px] h-3.5 bg-white/20 select-none pointer-events-none" />
           )}

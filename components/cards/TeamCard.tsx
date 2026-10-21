@@ -31,7 +31,7 @@ export interface TeamCardProps {
   connectButtonHref?: string;
 }
 
-// Ultra-smooth luxury cubic-bezier curve (similar to Apple iOS drawer physics)
+// Ultra smooth luxury cubic
 const easeSmooth = [0.32, 0.72, 0, 1] as const;
 
 const overlayVariants: Variants = {
@@ -154,7 +154,7 @@ export function TeamCard({
           className
         )}
       >
-        {/* Background Portrait Image with smooth zoom */}
+        {/* Background Portrait Image with */}
         <motion.div variants={imageVariants} className="absolute inset-0 w-full h-full">
           <Image
             src={member.image}
@@ -164,38 +164,36 @@ export function TeamCard({
             className="object-cover object-top"
             priority={index < 3}
           />
-          {/* Subtle Ambient Shadow Gradient for clean default text contrast */}
+          {/* Subtle Ambient Shadow Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
         </motion.div>
 
-        {/* Normal State: Name & Position shown at card bottom */}
+        {/* Normal State Name & */}
         <motion.div
           variants={bottomInfoVariants}
           className="absolute bottom-0 inset-x-0 p-5 sm:p-6 z-10 pointer-events-none"
         >
-          {/* Location chip */}
+          
           <div className="flex items-center gap-1.5 text-zinc-400 text-xs tracking-wider uppercase mb-1.5 font-medium">
             <MapPin className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
             <span className="truncate">{member.location}</span>
           </div>
 
-          {/* Member Name */}
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
             {member.name}
           </h3>
 
-          {/* Member Position */}
           <p className="text-xs sm:text-sm text-zinc-300 font-medium tracking-wide mt-1 uppercase">
             {member.position}
           </p>
         </motion.div>
 
-        {/* Hover State: Black background slides UP smoothly from bottom to top */}
+        {/* Hover State Black background */}
         <motion.div
           variants={overlayVariants}
           className="absolute inset-0 z-20 bg-black/95 sm:bg-black/95 p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md overflow-y-auto pointer-events-auto"
         >
-          {/* Header: Role Badge, Location, Name, Bio */}
+          {/* Header Role Badge, Location, */}
           <motion.div variants={contentVariants} className="flex-1 flex flex-col justify-center">
             <div className="flex items-center gap-1 text-zinc-400 text-xs">
               <MapPin className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
@@ -219,12 +217,12 @@ export function TeamCard({
             </p>
           </motion.div>
 
-          {/* Bottom Actions: Socials & Connect Button */}
+          {/* Bottom Actions Socials & */}
           <motion.div
             variants={actionsVariants}
             className="flex items-center justify-between gap-3 pt-3 border-t border-white/10 mt-auto"
           >
-            {/* Social Links */}
+            
             <div className="flex items-center gap-1.5">
               {member.socials.map((social) => (
                 <a

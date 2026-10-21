@@ -35,7 +35,7 @@ export default function NotFoundSection({ data = siteData.notFound }: NotFoundSe
 
       {/* Centered content wrapper */}
       <div className="relative z-10 max-w-4xl mx-auto w-full flex flex-col items-center text-center">
-        {/* Eyebrow badge */}
+        
         <div className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-semibold text-black mb-4">
           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-[#2563EB]" />
           <span>{data.badgeText}</span>
@@ -53,7 +53,6 @@ export default function NotFoundSection({ data = siteData.notFound }: NotFoundSe
           </span>
         </motion.div>
 
-        {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +79,6 @@ export default function NotFoundSection({ data = siteData.notFound }: NotFoundSe
           </span>
         </motion.h1>
 
-        {/* Subtitle description */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

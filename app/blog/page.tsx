@@ -20,10 +20,10 @@ export default function BlogsPage() {
             />
             <section className="relative w-full isolate text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200">
                 <div className="max-w-7xl mx-auto w-full">
-                    {/* Section Header */}
+                    
                     <div className="mb-8 sm:mb-10 text-left">
                         <div className="flex flex-col items-start text-left">
-                            {/* Eyebrow */}
+                            {/* Section eyebrow badge element */}
                             <motion.div
                                 initial={blogAnimations.eyebrow.initial}
                                 whileInView={blogAnimations.eyebrow.whileInView}
@@ -35,7 +35,7 @@ export default function BlogsPage() {
                                 <span>{blog.badgeText}</span>
                             </motion.div>
 
-                            {/* Stepped Title with #2563EB Sliced Badge and Spinning Star SVG */}
+                            {/* Stepped Title with #2563EB */}
                             <motion.h2
                                 initial={blogAnimations.headline.initial}
                                 whileInView={blogAnimations.headline.whileInView}
@@ -50,7 +50,7 @@ export default function BlogsPage() {
                                             {blog.headline.badge}
                                         </span>
                                     </span>
-                                    {/* SVG Rotating 4-point Sparkle */}
+                                    {/* SVG Rotating 4 point Sparkle */}
                                     <motion.span
                                         animate={blogAnimations.spin.animate}
                                         transition={blogAnimations.spin.transition}
@@ -63,7 +63,6 @@ export default function BlogsPage() {
                         </div>
                     </div>
 
-                    {/* Grid Container */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-5">
                         {posts.map((post) => (
                             <BlogCard key={post.id} post={post} />

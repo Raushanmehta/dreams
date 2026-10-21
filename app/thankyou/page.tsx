@@ -5,7 +5,7 @@ import siteData from "@/data/site.json";
 export default function ThankYouPage() {
     return (
         <main>
-            {/* Breadcrumb navigation */}
+            
             <BreadCrumb
                 title="Thank You"
                 subtitle="Thank you for contacting us. We will get back to you as soon as possible."
@@ -15,6 +15,5 @@ export default function ThankYouPage() {
         </main>
     );
 }
-
 
 7274025882

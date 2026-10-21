@@ -188,7 +188,6 @@ export default function Footer(): React.JSX.Element {
           </div>
         </motion.div>
 
-        {/* Horizontal divider line */}
         <div className="w-full border-t border-zinc-800/80 mb-6" />
 
         {/* Social copyright row */}

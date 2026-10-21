@@ -44,13 +44,13 @@ function renderHeroIcon(name: string, className = "w-4 h-4"): React.JSX.Element 
 }
 
 export default function HeroSection(): React.JSX.Element {
-  // All Hero Section data completely driven from data/site.json
+  // All Hero Section data
   const hero = siteData.hero as HeroData;
 
   return (
-    <section className="relative w-full min-h-screen bg-black p-4 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none">
-      {/* Framed Hero Canvas with Rounded Corners */}
-      <div className="relative w-full h-[calc(100vh-1.5rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+    <section className="relative w-full h-[85vh] lg:min-h-screen  bg-black p-4 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none">
+      {/* Framed Hero Canvas with */}
+      <div className="relative w-full h-[calc(85vh-1.5rem)] sm:h-[calc(850vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
         {/* Background Image from JSON */}
         <motion.div
           variants={heroAnimations.background.variants}
@@ -67,14 +67,14 @@ export default function HeroSection(): React.JSX.Element {
             sizes="100vw"
             className="object-cover object-center brightness-100 contrast-[1.02]"
           />
-          {/* Subtle bottom vignette to ensure ultra-sharp contrast for typography */}
+          {/* Subtle bottom vignette to */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/35 pointer-events-none" />
         </motion.div>
 
         {/* Bottom Content Area */}
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-12 lg:px-14 pb-6 sm:pb-8 md:pb-10 pt-24 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-12">
-          {/* Bottom Left: Huge Bold Branding Headline from JSON */}
+          {/* Bottom Left Huge Bold */}
           <motion.div
             variants={heroAnimations.headline.variants}
             initial="initial"
@@ -85,7 +85,7 @@ export default function HeroSection(): React.JSX.Element {
             <h1 className="flex flex-col text-[#EBE7DC] drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
               <span className="text-[32px] sm:text-[46px] md:text-[62px] lg:text-[76px] xl:text-[90px] font-bold tracking-[-0.035em] leading-[0.96] text-[#EBE7DC]/90 flex items-center flex-wrap gap-x-3 sm:gap-x-4">
                 <span>{hero.headline.prefix}</span>
-                {/* Tilted Sliced Background Badge with SVG Icon */}
+                {/* Tilted Sliced Background Badge */}
                 <span className="inline-flex items-center gap-2 sm:gap-2.5 shrink-0">
                   <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 md:px-7 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.5)] select-none">
                     <span className="inline-block skew-x-14 md:skew-x-18">
@@ -104,7 +104,7 @@ export default function HeroSection(): React.JSX.Element {
               </span>
               <span className="text-[76px] sm:text-[110px] md:text-[145px] lg:text-[170px] xl:text-[200px] leading-[0.84] font-bold tracking-[-0.04em] flex items-start">
                 <span>{hero.headline.main}</span>
-                {/* Spinning 6-point asterisk icon from components/icons folder */}
+                {/* Spinning 6 point asterisk */}
                 <motion.span
                   aria-hidden="true"
                   animate={heroAnimations.spin.animate}
@@ -117,7 +117,7 @@ export default function HeroSection(): React.JSX.Element {
             </h1>
           </motion.div>
 
-          {/* Bottom Right: CTA Button from JSON with Arrow Icon */}
+          {/* Bottom Right CTA Button */}
           <motion.div
             variants={heroAnimations.cta.variants}
             initial="initial"

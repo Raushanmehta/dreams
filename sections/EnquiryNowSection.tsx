@@ -55,11 +55,11 @@ export default function EnquiryNowSection(): React.JSX.Element {
   return (
     <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto w-full">
-        {/* ========================================================= */}
-        {/* SECTION HEADER: Matches Dreams* Brand Theme               */}
-        {/* ========================================================= */}
+        
+        {/* SECTION HEADER Matches Dreams */}
+        
         <div className="mb-8 sm:mb-10">
-          {/* Eyebrow badge */}
+          
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
             <span>{enquiryNow.badgeText}</span>
           </motion.div>
 
-          {/* Stepped Headline with signature tilted sliced blue badge */}
+          {/* Stepped Headline with signature */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   {enquiryNow.headline.line2Badge}
                 </span>
               </span>
-              {/* Rotating 4-point star SVG */}
+              {/* Rotating 4 point star SVG */}
               <motion.span
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -98,9 +98,8 @@ export default function EnquiryNowSection(): React.JSX.Element {
           </motion.h2>
         </div>
 
-        {/* ========================================================= */}
-        {/* MAIN SPLIT CARD: Luxury Real Estate Image + Elegant Form  */}
-        {/* ========================================================= */}
+        {/* MAIN SPLIT CARD Luxury */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,9 +107,9 @@ export default function EnquiryNowSection(): React.JSX.Element {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="grid grid-cols-1 lg:grid-cols-12 bg-white border border-black/[0.08] overflow-hidden rounded-[28px] sm:rounded-[32px]"
         >
-          {/* ========================================================= */}
-          {/* LEFT COLUMN: Ultra-Luxury Architectural Real Estate Villa */}
-          {/* ========================================================= */}
+          
+          {/* LEFT COLUMN Ultra Luxury */}
+          
           <div className="relative lg:col-span-6 min-h-[360px] sm:min-h-[460px] lg:min-h-full w-full overflow-hidden group">
             <Image
               src={enquiryNow.image}
@@ -123,12 +122,11 @@ export default function EnquiryNowSection(): React.JSX.Element {
 
           </div>
 
-          {/* ========================================================= */}
-          {/* RIGHT COLUMN: Pure White Luxury Enquiry Form Panel        */}
-          {/* ========================================================= */}
+          {/* RIGHT COLUMN Pure White */}
+          
           <div className="lg:col-span-6 bg-white p-6 sm:p-6 lg:p-10 xl:p-10 flex flex-col justify-center">
             <div className="w-full">
-              {/* Header Block */}
+              
               <div className="mb-6 sm:mb-8">
                 <h3 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-[#11131a] tracking-tight leading-tight mb-2">
                   {enquiryNow.form.title}<span className="text-[#2563EB]">*</span>
@@ -138,9 +136,9 @@ export default function EnquiryNowSection(): React.JSX.Element {
                 </p>
               </div>
 
-              {/* Form Block */}
+              {/* Interactive contact form container */}
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                {/* Row 1: First Name and Last Name */}
+                {/* Row 1 First Name */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -162,7 +160,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   />
                 </div>
 
-                {/* Row 2: Email Address */}
+                {/* Row 2 Email Address */}
                 <div>
                   <input
                     type="email"
@@ -175,7 +173,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   />
                 </div>
 
-                {/* Row 3: Phone Number */}
+                {/* Row 3 Phone Number */}
                 <div>
                   <input
                     type="tel"
@@ -187,7 +185,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   />
                 </div>
 
-                {/* Row 4: Message Textarea */}
+                {/* Row 4 Message Textarea */}
                 <div>
                   <textarea
                     name="message"
@@ -214,7 +212,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
                   )}
                 </AnimatePresence>
 
-                {/* Row 5: Submit Button matching Theme style */}
+                {/* Row 5 Submit Button */}
                 <div className="flex justify-end pt-2">
                   <motion.button
                     type="submit"

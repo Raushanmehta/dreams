@@ -47,7 +47,7 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
   };
 
   const booking = data?.bookingCard || {
-    avatar: "/images/team-brian.png",
+    avatar: "/images/team-brian.webp",
     title: "Book a 15 min call",
     description: "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
     buttonText: "Book a Free Call",
@@ -61,10 +61,10 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Left column */}
+          
           <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8 lg:sticky lg:top-0">
             <div>
-              {/* Eyebrow badge */}
+              
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -86,13 +86,13 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
               >
                 <span className="block">{data.headline.line1}</span>
                 <span className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 mt-1.5 sm:mt-2">
-                  {/* Tilted badge */}
+                  
                   <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                     <span className="inline-block skew-x-14 md:skew-x-18">
                       {data.headline.line2Badge}
                     </span>
                   </span>
-                  {/* Spinning star */}
+                  
                   <motion.span
                     animate={{ rotate: 360 }}
                     transition={{ repeat: Infinity, duration: 16, ease: "linear" }}

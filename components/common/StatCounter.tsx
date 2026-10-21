@@ -49,7 +49,7 @@ export default function StatCounter({
     const parsed = parseStatValue(value);
     if (isNaN(parsed.target)) return;
 
-    // Set initial 0 state when starting animation
+    // Set initial 0 state
     setDisplay(
       `${parsed.prefix}${formatNumber(0, parsed.decimals, parsed.hasComma)}${parsed.suffix}`
     );

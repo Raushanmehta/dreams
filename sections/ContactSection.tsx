@@ -65,11 +65,11 @@ export default function ContactSection(): React.JSX.Element {
   return (
     <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto w-full">
-        {/* ========================================================= */}
-        {/* SECTION HEADER: Matches Dreams* Signature Brand Theme    */}
-        {/* ========================================================= */}
+        
+        {/* SECTION HEADER Matches Dreams */}
+        
         <div className="mb-8 sm:mb-10">
-          {/* Eyebrow badge */}
+          
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function ContactSection(): React.JSX.Element {
             <span>{contact.badgeText}</span>
           </motion.div>
 
-          {/* Headline with skewed brand badge & rotating 4-point sparkle */}
+          {/* Headline with skewed brand */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,13 +91,13 @@ export default function ContactSection(): React.JSX.Element {
           >
             <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
               <span>{contact.headline.line1}</span>
-              {/* Tilted Sliced Background Badge in #2563EB */}
+              {/* Tilted Sliced Background Badge */}
               <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                 <span className="inline-block skew-x-14 md:skew-x-18">
                   {contact.headline.line2Badge}
                 </span>
               </span>
-              {/* Rotating 4-point star SVG icon */}
+              {/* Rotating 4 point star */}
               <motion.span
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -109,9 +109,8 @@ export default function ContactSection(): React.JSX.Element {
           </motion.h2>
         </div>
 
-        {/* ========================================================= */}
-        {/* MAIN SPLIT CARD: Luxury Obsidian Left + Crisp White Right */}
-        {/* ========================================================= */}
+        {/* MAIN SPLIT CARD Luxury */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,16 +118,16 @@ export default function ContactSection(): React.JSX.Element {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="grid grid-cols-1 lg:grid-cols-12 bg-white shadow-[0_25px_70px_rgba(0,0,0,0.07)] border border-black/[0.08] overflow-hidden rounded-[28px] sm:rounded-[32px]"
         >
-          {/* ========================================================= */}
-          {/* LEFT COLUMN: Luxury Obsidian Dark Panel (#0c0d12)         */}
-          {/* ========================================================= */}
+          
+          {/* LEFT COLUMN Luxury Obsidian */}
+          
           <div className="lg:col-span-5 bg-[#0c0d12] text-white p-6 sm:p-6 lg:p-10 xl:p-10 relative flex flex-col justify-between overflow-hidden">
             {/* Ambient royal blue glow overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(37,99,235,0.22),transparent_70%)] pointer-events-none" />
             <div className="absolute -bottom-24 -right-24 w-60 h-60 rounded-full bg-[#2563EB]/10 blur-[80px] pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full justify-between">
-              {/* Header block */}
+              
               <div className="h-auto lg:h-[116px] flex flex-col justify-start">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
                   {contact.privateOffice.title}
@@ -160,14 +159,13 @@ export default function ContactSection(): React.JSX.Element {
                 ))}
               </div>
 
-              {/* Description Paragraph */}
               <div className="h-auto lg:h-[120px] flex flex-col justify-start pt-2 lg:pt-3 mb-6 lg:mb-0">
                 <p className="text-zinc-400 text-[14px] leading-relaxed max-w-sm">
                   {siteData.site.description}
                 </p>
               </div>
 
-              {/* Social Icons */}
+              {/* Social media profile links */}
               <div className="h-auto lg:h-[48px] flex items-center gap-2.5 flex-wrap">
                 <motion.a
                   href="https://facebook.com"
@@ -228,11 +226,10 @@ export default function ContactSection(): React.JSX.Element {
             </div>
           </div>
 
-          {/* ========================================================= */}
-          {/* RIGHT COLUMN: Architectural Pure White Area (#ffffff)     */}
-          {/* ========================================================= */}
+          {/* RIGHT COLUMN Architectural Pure */}
+          
           <div className="lg:col-span-7 bg-white p-6 sm:p-6 lg:p-10 xl:p-10 flex flex-col justify-between">
-            {/* Header Block */}
+            
             <div className="h-auto lg:h-[116px] flex flex-col justify-start">
               <h3 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-[#11131a] tracking-tight leading-tight mb-1.5">
                 {contact.form.title}<span className="text-[#2563EB]">*</span>
@@ -242,9 +239,9 @@ export default function ContactSection(): React.JSX.Element {
               </p>
             </div>
 
-            {/* Form Block */}
+            {/* Interactive contact form container */}
             <form onSubmit={handleSubmit} className="flex flex-col">
-              {/* Row 1: Name and Email */}
+              {/* Row 1 Name and Email */}
               <div className="h-auto lg:h-[64px] grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
                 <input
                   type="text"
@@ -266,7 +263,7 @@ export default function ContactSection(): React.JSX.Element {
                 />
               </div>
 
-              {/* Row 2: Contact Number and Address */}
+              {/* Row 2 Contact Number */}
               <div className="h-auto lg:h-[64px] grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
                 <input
                   type="tel"
@@ -286,7 +283,7 @@ export default function ContactSection(): React.JSX.Element {
                 />
               </div>
 
-              {/* Row 3: Subject */}
+              {/* Row 3 Subject */}
               <div className="h-auto lg:h-[64px] pb-4">
                 <input
                   type="text"
@@ -299,7 +296,7 @@ export default function ContactSection(): React.JSX.Element {
                 />
               </div>
 
-              {/* Row 4: Message */}
+              {/* Row 4 Message */}
               <div className="h-auto lg:h-[160px] pb-5">
                 <textarea
                   name="message"
@@ -312,7 +309,7 @@ export default function ContactSection(): React.JSX.Element {
                 />
               </div>
 
-              {/* Row 5: Submit Button and Success Feedback */}
+              {/* Row 5 Submit Button */}
               <div className="h-auto lg:h-[48px] flex items-center justify-between gap-4 pt-1">
                 <motion.button
                   type="submit"
@@ -371,9 +368,8 @@ export default function ContactSection(): React.JSX.Element {
           </div>
         </motion.div>
 
-        {/* ========================================================= */}
-        {/* INTERACTIVE LOCATION MAP                                  */}
-        {/* ========================================================= */}
+        {/* INTERACTIVE LOCATION MAP */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -381,7 +377,6 @@ export default function ContactSection(): React.JSX.Element {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="mt-8 sm:mt-10 md:mt-12 relative w-full rounded-[28px] sm:rounded-[32px] overflow-hidden bg-zinc-900"
         >
-
 
           {/* Google Maps Interactive Embed iframe */}
           <div className="w-full h-[360px] sm:h-[400px] md:h-[420px] relative">

@@ -52,7 +52,6 @@ export default function PromotionalBannerCard({
         {title}
       </h3>
 
-      {/* CTA Button */}
       <motion.div
         whileHover={blogDetailAnimations.buttonHover}
         whileTap={blogDetailAnimations.buttonTap}

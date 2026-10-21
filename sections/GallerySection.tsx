@@ -45,7 +45,7 @@ export default function GallerySection({
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
 
-  // Group into 3 rows of 3 items, matching the 4-column bento ratios from the reference
+  // Group into 3 rows
   const GALLERY_ROWS = [
     {
       id: "row-1",
@@ -76,7 +76,7 @@ export default function GallerySection({
     },
   ];
 
-  // Dynamically compute flex values so hovering any card smoothly expands its width (w)
+  // Dynamically compute flex values
   const getCardFlex = (
     rowCards: (typeof GALLERY_ROWS)[0]["cards"],
     cardIndex: number,
@@ -84,17 +84,17 @@ export default function GallerySection({
   ): number => {
     const hoveredInRow = rowCards.find((c) => c.item.id === hoveredId);
 
-    // If no card in this row is hovered, return default ratio
+    // If no card in
     if (!hoveredInRow) {
       return rowCards[cardIndex].defaultFlex;
     }
 
-    // If this is the hovered card, expand width!
+    // If this is the
     if (hoveredInRow.item.id === rowCards[cardIndex].item.id) {
       return rowCards[cardIndex].activeFlex;
     }
 
-    // Calculate remaining flex space for siblings so total row width stays locked at 100%
+    // Calculate remaining flex space
     const totalDefault = rowCards.reduce((acc, c) => acc + c.defaultFlex, 0);
     const remaining = Math.max(0.6, totalDefault - hoveredInRow.activeFlex);
     const siblingDefaultTotal = rowCards
@@ -112,12 +112,12 @@ export default function GallerySection({
       )}
     >
       <div className="relative mx-auto max-w-7xl w-full">
-        {/* ========================================================= */}
-        {/* SECTION HEADER: Matches Dreams* Signature Brand Theme    */}
-        {/* ========================================================= */}
+        
+        {/* SECTION HEADER Matches Dreams */}
+        
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10">
           <div>
-            {/* Eyebrow */}
+            {/* Section eyebrow badge element */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export default function GallerySection({
               <span>{badgeText}</span>
             </motion.div>
 
-            {/* Headline with tilted blue sliced badge and spinning 4-point star */}
+            {/* Headline with tilted blue */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -139,13 +139,13 @@ export default function GallerySection({
             >
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
                 <span>{title}</span>
-                {/* Tilted Sliced Background Badge in #2563EB */}
+                {/* Tilted Sliced Background Badge */}
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
                     {highlightWord}
                   </span>
                 </span>
-                {/* Rotating 4-point star SVG icon */}
+                {/* Rotating 4 point star */}
                 <motion.span
                   animate={{ rotate: 360 }}
                   transition={{
@@ -162,9 +162,8 @@ export default function GallerySection({
           </div>
         </div>
 
-        {/* ========================================================= */}
-        {/* EXPANDING BENTO ACCORDION GRID                            */}
-        {/* ========================================================= */}
+        {/* EXPANDING BENTO ACCORDION GRID */}
+        
         <div className="relative space-y-2.5 sm:space-y-3.5 md:space-y-4 w-full">
           {GALLERY_ROWS.map((row, rowIdx) => (
             <div
@@ -199,9 +198,8 @@ export default function GallerySection({
         </div>
       </div>
 
-      {/* ========================================================= */}
-      {/* INTERACTIVE FULLSCREEN LIGHTBOX MODAL (Component)         */}
-      {/* ========================================================= */}
+      {/* INTERACTIVE FULLSCREEN LIGHTBOX MODAL (Component */}
+      
       <GalleryLightboxModal
         selectedItem={selectedItem}
         items={GALLERY_ITEMS}

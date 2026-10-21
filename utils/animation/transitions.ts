@@ -1,8 +1,6 @@
 import type { Transition } from "framer-motion";
 
-/**
- * Standard spring and easing presets for high-end micro-interactions
- */
+/* Standard spring and easing */
 export const springPresets = {
   gentle: {
     type: "spring",

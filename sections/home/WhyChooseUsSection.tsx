@@ -52,7 +52,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
       <div className="absolute top-1/4 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        {/* Left Column: Asymmetrical Rounded Image with 3D Offset Cross */}
+        {/* Left Column Asymmetrical Rounded */}
         <motion.div
           variants={whyChooseUsAnimations.image.variants}
           initial="initial"
@@ -74,7 +74,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
               />
             </div>
 
-            {/* Spinning 6-point asterisk matching Hero section */}
+            {/* Spinning 6 point asterisk */}
             <motion.div
               animate={whyChooseUsAnimations.floatingAsterisk.animate}
               transition={whyChooseUsAnimations.floatingAsterisk.transition}
@@ -88,9 +88,9 @@ export default function WhyChooseUsSection(): React.JSX.Element {
           </div>
         </motion.div>
 
-        {/* Right Column: Content, Stepped Headline with Badges & 2x2 Grid */}
+        {/* Right Column Content, Stepped */}
         <div className="lg:col-span-7 flex flex-col justify-center">
-          {/* Eyebrow */}
+          {/* Section eyebrow badge element */}
           <motion.div
             initial={whyChooseUsAnimations.eyebrow.initial}
             whileInView={whyChooseUsAnimations.eyebrow.whileInView}
@@ -102,7 +102,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
             <span>{whyChooseUs.badgeText}</span>
           </motion.div>
 
-          {/* Stepped Headline matching About section typography and Hero tilted sliced badge style */}
+          {/* Stepped Headline matching About */}
           <motion.h2
             initial={whyChooseUsAnimations.headline.initial}
             whileInView={whyChooseUsAnimations.headline.whileInView}
@@ -118,7 +118,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
                   {whyChooseUs.headline.line1Badge}
                 </span>
               </span>
-              {/* SVG Icon placed OUTSIDE the blue background on the right side */}
+              {/* SVG Icon placed OUTSIDE */}
               <motion.span
                 animate={whyChooseUsAnimations.spin.animate}
                 transition={whyChooseUsAnimations.spin.transition}
@@ -132,7 +132,6 @@ export default function WhyChooseUsSection(): React.JSX.Element {
             </div>
           </motion.h2>
 
-          {/* Description Paragraph */}
           <motion.p
             initial={whyChooseUsAnimations.description.initial}
             whileInView={whyChooseUsAnimations.description.whileInView}
@@ -143,7 +142,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
             {whyChooseUs.description}
           </motion.p>
 
-          {/* 2x2 Features Grid */}
+          {/* x2 Features Grid */}
           <motion.div
             variants={whyChooseUsAnimations.gridContainer}
             initial="hidden"
@@ -167,7 +166,6 @@ export default function WhyChooseUsSection(): React.JSX.Element {
                   <div className="w-9 h-[2px] bg-[#2563EB]/40 mt-2.5 rounded-full" />
                 </div>
 
-                {/* Text Content */}
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-[#2563EB] transition-colors leading-snug">
                     {feature.title}

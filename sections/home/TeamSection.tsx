@@ -45,7 +45,7 @@ export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.
   return (
     <section className="relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-white font-sans select-none overflow-hidden border-t border-zinc-900">
       <div className="max-w-7xl mx-auto w-full">
-        {/* Section Header - All data comes dynamically from JSON */}
+        {/* Section Header All data */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10">
           <div>
             <motion.div
@@ -59,7 +59,6 @@ export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.
               <span>{badgeText}</span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.15] uppercase">
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
                 <span>{headlinePrefix}</span>
@@ -80,7 +79,7 @@ export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.
           </div>
         </div>
 
-        {/* Shadcn UI Carousel: Drag & Swipe with NO buttons and NO pagination */}
+        {/* Shadcn UI Carousel Drag */}
         <div className="relative w-full">
           <Carousel
             opts={{

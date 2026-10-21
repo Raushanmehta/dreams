@@ -44,7 +44,6 @@ export default function TestimonialSection({
     ...testimonialsList.map((t) => ({ ...t, uniqueKey: `${t.id}-set3` })),
   ];
 
-  // Scroll reference
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -87,7 +86,7 @@ export default function TestimonialSection({
         {/* Section header container */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 ">
           <div>
-            {/* Eyebrow badge */}
+            
             <motion.div
               initial={testimonialAnimations.eyebrow.initial}
               whileInView={testimonialAnimations.eyebrow.whileInView}
@@ -99,7 +98,6 @@ export default function TestimonialSection({
               <span>{testimonials.badgeText}</span>
             </motion.div>
 
-            {/* Stepped headline */}
             <motion.h2
               initial={testimonialAnimations.headline.initial}
               whileInView={testimonialAnimations.headline.whileInView}
@@ -112,13 +110,13 @@ export default function TestimonialSection({
               </div>
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                 <span>{testimonials.headline.line2Prefix}</span>
-                {/* Tilted badge */}
+                
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.5)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
                     {testimonials.headline.line2Badge}
                   </span>
                 </span>
-                {/* Rotating star */}
+                
                 <motion.span
                   animate={testimonialAnimations.spin.animate}
                   transition={testimonialAnimations.spin.transition}
@@ -131,13 +129,11 @@ export default function TestimonialSection({
           </div>
         </div>
 
-        {/* Carousel container */}
         <div className="relative w-full">
-          {/* Vignette shadows */}
+          
           <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent z-10" />
 
-          {/* Scrolling track */}
           <div
             ref={scrollRef}
             onMouseEnter={() => setIsPaused(true)}

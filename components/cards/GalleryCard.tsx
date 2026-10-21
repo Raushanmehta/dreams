@@ -55,7 +55,7 @@ export default function GalleryCard({
         className
       )}
     >
-      {/* Background Photo with smooth zoom on hover */}
+      {/* Background Photo with smooth */}
       <div className="relative w-full h-full overflow-hidden">
         <Image
           src={imageSrc}
@@ -78,7 +78,7 @@ export default function GalleryCard({
         />
       </div>
 
-      {/* Top-Right Quick View Action Badge */}
+      {/* Top Right Quick View */}
       <div
         className={cn(
           "absolute top-2.5 sm:top-3.5 right-2.5 sm:right-3.5 z-10 transition-all duration-300",
@@ -92,7 +92,7 @@ export default function GalleryCard({
         </div>
       </div>
 
-      {/* Bottom Caption Info (No category, borderless) */}
+      {/* Bottom Caption Info (No */}
       <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 md:p-5 z-10 flex flex-col justify-end">
         <div className="transform transition-transform duration-300">
           <p className="text-[10px] sm:text-xs text-[#3b82f6] font-mono tracking-wider uppercase font-semibold mb-0.5 truncate">

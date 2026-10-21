@@ -1,8 +1,6 @@
 import type { Variants, Transition } from "framer-motion";
 
-/**
- * Desktop Navbar entrance & layout transition
- */
+/* Desktop Navbar entrance & */
 export const navbarDesktopVariants: Variants = {
   hidden: { y: -60, opacity: 0 },
   visible: { y: 0, opacity: 1 },
@@ -23,9 +21,7 @@ export const navbarDesktopTransition: Transition = {
   },
 };
 
-/**
- * Navigation Link Hover Pill Animation
- */
+/* Navigation Link Hover Pill Animation */
 export const navHoverPillVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },
   animate: { opacity: 1, scale: 1 },
@@ -38,18 +34,14 @@ export const navHoverPillTransition: Transition = {
   damping: 30,
 };
 
-/**
- * Navigation Link Active Indicator Pill
- */
+/* Navigation Link Active Indicator Pill */
 export const navActiveIndicatorTransition: Transition = {
   type: "spring",
   stiffness: 380,
   damping: 30,
 };
 
-/**
- * Desktop Scrolled CTA Button Entrance
- */
+/* Desktop Scrolled CTA Button Entrance */
 export const desktopCtaVariants: Variants = {
   hidden: { opacity: 0, x: 20, filter: "blur(4px)" },
   visible: { opacity: 1, x: 0, filter: "blur(0px)" },
@@ -61,9 +53,7 @@ export const desktopCtaTransition: Transition = {
   ease: [0.16, 1, 0.3, 1],
 };
 
-/**
- * Mobile Navbar Container Entrance & Layout Transition
- */
+/* Mobile Navbar Container Entrance */
 export const mobileNavbarVariants: Variants = {
   hidden: { y: -50, opacity: 0 },
   visible: { y: 0, opacity: 1 },
@@ -74,18 +64,14 @@ export const mobileNavbarTransition: Transition = {
   y: { type: "spring", stiffness: 300, damping: 25 },
 };
 
-/**
- * Mobile CTA Button on Scrolled Header
- */
+/* Mobile CTA Button on */
 export const mobileCtaVariants: Variants = {
   initial: { opacity: 0, scale: 0.9 },
   animate: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0.9 },
 };
 
-/**
- * Mobile Hamburger Menu Icon Line Variants
- */
+/* Mobile Hamburger Menu Icon */
 export const hamburgerTopVariants: Variants = {
   closed: { rotate: 0, y: 0, width: 20 },
   open: { rotate: 45, y: 6.5, width: 20 },
@@ -101,9 +87,7 @@ export const hamburgerBottomVariants: Variants = {
   open: { rotate: -45, y: -6.5, width: 20 },
 };
 
-/**
- * Mobile Dropdown Menu Container (Accordion Height & Fade)
- */
+/* Mobile Dropdown Menu Container */
 export const mobileDropdownVariants: Variants = {
   closed: { opacity: 0, height: 0 },
   open: { opacity: 1, height: "auto" },
@@ -114,9 +98,7 @@ export const mobileDropdownTransition: Transition = {
   ease: "easeInOut",
 };
 
-/**
- * Mobile Staggered Nav Items
- */
+/* Mobile Staggered Nav Items */
 export const mobileNavItemVariants: Variants = {
   initial: { opacity: 0, x: -10 },
   animate: (index: number) => ({
@@ -129,9 +111,7 @@ export const mobileNavItemVariants: Variants = {
   }),
 };
 
-/**
- * Consolidated navbarAnimations object
- */
+/* Consolidated navbarAnimations object */
 export const navbarAnimations = {
   desktop: {
     variants: navbarDesktopVariants,

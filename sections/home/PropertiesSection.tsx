@@ -50,7 +50,7 @@ export default function PropertiesSection(): React.JSX.Element {
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-blue-950/20 blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl w-full">
-        {/* Section Header */}
+        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-8">
           <div>
             <motion.div
@@ -78,7 +78,7 @@ export default function PropertiesSection(): React.JSX.Element {
                     {properties.headline.line2Badge}
                   </span>
                 </span>
-                {/* SVG Icon placed OUTSIDE the blue background on the right side */}
+                {/* SVG Icon placed OUTSIDE */}
                 <motion.span
                   animate={propertiesAnimations.spin.animate}
                   transition={propertiesAnimations.spin.transition}
@@ -97,7 +97,7 @@ export default function PropertiesSection(): React.JSX.Element {
             transition={propertiesAnimations.description.transition}
             className="hidden sm:flex items-center"
           >
-            {/* Custom Carousel Navigation Buttons with Framer Motion Hover */}
+            {/* Custom Carousel Navigation Buttons */}
             <div className="flex items-center gap-3">
               <motion.button
                 initial="rest"
@@ -108,14 +108,14 @@ export default function PropertiesSection(): React.JSX.Element {
                 aria-label="Previous slide"
                 className="relative overflow-hidden flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.05] text-white disabled:cursor-not-allowed disabled:opacity-30 select-none cursor-pointer"
               >
-                {/* Animated #2563EB background slide/glow fill with Framer Motion */}
+                {/* Animated #2563EB background slide/glow */}
                 <motion.span
                   variants={propertiesAnimations.buttonFill.variants}
                   transition={propertiesAnimations.buttonFill.transition}
                   className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
                 />
 
-                {/* Framer Motion subtle shine sweep across button on hover */}
+                {/* Framer Motion subtle shine */}
                 <motion.span
                   variants={propertiesAnimations.buttonShine.variants}
                   transition={propertiesAnimations.buttonShine.transition}
@@ -140,14 +140,14 @@ export default function PropertiesSection(): React.JSX.Element {
                 aria-label="Next slide"
                 className="relative overflow-hidden flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.05] text-white disabled:cursor-not-allowed disabled:opacity-30 select-none cursor-pointer"
               >
-                {/* Animated #2563EB background slide/glow fill with Framer Motion */}
+                {/* Animated #2563EB background slide/glow */}
                 <motion.span
                   variants={propertiesAnimations.buttonFill.variants}
                   transition={propertiesAnimations.buttonFill.transition}
                   className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
                 />
 
-                {/* Framer Motion subtle shine sweep across button on hover */}
+                {/* Framer Motion subtle shine */}
                 <motion.span
                   variants={propertiesAnimations.buttonShine.variants}
                   transition={propertiesAnimations.buttonShine.transition}
@@ -189,7 +189,7 @@ export default function PropertiesSection(): React.JSX.Element {
           </Carousel>
         </div>
 
-        {/* Carousel Pagination indicator dots with interactive click */}
+        {/* Carousel Pagination indicator dots */}
         <div className="flex items-center justify-center gap-2.5 mt-6 md:mt-8">
           {Array.from({ length: count }).map((_, i) => (
             <button

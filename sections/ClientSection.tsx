@@ -34,7 +34,7 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
     return (
         <section className="relative w-full bg-[#f4f4f2] text-[#11131a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200">
             <div className="relative mx-auto max-w-7xl w-full">
-                {/* Section Header */}
+                
                 <div className="mb-8 sm:mb-10 text-left">
                     <div className="flex flex-col items-start text-left">
                         <motion.div
@@ -62,7 +62,7 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
                                         {data.headline.line2Badge}
                                     </span>
                                 </span>
-                                {/* SVG Icon placed OUTSIDE the blue background on the right side */}
+                                {/* SVG Icon placed OUTSIDE */}
                                 <motion.span
                                     animate={{ rotate: 360 }}
                                     transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -78,7 +78,7 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
                     </div>
                 </div>
 
-                {/* Clients grid 4x2 */}
+                {/* Clients grid 4x */}
                 <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-5">
                     {clients.map((client, idx) => (
                         <motion.div

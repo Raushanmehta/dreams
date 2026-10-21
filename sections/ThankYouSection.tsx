@@ -60,13 +60,11 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
           <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 stroke-[2.2]" />
         </motion.div>
 
-        {/* Eyebrow badge */}
         <div className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-semibold text-black mb-4">
           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-[#2563EB]" />
           <span>{data?.badgeText || "Confirmation"}</span>
         </div>
 
-        {/* Main headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1a1a1a] leading-[1.18] uppercase">
           <span className="block">{headline.line1}</span>
           <span className="flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2">
@@ -88,7 +86,6 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
           </span>
         </h1>
 
-        {/* Subtitle description */}
         <p className="mt-4 text-sm sm:text-base text-zinc-600 max-w-lg leading-relaxed">
           {data?.subtitle ||
             "Your enquiry has been successfully registered. A dedicated luxury portfolio advisor will connect with you shortly."}

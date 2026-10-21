@@ -21,7 +21,7 @@ export default function TeamPage() {
             <BreadCrumb title="Our Team" subtitle="Driven by passion, defined by excellence." />
             <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-[#11131a] font-sans select-none overflow-hidden border-t border-zinc-200">
                 <div className="max-w-7xl mx-auto w-full">
-                    {/* Section Header - All data comes dynamically from JSON */}
+                    {/* Section Header All data */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 text-left">
                         <div className="flex flex-col items-start text-left">
                             <motion.div
@@ -35,7 +35,6 @@ export default function TeamPage() {
                                 <span>{badgeText}</span>
                             </motion.div>
 
-                            {/* Headline */}
                             <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase text-left">
                                 <div className="flex flex-wrap items-center justify-start gap-x-2.5 sm:gap-x-3 gap-y-2">
                                     <span>{headlinePrefix}</span>

@@ -44,9 +44,9 @@ export default function BlogCard({ post }: BlogCardProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
             </div>
 
-            {/* Floating White Content Box with Asymmetrical Cutout & Inverted Curves */}
+            {/* Floating White Content Box */}
             <div className="relative z-10 mx-2.5 sm:mx-3 mb-2.5 sm:mb-3">
-                {/* Optional 'Latest' Top Tab with Inverted Concave Corner Fillet */}
+                {/* Optional 'Latest' Top Tab */}
                 {post.isLatest && (
                     <div className="flex items-end -mb-px">
                         {/* The Tab Cradling the Badge */}
@@ -55,7 +55,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                                 Latest
                             </span>
                         </div>
-                        {/* Smooth Inverted Concave Fillet Curve connecting tab to main white box */}
+                        {/* Smooth Inverted Concave Fillet */}
                         <div className="w-4 h-4 overflow-hidden pointer-events-none self-end">
                             <svg
                                 viewBox="0 0 16 16"
@@ -68,40 +68,38 @@ export default function BlogCard({ post }: BlogCardProps) {
                     </div>
                 )}
 
-                {/* Upper Block: Title and Excerpt */}
+                {/* Upper Block Title and Excerpt */}
                 <div
                     className={`relative bg-white text-[#0c0d14] p-2 sm:p-3 md:p-4 pb-1 sm:pb-2 shadow-sm ${post.isLatest
                         ? "rounded-tr-[22px] sm:rounded-tr-[24px] rounded-tl-none"
                         : "rounded-t-[22px] sm:rounded-t-[24px]"
                         }`}
                 >
-                    {/* Post Title */}
+                    
                     <h3 className="text-base sm:text-lg md:text-[18px] font-bold text-[#0c0d14] tracking-tight leading-snug line-clamp-2 mb-1 group-hover:text-[#2563EB] transition-colors">
                         {post.title}
                     </h3>
 
-                    {/* Post Excerpt */}
                     <p className="text-xs sm:text-[13px] md:text-sm text-[#4f566b] leading-relaxed line-clamp-2 font-normal">
                         {post.excerpt}
                     </p>
                 </div>
 
-                {/* Lower Block: Bottom Meta Row with Category Pill, Date, and Cutout Notch */}
+                {/* Lower Block Bottom Meta */}
                 <div className="flex items-start">
-                    {/* Meta Content Pill & Date Tab */}
+                    {/* Meta Content Pill & */}
                     <div className="bg-white px-4 sm:px-5 md:px-6 pb-3.5 sm:pb-4 md:pb-5 pt-1 rounded-bl-[20px] sm:rounded-bl-[22px] rounded-br-[18px] sm:rounded-br-[20px] flex items-center gap-2.5 sm:gap-3 shadow-sm">
-                        {/* Category Pill */}
+                        
                         <span className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#eef0f8] text-[#4f566b] text-[11px] sm:text-xs font-semibold tracking-wide">
                             {post.category}
                         </span>
 
-                        {/* Date */}
                         <span className="text-[11px] sm:text-xs text-[#71717a] font-medium tracking-tight whitespace-nowrap">
                             {post.date}
                         </span>
                     </div>
 
-                    {/* Smooth Concave Fillet in the inside corner where Lower Tab meets Upper Block */}
+                    {/* Smooth Concave Fillet in */}
                     <div className="w-4 sm:w-5 h-4 sm:h-5 overflow-hidden pointer-events-none -mt-px">
                         <svg
                             viewBox="0 0 20 20"
@@ -112,7 +110,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                         </svg>
                     </div>
 
-                    {/* The remaining area to the right is transparent, revealing the artwork card underneath! */}
+                    {/* The remaining area to */}
                 </div>
             </div>
         </motion.article>

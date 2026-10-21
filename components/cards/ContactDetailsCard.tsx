@@ -81,7 +81,7 @@ export default function ContactDetailsCard({
       className={`bg-[#eaf4fd] rounded-[26px] border border-[#d2e8fc] p-4 sm:p-5 shadow-[0_8px_30px_rgba(37,99,235,0.06)] ${className}`}
     >
       <form onSubmit={handleSubmit} className="space-y-3.5">
-        {/* 1. Name Field */}
+        
         <div className="relative">
           <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 pointer-events-none" />
           <input
@@ -96,7 +96,6 @@ export default function ContactDetailsCard({
           />
         </div>
 
-        {/* 2. Email Field */}
         <div className="relative">
           <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 pointer-events-none" />
           <input
@@ -111,7 +110,6 @@ export default function ContactDetailsCard({
           />
         </div>
 
-        {/* 3. Phone Field */}
         <div className="relative">
           <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 pointer-events-none" />
           <input
@@ -125,7 +123,6 @@ export default function ContactDetailsCard({
           />
         </div>
 
-        {/* 4. Message Textarea */}
         <div className="relative">
           <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-zinc-400 pointer-events-none" />
           <textarea
@@ -147,7 +144,7 @@ export default function ContactDetailsCard({
           </p>
         )}
 
-        {/* 6. Send Message Button */}
+        {/* Send Message Button */}
         <motion.button
           type="submit"
           disabled={isSubmitting || isSubmitted}

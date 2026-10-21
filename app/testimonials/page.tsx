@@ -14,13 +14,12 @@ export default function TestimonialsPage(): React.JSX.Element {
 
     return (
         <main>
-            {/* Breadcrumb navigation */}
+            
             <BreadCrumb
                 title={testimonials.breadcrumb.title}
                 subtitle={testimonials.breadcrumb.subtitle}
             />
 
-            {/* Testimonials section */}
             <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
                 {/* Background ambient glow */}
                 <div className="absolute top-1/4 left-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
@@ -29,7 +28,7 @@ export default function TestimonialsPage(): React.JSX.Element {
                     {/* Section header container */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10">
                         <div>
-                            {/* Eyebrow badge */}
+                            
                             <motion.div
                                 initial={testimonialAnimations.eyebrow.initial}
                                 whileInView={testimonialAnimations.eyebrow.whileInView}
@@ -41,7 +40,6 @@ export default function TestimonialsPage(): React.JSX.Element {
                                 <span>{testimonials.badgeText}</span>
                             </motion.div>
 
-                            {/* Stepped headline */}
                             <motion.h2
                                 initial={testimonialAnimations.headline.initial}
                                 whileInView={testimonialAnimations.headline.whileInView}
@@ -56,13 +54,13 @@ export default function TestimonialsPage(): React.JSX.Element {
                                 )}
                                 <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2 mt-2 sm:mt-3">
                                     <span>{testimonials.headline.line2Prefix}</span>
-                                    {/* Tilted badge */}
+                                    
                                     <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                                         <span className="inline-block skew-x-14 md:skew-x-18">
                                             {testimonials.headline.line2Badge}
                                         </span>
                                     </span>
-                                    {/* Rotating star */}
+                                    
                                     <motion.span
                                         animate={testimonialAnimations.spin.animate}
                                         transition={testimonialAnimations.spin.transition}
@@ -74,7 +72,6 @@ export default function TestimonialsPage(): React.JSX.Element {
                             </motion.h2>
                         </div>
 
-                        {/* Description container */}
                         {(testimonials as { description?: string }).description && (
                             <motion.div
                                 initial={testimonialAnimations.description.initial}
@@ -90,7 +87,6 @@ export default function TestimonialsPage(): React.JSX.Element {
                         )}
                     </div>
 
-                    {/* Testimonials grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-5 items-stretch">
                         {testimonials.testimonialsList.map((item, index) => (
                             <motion.div

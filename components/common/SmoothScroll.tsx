@@ -21,7 +21,7 @@ function SmoothScrollInner({ children }: SmoothScrollProps) {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    // Clean up any previous ScrollSmoother instance (safe for React 19 Strict Mode)
+    // Clean up any previous
     const existing = ScrollSmoother.get();
     if (existing) {
       existing.kill();
@@ -37,7 +37,7 @@ function SmoothScrollInner({ children }: SmoothScrollProps) {
         normalizeScroll: false,
       });
 
-      // Smooth scroll navigation for anchor tags (#home, #services, #properties, etc.)
+      // Smooth scroll navigation for
       const handleAnchorClick = (e: MouseEvent) => {
         const anchor = (e.target as HTMLElement).closest("a");
         if (!anchor) return;
@@ -64,7 +64,7 @@ function SmoothScrollInner({ children }: SmoothScrollProps) {
     };
   }, []);
 
-  // When route changes, reset scroll to top and refresh ScrollSmoother
+  // When route changes, reset
   useEffect(() => {
     const smoother = ScrollSmoother.get();
     if (smoother) {

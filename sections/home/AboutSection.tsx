@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
 import { Sparkles } from "lucide-react";
@@ -10,13 +11,21 @@ import siteData from "@/data/site.json";
 import { aboutAnimations } from "@/utils/animation/about.animation";
 import StatCounter from "@/components/common/StatCounter";
 
-export default function AboutSection(): React.JSX.Element {
+export interface AboutSectionProps {
+  showButton?: boolean;
+}
+
+export default function AboutSection({
+  showButton,
+}: AboutSectionProps = {}): React.JSX.Element {
   const { about } = siteData;
+  const pathname = usePathname();
+  const shouldShowButton = showButton !== undefined ? showButton : pathname !== "/about";
 
   return (
     <section className="bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-[#1a1a1a] select-none">
       <div className="relative mx-auto max-w-7xl w-full">
-        {/* Image panel */}
+        
         <motion.div
           variants={aboutAnimations.image.variants}
           initial="initial"
@@ -34,7 +43,7 @@ export default function AboutSection(): React.JSX.Element {
           />
         </motion.div>
 
-        {/* Headline + copy, sits over the image's left edge with notched corners */}
+        {/* Headline + copy, sits */}
         <motion.div
           variants={aboutAnimations.container}
           initial="hidden"
@@ -59,13 +68,13 @@ export default function AboutSection(): React.JSX.Element {
               </motion.span>
               <motion.span variants={aboutAnimations.rise} className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 my-1">
                 <span>{about.headline.line2Prefix}</span>
-                {/* Tilted Sliced Background Badge in #2563EB matching Hero Section */}
+                {/* Tilted Sliced Background Badge */}
                 <span className="relative inline-block bg-[#2563EB] text-white px-3 sm:px-4 md:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
                     {about.headline.line2Badge}
                   </span>
                 </span>
-                {/* SVG Icon placed OUTSIDE the blue background on the right side */}
+                {/* SVG Icon placed OUTSIDE */}
                 <motion.span
                   animate={aboutAnimations.spin.animate}
                   transition={aboutAnimations.spin.transition}
@@ -107,41 +116,42 @@ export default function AboutSection(): React.JSX.Element {
               ))}
             </motion.div>
 
-            <Link href={about.cta.href}>
-              <motion.button
-                variants={aboutAnimations.rise}
-                initial="rest"
-                whileHover="hover"
-                whileTap={{ scale: 0.96 }}
-                className="relative group mt-2 overflow-hidden rounded-full bg-[#1a1a1a] px-6 sm:px-7 py-3 text-sm font-semibold tracking-wider text-white shadow-md flex items-center gap-2.5 select-none cursor-pointer"
-              >
-                {/* Animated #2563EB background slide/glow fill with Framer Motion */}
-                <motion.span
-                  variants={aboutAnimations.button.fill.variants}
-                  transition={aboutAnimations.button.fill.transition}
-                  className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
-                />
-
-                {/* Framer Motion subtle shine sweep across button on hover */}
-                <motion.span
-                  variants={aboutAnimations.button.shine.variants}
-                  transition={aboutAnimations.button.shine.transition}
-                  className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
-                />
-
-                {/* Text */}
-                <span className="relative z-10">{about.cta.label}</span>
-
-                {/* Arrow container with spring translation */}
-                <motion.div
-                  variants={aboutAnimations.button.arrow.variants}
-                  transition={aboutAnimations.button.arrow.transition}
-                  className="relative z-10 flex items-center justify-center w-6 h-6 rounded-full bg-white/15"
+            {shouldShowButton && (
+              <Link href={about.cta.href}>
+                <motion.button
+                  variants={aboutAnimations.rise}
+                  initial="rest"
+                  whileHover="hover"
+                  whileTap={{ scale: 0.96 }}
+                  className="relative group mt-2 overflow-hidden rounded-full bg-[#1a1a1a] px-6 sm:px-7 py-3 text-sm font-semibold tracking-wider text-white shadow-md flex items-center gap-2.5 select-none cursor-pointer"
                 >
-                  <ArrowRightIcon className="w-3.5 h-3.5 text-white" />
-                </motion.div>
-              </motion.button>
-            </Link>
+                  {/* Animated #2563EB background slide/glow */}
+                  <motion.span
+                    variants={aboutAnimations.button.fill.variants}
+                    transition={aboutAnimations.button.fill.transition}
+                    className="absolute inset-0 bg-[#2563EB] origin-bottom rounded-full"
+                  />
+
+                  {/* Framer Motion subtle shine */}
+                  <motion.span
+                    variants={aboutAnimations.button.shine.variants}
+                    transition={aboutAnimations.button.shine.transition}
+                    className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] pointer-events-none"
+                  />
+
+                  <span className="relative z-10">{about.cta.label}</span>
+
+                  {/* Arrow container with spring translation */}
+                  <motion.div
+                    variants={aboutAnimations.button.arrow.variants}
+                    transition={aboutAnimations.button.arrow.transition}
+                    className="relative z-10 flex items-center justify-center w-6 h-6 rounded-full bg-white/15"
+                  >
+                    <ArrowRightIcon className="w-3.5 h-3.5 text-white" />
+                  </motion.div>
+                </motion.button>
+              </Link>
+            )}
           </div>
         </motion.div>
       </div>

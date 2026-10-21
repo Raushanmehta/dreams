@@ -82,13 +82,13 @@ export default function BlogDetailSection({
   customArticle,
   customRelatedPosts,
 }: BlogDetailSectionProps) {
-  // Extract all data directly from site.json
+  // Extract all data directly
   const blogData = siteData.blog as unknown as BlogSiteSchema;
   const allBlogPosts = blogData.blogPosts || [];
   const matchedPost = (postSlug ? allBlogPosts.find((p) => p.slug === postSlug || p.id === postSlug) : null) || allBlogPosts[0];
   const postData = matchedPost || allBlogPosts[0] || ({} as BlogDetailArticleData);
 
-  // Build article data from matched post in site.json
+  // Build article data from
   const titleWords = (postData.title || "Architectural Trends Defining Luxury Living in 2025").split(" ");
   const article: BlogDetailArticleData = {
     id: postData.id || "post-1",
@@ -100,10 +100,10 @@ export default function BlogDetailSection({
     excerpt: postData.excerpt,
     category: postData.category || "Architecture",
     readTime: postData.readTime || "4 min read",
-    image: postData.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    image: postData.image || "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
     author: postData.author || {
       name: "Marcus Vance",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+      avatar: "/images/downloaded/photo-1534528741775-53994a69daeb.webp",
     },
     date: postData.date || "18 Oct 2024",
     commentsCountText: postData.commentsCountText || `${postData.readTime || "4 min read"} • Market Intelligence`,
@@ -112,7 +112,7 @@ export default function BlogDetailSection({
     ...customArticle,
   };
 
-  // Build recent posts for sidebar directly from site.json blogPosts
+  // Build recent posts for
   const relatedPosts: RelatedPost[] = customRelatedPosts || allBlogPosts
     .filter((p) => p.id !== article.id && p.slug !== postSlug)
     .slice(0, 5)
@@ -131,11 +131,10 @@ export default function BlogDetailSection({
       href: `/blog/${p.slug || p.id}`,
     }));
 
-
   // Build promotional banner from site.json
   const promotionalBanner = blogData.promotionalBanner || {};
 
-  // References for sticky column pinning with GSAP ScrollSmoother
+  // References for sticky column
   const mainColRef = useRef<HTMLDivElement | null>(null);
   const sidebarContainerRef = useRef<HTMLDivElement | null>(null);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
@@ -185,7 +184,7 @@ export default function BlogDetailSection({
       ScrollTrigger.refresh();
     };
 
-    // Small delay ensures ScrollSmoother in parent layout is fully initialized
+    // Small delay ensures ScrollSmoother
     const timer = setTimeout(setupPin, 120);
     const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 500);
 
@@ -200,11 +199,11 @@ export default function BlogDetailSection({
   return (
     <section className="relative w-full isolate  text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200">
       <div className="max-w-7xl mx-auto w-full">
-        {/* Main 2-Column Responsive Grid */}
+        {/* Main 2 Column Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* ============================================================== */}
-          {/* LEFT COLUMN: Main Blog Post Content (8 Cols)                   */}
-          {/* ============================================================== */}
+          
+          {/* LEFT COLUMN Main Blog */}
+          
           <main ref={mainColRef} className="lg:col-span-8 flex flex-col">
             {/* Eyebrow Badge matching site theme */}
             <motion.div
@@ -217,7 +216,7 @@ export default function BlogDetailSection({
               <span>{article.badgeText}</span>
             </motion.div>
 
-            {/* 1. Main Article Title with Signature Sliced Badge and Spinning Star */}
+            {/* Main Article Title with */}
             <motion.h1
               variants={blogDetailAnimations.fadeUp}
               initial="hidden"
@@ -246,7 +245,7 @@ export default function BlogDetailSection({
               </div>
             </motion.h1>
 
-            {/* 2. Hero Featured Image (Luxury Estate from site.json) */}
+            {/* Hero Featured Image (Luxury */}
             <motion.figure
               variants={blogDetailAnimations.fadeUp}
               initial="hidden"
@@ -264,7 +263,7 @@ export default function BlogDetailSection({
               />
             </motion.figure>
 
-            {/* 3. Article Body Content - Dynamic sections from site.json */}
+            {/* Article Body Content Dynamic */}
             <article className="prose prose-zinc max-w-none text-[#52525b] text-[15px] sm:text-[15.5px] leading-[1.8] mt-3">
               {article.sections && article.sections.length > 0 ? (
                 article.sections.map((sec, idx) => (
@@ -286,7 +285,7 @@ export default function BlogDetailSection({
                       ))}
                     </motion.div>
 
-                    {/* Show Quote block after the second section (or if only 1 section) */}
+                    {/* Show Quote block after */}
                     {(idx === 1 || (article.sections && article.sections.length <= 1)) && article.quote && (
                       <motion.blockquote
                         variants={blogDetailAnimations.fadeUp}
@@ -311,15 +310,14 @@ export default function BlogDetailSection({
             </article>
           </main>
 
-          {/* ============================================================== */}
-          {/* RIGHT COLUMN: Sidebar (4 Cols) - STICKY                        */}
-          {/* ============================================================== */}
+          {/* RIGHT COLUMN Sidebar */}
+          
           <aside ref={sidebarContainerRef} className="lg:col-span-4 relative self-start w-full">
             <div ref={sidebarRef} className="w-full flex flex-col gap-4 sm:gap-6 lg:sticky lg:top-0">
-              {/* 2. Recent Posts Grid (From site.json blog.blogPosts) */}
+              {/* Recent Posts Grid (From */}
               <YouMayLikeGrid title="Recent Posts" posts={relatedPosts} />
 
-              {/* 3. Promotional Content Gradient Banner (From site.json blog.promotionalBanner) */}
+              {/* Promotional Content Gradient Banner */}
               <PromotionalBannerCard {...promotionalBanner} />
             </div>
           </aside>

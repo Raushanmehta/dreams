@@ -35,7 +35,7 @@ export default function PropertiesCard({
     propertiesCount = property?.propertiesCount,
     estatesCount = property?.estatesCount,
     subtitle = property?.subtitle,
-    imageUrl = property?.imageUrl || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    imageUrl = property?.imageUrl || "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
     imageAlt = property?.imageAlt || "Luxury modern architectural villa with infinity pool",
     ctaText = property?.ctaText || "Explore Property",
     href = property?.href || (property?.id ? `/properties/${property.id}` : "/properties/villa-on-hollywood-boulevard"),
@@ -54,7 +54,7 @@ export default function PropertiesCard({
                 className
             )}
         >
-            {/* Background Image with smooth hover scale */}
+            {/* Background Image with smooth */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <Image
                     src={imageUrl}
@@ -78,7 +78,7 @@ export default function PropertiesCard({
                     {subtitle || `${propertiesCount || 148} Properties • ${estatesCount || 24} Estates`}
                 </p>
 
-                {/* Explore Button: Glassmorphic Frosted Blur */}
+                {/* Explore Button Glassmorphic Frosted Blur */}
                 <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

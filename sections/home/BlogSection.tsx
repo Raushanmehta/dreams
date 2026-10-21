@@ -45,10 +45,10 @@ export default function BlogSection() {
       style={{ backgroundColor: "#ffffff" }}
     >
       <div className="max-w-7xl mx-auto w-full">
-        {/* Section Header: Styled cleanly on white background */}
+        {/* Section Header Styled cleanly */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 ">
           <div>
-            {/* Eyebrow */}
+            {/* Section eyebrow badge element */}
             <motion.div
               initial={blogAnimations.eyebrow.initial}
               whileInView={blogAnimations.eyebrow.whileInView}
@@ -60,7 +60,7 @@ export default function BlogSection() {
               <span>{blog.badgeText}</span>
             </motion.div>
 
-            {/* Stepped Title with #2563EB Sliced Badge and Spinning Star SVG */}
+            {/* Stepped Title with #2563EB */}
             <motion.h2
               initial={blogAnimations.headline.initial}
               whileInView={blogAnimations.headline.whileInView}
@@ -75,7 +75,7 @@ export default function BlogSection() {
                     {blog.headline.badge}
                   </span>
                 </span>
-                {/* SVG Rotating 4-point Sparkle */}
+                {/* SVG Rotating 4 point Sparkle */}
                 <motion.span
                   animate={blogAnimations.spin.animate}
                   transition={blogAnimations.spin.transition}
@@ -88,7 +88,7 @@ export default function BlogSection() {
           </div>
         </div>
 
-        {/* Shadcn Embla Carousel: Smooth 2-card sliding on desktop, 1-card on mobile */}
+        {/* Shadcn Embla Carousel Smooth */}
         <div className="relative w-full py-2">
           <Carousel
             setApi={setApi}
@@ -113,7 +113,7 @@ export default function BlogSection() {
 
         {/* Bottom Line Arrow Navigation Controls */}
         <div className="flex items-center justify-between pt-2 sm:pt-3 w-full">
-          {/* Left Line Arrow: ←────── */}
+          {/* Left Line Arrow ←────── */}
           <motion.button
             type="button"
             onClick={() => api?.scrollPrev()}
@@ -124,13 +124,13 @@ export default function BlogSection() {
             className={`group flex items-center gap-0 select-none cursor-pointer py-3 transition-opacity ${canScrollPrev ? "opacity-100" : "opacity-35 cursor-not-allowed"
               }`}
           >
-            {/* Arrow Head */}
+            
             <ArrowLeftIcon className="w-5 h-5 text-zinc-900 group-hover:text-[#2563EB] transition-colors transition-transform group-hover:-translate-x-1.5" />
             {/* Long Horizontal Extension Line */}
             <span className="w-16 sm:w-24 md:w-28 h-[1.5px] bg-zinc-300 group-hover:bg-[#2563EB] transition-colors" />
           </motion.button>
 
-          {/* Right Line Arrow: ──────→ */}
+          {/* Right Line Arrow ──────→ */}
           <motion.button
             type="button"
             onClick={() => api?.scrollNext()}
@@ -143,7 +143,7 @@ export default function BlogSection() {
           >
             {/* Long Horizontal Extension Line */}
             <span className="w-16 sm:w-24 md:w-28 h-[1.5px] bg-zinc-300 group-hover:bg-[#2563EB] transition-colors" />
-            {/* Arrow Head */}
+            
             <ArrowRightIcon className="w-5 h-5 text-zinc-900 group-hover:text-[#2563EB] transition-colors transition-transform group-hover:translate-x-1.5" />
           </motion.button>
         </div>

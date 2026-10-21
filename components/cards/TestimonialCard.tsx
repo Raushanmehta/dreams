@@ -26,7 +26,7 @@ export default function TestimonialCard({
   testimonial,
   className,
 }: TestimonialCardProps): React.JSX.Element {
-  // Parse rating (supports numbers 5, 4.5 or strings "5", "4.5", "5/5")
+  // Parse rating (supports numbers
   const numericRating =
     typeof testimonial.rating === "number"
       ? testimonial.rating
@@ -47,9 +47,9 @@ export default function TestimonialCard({
       <div className="relative w-full h-full rounded-[24.5px] p-6 sm:p-7 flex flex-col justify-between bg-zinc-950/85 backdrop-blur-2xl overflow-hidden shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.22),inset_0_0_24px_0_rgba(255,255,255,0.02)]">
         <div className="relative z-10 flex flex-col h-full justify-between">
           <div>
-            {/* Top Row: Avatar and Star Rating (5 Stars or 4.5 Stars) */}
+            {/* Top Row Avatar and */}
             <div className="flex items-center justify-between mb-5 gap-3">
-              {/* Avatar Container */}
+              
               <div className="w-[52px] h-[52px] rounded-xl bg-white/[0.06] shadow-inner overflow-hidden flex items-center justify-center p-0.5 border border-white/15 flex-shrink-0 group-hover:border-[#2563EB]/40 transition-colors">
                 <Image
                   src={testimonial.avatar}
@@ -60,7 +60,7 @@ export default function TestimonialCard({
                 />
               </div>
 
-              {/* 5 Stars / 4.5 Stars Rating Badge */}
+              {/* Stars / 4.5 Stars */}
               <div className="flex items-center">
                 <div className="flex items-center gap-0.5">
                   {[1, 2, 3, 4, 5].map((starIdx) => {
@@ -100,7 +100,7 @@ export default function TestimonialCard({
               </div>
             </div>
 
-            {/* Middle Row: Name and Role */}
+            {/* Middle Row Name and Role */}
             <div className="mb-4">
               <h3 className="font-bold text-[17px] sm:text-[18px] text-white tracking-tight leading-snug truncate">
                 {testimonial.name}
@@ -111,7 +111,7 @@ export default function TestimonialCard({
             </div>
           </div>
 
-          {/* Bottom Row: Quote (Always open & visible, no open/close button) */}
+          {/* Bottom Row Quote (Always */}
           <div className="border-t border-white/[0.08] pt-4 mt-auto">
             <p className="text-zinc-300 text-[13.5px] sm:text-[14px] font-normal leading-[1.65] tracking-[-0.01em]">
               {testimonial.quote}

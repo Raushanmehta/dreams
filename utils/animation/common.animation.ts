@@ -1,8 +1,6 @@
 import type { Variants } from "framer-motion";
 
-/**
- * Common fade-in animation variants
- */
+/* Common fade in animation variants */
 export const fadeInVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -11,9 +9,7 @@ export const fadeInVariants: Variants = {
   },
 };
 
-/**
- * Common rise / slide-up animation variants
- */
+/* Common rise / slide */
 export const riseVariants: Variants = {
   hidden: { opacity: 0, y: 28 },
   show: {
@@ -23,9 +19,7 @@ export const riseVariants: Variants = {
   },
 };
 
-/**
- * Common staggered container variants
- */
+/* Common staggered container variants */
 export const staggerContainerVariants: Variants = {
   hidden: {},
   show: {

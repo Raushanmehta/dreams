@@ -24,7 +24,7 @@ export default function PropertiesPage() {
                 <div className="absolute top-0 right-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
                 <div className="relative mx-auto max-w-7xl w-full">
-                    {/* Section Header */}
+                    
                     <div className="mb-8 sm:mb-10">
                         <div>
                             <motion.div
@@ -52,7 +52,7 @@ export default function PropertiesPage() {
                                             {properties.headline.line2Badge}
                                         </span>
                                     </span>
-                                    {/* SVG Icon placed OUTSIDE the blue background on the right side */}
+                                    {/* SVG Icon placed OUTSIDE */}
                                     <motion.span
                                         animate={{ rotate: 360 }}
                                         transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -65,7 +65,6 @@ export default function PropertiesPage() {
                         </div>
                     </div>
 
-                    {/* Properties Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-5">
                         {propertiesList.map((property) => (
                             <PropertiesCard

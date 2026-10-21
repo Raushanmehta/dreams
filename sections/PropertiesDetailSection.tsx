@@ -42,12 +42,12 @@ export default function PropertiesDetailSection({
   const propertiesList = properties.propertiesList;
   const fallbackProperty = propertiesList[0];
 
-  // Find matching property from propertiesList if slug matches, otherwise fallback to first property
+  // Find matching property from
   const matchedProperty =
     (propertySlug ? propertiesList.find((p) => p.id === propertySlug) : null) ||
     fallbackProperty;
 
-  // Combine matched property data from propertiesList
+  // Combine matched property data
   const property = {
     ...fallbackProperty,
     ...matchedProperty,
@@ -58,10 +58,7 @@ export default function PropertiesDetailSection({
       matchedProperty.imageUrl ||
       (fallbackProperty as any).mainImage ||
       fallbackProperty.imageUrl,
-    galleryImages:
-      (matchedProperty as any).galleryImages ||
-      (fallbackProperty as any).galleryImages ||
-      [],
+
     specs:
       (matchedProperty as any).OverView ||
       (matchedProperty as any).overview ||
@@ -101,11 +98,9 @@ export default function PropertiesDetailSection({
     inquiryForm: properties.inquiryForm || {},
   };
 
-  // State management
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [activeFloorPlan, setActiveFloorPlan] = useState(0);
 
-  // References for sticky column pinning with GSAP ScrollSmoother
+  // References for sticky column
   const leftColRef = useRef<HTMLDivElement | null>(null);
   const sidebarContainerRef = useRef<HTMLDivElement | null>(null);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
@@ -155,7 +150,7 @@ export default function PropertiesDetailSection({
       ScrollTrigger.refresh();
     };
 
-    // Small delay ensures ScrollSmoother in parent layout is fully initialized
+    // Small delay ensures ScrollSmoother
     const timer = setTimeout(setupPin, 120);
     const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 500);
 
@@ -170,11 +165,9 @@ export default function PropertiesDetailSection({
     };
   }, []);
 
+  const currentImage = property.mainImage || "/images/service-villa.webp";
 
-  const gallery = property.galleryImages || [];
-  const currentImage = gallery[activeImageIndex]?.url || property.mainImage;
-
-  // Floor plans data from propertiesList in JSON
+  // Floor plans data from
   const floorPlans: FloorPlan[] = property.floorPlans;
   const currentPlan = floorPlans[activeFloorPlan] || floorPlans[0] || {
     id: "fp-default",
@@ -182,13 +175,13 @@ export default function PropertiesDetailSection({
     size: "Spacious",
     bedrooms: 0,
     bathrooms: 0,
-    image: property.mainImage || "/images/service-villa.jpg",
+    image: property.mainImage || "/images/service-villa.webp",
   };
 
-  // Amenities list from propertiesList in JSON
+  // Amenities list from propertiesList
   const amenitiesList: string[] = property.amenities;
 
-  // Nearby landmarks & transit from propertiesList in JSON
+  // Nearby landmarks & transit
   const nearbyPlaces: NearbyPlace[] = property.nearbyPlaces;
 
   const renderNearbyIcon = (category: string) => {
@@ -215,7 +208,7 @@ export default function PropertiesDetailSection({
     }
   };
 
-  // Helper icon render for specs with w-8 h-8
+  // Helper icon render for
   const renderSpecIcon = (iconName: string) => {
     const iconProps = { className: "w-8 h-8 text-[#2563EB] flex-shrink-0" };
     switch (iconName?.toLowerCase()) {
@@ -246,9 +239,9 @@ export default function PropertiesDetailSection({
 
   return (
     <div className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-[#11131a] font-sans select-none">
-      {/* ========================================================= */}
-      {/* 1. TOP HERO SECTION: LARGE IMAGE WITH OVERLAYS           */}
-      {/* ========================================================= */}
+      
+      {/* TOP HERO SECTION LARGE */}
+      
       <section className="relative w-full max-w-7xl mx-auto">
         <motion.div
           variants={propertiesDetailAnimations.hero.variants}
@@ -257,7 +250,7 @@ export default function PropertiesDetailSection({
           transition={propertiesDetailAnimations.hero.transition}
           className="relative w-full h-[300px] sm:h-[380px] md:h-[500px] lg:h-[500px] rounded-3xl sm:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-zinc-200/80 bg-zinc-900"
         >
-          {/* Main Hero Background Image with Smooth Crossfade */}
+          {/* Main Hero Background Image */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentImage}
@@ -287,9 +280,9 @@ export default function PropertiesDetailSection({
 
           {/* Bottom Overlay Content */}
           <div className="absolute bottom-0 inset-x-0 p-6 sm:p-4 md:p-6 flex flex-col md:flex-row md:items-end justify-between gap-6 z-10">
-            {/* Left Column: Title, Price, Location */}
+            {/* Left Column Title, Price, Location */}
             <div className="max-w-3xl">
-              {/* Location */}
+              {/* Property location address block */}
               <div className="flex items-center gap-1.5 text-zinc-200 text-xs sm:text-sm font-medium">
                 <MapPin className="w-4 h-4 text-[#2563EB] flex-shrink-0 fill-[#2563EB]/20" />
                 <span>{property.location}</span>
@@ -305,67 +298,31 @@ export default function PropertiesDetailSection({
         </motion.div>
       </section>
 
-      {/* ========================================================= */}
-      {/* 2. THUMBNAIL GALLERY STRIP                               */}
-      {/* ========================================================= */}
-      {gallery && gallery.length > 0 && (
-        <section className="relative w-full pt-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5 sm:gap-3.5">
-            {gallery.slice(0, 6).map((img: any, index: number) => {
-              const isActive = activeImageIndex === index;
-              return (
-                <motion.button
-                  key={img.id || index}
-                  type="button"
-                  onClick={() => setActiveImageIndex(index)}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className={`relative h-18 sm:h-22 md:h-24 w-full rounded-2xl overflow-hidden cursor-pointer transition-all ${isActive
-                    ? "ring-3 ring-[#2563EB] shadow-[0_6px_20px_rgba(37,99,235,0.35)]"
-                    : "opacity-80 hover:opacity-100 ring-1 ring-zinc-300"
-                    }`}
-                >
-                  <Image
-                    src={img.url}
-                    alt={img.alt || `Photo ${index + 1}`}
-                    fill
-                    sizes="160px"
-                    className="object-cover"
-                    unoptimized
-                  />
-                </motion.button>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* ========================================================= */}
-      {/* 3. MAIN CONTENT: 2-COLUMN LAYOUT                         */}
-      {/* ========================================================= */}
+      {/* MAIN CONTENT 2 COLUMN LAYOUT */}
+      
       <section className="relative w-full pt-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6">
-          {/* ======================================================= */}
-          {/* LEFT COLUMN: OVERVIEW, DESCRIPTION, AMENITIES, FLOOR PLANS, LOCATION */}
-          {/* ======================================================= */}
+          
+          {/* LEFT COLUMN OVERVIEW, DESCRIPTION, */}
+          
           <div ref={leftColRef} className="lg:col-span-8 flex flex-col gap-6 sm:gap-6">
-            {/* ----------------------------------------------------- */}
-            {/* A. OVERVIEW SECTION                                  */}
-            {/* ----------------------------------------------------- */}
+            
+            {/* A. OVERVIEW SECTION */}
+            
             <motion.div
               initial={propertiesDetailAnimations.fadeUp.initial}
               whileInView={propertiesDetailAnimations.fadeUp.whileInView}
               viewport={propertiesDetailAnimations.fadeUp.viewport}
               transition={propertiesDetailAnimations.fadeUp.transition}
             >
-              {/* Header */}
+              {/* Section header title block */}
               <div className=" border-b border-zinc-100">
                 <h2 className="text-2xl sm:text-[26px] font-bold text-[#11131a] tracking-tight">
                   {property.sectionTitles?.overview || "Overview"}
                 </h2>
               </div>
 
-              {/* 6 Spec Cards Grid */}
+              {/* Spec Cards Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 mt-5">
                 {(property.specs || []).map((spec: any) => (
                   <motion.div
@@ -396,9 +353,8 @@ export default function PropertiesDetailSection({
               </div>
             </motion.div>
 
-            {/* ----------------------------------------------------- */}
-            {/* B. DESCRIPTION SECTION                               */}
-            {/* ----------------------------------------------------- */}
+            {/* B. DESCRIPTION SECTION */}
+            
             {property.description && (
               <motion.div
                 initial={propertiesDetailAnimations.fadeUp.initial}
@@ -415,9 +371,8 @@ export default function PropertiesDetailSection({
               </motion.div>
             )}
 
-            {/* ----------------------------------------------------- */}
-            {/* C. AMENITIES & FEATURES SECTION                       */}
-            {/* ----------------------------------------------------- */}
+            {/* C. AMENITIES & FEATURES SECTION */}
+            
             <motion.div
               initial={propertiesDetailAnimations.fadeUp.initial}
               whileInView={propertiesDetailAnimations.fadeUp.whileInView}
@@ -435,7 +390,7 @@ export default function PropertiesDetailSection({
                 </div>
               </div>
 
-              {/* Grid of amenities with SVG checkmarks */}
+              {/* Grid of amenities with */}
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
                 {amenitiesList.map((amenity, idx) => (
                   <motion.div
@@ -455,9 +410,8 @@ export default function PropertiesDetailSection({
               </div>
             </motion.div>
 
-            {/* ----------------------------------------------------- */}
-            {/* D. FLOOR PLANS SECTION                                */}
-            {/* ----------------------------------------------------- */}
+            {/* D. FLOOR PLANS SECTION */}
+            
             <motion.div
               initial={propertiesDetailAnimations.fadeUp.initial}
               whileInView={propertiesDetailAnimations.fadeUp.whileInView}
@@ -486,8 +440,7 @@ export default function PropertiesDetailSection({
 
                 >
 
-
-                  {/* Floor Plan Blueprint / Schematic Visual */}
+                  {/* Floor Plan Blueprint / */}
                   <div className="relative w-full h-[260px] sm:h-[300px] rounded-2xl overflow-hidden border border-zinc-200 bg-[#0e1726] flex items-center justify-center">
                     {/* Architectural Blueprint Grid Pattern */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none" />
@@ -507,9 +460,8 @@ export default function PropertiesDetailSection({
               </AnimatePresence>
             </motion.div>
 
-            {/* ----------------------------------------------------- */}
-            {/* E. LOCATION & NEARBY PLACES                           */}
-            {/* ----------------------------------------------------- */}
+            {/* E. LOCATION & NEARBY PLACES */}
+            
             <motion.div
               initial={propertiesDetailAnimations.fadeUp.initial}
               whileInView={propertiesDetailAnimations.fadeUp.whileInView}
@@ -546,15 +498,13 @@ export default function PropertiesDetailSection({
               </div>
             </motion.div>
 
-            {/* ----------------------------------------------------- */}
           </div>
 
-          {/* ======================================================= */}
-          {/* RIGHT COLUMN: STICKY AGENT PROFILE & INQUIRY FORM       */}
-          {/* ======================================================= */}
+          {/* RIGHT COLUMN STICKY AGENT */}
+          
           <div ref={sidebarContainerRef} className="lg:col-span-4 relative w-full h-full">
             <div ref={sidebarRef} className="w-full space-y-6 z-20">
-              {/* 1. Standalone Contact Details & Inquiry Form Card */}
+              {/* Standalone Contact Details & */}
               <ContactDetailsCard
                 propertyTitle={property.title}
                 config={property.inquiryForm}

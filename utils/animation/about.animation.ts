@@ -1,16 +1,12 @@
 import type { Variants, Transition } from "framer-motion";
 
-/**
- * About Section Stagger Container
- */
+/* About Section Stagger Container */
 export const aboutContainerVariants: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
 
-/**
- * About Section Rise / Slide Up Variants
- */
+/* About Section Rise / */
 export const aboutRiseVariants: Variants = {
   hidden: { opacity: 0, y: 28 },
   show: {
@@ -20,9 +16,7 @@ export const aboutRiseVariants: Variants = {
   },
 };
 
-/**
- * About Hero Image Panel Entrance
- */
+/* About Hero Image Panel Entrance */
 export const aboutImageVariants: Variants = {
   initial: { opacity: 0, scale: 0.97 },
   animate: { opacity: 1, scale: 1 },
@@ -33,9 +27,7 @@ export const aboutImageTransition: Transition = {
   ease: [0.22, 1, 0.36, 1],
 };
 
-/**
- * Luxury CTA Button Fill & Shine Sweep
- */
+/* Luxury CTA Button Fill */
 export const buttonFillVariants: Variants = {
   rest: { scaleY: 0, opacity: 0 },
   hover: { scaleY: 1, opacity: 1 },
@@ -67,17 +59,13 @@ export const buttonArrowTransition: Transition = {
   damping: 22,
 };
 
-/**
- * Eyebrow Fade-in Variants
- */
+/* Eyebrow Fade in Variants */
 export const eyebrowVariants: Variants = {
   initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
 };
 
-/**
- * Consolidated About Animations Object
- */
+/* Consolidated About Animations Object */
 export const aboutAnimations = {
   container: aboutContainerVariants,
   rise: aboutRiseVariants,

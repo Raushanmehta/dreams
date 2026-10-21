@@ -29,7 +29,7 @@ const defaultRelatedPosts: RelatedPost[] = [
     category: "Architecture",
     date: "18 Oct 2024",
     categoryBadgeClass: "bg-[#FFF3E0] text-[#D97706]",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
+    image: "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
     href: "/blog/post-1",
   },
   {
@@ -38,7 +38,7 @@ const defaultRelatedPosts: RelatedPost[] = [
     category: "Market Insights",
     date: "24 Nov 2024",
     categoryBadgeClass: "bg-[#FEEAE6] text-[#EA580C]",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80",
+    image: "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
     href: "/blog/post-2",
   },
   {
@@ -47,7 +47,7 @@ const defaultRelatedPosts: RelatedPost[] = [
     category: "Urban Living",
     date: "12 Nov 2024",
     categoryBadgeClass: "bg-[#FFF3E0] text-[#D97706]",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80",
+    image: "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
     href: "/blog/post-3",
   },
   {
@@ -56,7 +56,7 @@ const defaultRelatedPosts: RelatedPost[] = [
     category: "Sustainability",
     date: "05 Nov 2024",
     categoryBadgeClass: "bg-[#FEF2F2] text-[#E11D48]",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80",
+    image: "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
     href: "/blog/post-4",
   },
   {
@@ -65,7 +65,7 @@ const defaultRelatedPosts: RelatedPost[] = [
     category: "Smart Living",
     date: "28 Oct 2024",
     categoryBadgeClass: "bg-[#FFF3E0] text-[#D97706]",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80",
+    image: "/images/downloaded/photo-1600210492486-724fe5c67fb0.webp",
     href: "/blog/post-5",
   },
 ];
@@ -77,12 +77,11 @@ export default function YouMayLikeGrid({
 }: YouMayLikeGridProps) {
   return (
     <div className={`w-full ${className}`}>
-      {/* Section Title */}
+      
       <h3 className="text-xl sm:text-[22px] font-bold text-[#11131a] tracking-tight mb-4">
         {title}
       </h3>
 
-      {/* 1-Column Grid */}
       <motion.div
         variants={blogDetailAnimations.container}
         initial="hidden"
@@ -98,7 +97,7 @@ export default function YouMayLikeGrid({
             className="group relative rounded-xl bg-white p-2.5 sm:p-3 shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-zinc-200/80 transition-shadow hover:shadow-md cursor-pointer select-none"
           >
             <Link href={post.href || "#"} className="flex items-center gap-3 sm:gap-3.5">
-              {/* Thumbnail */}
+              
               <div className="relative h-20 w-20 sm:h-22 sm:w-22 shrink-0 overflow-hidden rounded-lg bg-zinc-100">
                 <Image
                   src={post.image}
@@ -110,7 +109,6 @@ export default function YouMayLikeGrid({
                 />
               </div>
 
-              {/* Details */}
               <div className="flex flex-col justify-center min-w-0 flex-1">
                 {/* Category Badge & Date */}
                 <div className="mb-1.5 flex items-center gap-2">
@@ -128,7 +126,7 @@ export default function YouMayLikeGrid({
                   )}
                 </div>
 
-                {/* Title */}
+                {/* Main heading title element */}
                 <h4 className="text-[13px] sm:text-[13.5px] font-bold text-[#11131a] leading-snug line-clamp-2 group-hover:text-[#2563EB] transition-colors">
                   {post.title}
                 </h4>
