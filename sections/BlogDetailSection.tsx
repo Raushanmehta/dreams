@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, MessageSquare, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -11,7 +11,7 @@ import { FourPointStarIcon } from "@/components/icons";
 import YouMayLikeGrid, { type RelatedPost } from "@/components/cards/YouMayLikeGrid";
 import PromotionalBannerCard from "@/components/cards/PromotionalBannerCard";
 import { blogDetailAnimations } from "@/utils/animation/blog-detail.animation";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsBlogData } from "@/data";
 
 export interface BlogContentSection {
   subheading: string;
@@ -77,13 +77,15 @@ export interface BlogDetailSectionProps {
   customRelatedPosts?: RelatedPost[];
 }
 
-export default function BlogDetailSection({
+export function BlogDetailSection({
+  data,
+  className,
   postSlug,
   customArticle,
   customRelatedPosts,
-}: BlogDetailSectionProps) {
+}: SectionProps<DreamsBlogData> & BlogDetailSectionProps = {}) {
   // Extract all data directly
-  const blogData = siteData.blog as unknown as BlogSiteSchema;
+  const blogData = (data || site.blog) as unknown as BlogSiteSchema;
   const allBlogPosts = blogData.blogPosts || [];
   const matchedPost = (postSlug ? allBlogPosts.find((p) => p.slug === postSlug || p.id === postSlug) : null) || allBlogPosts[0];
   const postData = matchedPost || allBlogPosts[0] || ({} as BlogDetailArticleData);
@@ -197,7 +199,7 @@ export default function BlogDetailSection({
   }, []);
 
   return (
-    <section className="relative w-full isolate  text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200">
+    <section className={`relative w-full isolate text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200 ${className || ""}`}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Main 2 Column Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
@@ -328,3 +330,4 @@ export default function BlogDetailSection({
 }
 
 export { YouMayLikeGrid, YouMayLikeGrid as RecentPostsGrid, PromotionalBannerCard };
+export default BlogDetailSection;

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X, Sparkles, ArrowRight } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsFaqsData } from "@/data";
 
 export interface FaqItem {
   id: number;
@@ -33,20 +33,21 @@ export interface FaqsSectionData {
   items: FaqItem[];
 }
 
-interface FaqsSectionProps {
+export interface FaqsSectionProps {
   data?: FaqsSectionData;
 }
 
-export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps): React.JSX.Element {
+export function FaqsSection({ data, className }: SectionProps<DreamsFaqsData> & FaqsSectionProps = {}): React.JSX.Element {
+  const faqData = (data || site.faqs) as unknown as FaqsSectionData;
   // First item open
-  const [openId, setOpenId] = useState<number | null>(data?.items?.[0]?.id ?? 1);
+  const [openId, setOpenId] = useState<number | null>(faqData?.items?.[0]?.id ?? 1);
 
   // Toggle accordion state
   const toggleItem = (id: number) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
-  const booking = data?.bookingCard || {
+  const booking = faqData?.bookingCard || {
     avatar: "/images/team-brian.webp",
     title: "Book a 15 min call",
     description: "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
@@ -55,7 +56,7 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80">
+    <section className={`relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200/80 ${className || ""}`}>
       {/* Background ambient glow */}
       <div className="absolute top-1/4 left-1/6 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
 
@@ -73,7 +74,7 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                 className="inline-flex items-center gap-2 uppercase tracking-widest  font-semibold text-[#11131a] mb-3"
               >
                 <Sparkles className="h-5 w-5 text-[#2563EB]" />
-                <span>{data.badgeText}</span>
+                <span>{faqData.badgeText}</span>
               </motion.div>
 
               {/* Stepped brand headline */}
@@ -84,12 +85,12 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                 transition={{ duration: 0.55, delay: 0.08 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1a1a1a] leading-[1.15] uppercase"
               >
-                <span className="block">{data.headline.line1}</span>
+                <span className="block">{faqData.headline.line1}</span>
                 <span className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 mt-1.5 sm:mt-2">
                   
                   <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                     <span className="inline-block skew-x-14 md:skew-x-18">
-                      {data.headline.line2Badge}
+                      {faqData.headline.line2Badge}
                     </span>
                   </span>
                   
@@ -100,7 +101,7 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
                   >
                     <FourPointStarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a1a1a]" />
                   </motion.span>
-                  <span>{data.headline.line2Suffix}</span>
+                  <span>{faqData.headline.line2Suffix}</span>
                 </span>
               </motion.h2>
             </div>
@@ -150,7 +151,7 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
 
           {/* Right accordion column */}
           <div className="lg:col-span-7 flex flex-col gap-3.5 sm:gap-4">
-            {data?.items?.map((item, index) => {
+            {faqData?.items?.map((item, index) => {
               const isOpen = openId === item.id;
               return (
                 <motion.div
@@ -218,3 +219,5 @@ export default function FaqsSection({ data = siteData.faqs }: FaqsSectionProps):
     </section>
   );
 }
+
+export default FaqsSection;

@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Bed, Bath, Car, Calendar, Maximize2, Scan, CheckCircle2, Plane, Waves, Utensils, GraduationCap, ShoppingBag, Shield, Compass, } from "lucide-react";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsPropertiesData } from "@/data";
 import { propertiesDetailAnimations } from "@/utils/animation/properties-detail.animation";
 import { ContactDetailsCard } from "@/components/cards";
 
@@ -30,19 +30,47 @@ export interface NearbyPlace {
   time: string;
 }
 
+export interface PropertySpec {
+  id: string;
+  label: string;
+  value: string;
+  unit?: string;
+  icon: string;
+}
+
+export interface PropertyDetailRecord {
+  id?: string;
+  title?: string;
+  location?: string;
+  mainImage?: string;
+  imageUrl?: string;
+  OverView?: PropertySpec[];
+  overview?: PropertySpec[];
+  specs?: PropertySpec[];
+  description?: string;
+  amenities?: string[];
+  features?: string[];
+  floorPlans?: FloorPlan[] | FloorPlan;
+  nearbyPlaces?: NearbyPlace[];
+  galleryImages?: string[];
+  price?: string;
+}
+
 export interface PropertiesDetailSectionProps {
   propertySlug?: string;
 }
 
-export default function PropertiesDetailSection({
+export function PropertiesDetailSection({
+  data,
+  className,
   propertySlug,
-}: PropertiesDetailSectionProps): React.JSX.Element {
-  // Load data from siteData.properties
-  const { properties } = siteData;
-  const propertiesList = properties.propertiesList;
-  const fallbackProperty = propertiesList[0];
+}: SectionProps<DreamsPropertiesData> & PropertiesDetailSectionProps = {}): React.JSX.Element {
+  // Load data from site.properties
+  const properties = data || site.properties;
+  const propertiesList = (properties.propertiesList || []) as unknown as PropertyDetailRecord[];
+  const fallbackProperty = propertiesList[0] || {};
 
-  // Find matching property from
+  // Find matching property
   const matchedProperty =
     (propertySlug ? propertiesList.find((p) => p.id === propertySlug) : null) ||
     fallbackProperty;
@@ -54,39 +82,37 @@ export default function PropertiesDetailSection({
     title: matchedProperty.title || fallbackProperty.title,
     location: matchedProperty.location || fallbackProperty.location,
     mainImage:
-      (matchedProperty as any).mainImage ||
+      matchedProperty.mainImage ||
       matchedProperty.imageUrl ||
-      (fallbackProperty as any).mainImage ||
-      fallbackProperty.imageUrl,
+      fallbackProperty.mainImage ||
+      fallbackProperty.imageUrl ||
+      "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
 
     specs:
-      (matchedProperty as any).OverView ||
-      (matchedProperty as any).overview ||
-      (matchedProperty as any).specs ||
-      (fallbackProperty as any).OverView ||
-      (fallbackProperty as any).overview ||
-      (fallbackProperty as any).specs ||
+      matchedProperty.OverView ||
+      matchedProperty.overview ||
+      matchedProperty.specs ||
+      fallbackProperty.OverView ||
+      fallbackProperty.overview ||
+      fallbackProperty.specs ||
       [],
     description:
-      (matchedProperty as any).description ||
+      matchedProperty.description ||
       fallbackProperty.description ||
       "",
     amenities:
-      (matchedProperty as any).amenities ||
-      (matchedProperty as any).features ||
-      (fallbackProperty as any).amenities ||
-      (fallbackProperty as any).features ||
+      matchedProperty.amenities ||
+      matchedProperty.features ||
+      fallbackProperty.amenities ||
+      fallbackProperty.features ||
       [],
     floorPlans: (() => {
-      const raw =
-        (matchedProperty as any).floorPlans ||
-        (fallbackProperty as any).floorPlans ||
-        [];
+      const raw = matchedProperty.floorPlans || fallbackProperty.floorPlans || [];
       return Array.isArray(raw) ? raw : raw && typeof raw === "object" ? [raw] : [];
     })(),
     nearbyPlaces:
-      (matchedProperty as any).nearbyPlaces ||
-      (fallbackProperty as any).nearbyPlaces ||
+      matchedProperty.nearbyPlaces ||
+      fallbackProperty.nearbyPlaces ||
       [],
     sectionTitles: properties.sectionTitles || {
       overview: "Overview",
@@ -238,7 +264,7 @@ export default function PropertiesDetailSection({
   };
 
   return (
-    <div className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-[#11131a] font-sans select-none">
+    <div className={`relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-[#11131a] font-sans select-none ${className || ""}`}>
       
       {/* TOP HERO SECTION LARGE */}
       
@@ -262,7 +288,7 @@ export default function PropertiesDetailSection({
             >
               <Image
                 src={currentImage}
-                alt={property.title}
+                alt={property.title || "Luxury Architectural Residence"}
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1280px"
@@ -324,7 +350,7 @@ export default function PropertiesDetailSection({
 
               {/* Spec Cards Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 mt-5">
-                {(property.specs || []).map((spec: any) => (
+                {(property.specs || []).map((spec: PropertySpec) => (
                   <motion.div
                     key={spec.id}
                     whileHover={propertiesDetailAnimations.cardHover}
@@ -427,6 +453,24 @@ export default function PropertiesDetailSection({
                     Architectural spatial layouts & dimensional distribution
                   </p>
                 </div>
+                {floorPlans.length > 1 && (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {floorPlans.map((fp, idx) => (
+                      <button
+                        key={fp.id || idx}
+                        type="button"
+                        onClick={() => setActiveFloorPlan(idx)}
+                        className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+                          activeFloorPlan === idx
+                            ? "bg-[#2563EB] text-white shadow-sm"
+                            : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
+                        }`}
+                      >
+                        {fp.name || `Plan ${idx + 1}`}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Active Floor Plan Details */}
@@ -516,3 +560,5 @@ export default function PropertiesDetailSection({
     </div>
   );
 }
+
+export default PropertiesDetailSection;

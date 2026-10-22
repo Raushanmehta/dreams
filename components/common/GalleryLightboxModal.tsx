@@ -22,6 +22,8 @@ export interface GalleryLightboxModalProps {
     className?: string;
 }
 
+const emptySubscribe = () => () => {};
+
 /* Pure Fullscreen Interactive Gallery */
 export default function GalleryLightboxModal({
     selectedItem,
@@ -31,12 +33,8 @@ export default function GalleryLightboxModal({
     className,
 }: GalleryLightboxModalProps): React.JSX.Element | null {
     const [api, setApi] = useState<CarouselApi>();
-    const [mounted, setMounted] = useState<boolean>(false);
+    const mounted = React.useSyncExternalStore(emptySubscribe, () => true, () => false);
     const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     // Initial index when opened
     const initialIndex = useMemo(() => {

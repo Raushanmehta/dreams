@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import BreadCrumb from "@/components/common/BreadCrumb";
 import PropertiesDetailSection from "@/sections/PropertiesDetailSection";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 
 interface PropertiesDetailPageProps {
     params: Promise<{
@@ -10,7 +10,7 @@ interface PropertiesDetailPageProps {
 }
 
 export async function generateStaticParams() {
-    return siteData.properties.propertiesList.map((property) => ({
+    return site.properties.propertiesList.map((property) => ({
         slug: property.id,
     }));
 }
@@ -18,8 +18,8 @@ export async function generateStaticParams() {
 async function PropertyDetailContent({ params }: PropertiesDetailPageProps) {
     const { slug } = await params;
     const matched =
-        siteData.properties.propertiesList.find((p) => p.id === slug) ||
-        siteData.properties.propertiesList[0];
+        site.properties.propertiesList.find((p) => p.id === slug) ||
+        site.properties.propertiesList[0];
 
     return (
         <>
@@ -27,7 +27,7 @@ async function PropertyDetailContent({ params }: PropertiesDetailPageProps) {
                 title="Property Details"
                 subtitle={matched?.title ? `${matched.title} Luxury Residence` : "Luxury Residence"}
             />
-            <PropertiesDetailSection propertySlug={slug} />
+            <PropertiesDetailSection data={site.properties} propertySlug={slug} />
         </>
     );
 }

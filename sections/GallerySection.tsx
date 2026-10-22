@@ -7,7 +7,7 @@ import GalleryCard from "@/components/cards/GalleryCard";
 import GalleryLightboxModal from "@/components/common/GalleryLightboxModal";
 import { FourPointStarIcon } from "@/components/icons";
 import { Sparkles } from "lucide-react";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsGalleryData } from "@/data";
 
 export interface GalleryItem {
   id: string;
@@ -27,7 +27,7 @@ export interface GalleryItem {
   aspectClass?: string;
 }
 
-export const GALLERY_ITEMS: GalleryItem[] = siteData.gallery.items as GalleryItem[];
+export const GALLERY_ITEMS: GalleryItem[] = site.gallery.items as GalleryItem[];
 
 export interface GallerySectionProps {
   title?: string;
@@ -36,12 +36,19 @@ export interface GallerySectionProps {
   className?: string;
 }
 
-export default function GallerySection({
-  title = siteData.gallery.title,
-  badgeText = siteData.gallery.badgeText,
-  highlightWord = siteData.gallery.highlightWord,
+export function GallerySection({
+  data,
+  title,
+  badgeText,
+  highlightWord,
   className,
-}: GallerySectionProps): React.JSX.Element {
+}: SectionProps<DreamsGalleryData> & GallerySectionProps = {}): React.JSX.Element {
+  const gallery = (data || site.gallery) as unknown as DreamsGalleryData;
+  const sectionTitle = title || gallery.title;
+  const sectionBadge = badgeText || gallery.badgeText;
+  const sectionHighlight = highlightWord || gallery.highlightWord;
+  const galleryItems = (gallery.items || GALLERY_ITEMS) as GalleryItem[];
+
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
 
@@ -51,27 +58,27 @@ export default function GallerySection({
       id: "row-1",
       height: "h-[200px] sm:h-[280px] md:h-[380px] lg:h-[440px]",
       cards: [
-        { item: GALLERY_ITEMS[0], defaultFlex: 1, activeFlex: 2.3 },
-        { item: GALLERY_ITEMS[1], defaultFlex: 2, activeFlex: 2.6 },
-        { item: GALLERY_ITEMS[2], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[0] || GALLERY_ITEMS[0], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[1] || GALLERY_ITEMS[1], defaultFlex: 2, activeFlex: 2.6 },
+        { item: galleryItems[2] || GALLERY_ITEMS[2], defaultFlex: 1, activeFlex: 2.3 },
       ],
     },
     {
       id: "row-2",
       height: "h-[160px] sm:h-[220px] md:h-[260px] lg:h-[300px]",
       cards: [
-        { item: GALLERY_ITEMS[3], defaultFlex: 1, activeFlex: 2.3 },
-        { item: GALLERY_ITEMS[4], defaultFlex: 2, activeFlex: 2.6 },
-        { item: GALLERY_ITEMS[5], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[3] || GALLERY_ITEMS[3], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[4] || GALLERY_ITEMS[4], defaultFlex: 2, activeFlex: 2.6 },
+        { item: galleryItems[5] || GALLERY_ITEMS[5], defaultFlex: 1, activeFlex: 2.3 },
       ],
     },
     {
       id: "row-3",
       height: "h-[160px] sm:h-[220px] md:h-[260px] lg:h-[300px]",
       cards: [
-        { item: GALLERY_ITEMS[6], defaultFlex: 1, activeFlex: 2.3 },
-        { item: GALLERY_ITEMS[7], defaultFlex: 1, activeFlex: 2.3 },
-        { item: GALLERY_ITEMS[8], defaultFlex: 2, activeFlex: 2.6 },
+        { item: galleryItems[6] || GALLERY_ITEMS[6], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[7] || GALLERY_ITEMS[7], defaultFlex: 1, activeFlex: 2.3 },
+        { item: galleryItems[8] || GALLERY_ITEMS[8], defaultFlex: 2, activeFlex: 2.6 },
       ],
     },
   ];
@@ -126,7 +133,7 @@ export default function GallerySection({
               className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] font-semibold mb-4"
             >
               <Sparkles className="h-5 w-5 text-[#2563EB]" />
-              <span>{badgeText}</span>
+              <span>{sectionBadge}</span>
             </motion.div>
 
             {/* Headline with tilted blue */}
@@ -138,11 +145,11 @@ export default function GallerySection({
               className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase"
             >
               <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-2">
-                <span>{title}</span>
+                <span>{sectionTitle}</span>
                 {/* Tilted Sliced Background Badge */}
                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.4)] select-none">
                   <span className="inline-block skew-x-14 md:skew-x-18">
-                    {highlightWord}
+                    {sectionHighlight}
                   </span>
                 </span>
                 {/* Rotating 4 point star */}
@@ -202,10 +209,12 @@ export default function GallerySection({
       
       <GalleryLightboxModal
         selectedItem={selectedItem}
-        items={GALLERY_ITEMS}
+        items={galleryItems}
         onClose={() => setSelectedItem(null)}
         onSelect={(item) => setSelectedItem(item)}
       />
     </section>
   );
 }
+
+export default GallerySection;

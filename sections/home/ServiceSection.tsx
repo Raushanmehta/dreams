@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
 import ServiceCard, { type ServiceItem } from "@/components/cards/ServiceCard";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsServicesData } from "@/data";
 import { serviceAnimations } from "@/utils/animation/service.animation";
 
-export default function ServiceSection(): React.JSX.Element {
-  const { services } = siteData;
+export function ServiceSection({ data, className }: SectionProps<DreamsServicesData> = {}): React.JSX.Element {
+  const services = (data || site.services) as unknown as DreamsServicesData;
 
   return (
     <section
-      className="relative w-full isolate text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
+      className={`relative w-full isolate text-[#11131a] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200 ${className || ""}`}
     >
       <div className="max-w-7xl mx-auto w-full">
         
@@ -73,3 +73,5 @@ export default function ServiceSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default ServiceSection;

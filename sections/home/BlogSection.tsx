@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import BlogCard, { type BlogPost } from "@/components/cards/BlogCard";
 import { FourPointStarIcon, ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
 import { Sparkles } from "lucide-react";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsBlogData } from "@/data";
 import {
   Carousel,
   CarouselContent,
@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/carousel";
 import { blogAnimations } from "@/utils/animation/blog.animation";
 
-export default function BlogSection() {
-  const { blog } = siteData;
+export function BlogSection({ data, className }: SectionProps<DreamsBlogData> = {}) {
+  const blog = (data || site.blog) as unknown as DreamsBlogData;
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -41,7 +41,7 @@ export default function BlogSection() {
 
   return (
     <section
-      className="relative w-full isolate bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200"
+      className={`relative w-full isolate bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200 ${className || ""}`}
       style={{ backgroundColor: "#ffffff" }}
     >
       <div className="max-w-7xl mx-auto w-full">
@@ -151,3 +151,5 @@ export default function BlogSection() {
     </section>
   );
 }
+
+export default BlogSection;

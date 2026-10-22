@@ -6,11 +6,11 @@ import { Sparkles } from "lucide-react";
 import BreadCrumb from "@/components/common/BreadCrumb";
 import { FourPointStarIcon } from "@/components/icons";
 import { TestimonialCard } from "@/components/cards";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 import { testimonialAnimations } from "@/utils/animation/testimonial.animation";
 
 export default function TestimonialsPage(): React.JSX.Element {
-    const { testimonials } = siteData;
+    const testimonials = site.testimonials;
 
     return (
         <main>

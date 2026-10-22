@@ -6,10 +6,10 @@ import BreadCrumb from "@/components/common/BreadCrumb";
 import BlogCard, { type BlogPost } from "@/components/cards/BlogCard";
 import { FourPointStarIcon } from "@/components/icons";
 import { blogAnimations } from "@/utils/animation/blog.animation";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 
 export default function BlogsPage() {
-    const { blog } = siteData;
+    const blog = site.blog;
     const posts = (blog.blogPosts || []) as BlogPost[];
 
     return (

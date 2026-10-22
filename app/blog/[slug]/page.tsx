@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import BreadCrumb from "@/components/common/BreadCrumb";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 import BlogDetailSection, { type BlogDetailArticleData } from "@/sections/BlogDetailSection";
 
 interface BlogDetailPageProps {
@@ -10,7 +10,7 @@ interface BlogDetailPageProps {
 }
 
 export async function generateStaticParams() {
-    const allPosts = (siteData.blog.blogPosts || []) as BlogDetailArticleData[];
+    const allPosts = (site.blog.blogPosts || []) as BlogDetailArticleData[];
     const paramsList: { slug: string }[] = [];
     allPosts.forEach((post) => {
         if (post.id) paramsList.push({ slug: post.id });
@@ -27,9 +27,9 @@ async function BlogDetailContent({ params }: BlogDetailPageProps) {
         <>
             <BreadCrumb
                 title="Blog Details"
-                subtitle={siteData.blog.pageSubtitle}
+                subtitle={site.blog.pageSubtitle}
             />
-            <BlogDetailSection postSlug={slug} />
+            <BlogDetailSection data={site.blog} postSlug={slug} />
         </>
     );
 }

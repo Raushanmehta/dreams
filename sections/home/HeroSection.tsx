@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsHeroData } from "@/data";
 import {
   FourPointStarIcon,
   AsteriskIcon,
@@ -43,14 +43,14 @@ function renderHeroIcon(name: string, className = "w-4 h-4"): React.JSX.Element 
   }
 }
 
-export default function HeroSection(): React.JSX.Element {
+export function HeroSection({ data, className }: SectionProps<DreamsHeroData> = {}): React.JSX.Element {
   // All Hero Section data
-  const hero = siteData.hero as HeroData;
+  const hero = (data || site.hero) as unknown as HeroData;
 
   return (
-    <section className="relative w-full h-[85vh] lg:min-h-screen  bg-black p-4 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none">
+    <section className={`relative w-full h-[90vh] lg:min-h-screen bg-black p-4 sm:p-4 md:p-5 flex flex-col justify-between overflow-hidden select-none ${className || ""}`}>
       {/* Framed Hero Canvas with */}
-      <div className="relative w-full h-[calc(85vh-1.5rem)] sm:h-[calc(850vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+      <div className="relative w-full h-[calc(90vh-1.5rem)] sm:h-[calc(90vh-2rem)] md:h-[calc(100vh-2.5rem)] rounded-[22px] sm:rounded-[28px] md:rounded-[34px] overflow-hidden flex flex-col justify-end border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
         {/* Background Image from JSON */}
         <motion.div
           variants={heroAnimations.background.variants}
@@ -142,3 +142,5 @@ export default function HeroSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default HeroSection;

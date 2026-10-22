@@ -12,7 +12,7 @@ import {
   PrimeLocationsIcon,
   BespokeLuxuryIcon,
 } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsWhyChooseUsData } from "@/data";
 import { whyChooseUsAnimations } from "@/utils/animation/whychooseus.animation";
 
 export interface FeatureItem {
@@ -22,8 +22,8 @@ export interface FeatureItem {
   icon: string;
 }
 
-export default function WhyChooseUsSection(): React.JSX.Element {
-  const { whyChooseUs } = siteData;
+export function WhyChooseUsSection({ data, className }: SectionProps<DreamsWhyChooseUsData> = {}): React.JSX.Element {
+  const whyChooseUs = (data || site.whyChooseUs) as unknown as DreamsWhyChooseUsData;
 
   const renderFeatureIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
@@ -46,7 +46,7 @@ export default function WhyChooseUsSection(): React.JSX.Element {
 
   return (
     <section
-      className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20  font-sans text-neutral-900 select-none overflow-hidden border-t border-black/[0.08]"
+      className={`relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-neutral-900 select-none overflow-hidden border-t border-black/[0.08] ${className || ""}`}
     >
       {/* Ambient background accent */}
       <div className="absolute top-1/4 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[160px] pointer-events-none" />
@@ -182,3 +182,5 @@ export default function WhyChooseUsSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default WhyChooseUsSection;

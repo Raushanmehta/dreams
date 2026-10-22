@@ -6,10 +6,10 @@ import { Sparkles } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
 import { TeamCard, type TeamMember } from "@/components/cards/TeamCard";
 import BreadCrumb from "@/components/common/BreadCrumb";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 
 export default function TeamPage() {
-    const { team } = siteData;
+    const team = site.team;
     const members = (team.members || []) as TeamMember[];
 
     const badgeText = team.badgeText || team.title || "Our Teams";

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsClientsData } from "@/data";
 
 export interface ClientItem {
     id: number;
@@ -13,26 +13,18 @@ export interface ClientItem {
     logo: string;
 }
 
-export interface ClientSectionData {
-    badgeText: string;
-    headline: {
-        line1: string;
-        line2Badge: string;
-        line2Suffix?: string;
-    };
-    description?: string;
-    clientsList: ClientItem[];
+export type ClientSectionData = DreamsClientsData;
+
+export interface ClientSectionProps extends SectionProps<DreamsClientsData> {
+    data?: DreamsClientsData;
 }
 
-interface ClientSectionProps {
-    data?: ClientSectionData;
-}
-
-export default function ClientSection({ data = siteData.clients }: ClientSectionProps): React.JSX.Element {
-    const clients = data.clientsList || [];
+export function ClientSection({ data, className }: ClientSectionProps = {}): React.JSX.Element {
+    const clientData = data || site.clients;
+    const clients = clientData.clientsList || [];
 
     return (
-        <section className="relative w-full bg-[#f4f4f2] text-[#11131a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200">
+        <section className={`relative w-full bg-[#f4f4f2] text-[#11131a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none overflow-hidden border-t border-zinc-200 ${className || ""}`}>
             <div className="relative mx-auto max-w-7xl w-full">
                 
                 <div className="mb-8 sm:mb-10 text-left">
@@ -45,7 +37,7 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
                             className="inline-flex items-center gap-2 uppercase tracking-widest text-[#11131a] font-semibold mb-4"
                         >
                             <Sparkles className="h-5 w-5 text-[#2563EB]" />
-                            <span>{data.badgeText}</span>
+                            <span>{clientData.badgeText}</span>
                         </motion.div>
 
                         <motion.h2
@@ -56,10 +48,10 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
                             className="text-4xl sm:text-5xl md:text-[56px] font-medium tracking-tight text-[#11131a] leading-[1.15] uppercase text-left"
                         >
                             <div className="flex flex-wrap items-center justify-start gap-x-2.5 sm:gap-x-3 gap-y-2">
-                                <span>{data.headline.line1}</span>
+                                <span>{clientData.headline.line1}</span>
                                 <span className="relative inline-block bg-[#2563EB] text-white px-3.5 sm:px-5 py-0.5 sm:py-1 leading-none -skew-x-14 md:-skew-x-18 shadow-[0_8px_26px_rgba(37,99,235,0.35)] select-none">
                                     <span className="inline-block skew-x-14 md:skew-x-18">
-                                        {data.headline.line2Badge}
+                                        {clientData.headline.line2Badge}
                                     </span>
                                 </span>
                                 {/* SVG Icon placed OUTSIDE */}
@@ -70,8 +62,8 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
                                 >
                                     <FourPointStarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#2563EB]" />
                                 </motion.span>
-                                {data.headline.line2Suffix && (
-                                    <span>{data.headline.line2Suffix}</span>
+                                {(clientData.headline as { line2Suffix?: string }).line2Suffix && (
+                                    <span>{(clientData.headline as { line2Suffix?: string }).line2Suffix}</span>
                                 )}
                             </div>
                         </motion.h2>
@@ -115,3 +107,5 @@ export default function ClientSection({ data = siteData.clients }: ClientSection
         </section>
     );
 }
+
+export default ClientSection;

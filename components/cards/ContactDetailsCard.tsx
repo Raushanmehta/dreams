@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Mail, Phone, MessageSquare, Send, CheckCircle2 } from "lucide-react";
-import siteData from "@/data/site.json";
+import { User, Mail, Phone, MessageSquare, CheckCircle2 } from "lucide-react";
+import { site } from "@/data";
 
 export interface InquiryFormConfig {
   namePlaceholder?: string;
@@ -31,7 +31,7 @@ export default function ContactDetailsCard({
   className = "",
   onSuccess,
 }: ContactDetailsCardProps): React.JSX.Element {
-  const inquiryConfig = config || (siteData.properties as any)?.inquiryForm || {};
+  const inquiryConfig = config || site.properties.inquiryForm || {};
 
   const [formData, setFormData] = useState({
     name: "",

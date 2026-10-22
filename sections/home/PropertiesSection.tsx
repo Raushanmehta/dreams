@@ -11,11 +11,11 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import PropertiesCard, { type PropertyDestination } from "@/components/cards/PropertiesCard";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsPropertiesData } from "@/data";
 import { propertiesAnimations } from "@/utils/animation/properties.animation";
 
-export default function PropertiesSection(): React.JSX.Element {
-  const { properties } = siteData;
+export function PropertiesSection({ data, className }: SectionProps<DreamsPropertiesData> = {}): React.JSX.Element {
+  const properties = (data || site.properties) as unknown as DreamsPropertiesData;
   const propertiesList = (properties?.propertiesList || []) as PropertyDestination[];
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(1);
@@ -44,7 +44,7 @@ export default function PropertiesSection(): React.JSX.Element {
   }, [api]);
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
+    <section className={`relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08] ${className || ""}`}>
       {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 -z-10 h-[450px] w-[450px] rounded-full bg-emerald-950/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-blue-950/20 blur-[120px] pointer-events-none" />
@@ -208,3 +208,5 @@ export default function PropertiesSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default PropertiesSection;

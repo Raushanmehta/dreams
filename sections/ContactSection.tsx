@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, MapPin, ExternalLink, Sparkles } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsContactData } from "@/data";
 
 interface ContactFormData {
   name: string;
@@ -22,8 +22,8 @@ export interface ContactItem {
   href: string;
 }
 
-export default function ContactSection(): React.JSX.Element {
-  const contact = siteData.contact;
+export function ContactSection({ data, className }: SectionProps<DreamsContactData> = {}): React.JSX.Element {
+  const contact = (data || site.contact) as unknown as DreamsContactData;
 
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -63,7 +63,7 @@ export default function ContactSection(): React.JSX.Element {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
+    <section className={`relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80 ${className || ""}`}>
       <div className="max-w-7xl mx-auto w-full">
         
         {/* SECTION HEADER Matches Dreams */}
@@ -161,7 +161,7 @@ export default function ContactSection(): React.JSX.Element {
 
               <div className="h-auto lg:h-[120px] flex flex-col justify-start pt-2 lg:pt-3 mb-6 lg:mb-0">
                 <p className="text-zinc-400 text-[14px] leading-relaxed max-w-sm">
-                  {siteData.site.description}
+                  {(contact as { description?: string }).description || "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks."}
                 </p>
               </div>
 
@@ -394,3 +394,5 @@ export default function ContactSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default ContactSection;

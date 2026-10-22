@@ -1,6 +1,6 @@
 import BreadCrumb from "@/components/common/BreadCrumb";
 import FaqsSection from "@/sections/FaqsSection";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 
 export default function FAQsPage() {
     return (
@@ -11,7 +11,7 @@ export default function FAQsPage() {
                 subtitle="Frequently Asked Questions & Luxury Real Estate Advisory."
             />
             
-            <FaqsSection data={siteData.faqs} />
+            <FaqsSection data={site.faqs} />
         </main>
     );
 }

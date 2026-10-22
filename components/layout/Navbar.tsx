@@ -20,7 +20,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsNavbarData } from "@/data";
 import { navbarAnimations } from "@/utils/animation/navbar.animation";
 
 // Dynamic icon registry
@@ -69,13 +69,14 @@ export interface CtaConfig {
 }
 
 // Navbar content component
-function NavbarContent(): React.JSX.Element {
+function NavbarContent({ data, className }: SectionProps<DreamsNavbarData>): React.JSX.Element {
   const pathname = usePathname();
   const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  const { logo, navItems, cta } = siteData.navbar as {
+  const navData = data || site.navbar;
+  const { logo, navItems, cta } = navData as {
     logo: LogoConfig;
     navItems: NavItemConfig[];
     cta: CtaConfig;
@@ -96,16 +97,18 @@ function NavbarContent(): React.JSX.Element {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Route change effect
-  useEffect(() => {
+  // Close mobile navigation on route change
+  const [prevPath, setPrevPath] = useState(pathname);
+  if (prevPath !== pathname) {
+    setPrevPath(pathname);
     setIsMobileOpen(false);
-  }, [pathname]);
+  }
 
   // Active navigation items
   const displayItems = navItems;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300">
+    <header className={cn("fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-300", className)}>
       {/* Desktop navigation bar */}
       <motion.nav
         layout
@@ -423,10 +426,12 @@ function NavbarContent(): React.JSX.Element {
 }
 
 // Navbar root export
-export default function Navbar(): React.JSX.Element {
+export function Navbar({ data, className }: SectionProps<DreamsNavbarData> = {}): React.JSX.Element {
   return (
     <Suspense fallback={null}>
-      <NavbarContent />
+      <NavbarContent data={data} className={className} />
     </Suspense>
   );
 }
+
+export default Navbar;

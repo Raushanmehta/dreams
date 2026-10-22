@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
 import { Sparkles } from "lucide-react";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsAboutData } from "@/data";
 import { aboutAnimations } from "@/utils/animation/about.animation";
 import StatCounter from "@/components/common/StatCounter";
 
@@ -15,15 +15,17 @@ export interface AboutSectionProps {
   showButton?: boolean;
 }
 
-export default function AboutSection({
+export function AboutSection({
+  data,
+  className,
   showButton,
-}: AboutSectionProps = {}): React.JSX.Element {
-  const { about } = siteData;
+}: SectionProps<DreamsAboutData> & AboutSectionProps = {}): React.JSX.Element {
+  const about = (data || site.about) as unknown as DreamsAboutData;
   const pathname = usePathname();
   const shouldShowButton = showButton !== undefined ? showButton : pathname !== "/about";
 
   return (
-    <section className="bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-[#1a1a1a] select-none">
+    <section className={`bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-[#1a1a1a] select-none ${className || ""}`}>
       <div className="relative mx-auto max-w-7xl w-full">
         
         <motion.div
@@ -158,3 +160,5 @@ export default function AboutSection({
     </section>
   );
 }
+
+export default AboutSection;

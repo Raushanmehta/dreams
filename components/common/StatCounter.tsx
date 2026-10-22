@@ -49,15 +49,15 @@ export default function StatCounter({
     const parsed = parseStatValue(value);
     if (isNaN(parsed.target)) return;
 
-    // Set initial 0 state
-    setDisplay(
-      `${parsed.prefix}${formatNumber(0, parsed.decimals, parsed.hasComma)}${parsed.suffix}`
-    );
+    const initialZero = `${parsed.prefix}${formatNumber(0, parsed.decimals, parsed.hasComma)}${parsed.suffix}`;
 
     const controls = animate(0, parsed.target, {
       duration,
       delay,
       ease: [0.16, 1, 0.3, 1],
+      onPlay: () => {
+        setDisplay(initialZero);
+      },
       onUpdate: (latest) => {
         setDisplay(
           `${parsed.prefix}${formatNumber(latest, parsed.decimals, parsed.hasComma)}${parsed.suffix}`

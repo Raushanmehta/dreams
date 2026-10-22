@@ -29,7 +29,6 @@ export interface PropertiesCardProps extends PropertyDestination {
 
 export default function PropertiesCard({
     property,
-    index,
     title = property?.title || "Beverly Hills Modern Villa",
     location = property?.location,
     propertiesCount = property?.propertiesCount,
@@ -75,7 +74,7 @@ export default function PropertiesCard({
                     {title}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-1.5 font-medium tracking-wide">
-                    {subtitle || `${propertiesCount || 148} Properties • ${estatesCount || 24} Estates`}
+                    {subtitle || (location ? `${location} • ` : "") + `${propertiesCount || 148} Properties • ${estatesCount || 24} Estates`}
                 </p>
 
                 {/* Explore Button Glassmorphic Frosted Blur */}

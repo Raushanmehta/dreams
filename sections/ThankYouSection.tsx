@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, ArrowRight, Home, Compass } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsThankYouData } from "@/data";
 
 export interface ThankYouData {
   badgeText?: string;
@@ -22,24 +22,25 @@ export interface ThankYouData {
   }>;
 }
 
-interface ThankYouSectionProps {
+export interface ThankYouSectionProps {
   data?: ThankYouData;
 }
 
-export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSectionProps): React.JSX.Element {
-  const headline = data?.headline || {
+export function ThankYouSection({ data, className }: SectionProps<DreamsThankYouData> & ThankYouSectionProps = {}): React.JSX.Element {
+  const thankYou = (data || site.thankYou) as unknown as ThankYouData;
+  const headline = thankYou?.headline || {
     line1: "Thank You",
     line2Badge: "Confirmed",
     line2Suffix: "& Received",
   };
 
-  const actionButtons = data?.actionButtons || [
+  const actionButtons = thankYou?.actionButtons || [
     { label: "Explore Residences", href: "/properties", primary: true },
     { label: "Return to Home", href: "/", primary: false },
   ];
 
   return (
-    <section className="relative w-full min-h-[80vh] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none flex items-center justify-center">
+    <section className={`relative w-full min-h-[80vh] bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none flex items-center justify-center ${className || ""}`}>
       {/* Background ambient glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_25%,rgba(37,99,235,0.08),transparent)] pointer-events-none" />
 
@@ -62,7 +63,7 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
 
         <div className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-semibold text-black mb-4">
           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-[#2563EB]" />
-          <span>{data?.badgeText || "Confirmation"}</span>
+          <span>{thankYou?.badgeText || "Confirmation"}</span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1a1a1a] leading-[1.18] uppercase">
@@ -87,7 +88,7 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-zinc-600 max-w-lg leading-relaxed">
-          {data?.subtitle ||
+          {thankYou?.subtitle ||
             "Your enquiry has been successfully registered. A dedicated luxury portfolio advisor will connect with you shortly."}
         </p>
 
@@ -116,3 +117,5 @@ export default function ThankYouSection({ data = siteData.thankYou }: ThankYouSe
     </section>
   );
 }
+
+export default ThankYouSection;

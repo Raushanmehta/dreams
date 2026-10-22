@@ -10,31 +10,19 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { TeamCard, type TeamMember, type SocialLink } from "@/components/cards/TeamCard";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsTeamData } from "@/data";
 
 export type { TeamMember, SocialLink };
 
-export interface TeamSectionData {
-  title?: string;
-  badgeText?: string;
-  badgeIcon?: string;
-  headline?: {
-    prefix?: string;
-    badge?: string;
-    icon?: string;
-  };
-  connectButtonText?: string;
-  connectButtonHref?: string;
-  members: TeamMember[];
+export type TeamSectionData = DreamsTeamData;
+
+export interface TeamSectionProps extends SectionProps<DreamsTeamData> {
+  data?: DreamsTeamData;
 }
 
-export interface TeamSectionProps {
-  data?: TeamSectionData;
-}
-
-export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.Element {
-  const team = (data || siteData.team) as TeamSectionData;
-  const members = (team.members || []) as TeamMember[];
+export function TeamSection({ data, className }: TeamSectionProps = {}): React.JSX.Element {
+  const team = data || site.team;
+  const members = (team.members || []) as unknown as TeamMember[];
 
   const badgeText = team.badgeText || team.title || "Our Teams";
   const headlinePrefix = team.headline?.prefix || "Meet Our";
@@ -43,7 +31,7 @@ export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.
   const connectButtonHref = team.connectButtonHref || "#contact";
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-white font-sans select-none overflow-hidden border-t border-zinc-900">
+    <section className={`relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 text-white font-sans select-none overflow-hidden border-t border-zinc-900 ${className || ""}`}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header All data */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10">
@@ -109,3 +97,5 @@ export default function TeamSection({ data }: TeamSectionProps = {}): React.JSX.
     </section>
   );
 }
+
+export default TeamSection;

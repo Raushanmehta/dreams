@@ -1,2149 +1,2362 @@
 {
-  "site": {
-    "name": "Dreams Luxury Real Estate",
-    "description": "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.",
-    "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow"
-  },
-  "navbar": {
-    "logo": {
-      "text": "Dreams",
-      "highlight": "*",
-      "image": "",
-      "alt": "Dreams Luxury Real Estate",
-      "href": "/"
-    },
-    "navItems": [
-      {
-        "label": "Home",
-        "href": "/",
-        "icon": "Home"
-      },
-      {
-        "label": "About",
-        "href": "/about",
-        "icon": "Info"
-      },
-      {
-        "label": "Properties",
-        "href": "/properties",
-        "icon": "Building2"
-      },
-      {
-        "label": "Clients",
-        "href": "/clients",
-        "icon": "Award"
-      },
-      {
-        "label": "Blogs",
-        "href": "/blog",
-        "icon": "BookOpen"
-      },
-      {
-        "label": "Contact Us",
-        "href": "/contact",
-        "icon": "Mail"
-      }
-    ],
-    "cta": {
-      "label": "Enquiry Now",
-      "href": "/enquiry-now",
-      "icon": "ArrowRight"
-    }
-  },
-  "hero": {
-    "backgroundImage": "/images/hero-banners.webp",
-    "backgroundAlt": "Luxury modern architectural residence with illuminated pool",
-    "headline": {
-      "prefix": "Book",
-      "badge": "Your",
-      "main": "Dreams",
-      "badgeIcon": "FourPointStar",
-      "mainIcon": "Asterisk"
-    },
-    "description": "Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives.",
-    "cta": {
-      "label": "Enquire Now",
-      "href": "/enquiry-now",
-      "icon": "ArrowRight"
-    }
-  },
-  "about": {
-    "badgeText": "About Us",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line1": "ABOUT OUR",
-      "line2Prefix": "BOOK",
-      "line2Badge": "PRESTIGIOU",
-      "line3": "RESIDENCES",
-      "icon": "FourPointStar"
-    },
-    "description": "We represent the world’s most distinguished residential estates, private waterfront sanctuaries, and prime architectural masterworks.",
-    "image": "/images/downloaded/photo-1600210492486-724fe5c67fb0.webp",
-    "imageAlt": "Luxury living room with sculpted chairs and a stone coffee table",
-    "stats": [
-      {
-        "value": "$2.8B+",
-        "label": "Volume Sold"
-      },
-      {
-        "value": "450+",
-        "label": "Estates"
-      },
-      {
-        "value": "15+ Yrs",
-        "label": "Advisory"
-      }
-    ],
-    "cta": {
-      "label": "ABOUT US",
-      "href": "/about",
-      "icon": "ArrowRight"
-    }
-  },
-  "blog": {
-    "pageTitle": "Our Blogs",
-    "pageSubtitle": "In-depth intelligence on prime global real estate, architectural trends, and wealth preservation.",
-    "badgeText": "Our Blogs",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "prefix": "Featured",
-      "badge": "Article",
-      "icon": "FourPointStar"
-    },
-    "blogPosts": [
-      {
-        "id": "post-1",
-        "title": "Architectural Trends Defining Luxury Living in 2025",
-        "excerpt": "Discover how organic biophilic architecture, zero-carbon construction, and private wellness pavilions are shaping ultra-luxury estates.",
-        "category": "Architecture",
-        "date": "18 Oct 2024",
-        "readTime": "4 min read",
-        "image": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
-        "isLatest": false,
-        "badgeText": "Architecture • Insight",
-        "headlinePrefix": "Architectural",
-        "headlineBadge": "Trend",
-        "headlineSuffix": "Defining Luxury Living in 2025",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+  "Dreams": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "navbar": "DreamsNavbar1",
+          "footer": "DreamsFooter1"
         },
-        "commentsCountText": "4 min read • Market Intelligence",
-        "quote": {
-          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
-          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
-        },
-        "sections": [
-          {
-            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
-            "paragraphs": [
-              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
-              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "hero",
+                "component": "DreamsHero1"
+              },
+              {
+                "key": "about",
+                "component": "DreamsAbout1"
+              },
+              {
+                "key": "properties",
+                "component": "DreamsProperties1"
+              },
+              {
+                "key": "whyChooseUs",
+                "component": "DreamsWhyChooseUs1"
+              },
+              {
+                "key": "team",
+                "component": "DreamsTeam1"
+              },
+              {
+                "key": "services",
+                "component": "DreamsServices1"
+              },
+              {
+                "key": "testimonials",
+                "component": "DreamsTestimonials1"
+              },
+              {
+                "key": "blog",
+                "component": "DreamsBlog1"
+              }
             ]
           },
-          {
-            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
-            "paragraphs": [
-              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+          "about": {
+            "components": [
+              {
+                "key": "about",
+                "component": "DreamsAbout1"
+              },
+              {
+                "key": "whyChooseUs",
+                "component": "DreamsWhyChooseUs1"
+              }
             ]
           },
-          {
-            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
-            "paragraphs": [
-              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
-              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
-            ]
-          }
-        ],
-        "slug": "architectural-trends-defining-luxury-living-in-2025"
-      },
-      {
-        "id": "post-2",
-        "title": "Prime Waterfront Estates: Navigating Global Coastal Investments",
-        "excerpt": "A strategic guide to acquiring high-yield waterfront sanctuaries across the French Riviera, Amalfi Coast, and Miami Biscayne Bay.",
-        "category": "Market Insights",
-        "date": "24 Nov 2024",
-        "readTime": "5 min read",
-        "image": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
-        "isLatest": true,
-        "badgeText": "Market Insights • Prime Waterfront",
-        "headlinePrefix": "Prime",
-        "headlineBadge": "Waterfront",
-        "headlineSuffix": "Estates & Global Coastal Investments",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1507003211169-0a1dd7228f2d.webp"
-        },
-        "commentsCountText": "5 min read • Market Intelligence",
-        "quote": {
-          "text": "Waterfront real estate remains the quintessential store of generational value—geography dictates scarcity, while architecture defines prestige.",
-          "author": "Alistair Croft, Head of Prime Global Acquisitions at Dreams"
-        },
-        "sections": [
-          {
-            "subheading": "Strategic Coastal Acquisitions Across Monaco & The French Riviera",
-            "paragraphs": [
-              "Prime waterfront real estate continues to outperform the broader luxury residential market by significant margins. In tier-one maritime enclaves—from the cliffside villas of Cap d’Antibes to the private moorings of Monaco’s Port Hercules—constrained geographic supply meets escalating international wealth migration.",
-              "Investors seeking prime coastal assets prioritize deep-water dockage, multi-tiered security parameters, and unrestricted Mediterranean or Caribbean vistas. These trophy properties function not merely as lifestyle havens, but as cornerstone liquid capital reserves."
+          "properties": {
+            "components": [
+              {
+                "key": "properties",
+                "component": "DreamsProperties1"
+              }
             ]
           },
-          {
-            "subheading": "Evaluating Long-Term Yield & Capital Appreciation in Coastal Sanctuaries",
-            "paragraphs": [
-              "A rigorous analysis of global coastal transactions demonstrates that bespoke architectural residences with direct beach access experience annualized appreciation rates exceeding standard inland luxury by 30 to 45 percent. Waterfront properties in micro-markets like Miami’s Indian Creek or the Amalfi Coast rarely enter open-market listings, trading through private broker syndicates.",
-              "Our advisory team leverages direct relationships with private trust offices to secure off-market titles before public marketing commences."
+          "clients": {
+            "components": [
+              {
+                "key": "clients",
+                "component": "DreamsClients1"
+              }
             ]
           },
-          {
-            "subheading": "Climate Resilient Engineering & Architectural Permanence",
-            "paragraphs": [
-              "Today’s prime waterfront buyers demand cutting-edge marine engineering alongside peerless aesthetic splendor. Reinforced seawall architecture, marine-grade corrosion-resistant alloys, and autonomous off-grid backup systems ensure coastal masterworks remain resilient for centuries.",
-              "Investing in prime waterfront sanctuaries demands specialized due diligence spanning coastal easement rights, sovereign tax treaty positioning, and architectural adaptability. Dreams provides confidential guidance from initial identification through post-settlement management."
-            ]
-          }
-        ],
-        "slug": "prime-waterfront-estates-navigating-global-coastal-investments"
-      },
-      {
-        "id": "post-3",
-        "title": "The Rise of High-Rise Penthouses in Urban Epicenters",
-        "excerpt": "How panoramic skyline terraces, private elevator foyers, and bespoke hotel-tier concierge amenities are redefining metropolis penthouses.",
-        "category": "Urban Living",
-        "date": "12 Nov 2024",
-        "readTime": "3 min read",
-        "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
-        "isLatest": false,
-        "badgeText": "Urban Living • Insights",
-        "headlinePrefix": "The",
-        "headlineBadge": "Rise",
-        "headlineSuffix": "of High-Rise Penthouses in Urban Epicenters",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
-        },
-        "commentsCountText": "3 min read • Market Intelligence",
-        "quote": {
-          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
-          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
-        },
-        "sections": [
-          {
-            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
-            "paragraphs": [
-              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
-              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+          "team": {
+            "components": [
+              {
+                "key": "team",
+                "component": "DreamsTeam1"
+              }
             ]
           },
-          {
-            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
-            "paragraphs": [
-              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+          "testimonials": {
+            "components": [
+              {
+                "key": "testimonials",
+                "component": "DreamsTestimonials1"
+              }
             ]
           },
-          {
-            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
-            "paragraphs": [
-              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
-              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
-            ]
-          }
-        ],
-        "slug": "the-rise-of-high-rise-penthouses-in-urban-epicenters"
-      },
-      {
-        "id": "post-4",
-        "title": "Sustainable Sanctuaries: Net-Zero Mansions of Tomorrow",
-        "excerpt": "Exploring how geothermal climate engineering and solar glass integration elevate ecological residential design to an art form.",
-        "category": "Sustainability",
-        "date": "04 Nov 2024",
-        "readTime": "4 min read",
-        "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-        "isLatest": false,
-        "badgeText": "Sustainability • Insights",
-        "headlinePrefix": "Sustainable",
-        "headlineBadge": "Sanctuaries:",
-        "headlineSuffix": "Net-Zero Mansions of Tomorrow",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
-        },
-        "commentsCountText": "4 min read • Market Intelligence",
-        "quote": {
-          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
-          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
-        },
-        "sections": [
-          {
-            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
-            "paragraphs": [
-              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
-              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+          "blog": {
+            "components": [
+              {
+                "key": "blog",
+                "component": "DreamsBlog1"
+              }
             ]
           },
-          {
-            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
-            "paragraphs": [
-              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+          "contact": {
+            "components": [
+              {
+                "key": "contact",
+                "component": "DreamsContact1"
+              }
             ]
           },
-          {
-            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
-            "paragraphs": [
-              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
-              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
-            ]
-          }
-        ],
-        "slug": "sustainable-sanctuaries-net-zero-mansions-of-tomorrow"
-      },
-      {
-        "id": "post-5",
-        "title": "Curating Private Sanctuaries: The Art of Smart Home Living",
-        "excerpt": "From ambient biological circadian lighting to AI-driven security vaults, step inside the next generation of intelligent luxury retreats.",
-        "category": "Smart Estates",
-        "date": "28 Oct 2024",
-        "readTime": "3 min read",
-        "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
-        "isLatest": false,
-        "badgeText": "Smart Estates • Insights",
-        "headlinePrefix": "Curating",
-        "headlineBadge": "Private",
-        "headlineSuffix": "Sanctuaries: The Art of Smart Home Living",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
-        },
-        "commentsCountText": "3 min read • Market Intelligence",
-        "quote": {
-          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
-          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
-        },
-        "sections": [
-          {
-            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
-            "paragraphs": [
-              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
-              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+          "enquiryNow": {
+            "components": [
+              {
+                "key": "enquiryNow",
+                "component": "DreamsEnquiryNow1"
+              }
             ]
           },
-          {
-            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
-            "paragraphs": [
-              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+          "gallery": {
+            "components": [
+              {
+                "key": "gallery",
+                "component": "DreamsGallery1"
+              }
             ]
           },
-          {
-            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
-            "paragraphs": [
-              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
-              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
-            ]
-          }
-        ],
-        "slug": "curating-private-sanctuaries-the-art-of-smart-home-living"
-      },
-      {
-        "id": "post-6",
-        "title": "Heritage Restorations: Reviving Historic European Châteaux",
-        "excerpt": "Balancing centuries-old stone craftsmanship with state-of-the-art contemporary lifestyle technology across France and Tuscany.",
-        "category": "Heritage",
-        "date": "15 Oct 2024",
-        "readTime": "5 min read",
-        "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
-        "isLatest": false,
-        "badgeText": "Heritage • Insights",
-        "headlinePrefix": "Heritage",
-        "headlineBadge": "Restorations:",
-        "headlineSuffix": "Reviving Historic European Châteaux",
-        "author": {
-          "name": "Marcus Vance",
-          "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
-        },
-        "commentsCountText": "5 min read • Market Intelligence",
-        "quote": {
-          "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
-          "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
-        },
-        "sections": [
-          {
-            "subheading": "Biophilic Architecture & Private Wellness Pavilions",
-            "paragraphs": [
-              "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
-              "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+          "faqs": {
+            "components": [
+              {
+                "key": "faqs",
+                "component": "DreamsFaqs1"
+              }
             ]
           },
-          {
-            "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
-            "paragraphs": [
-              "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+          "thankYou": {
+            "components": [
+              {
+                "key": "thankYou",
+                "component": "DreamsThankYou1"
+              }
             ]
           },
-          {
-            "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
-            "paragraphs": [
-              "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
-              "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+          "notFound": {
+            "components": [
+              {
+                "key": "notFound",
+                "component": "DreamsNotFound1"
+              }
             ]
           }
-        ],
-        "slug": "heritage-restorations-reviving-historic-european-chteaux"
-      }
-    ],
-    "promotionalBanner": {
-      "badge": "Exclusive Sanctuaries",
-      "title": "Discover Curated\nLuxury Waterfront\nEstates & Villas",
-      "buttonText": "Enquiry Now",
-      "buttonHref": "/enquiry-now"
-    }
-  },
-  "properties": {
-    "pageTitle": "Our Properties",
-    "pageSubtitle": "Curated portfolios of iconic estates and architectural landmarks across global capitals.",
-    "badgeText": "Featured Properties",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line1": "Exclusive Estates &",
-      "line2Prefix": "Luxury",
-      "line2Badge": "Propertie",
-      "icon": "FourPointStar"
-    },
-    "description": "Explore our handpicked collection of premier architectural sanctuaries, waterfront estates, and prestigious luxury properties worldwide.",
-    "propertiesList": [
-      {
-        "id": "beverly-hills-villa",
-        "title": "Beverly Hills Modern Villa",
-        "location": "Beverly Hills, CA 90210, USA",
-        "propertiesCount": "148",
-        "estatesCount": "24",
-        "imageUrl": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
-        "imageAlt": "Luxury modern architectural villa with infinity pool in Beverly Hills",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1584622650111-993a426fbf0a.webp",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "3",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "4",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "2",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "4530",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "description": "The very best waterfront location in Harbor Islands complete with private dock and amazing water frontage! Offering panoramic water views, this spacious home has volume ceilings and offers a rarely available ground floor master bedroom suite. The modern kitchen has been completely updated, leading to entertainment and family rooms that open to fabulous back yard and swimming pool overlooking the waterways. Must be seen!",
-        "amenities": [
-          "Private Heated Infinity Pool",
-          "Dual Custom Marble Sinks",
-          "Sub-Zero Culinary Appliances",
-          "Architectural Fireplace",
-          "Private Elevator Access",
-          "Smart Climate Automation",
-          "Lush Biophilic Landscaping",
-          "24/7 Monitored Security",
-          "Temperature-Controlled Wine Cellar"
-        ],
-        "floorPlans": {
-          "id": "fp-ground",
-          "name": "Ground Level",
-          "size": "2,450 sq ft",
-          "bedrooms": 2,
-          "bathrooms": 2.5,
-          "ceilingHeight": "13.0 ft",
-          "image": "https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-          "description": "Grand foyer, formal living salon, open culinary suite, and guest quarters."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "International Private Airport",
-            "category": "Airport",
-            "distance": "14.2 miles",
-            "time": "18 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Waterfront Yacht Marina",
-            "category": "Marina",
-            "distance": "2.5 miles",
-            "time": "6 mins drive"
-          },
-          {
-            "id": "np-dining",
-            "name": "Michelin Star Dining",
-            "category": "Dining",
-            "distance": "1.2 miles",
-            "time": "4 mins walk"
-          },
-          {
-            "id": "np-school",
-            "name": "Elite International Academy",
-            "category": "Education",
-            "distance": "3.8 miles",
-            "time": "8 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Haute Couture Shopping District",
-            "category": "Shopping",
-            "distance": "0.9 miles",
-            "time": "3 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Private Health & Country Club",
-            "category": "Wellness",
-            "distance": "2.1 miles",
-            "time": "5 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "dubai-sky-penthouse",
-        "title": "Dubai Marina Sky Penthouse",
-        "location": "Marina Bay, Dubai, UAE",
-        "propertiesCount": "320",
-        "estatesCount": "42",
-        "imageUrl": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
-        "imageAlt": "Skyline luxury penthouse with glass terrace overlooking Dubai Marina",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
-        "description": "Perched across the top floors of Dubai Marina, this extraordinary duplex sky penthouse commands 360-degree vistas over Palm Jumeirah and the Arabian Gulf. Complete with private sky infinity pool, floor-to-ceiling soundproof acoustic glass, Italian marble flooring, and private high-speed elevator foyer.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "4",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "5",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "3",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "6800",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Private Sky Pool",
-          "Panoramic Marina View",
-          "Private Helipad Access",
-          "Biometric Elevator",
-          "Italian Calacatta Marble",
-          "Sauna & Steam Suite",
-          "24/7 Butler Concierge",
-          "Temperature-Controlled Cellar"
-        ],
-        "floorPlans": {
-          "id": "fp-dubai-penthouse",
-          "name": "Sky Duplex Penthouse",
-          "size": "6,800 sq ft",
-          "bedrooms": 4,
-          "bathrooms": 5,
-          "ceilingHeight": "16.0 ft",
-          "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
-          "description": "Double-height living pavilion, private sky terrace infinity pool, and master penthouse suite."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Dubai International Airport",
-            "category": "Airport",
-            "distance": "16.5 miles",
-            "time": "20 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Dubai Marina Yacht Club",
-            "category": "Marina",
-            "distance": "0.4 miles",
-            "time": "5 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "Pier 7 Fine Dining",
-            "category": "Dining",
-            "distance": "0.6 miles",
-            "time": "7 mins walk"
-          },
-          {
-            "id": "np-school",
-            "name": "Emirates International School",
-            "category": "Education",
-            "distance": "3.2 miles",
-            "time": "8 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Dubai Marina Mall",
-            "category": "Shopping",
-            "distance": "0.5 miles",
-            "time": "6 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "The Ritz-Carlton Spa",
-            "category": "Wellness",
-            "distance": "1.1 miles",
-            "time": "4 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "monaco-waterfront-estate",
-        "title": "Monaco Waterfront Estate",
-        "location": "Port Hercules, Monaco",
-        "propertiesCount": "96",
-        "estatesCount": "18",
-        "imageUrl": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
-        "imageAlt": "Ultra-luxury modern waterfront villa with private yacht dock in Monaco",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
-        "description": "A rare multi-level waterfront estate situated directly facing the superyacht harbor of Port Hercules. Architecturally designed with cascading sea-view terraces, heated saltwater pool, private wine tasting vault, and direct superyacht tender mooring privileges.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "5",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "6",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "4",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "8900",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Superyacht Mooring Dock",
-          "Cascading Sea Terraces",
-          "Saltwater Infinity Pool",
-          "Wine Tasting Vault",
-          "Subterranean Quad Garage",
-          "Bulletproof Security Glazing",
-          "Private Staff Quarters",
-          "High-Speed Glass Elevator"
-        ],
-        "floorPlans": {
-          "id": "fp-monaco-waterfront",
-          "name": "Waterfront Triplex Villa",
-          "size": "8,900 sq ft",
-          "bedrooms": 5,
-          "bathrooms": 6,
-          "ceilingHeight": "14.5 ft",
-          "image": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
-          "description": "Cascading sea-view terraces, private yacht tender dock, and wine tasting vault."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Monaco Heliport",
-            "category": "Airport",
-            "distance": "1.2 miles",
-            "time": "4 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Port Hercules Yacht Marina",
-            "category": "Marina",
-            "distance": "0.1 miles",
-            "time": "2 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "Le Louis XV Alain Ducasse",
-            "category": "Dining",
-            "distance": "0.8 miles",
-            "time": "3 mins drive"
-          },
-          {
-            "id": "np-school",
-            "name": "International School of Monaco",
-            "category": "Education",
-            "distance": "1.5 miles",
-            "time": "5 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Carré d'Or Luxury Boutiques",
-            "category": "Shopping",
-            "distance": "0.7 miles",
-            "time": "8 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Thermes Marins Monte-Carlo",
-            "category": "Wellness",
-            "distance": "0.6 miles",
-            "time": "3 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "mayfair-heritage-residence",
-        "title": "Mayfair Heritage Residence",
-        "location": "Mayfair, London, UK",
-        "propertiesCount": "185",
-        "estatesCount": "35",
-        "imageUrl": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
-        "imageAlt": "Prestigious illuminated heritage estate and modern residence in Mayfair",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
-        "description": "A Grade-II listed Mayfair townhouse restoration blending Georgian architectural grandeur with cutting-edge bespoke amenities, private mews courtyard, temperature-controlled library, and private passenger lift accessing all six floors.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "4",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "4",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "2",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "5600",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Grade II Listed Georgian Architecture",
-          "Private Secondary Mews House",
-          "Internal 6-Stop Passenger Lift",
-          "Landscaped Private Courtyard",
-          "Bespoke Walnut Library",
-          "Lutron Homeworks Smart Lighting",
-          "Sommelier Wine Cellar",
-          "Underfloor Zoned Heating"
-        ],
-        "floorPlans": {
-          "id": "fp-mayfair-townhouse",
-          "name": "Six-Floor Georgian Townhouse",
-          "size": "5,600 sq ft",
-          "bedrooms": 4,
-          "bathrooms": 4,
-          "ceilingHeight": "13.5 ft",
-          "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
-          "description": "Restored Georgian reception rooms, private internal elevator, and secluded mews courtyard garden."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "London City Airport",
-            "category": "Airport",
-            "distance": "9.8 miles",
-            "time": "30 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Hyde Park Boating Lake",
-            "category": "Marina",
-            "distance": "0.5 miles",
-            "time": "7 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "The Connaught Dining",
-            "category": "Dining",
-            "distance": "0.3 miles",
-            "time": "4 mins walk"
-          },
-          {
-            "id": "np-school",
-            "name": "Westminster School",
-            "category": "Education",
-            "distance": "2.1 miles",
-            "time": "12 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Bond Street Luxury Shopping",
-            "category": "Shopping",
-            "distance": "0.2 miles",
-            "time": "3 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "The Lansdowne Private Club",
-            "category": "Wellness",
-            "distance": "0.4 miles",
-            "time": "5 mins walk"
-          }
-        ]
-      },
-      {
-        "id": "lake-como-grand-palazzo",
-        "title": "Lake Como Grand Palazzo",
-        "location": "Bellagio, Lake Como, Italy",
-        "propertiesCount": "112",
-        "estatesCount": "16",
-        "imageUrl": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-        "imageAlt": "Historic palazzo and contemporary villa overlooking Lake Como Italy",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-        "description": "Majestic neoclassical villa on the Bellagio shore of Lake Como with botanical Italian gardens, private boathouse, century-old cypress trees, and breathtaking vistas of the Alpine foothills. Includes restored frescoed salons, detached guest house, and private stone dock.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "6",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "7",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "3",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "9800",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Private Boathouse & Dock",
-          "Botanical Italian Gardens",
-          "Original Frescoed Ceilings",
-          "Lakeside Infinity Pool",
-          "Detached Guest House Villa",
-          "Antique Stone Sun Terraces",
-          "Underground Wine Cellar",
-          "Private Helicopter Landing Lawn"
-        ],
-        "floorPlans": {
-          "id": "fp-lake-como-palazzo",
-          "name": "Neoclassical Palazzo & Boathouse",
-          "size": "9,800 sq ft",
-          "bedrooms": 6,
-          "bathrooms": 7,
-          "ceilingHeight": "15.0 ft",
-          "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-          "description": "Frescoed grand reception hall, detached lakeside guest villa, and private covered stone boathouse."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Milan Malpensa Airport",
-            "category": "Airport",
-            "distance": "48 miles",
-            "time": "55 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Bellagio Private Stone Pier",
-            "category": "Marina",
-            "distance": "0.2 miles",
-            "time": "3 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "Mistral Michelin Restaurant",
-            "category": "Dining",
-            "distance": "0.9 miles",
-            "time": "12 mins walk"
-          },
-          {
-            "id": "np-school",
-            "name": "International School of Como",
-            "category": "Education",
-            "distance": "18 miles",
-            "time": "30 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Via Garibaldi Artisan Boutiques",
-            "category": "Shopping",
-            "distance": "0.8 miles",
-            "time": "10 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Villa d'Este Wellness Spa",
-            "category": "Wellness",
-            "distance": "12 miles",
-            "time": "20 mins boat"
-          }
-        ]
-      },
-      {
-        "id": "st-moritz-alpine-chalet",
-        "title": "St. Moritz Alpine Chalet",
-        "location": "Via Serlas, St. Moritz, Switzerland",
-        "propertiesCount": "74",
-        "estatesCount": "12",
-        "imageUrl": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
-        "imageAlt": "Architectural alpine chalet with panoramic mountain glass walls in St. Moritz",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
-        "description": "Exceptional ski-in / ski-out timber and stone chalet in prestigious St. Moritz with soaring timber beams, panoramic Engadin valley views, private heated ski room, and indoor Nordic wellness spa. Masterfully engineered with geothermal climate systems.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "5",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "5",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "3",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "6900",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Direct Ski-In / Ski-Out",
-          "Indoor Nordic Spa & Sauna",
-          "Heated Ski & Gear Room",
-          "Central Alpine Fireplace",
-          "Geothermal Eco-Heating",
-          "Panoramic Mountain Glass",
-          "Wine Tasting Vault",
-          "Triple Heated Garage"
-        ],
-        "floorPlans": {
-          "id": "fp-st-moritz-chalet",
-          "name": "Ski-In Ski-Out Timber Chalet",
-          "size": "6,900 sq ft",
-          "bedrooms": 5,
-          "bathrooms": 5,
-          "ceilingHeight": "14.0 ft",
-          "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
-          "description": "Exposed timber beams, central alpine fireplace, heated ski room, and indoor Nordic cedar spa."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Samedan Private Jet Airport",
-            "category": "Airport",
-            "distance": "4.5 miles",
-            "time": "10 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Corviglia Ski Lift Terminal",
-            "category": "Marina",
-            "distance": "0.1 miles",
-            "time": "2 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "Badrutt's Palace Dining",
-            "category": "Dining",
-            "distance": "0.8 miles",
-            "time": "4 mins drive"
-          },
-          {
-            "id": "np-school",
-            "name": "Lyceum Alpinum Zuoz",
-            "category": "Education",
-            "distance": "9.2 miles",
-            "time": "15 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Via Serlas Luxury Shopping",
-            "category": "Shopping",
-            "distance": "0.7 miles",
-            "time": "8 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Palace Wellness & Spa",
-            "category": "Wellness",
-            "distance": "0.8 miles",
-            "time": "4 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "french-riviera-sunset-villa",
-        "title": "French Riviera Sunset Villa",
-        "location": "Cap d'Antibes, French Riviera, France",
-        "propertiesCount": "135",
-        "estatesCount": "22",
-        "imageUrl": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
-        "imageAlt": "Bespoke contemporary hillside sanctuary overlooking the Mediterranean sea",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
-        "description": "Perched on the prime crest of Cap d'Antibes, this sun-drenched architectural villa offers uninterrupted Mediterranean sunset horizons, minimalist floor-to-ceiling glass walls, expansive pool deck, and centuries-old private olive groves.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "4",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "5",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "2",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "5800",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Unobstructed Sunset Views",
-          "Infinity Edge Heated Pool",
-          "Ancient Olive Groves",
-          "Open-Air Summer Kitchen",
-          "Private Security Gate",
-          "Bespoke Master Suite",
-          "Automated Solar Sunshades",
-          "Direct Beach Trail"
-        ],
-        "floorPlans": {
-          "id": "fp-french-riviera-villa",
-          "name": "Cap d'Antibes Hillside Sanctuary",
-          "size": "6,200 sq ft",
-          "bedrooms": 4,
-          "bathrooms": 4.5,
-          "ceilingHeight": "13.0 ft",
-          "image": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
-          "description": "Cantilevered infinity deck, floor-to-ceiling glass pavilions, and private Mediterranean olive grove."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Nice Côte d'Azur Airport",
-            "category": "Airport",
-            "distance": "12.5 miles",
-            "time": "22 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Port Vauban Yacht Marina",
-            "category": "Marina",
-            "distance": "2.1 miles",
-            "time": "6 mins drive"
-          },
-          {
-            "id": "np-dining",
-            "name": "Eden-Roc Restaurant",
-            "category": "Dining",
-            "distance": "0.9 miles",
-            "time": "3 mins drive"
-          },
-          {
-            "id": "np-school",
-            "name": "Centre International de Valbonne",
-            "category": "Education",
-            "distance": "6.4 miles",
-            "time": "14 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Boulevard de la Croisette",
-            "category": "Shopping",
-            "distance": "6.8 miles",
-            "time": "15 mins drive"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Cap d'Antibes Tennis Club",
-            "category": "Wellness",
-            "distance": "0.8 miles",
-            "time": "2 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "tokyo-imperial-sky-haven",
-        "title": "Tokyo Imperial Sky Haven",
-        "location": "Roppongi Hills, Tokyo, Japan",
-        "propertiesCount": "88",
-        "estatesCount": "14",
-        "imageUrl": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
-        "imageAlt": "Biophilic architectural penthouse overlooking Tokyo skyline",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
-        "description": "Sophisticated triplex residence towering above Roppongi Hills with private Japanese rooftop zen rock garden, unobstructed views of Tokyo Tower and Mount Fuji, Hinoki wood onsen tub, and discreet multi-tier biometric security.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "3",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "3",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "2",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "4600",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Rooftop Zen Rock Garden",
-          "Tokyo Tower & Mt. Fuji Views",
-          "Biometric Private Lift",
-          "Hinoki Wood Onsen Tub",
-          "Custom Tatami Tea Room",
-          "Japanese Whiskey Bar",
-          "Sub-Zero Chef Kitchen",
-          "24/7 Bilingual Concierge"
-        ],
-        "floorPlans": {
-          "id": "fp-tokyo-haven",
-          "name": "Roppongi Hills Triplex Penthouse",
-          "size": "5,400 sq ft",
-          "bedrooms": 3,
-          "bathrooms": 3.5,
-          "ceilingHeight": "12.5 ft",
-          "image": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
-          "description": "Rooftop zen rock garden, private cypress onsen bath, and panoramic vistas of Tokyo Tower and Mount Fuji."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Haneda International Airport",
-            "category": "Airport",
-            "distance": "11.2 miles",
-            "time": "18 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Tokyo Bay Yacht Terminal",
-            "category": "Marina",
-            "distance": "4.2 miles",
-            "time": "12 mins drive"
-          },
-          {
-            "id": "np-dining",
-            "name": "Sukiyabashi Jiro Dining",
-            "category": "Dining",
-            "distance": "2.4 miles",
-            "time": "8 mins drive"
-          },
-          {
-            "id": "np-school",
-            "name": "The American School in Japan",
-            "category": "Education",
-            "distance": "7.5 miles",
-            "time": "20 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Ginza Luxury Shopping District",
-            "category": "Shopping",
-            "distance": "2.1 miles",
-            "time": "7 mins drive"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Aman Spa Tokyo",
-            "category": "Wellness",
-            "distance": "2.8 miles",
-            "time": "9 mins drive"
-          }
-        ]
-      },
-      {
-        "id": "santorini-cliff-sanctuary",
-        "title": "Santorini Aegean Cliff Sanctuary",
-        "location": "Oia, Santorini 847 02, Greece",
-        "propertiesCount": "112",
-        "estatesCount": "18",
-        "imageUrl": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
-        "imageAlt": "Whitewashed luxury Aegean cliffside villa in Santorini with caldera views",
-        "ctaText": "Explore Property",
-        "mainImage": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
-        "description": "Perched dramatically above the azure waters of the Santorini caldera, this Cycladic architectural marvel features private cave suites, heated infinity hydrotherapy pool, unobstructed sunset vistas, and secluded cliffside helicopter landing privileges.",
-        "OverView": [
-          {
-            "id": "bedrooms",
-            "label": "Bedrooms",
-            "value": "4",
-            "icon": "Bed"
-          },
-          {
-            "id": "bathrooms",
-            "label": "Bathrooms",
-            "value": "5",
-            "icon": "Bath"
-          },
-          {
-            "id": "garage",
-            "label": "Garage",
-            "value": "2",
-            "icon": "Car"
-          },
-          {
-            "id": "area",
-            "label": "Area",
-            "value": "5100",
-            "unit": "sq ft",
-            "icon": "Maximize2"
-          }
-        ],
-        "amenities": [
-          "Caldera Sunset Panorama",
-          "Private Heated Infinity Pool",
-          "Cave Suite Master Bedroom",
-          "Cycladic Vaulted Ceilings",
-          "Private Heliport Access",
-          "Temperature-Controlled Wine Cellar",
-          "Al Fresco Cliffside Dining",
-          "24/7 Dedicated Butler"
-        ],
-        "floorPlans": {
-          "id": "fp-santorini-cliff",
-          "name": "Caldera Cliffside Cave Villa",
-          "size": "5,100 sq ft",
-          "bedrooms": 4,
-          "bathrooms": 5,
-          "ceilingHeight": "11.5 ft",
-          "image": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
-          "description": "Vaulted whitewashed cave suites, heated infinity hydrotherapy pool, and private sunset observation lounge."
-        },
-        "nearbyPlaces": [
-          {
-            "id": "np-airport",
-            "name": "Santorini International Airport",
-            "category": "Airport",
-            "distance": "10.5 miles",
-            "time": "20 mins drive"
-          },
-          {
-            "id": "np-beach",
-            "name": "Ammoudi Bay Yacht Pier",
-            "category": "Marina",
-            "distance": "0.6 miles",
-            "time": "8 mins walk"
-          },
-          {
-            "id": "np-dining",
-            "name": "1800-Floga Caldera Dining",
-            "category": "Dining",
-            "distance": "0.2 miles",
-            "time": "3 mins walk"
-          },
-          {
-            "id": "np-school",
-            "name": "International Academy of Thira",
-            "category": "Education",
-            "distance": "6.8 miles",
-            "time": "15 mins drive"
-          },
-          {
-            "id": "np-shopping",
-            "name": "Oia Marble Walking Promenade",
-            "category": "Shopping",
-            "distance": "0.1 miles",
-            "time": "2 mins walk"
-          },
-          {
-            "id": "np-wellness",
-            "name": "Canaves Spa Sanctuary",
-            "category": "Wellness",
-            "distance": "0.4 miles",
-            "time": "5 mins walk"
-          }
-        ]
-      }
-    ],
-    "sectionTitles": {
-      "overview": "Overview",
-      "description": "Description",
-      "amenities": "Amenities & Features",
-      "floorPlans": "Floor Plans",
-      "location": "Location & Nearby Places"
-    },
-    "inquiryForm": {
-      "namePlaceholder": "Name",
-      "emailPlaceholder": "Email",
-      "phonePlaceholder": "Phone",
-      "messagePrefix": "Hello, I am interested in",
-      "gdprLabel": "GDPR Agreement *",
-      "gdprText": "I consent to having this website store my submitted information so they can respond to my inquiry.",
-      "submitButtonText": "Send Message",
-      "successMessage": "Thank you! Agent Nathan James will contact you shortly regarding this property."
-    }
-  },
-  "services": {
-    "badgeText": "Our Services",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "prefix": "Architectural",
-      "badge": "Services",
-      "icon": "FourPointStar"
-    },
-    "servicesList": [
-      {
-        "id": "service-1",
-        "title": "Designing The Future Of Living",
-        "lines": [
-          "DESIGNING THE FUTURE OF LIVING"
-        ],
-        "subtitle": "Architectural Masterworks & Sustainable Sanctuaries",
-        "year": "2026",
-        "image": "/images/service-villa.webp"
-      },
-      {
-        "id": "service-2",
-        "title": "Luxury Villa Architecture",
-        "lines": [
-          "LUXURY VILLA ARCHITECTURE"
-        ],
-        "subtitle": "Custom Residence Design & Structural Mastery",
-        "year": "2026",
-        "image": "/images/service-chalet.webp"
-      },
-      {
-        "id": "service-3",
-        "title": "Waterfront Sanctuary Living",
-        "lines": [
-          "WATERFRONT SANCTUARY LIVING"
-        ],
-        "subtitle": "Private Yacht Marinas & Coastal Estates",
-        "year": "2026",
-        "image": "/images/service-waterfront.webp"
-      },
-      {
-        "id": "service-4",
-        "title": "Skyline Penthouse Portfolio",
-        "lines": [
-          "SKYLINE PENTHOUSE PORTFOLIO"
-        ],
-        "subtitle": "Metropolitan Towers & Panoramic Terraces",
-        "year": "2026",
-        "image": "/images/service-penthouse.webp"
-      },
-      {
-        "id": "service-5",
-        "title": "High-Density Residential Towers",
-        "lines": [
-          "HIGH RESIDENTIAL TOWERS"
-        ],
-        "subtitle": "Urban Master Development & Landmark Arenas",
-        "year": "2026",
-        "image": "/images/service-mansion.webp"
-      },
-      {
-        "id": "service-6",
-        "title": "Japanese Zen Minimalism",
-        "lines": [
-          "JAPANESE ZEN MINIMALISM"
-        ],
-        "subtitle": "Biophilic Balance & Meditative Courtyards",
-        "year": "2026",
-        "image": "/images/service-japan.webp"
-      }
-    ]
-  },
-  "team": {
-    "title": "OUR TEAMS",
-    "badgeText": "Our Teams",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "prefix": "Meet Our",
-      "badge": "Curators",
-      "icon": "FourPointStar"
-    },
-    "connectButtonText": "Connect",
-    "connectButtonHref": "/contact",
-    "members": [
-      {
-        "id": "julian-vance",
-        "name": "Julian Vance",
-        "position": "Principal Estates Director",
-        "image": "/images/review-sweater.webp",
-        "description": "The sheer caliber of craftsmanship and discretion is unmatched. We curate private off-market sanctuaries for discerning global collectors.",
-        "location": "Mayfair, London & Monaco",
-        "socials": [
-          {
-            "platform": "linkedin",
-            "href": "https://linkedin.com",
-            "label": "LinkedIn"
-          },
-          {
-            "platform": "instagram",
-            "href": "https://instagram.com",
-            "label": "Instagram"
-          },
-          {
-            "platform": "twitter",
-            "href": "https://x.com",
-            "label": "X (Twitter)"
-          },
-          {
-            "platform": "email",
-            "href": "mailto:julian@luxuryestates.com",
-            "label": "Direct Email"
-          }
-        ]
-      },
-      {
-        "id": "brian-hanley",
-        "name": "Brian Hanley",
-        "position": "Managing Partner — Acquisitions",
-        "image": "/images/review-vneck.webp",
-        "description": "Every acquisition is conducted with white-glove precision. We set the gold standard for premier architectural and residential masterworks.",
-        "location": "Beverly Hills & Bel Air, CA",
-        "socials": [
-          {
-            "platform": "linkedin",
-            "href": "https://linkedin.com",
-            "label": "LinkedIn"
-          },
-          {
-            "platform": "instagram",
-            "href": "https://instagram.com",
-            "label": "Instagram"
-          },
-          {
-            "platform": "twitter",
-            "href": "https://x.com",
-            "label": "X (Twitter)"
-          },
-          {
-            "platform": "email",
-            "href": "mailto:brian@luxuryestates.com",
-            "label": "Direct Email"
-          }
-        ]
-      },
-      {
-        "id": "elena-rostova",
-        "name": "Elena Rostova",
-        "position": "Head of Private Wealth & Waterfront",
-        "image": "/images/review-blue.webp",
-        "description": "Curating access to private coastal havens and ultra-prime waterfront villas that never appear on public real estate listings.",
-        "location": "Monaco & French Riviera",
-        "socials": [
-          {
-            "platform": "linkedin",
-            "href": "https://linkedin.com",
-            "label": "LinkedIn"
-          },
-          {
-            "platform": "instagram",
-            "href": "https://instagram.com",
-            "label": "Instagram"
-          },
-          {
-            "platform": "twitter",
-            "href": "https://x.com",
-            "label": "X (Twitter)"
-          },
-          {
-            "platform": "email",
-            "href": "mailto:elena@luxuryestates.com",
-            "label": "Direct Email"
-          }
-        ]
-      },
-      {
-        "id": "marcus-cole",
-        "name": "Marcus Cole",
-        "position": "Lead Architectural Designer",
-        "image": "/images/review-marcus.webp",
-        "description": "A true time-saver. I can focus on my core logic instead of pixel-pushing. Highly recommended.",
-        "location": "Zurich, Switzerland",
-        "socials": [
-          {
-            "platform": "linkedin",
-            "href": "https://linkedin.com",
-            "label": "LinkedIn"
-          },
-          {
-            "platform": "instagram",
-            "href": "https://instagram.com",
-            "label": "Instagram"
-          },
-          {
-            "platform": "twitter",
-            "href": "https://x.com",
-            "label": "X (Twitter)"
-          },
-          {
-            "platform": "email",
-            "href": "mailto:marcus@luxuryestates.com",
-            "label": "Direct Email"
-          }
-        ]
-      },
-      {
-        "id": "sophia-laurent",
-        "name": "Sophia Laurent",
-        "position": "Chief Strategy & Heritage Officer",
-        "image": "/images/testimonial-sarah.webp",
-        "description": "Exceptional market foresight paired with world-class architectural curation. Delivering extraordinary residential value across generations.",
-        "location": "Paris & Lake Como, Italy",
-        "socials": [
-          {
-            "platform": "linkedin",
-            "href": "https://linkedin.com",
-            "label": "LinkedIn"
-          },
-          {
-            "platform": "instagram",
-            "href": "https://instagram.com",
-            "label": "Instagram"
-          },
-          {
-            "platform": "twitter",
-            "href": "https://x.com",
-            "label": "X (Twitter)"
-          },
-          {
-            "platform": "email",
-            "href": "mailto:sophia@luxuryestates.com",
-            "label": "Direct Email"
-          }
-        ]
-      }
-    ]
-  },
-  "testimonials": {
-    "breadcrumb": {
-      "title": "Client Testimonials",
-      "subtitle": "Discover how our bespoke acquisitions and architectural sanctuaries inspire our distinguished patrons."
-    },
-    "pageTitle": "Client Testimonials",
-    "pageSubtitle": "Discreetly representing HNWIs, royal families, and multinational corporations across 21 global markets.",
-    "badgeText": "Client Testimonials",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line2Prefix": "Loved By",
-      "line2Badge": "Clients",
-      "icon": "FourPointStar"
-    },
-    "testimonialsList": [
-      {
-        "id": "sarah-anderson",
-        "name": "Sarah Anderson",
-        "role": "Villa Collector & Patron",
-        "avatar": "/images/testimonial-sarah.webp",
-        "rating": 5,
-        "bgColor": "#FEF3B4",
-        "quote": "From the very first private viewing, Dreams understood our architectural vision and secured an extraordinary waterfront villa in Kyoto. The discretion was exemplary."
-      },
-      {
-        "id": "michael-carter",
-        "name": "Michael Carter",
-        "role": "Real Estate Investor",
-        "avatar": "/images/testimonial-michael.webp",
-        "rating": 5,
-        "bgColor": "#DCF2DE",
-        "quote": "Acquiring prime off-market penthouses across global capitals seemed daunting, but their advisory team delivered flawlessly under strict confidentiality."
-      },
-      {
-        "id": "emily-thompson",
-        "name": "Emily Thompson",
-        "role": "Private Estate Owner",
-        "avatar": "/images/testimonial-emily.webp",
-        "rating": 5,
-        "bgColor": "#E7DBF9",
-        "quote": "They did not simply broker an estate; they curated an enduring architectural legacy for our family. Invaluable partners in global luxury real estate."
-      },
-      {
-        "id": "daniel-wilson",
-        "name": "Daniel Wilson",
-        "role": "Family Office Director",
-        "avatar": "/images/testimonial-daniel.webp",
-        "rating": 5,
-        "bgColor": "#F8DECB",
-        "quote": "Their due diligence, structural auditing, and discreet international escrow management set a global gold standard for high-net-worth property acquisitions."
-      },
-      {
-        "id": "sophia-martinez",
-        "name": "Sophia Martinez",
-        "role": "Bespoke Residence Owner",
-        "avatar": "/images/testimonial-sarah.webp",
-        "rating": 5,
-        "bgColor": "#DEF0FA",
-        "quote": "Entrusting our Swiss alpine retreat to Dreams resulted in an effortless acquisition. Every milestone was executed with uncompromising precision."
-      },
-      {
-        "id": "alex-rivera",
-        "name": "Alex Rivera",
-        "role": "Private Wealth Principal",
-        "avatar": "/images/testimonial-michael.webp",
-        "rating": 4.5,
-        "bgColor": "#FDE6E6",
-        "quote": "From day one, their market intelligence and private network opened access to sanctuaries unavailable anywhere else. Exceptional collaboration throughout."
-      }
-    ]
-  },
-  "whyChooseUs": {
-    "badgeText": "Why Choose Us",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line1Prefix": "Curating",
-      "line1Badge": "Sanctuarie",
-      "line2": "Of Distinction",
-      "icon": "FourPointStar"
-    },
-    "description": "We bridge the gap between discerning collectors and rare off-market architectural masterworks with unmatched confidentiality.",
-    "image": "/images/why-choose-uss.webp",
-    "imageAlt": "Architectural luxury villa showcasing precision design and natural balance",
-    "features": [
-      {
-        "id": "private-tours",
-        "title": "Private Tours",
-        "description": "Curated walkthroughs and VIP viewings at your personal convenience.",
-        "icon": "PrivateTours"
-      },
-      {
-        "id": "high-yield",
-        "title": "High Yield",
-        "description": "Proven asset appreciation and prime market efficiency for elite portfolios.",
-        "icon": "HighYield"
-      },
-      {
-        "id": "prime-locations",
-        "title": "Prime Locations",
-        "description": "Sanctuaries situated in the world's most sought-after and secure enclaves.",
-        "icon": "PrimeLocations"
-      },
-      {
-        "id": "bespoke-luxury",
-        "title": "Bespoke Luxury",
-        "description": "Architectural mastery engineered for privacy and timeless presence.",
-        "icon": "BespokeLuxury"
-      }
-    ]
-  },
-  "contact": {
-    "badgeText": "Get In Touch",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line1": "Private",
-      "line2Badge": "Concierge",
-      "icon": "FourPointStar"
-    },
-    "privateOffice": {
-      "title": "Private Office",
-      "subtitle": "White-glove real estate representation across Beverly Hills, London, Dubai & Monaco."
-    },
-    "contacts": [
-      {
-        "number": "1",
-        "title": "Contact Number",
-        "value": "+1 000000000",
-        "href": "tel:+1000000000"
-      },
-      {
-        "number": "2",
-        "title": "Email",
-        "value": "info@xyz.com",
-        "href": "mailto:info@xyz.com"
-      },
-      {
-        "number": "3",
-        "title": "Location",
-        "value": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
-        "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
-      }
-    ],
-    "form": {
-      "title": "Direct Advisory Inquiry",
-      "subtitle": "Submit your private inquiry. Our Managing Partners will respond discreetly within 24 hours.",
-      "submitButton": "Submit"
-    }
-  },
-  "enquiryNow": {
-    "badgeText": "Private Acquisition",
-    "badgeIcon": "Sparkles",
-    "headline": {
-      "line1": "Exclusive",
-      "line2Badge": "Enquiry",
-      "icon": "FourPointStar"
-    },
-    "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-    "imageAlt": "Ultra-luxury modern architectural mansion with illuminated infinity pool",
-    "form": {
-      "title": "Direct Private Inquiry",
-      "subtitle": "Fill out your acquisition details below. Our senior estate directors will get in touch with discreet speed.",
-      "submitButton": "Submit "
-    }
-  },
-  "gallery": {
-    "title": "Architectural",
-    "badgeText": "Real Estate",
-    "badgeIcon": "Sparkles",
-    "highlightWord": "Masterworks",
-    "items": [
-      {
-        "id": "manhattan-penthouse",
-        "title": "The Manhattan Pinnacle",
-        "subtitle": "Duplex sky residence with private glass terrace",
-        "location": "Billionaires' Row, New York",
-        "creator": "Vance Architectural Group",
-        "year": "2026",
-        "description": "An elevated duplex penthouse commanding 360-degree panoramic skyline vistas across Central Park with private elevator access, double-height ceilings, and bronze-framed thermal glass.",
-        "image": "/images/downloaded/photo-1545324418-cc1a3fa10c00.webp",
-        "alt": "Luxury high-rise residential penthouse overlooking metropolitan skyline at sunset",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[400px] lg:h-[450px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[220px] sm:h-[260px]"
-      },
-      {
-        "id": "beverly-hills-villa",
-        "title": "Beverly Hills Modernist Villa",
-        "subtitle": "Architectural estate with infinity cantilever pool",
-        "location": "Bel Air & Beverly Hills, CA",
-        "creator": "Hanley & Partners Studio",
-        "year": "2026",
-        "description": "Sleek geometric lines, automated zero-edge glass facades, and a cascading cantilevered infinity pool overlooking the Los Angeles basin with private gated motor court.",
-        "image": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
-        "alt": "Contemporary luxury architectural villa with illuminated infinity pool at dusk",
-        "colSpanDesktop": "md:col-span-2",
-        "heightDesktop": "md:h-[400px] lg:h-[450px]",
-        "colSpanMobile": "col-span-2",
-        "heightMobile": "h-[270px] sm:h-[320px]"
-      },
-      {
-        "id": "alpine-chalet",
-        "title": "St. Moritz Alpine Glass Chalet",
-        "subtitle": "Tri-level timber & thermal glass ski sanctuary",
-        "location": "St. Moritz, Engadin Valley",
-        "creator": "Alpine Modernist Atelier",
-        "year": "2026",
-        "description": "Curated for private mountain sanctuary living with ski-in access, hand-carved local timber beams, radiant slate flooring, and floor-to-ceiling glass framing snowy glacial peaks.",
-        "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
-        "alt": "Modern architectural alpine chalet surrounded by snow and pine trees",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[400px] lg:h-[450px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[220px] sm:h-[260px]"
-      },
-      {
-        "id": "mayfair-heritage",
-        "title": "Mayfair Contemporary Mansion",
-        "subtitle": "Illuminated Georgian courtyard & private gallery",
-        "location": "Mayfair, London W1",
-        "creator": "Heritage Restoration Guild",
-        "year": "2025",
-        "description": "A masterful fusion of classical limestone heritage and cutting-edge subterranean wellness suites, bespoke wine cellars, and landscaped light-well courtyards.",
-        "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
-        "alt": "Illuminated luxury modern brick and glass mansion at twilight",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[200px] sm:h-[230px]"
-      },
-      {
-        "id": "monaco-waterfront",
-        "title": "Cap d'Antibes Coastal Villa",
-        "subtitle": "Private waterfront estate with superyacht mooring",
-        "location": "French Riviera & Monaco",
-        "creator": "Rostova Waterfront Group",
-        "year": "2026",
-        "description": "Set upon a private Mediterranean promontory, offering direct private beach access, sculpted marble terraces, private helipad, and uninterrupted turquoise sea horizons.",
-        "image": "/images/downloaded/photo-1613490493576-7fde63acd811.webp",
-        "alt": "White contemporary coastal estate villa with infinity pool overlooking ocean",
-        "colSpanDesktop": "md:col-span-2",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-2",
-        "heightMobile": "h-[220px] sm:h-[250px]"
-      },
-      {
-        "id": "lake-como-villa",
-        "title": "Lake Como Historic Villa",
-        "subtitle": "Palazzo with private botanical waterfront park",
-        "location": "Tremezzo, Lake Como",
-        "creator": "Italian Heritage Curators",
-        "year": "2025",
-        "description": "Centuries-old cypress avenues leading to a restored neoclassical palazzo with private boat dock, frescoed salon ceilings, and contemporary glass guest pavilions.",
-        "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
-        "alt": "Classic lakeside luxury estate with landscaped terrace and Italian architecture",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[200px] sm:h-[230px]"
-      },
-      {
-        "id": "dubai-sky-penthouse",
-        "title": "Dubai Marina Horizon Penthouse",
-        "subtitle": "Triplex sky mansion with panoramic plunge pool",
-        "location": "Dubai Marina, United Arab Emirates",
-        "creator": "Mirage Architectural Guild",
-        "year": "2026",
-        "description": "Rising 70 storeys above the Arabian Gulf, featuring 30-foot ceilings, automated smart home automation, and an infinity plunge pool overlooking the superyacht marina.",
-        "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
-        "alt": "Skyline luxury penthouse with glass terrace and city views",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[200px] sm:h-[230px]"
-      },
-      {
-        "id": "aspen-salon",
-        "title": "Aspen Great Room & Living Salon",
-        "subtitle": "Double-height interior with marble hearth",
-        "location": "Red Mountain, Aspen, Colorado",
-        "creator": "Cole Spatial Interiors",
-        "year": "2026",
-        "description": "Monumental book-matched Calacatta marble hearth, custom acoustic timber millwork, and double-height glass framing majestic views of snowy pine peaks.",
-        "image": "/images/downloaded/photo-1600210492486-724fe5c67fb0.webp",
-        "alt": "Double-height luxury living room with fireplace and floor-to-ceiling windows",
-        "colSpanDesktop": "md:col-span-1",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-1",
-        "heightMobile": "h-[200px] sm:h-[230px]"
-      },
-      {
-        "id": "mallorca-cliffside",
-        "title": "Mallorca Cliffside Masterwork",
-        "subtitle": "Cantilevered stone & glass promontory villa",
-        "location": "Port d'Andratx, Balearic Islands",
-        "creator": "Balearic Architectural Studio",
-        "year": "2026",
-        "description": "Seamlessly sculpted into the sea cliffs, capturing the golden hour sunset across the Mediterranean with multi-tiered infinity decks and submerged viewing suites.",
-        "image": "/images/downloaded/photo-1580587771525-78b9dba3b914.webp",
-        "alt": "Sprawling white contemporary architectural villa overlooking the sea at sunset",
-        "colSpanDesktop": "md:col-span-2",
-        "heightDesktop": "md:h-[260px] lg:h-[300px]",
-        "colSpanMobile": "col-span-2",
-        "heightMobile": "h-[220px] sm:h-[250px]"
-      }
-    ]
-  },
-  "footer": {
-    "logo": {
-      "text": "Dreams",
-      "highlight": "*",
-      "image": "",
-      "alt": "Dreams Luxury Real Estate",
-      "href": "/"
-    },
-    "description": "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.",
-    "about": {
-      "title": "Navigation",
-      "links": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "About Us",
-          "href": "/about"
-        },
-        {
-          "label": "Properties",
-          "href": "/properties"
-        },
-        {
-          "label": "Our Clients",
-          "href": "/clients"
-        },
-        {
-          "label": "Testimonials",
-          "href": "/testimonials"
-        },
-        {
-          "label": "Our Team",
-          "href": "/team"
         }
-      ]
+      }
     },
-    "helpful": {
-      "title": "Quick Links",
-      "links": [
-        {
-          "label": "Gallery",
-          "href": "/gallery"
-        },
-        {
-          "label": "Blogs",
-          "href": "/blog"
-        },
-        {
-          "label": "FAQs",
-          "href": "/faqs"
-        },
-        {
-          "label": "Enquiry Now",
-          "href": "/enquiry-now",
-          "isLive": true
-        },
-        {
-          "label": "Contact Us",
-          "href": "/contact"
+    "sections": {
+      "navbar": {
+        "variants": {
+          "DreamsNavbar1": {
+            "logo": {
+              "text": "Dreams",
+              "highlight": "*",
+              "image": "",
+              "alt": "Dreams Luxury Real Estate",
+              "href": "/"
+            },
+            "navItems": [
+              {
+                "label": "Home",
+                "href": "/",
+                "icon": "Home"
+              },
+              {
+                "label": "About",
+                "href": "/about",
+                "icon": "Info"
+              },
+              {
+                "label": "Properties",
+                "href": "/properties",
+                "icon": "Building2"
+              },
+              {
+                "label": "Clients",
+                "href": "/clients",
+                "icon": "Award"
+              },
+              {
+                "label": "Blogs",
+                "href": "/blog",
+                "icon": "BookOpen"
+              },
+              {
+                "label": "Contact Us",
+                "href": "/contact",
+                "icon": "Mail"
+              }
+            ],
+            "cta": {
+              "label": "Enquiry Now",
+              "href": "/enquiry-now",
+              "icon": "ArrowRight"
+            }
+          }
         }
-      ]
-    },
-    "contact": {
-      "title": "Contact Us",
-      "items": [
-        {
-          "icon": "Mail",
-          "text": "concierge@dreamsluxury.com",
-          "href": "mailto:concierge@dreamsluxury.com"
-        },
-        {
-          "icon": "Phone",
-          "text": "+1 (800) 555-DREAM",
-          "href": "tel:+18005553732"
-        },
-        {
-          "icon": "MapPin",
-          "text": "3170 Rosewood Lane Unit 200, Beverly Hills, CA 90210",
-          "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
+      },
+      "hero": {
+        "variants": {
+          "DreamsHero1": {
+            "backgroundImage": "/images/hero-banners.webp",
+            "backgroundAlt": "Luxury modern architectural residence with illuminated pool",
+            "headline": {
+              "prefix": "Book",
+              "badge": "Your",
+              "main": "Dreams",
+              "badgeIcon": "FourPointStar",
+              "mainIcon": "Asterisk"
+            },
+            "description": "Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives.",
+            "cta": {
+              "label": "Enquire Now",
+              "href": "/enquiry-now",
+              "icon": "ArrowRight"
+            }
+          }
         }
-      ]
-    },
-    "socialLinks": [
-      {
-        "platform": "Facebook",
-        "href": "https://facebook.com",
-        "icon": "Facebook"
       },
-      {
-        "platform": "Instagram",
-        "href": "https://instagram.com",
-        "icon": "Instagram"
+      "about": {
+        "variants": {
+          "DreamsAbout1": {
+            "badgeText": "About Us",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line1": "ABOUT OUR",
+              "line2Prefix": "BOOK",
+              "line2Badge": "PRESTIGIOU",
+              "line3": "RESIDENCES",
+              "icon": "FourPointStar"
+            },
+            "description": "We represent the world’s most distinguished residential estates, private waterfront sanctuaries, and prime architectural masterworks.",
+            "image": "/images/downloaded/photo-1600210492486-724fe5c67fb0.webp",
+            "imageAlt": "Luxury living room with sculpted chairs and a stone coffee table",
+            "stats": [
+              {
+                "value": "$2.8B+",
+                "label": "Volume Sold"
+              },
+              {
+                "value": "450+",
+                "label": "Estates"
+              },
+              {
+                "value": "15+ Yrs",
+                "label": "Advisory"
+              }
+            ],
+            "cta": {
+              "label": "ABOUT US",
+              "href": "/about",
+              "icon": "ArrowRight"
+            }
+          }
+        }
       },
-      {
-        "platform": "Twitter",
-        "href": "https://twitter.com",
-        "icon": "Twitter"
+      "blog": {
+        "variants": {
+          "DreamsBlog1": {
+            "pageTitle": "Our Blogs",
+            "pageSubtitle": "In-depth intelligence on prime global real estate, architectural trends, and wealth preservation.",
+            "badgeText": "Our Blogs",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "prefix": "Featured",
+              "badge": "Article",
+              "icon": "FourPointStar"
+            },
+            "blogPosts": [
+              {
+                "id": "post-1",
+                "title": "Architectural Trends Defining Luxury Living in 2025",
+                "excerpt": "Discover how organic biophilic architecture, zero-carbon construction, and private wellness pavilions are shaping ultra-luxury estates.",
+                "category": "Architecture",
+                "date": "18 Oct 2024",
+                "readTime": "4 min read",
+                "image": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
+                "isLatest": false,
+                "badgeText": "Architecture • Insight",
+                "headlinePrefix": "Architectural",
+                "headlineBadge": "Trend",
+                "headlineSuffix": "Defining Luxury Living in 2025",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+                },
+                "commentsCountText": "4 min read • Market Intelligence",
+                "quote": {
+                  "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+                  "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+                },
+                "sections": [
+                  {
+                    "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+                    "paragraphs": [
+                      "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+                      "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+                    ]
+                  },
+                  {
+                    "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+                    "paragraphs": [
+                      "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+                    ]
+                  },
+                  {
+                    "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+                    "paragraphs": [
+                      "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+                      "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+                    ]
+                  }
+                ],
+                "slug": "architectural-trends-defining-luxury-living-in-2025"
+              },
+              {
+                "id": "post-2",
+                "title": "Prime Waterfront Estates: Navigating Global Coastal Investments",
+                "excerpt": "A strategic guide to acquiring high-yield waterfront sanctuaries across the French Riviera, Amalfi Coast, and Miami Biscayne Bay.",
+                "category": "Market Insights",
+                "date": "24 Nov 2024",
+                "readTime": "5 min read",
+                "image": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
+                "isLatest": true,
+                "badgeText": "Market Insights • Prime Waterfront",
+                "headlinePrefix": "Prime",
+                "headlineBadge": "Waterfront",
+                "headlineSuffix": "Estates & Global Coastal Investments",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1507003211169-0a1dd7228f2d.webp"
+                },
+                "commentsCountText": "5 min read • Market Intelligence",
+                "quote": {
+                  "text": "Waterfront real estate remains the quintessential store of generational value—geography dictates scarcity, while architecture defines prestige.",
+                  "author": "Alistair Croft, Head of Prime Global Acquisitions at Dreams"
+                },
+                "sections": [
+                  {
+                    "subheading": "Strategic Coastal Acquisitions Across Monaco & The French Riviera",
+                    "paragraphs": [
+                      "Prime waterfront real estate continues to outperform the broader luxury residential market by significant margins. In tier-one maritime enclaves—from the cliffside villas of Cap d’Antibes to the private moorings of Monaco’s Port Hercules—constrained geographic supply meets escalating international wealth migration.",
+                      "Investors seeking prime coastal assets prioritize deep-water dockage, multi-tiered security parameters, and unrestricted Mediterranean or Caribbean vistas. These trophy properties function not merely as lifestyle havens, but as cornerstone liquid capital reserves."
+                    ]
+                  },
+                  {
+                    "subheading": "Evaluating Long-Term Yield & Capital Appreciation in Coastal Sanctuaries",
+                    "paragraphs": [
+                      "A rigorous analysis of global coastal transactions demonstrates that bespoke architectural residences with direct beach access experience annualized appreciation rates exceeding standard inland luxury by 30 to 45 percent. Waterfront properties in micro-markets like Miami’s Indian Creek or the Amalfi Coast rarely enter open-market listings, trading through private broker syndicates.",
+                      "Our advisory team leverages direct relationships with private trust offices to secure off-market titles before public marketing commences."
+                    ]
+                  },
+                  {
+                    "subheading": "Climate Resilient Engineering & Architectural Permanence",
+                    "paragraphs": [
+                      "Today’s prime waterfront buyers demand cutting-edge marine engineering alongside peerless aesthetic splendor. Reinforced seawall architecture, marine-grade corrosion-resistant alloys, and autonomous off-grid backup systems ensure coastal masterworks remain resilient for centuries.",
+                      "Investing in prime waterfront sanctuaries demands specialized due diligence spanning coastal easement rights, sovereign tax treaty positioning, and architectural adaptability. Dreams provides confidential guidance from initial identification through post-settlement management."
+                    ]
+                  }
+                ],
+                "slug": "prime-waterfront-estates-navigating-global-coastal-investments"
+              },
+              {
+                "id": "post-3",
+                "title": "The Rise of High-Rise Penthouses in Urban Epicenters",
+                "excerpt": "How panoramic skyline terraces, private elevator foyers, and bespoke hotel-tier concierge amenities are redefining metropolis penthouses.",
+                "category": "Urban Living",
+                "date": "12 Nov 2024",
+                "readTime": "3 min read",
+                "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
+                "isLatest": false,
+                "badgeText": "Urban Living • Insights",
+                "headlinePrefix": "The",
+                "headlineBadge": "Rise",
+                "headlineSuffix": "of High-Rise Penthouses in Urban Epicenters",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+                },
+                "commentsCountText": "3 min read • Market Intelligence",
+                "quote": {
+                  "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+                  "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+                },
+                "sections": [
+                  {
+                    "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+                    "paragraphs": [
+                      "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+                      "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+                    ]
+                  },
+                  {
+                    "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+                    "paragraphs": [
+                      "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+                    ]
+                  },
+                  {
+                    "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+                    "paragraphs": [
+                      "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+                      "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+                    ]
+                  }
+                ],
+                "slug": "the-rise-of-high-rise-penthouses-in-urban-epicenters"
+              },
+              {
+                "id": "post-4",
+                "title": "Sustainable Sanctuaries: Net-Zero Mansions of Tomorrow",
+                "excerpt": "Exploring how geothermal climate engineering and solar glass integration elevate ecological residential design to an art form.",
+                "category": "Sustainability",
+                "date": "04 Nov 2024",
+                "readTime": "4 min read",
+                "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+                "isLatest": false,
+                "badgeText": "Sustainability • Insights",
+                "headlinePrefix": "Sustainable",
+                "headlineBadge": "Sanctuaries:",
+                "headlineSuffix": "Net-Zero Mansions of Tomorrow",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+                },
+                "commentsCountText": "4 min read • Market Intelligence",
+                "quote": {
+                  "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+                  "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+                },
+                "sections": [
+                  {
+                    "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+                    "paragraphs": [
+                      "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+                      "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+                    ]
+                  },
+                  {
+                    "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+                    "paragraphs": [
+                      "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+                    ]
+                  },
+                  {
+                    "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+                    "paragraphs": [
+                      "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+                      "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+                    ]
+                  }
+                ],
+                "slug": "sustainable-sanctuaries-net-zero-mansions-of-tomorrow"
+              },
+              {
+                "id": "post-5",
+                "title": "Curating Private Sanctuaries: The Art of Smart Home Living",
+                "excerpt": "From ambient biological circadian lighting to AI-driven security vaults, step inside the next generation of intelligent luxury retreats.",
+                "category": "Smart Estates",
+                "date": "28 Oct 2024",
+                "readTime": "3 min read",
+                "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
+                "isLatest": false,
+                "badgeText": "Smart Estates • Insights",
+                "headlinePrefix": "Curating",
+                "headlineBadge": "Private",
+                "headlineSuffix": "Sanctuaries: The Art of Smart Home Living",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+                },
+                "commentsCountText": "3 min read • Market Intelligence",
+                "quote": {
+                  "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+                  "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+                },
+                "sections": [
+                  {
+                    "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+                    "paragraphs": [
+                      "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+                      "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+                    ]
+                  },
+                  {
+                    "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+                    "paragraphs": [
+                      "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+                    ]
+                  },
+                  {
+                    "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+                    "paragraphs": [
+                      "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+                      "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+                    ]
+                  }
+                ],
+                "slug": "curating-private-sanctuaries-the-art-of-smart-home-living"
+              },
+              {
+                "id": "post-6",
+                "title": "Heritage Restorations: Reviving Historic European Châteaux",
+                "excerpt": "Balancing centuries-old stone craftsmanship with state-of-the-art contemporary lifestyle technology across France and Tuscany.",
+                "category": "Heritage",
+                "date": "15 Oct 2024",
+                "readTime": "5 min read",
+                "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
+                "isLatest": false,
+                "badgeText": "Heritage • Insights",
+                "headlinePrefix": "Heritage",
+                "headlineBadge": "Restorations:",
+                "headlineSuffix": "Reviving Historic European Châteaux",
+                "author": {
+                  "name": "Marcus Vance",
+                  "avatar": "/images/downloaded/photo-1534528741775-53994a69daeb.webp"
+                },
+                "commentsCountText": "5 min read • Market Intelligence",
+                "quote": {
+                  "text": "True architectural luxury is not defined by excess, but by the seamless dialogue between natural landscapes and private living spaces designed to endure across generations.",
+                  "author": "Julian Sterling, Chief Architectural Curator at Dreams Luxury Real Estate"
+                },
+                "sections": [
+                  {
+                    "subheading": "Biophilic Architecture & Private Wellness Pavilions",
+                    "paragraphs": [
+                      "The world of ultra-luxury residential sanctuaries has evolved beyond mere scale and decorative ornament. Today’s high-net-worth homeowners demand living spaces that prioritize holistic wellbeing, organic natural harmony, and effortless seclusion. Private wellness pavilions featuring thermal plunge pools, oxygen-enriched master suites, and seamless indoor-outdoor water features have transitioned from discretionary luxuries to baseline expectations in prime estates.",
+                      "From the cliffs of the French Riviera to the secluded coves of Miami Biscayne Bay, prime architectural residences are now engineered around restorative tranquility. Natural stone facades, living green courtyards, and panoramic floor-to-ceiling glass expanses dissolve the boundary between interior sanctuaries and untouched coastal landscapes."
+                    ]
+                  },
+                  {
+                    "subheading": "Next-Gen Smart Home Automation & Sustainable Prime Estates",
+                    "paragraphs": [
+                      "Modern prime estates are increasingly defined by invisible intelligence. Net-zero geothermal climate systems, self-regulating solar glass, and advanced acoustic isolation work in concert to create residential environments of absolute serenity. Discretion and sustainability now walk hand in hand, offering buyers uncompromised indulgence with zero environmental compromise."
+                    ]
+                  },
+                  {
+                    "subheading": "Navigating Global Coastal Investments & Prime Waterfront Sanctuaries",
+                    "paragraphs": [
+                      "As global wealth continues to seek refuge in prime physical assets, coastal and waterfront sanctuaries remain the gold standard of generational wealth preservation. With strictly limited coastline inventory across tier-one locations such as Monaco, Saint-Tropez, and Palm Beach, bespoke architectural masterworks continue to command unprecedented valuation premiums.",
+                      "Investing in prime residences requires both deep market intelligence and access to confidential off-market portfolios. As architectural innovation continues to redefine modern sanctuaries, discerning buyers are acquiring not just properties, but private worlds of enduring distinction."
+                    ]
+                  }
+                ],
+                "slug": "heritage-restorations-reviving-historic-european-chteaux"
+              }
+            ],
+            "promotionalBanner": {
+              "badge": "Exclusive Sanctuaries",
+              "title": "Discover Curated\nLuxury Waterfront\nEstates & Villas",
+              "buttonText": "Enquiry Now",
+              "buttonHref": "/enquiry-now"
+            }
+          }
+        }
       },
-      {
-        "platform": "LinkedIn",
-        "href": "https://linkedin.com",
-        "icon": "LinkedIn"
+      "properties": {
+        "variants": {
+          "DreamsProperties1": {
+            "pageTitle": "Our Properties",
+            "pageSubtitle": "Curated portfolios of iconic estates and architectural landmarks across global capitals.",
+            "badgeText": "Featured Properties",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line1": "Exclusive Estates &",
+              "line2Prefix": "Luxury",
+              "line2Badge": "Propertie",
+              "icon": "FourPointStar"
+            },
+            "description": "Explore our handpicked collection of premier architectural sanctuaries, waterfront estates, and prestigious luxury properties worldwide.",
+            "propertiesList": [
+              {
+                "id": "beverly-hills-villa",
+                "title": "Beverly Hills Modern Villa",
+                "location": "Beverly Hills, CA 90210, USA",
+                "propertiesCount": "148",
+                "estatesCount": "24",
+                "imageUrl": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
+                "imageAlt": "Luxury modern architectural villa with infinity pool in Beverly Hills",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1584622650111-993a426fbf0a.webp",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "3",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "4",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "2",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "4530",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "description": "The very best waterfront location in Harbor Islands complete with private dock and amazing water frontage! Offering panoramic water views, this spacious home has volume ceilings and offers a rarely available ground floor master bedroom suite. The modern kitchen has been completely updated, leading to entertainment and family rooms that open to fabulous back yard and swimming pool overlooking the waterways. Must be seen!",
+                "amenities": [
+                  "Private Heated Infinity Pool",
+                  "Dual Custom Marble Sinks",
+                  "Sub-Zero Culinary Appliances",
+                  "Architectural Fireplace",
+                  "Private Elevator Access",
+                  "Smart Climate Automation",
+                  "Lush Biophilic Landscaping",
+                  "24/7 Monitored Security",
+                  "Temperature-Controlled Wine Cellar"
+                ],
+                "floorPlans": {
+                  "id": "fp-ground",
+                  "name": "Ground Level",
+                  "size": "2,450 sq ft",
+                  "bedrooms": 2,
+                  "bathrooms": 2.5,
+                  "ceilingHeight": "13.0 ft",
+                  "image": "https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+                  "description": "Grand foyer, formal living salon, open culinary suite, and guest quarters."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "International Private Airport",
+                    "category": "Airport",
+                    "distance": "14.2 miles",
+                    "time": "18 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Waterfront Yacht Marina",
+                    "category": "Marina",
+                    "distance": "2.5 miles",
+                    "time": "6 mins drive"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Michelin Star Dining",
+                    "category": "Dining",
+                    "distance": "1.2 miles",
+                    "time": "4 mins walk"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "Elite International Academy",
+                    "category": "Education",
+                    "distance": "3.8 miles",
+                    "time": "8 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Haute Couture Shopping District",
+                    "category": "Shopping",
+                    "distance": "0.9 miles",
+                    "time": "3 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Private Health & Country Club",
+                    "category": "Wellness",
+                    "distance": "2.1 miles",
+                    "time": "5 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "dubai-sky-penthouse",
+                "title": "Dubai Marina Sky Penthouse",
+                "location": "Marina Bay, Dubai, UAE",
+                "propertiesCount": "320",
+                "estatesCount": "42",
+                "imageUrl": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
+                "imageAlt": "Skyline luxury penthouse with glass terrace overlooking Dubai Marina",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
+                "description": "Perched across the top floors of Dubai Marina, this extraordinary duplex sky penthouse commands 360-degree vistas over Palm Jumeirah and the Arabian Gulf. Complete with private sky infinity pool, floor-to-ceiling soundproof acoustic glass, Italian marble flooring, and private high-speed elevator foyer.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "4",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "5",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "3",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "6800",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Private Sky Pool",
+                  "Panoramic Marina View",
+                  "Private Helipad Access",
+                  "Biometric Elevator",
+                  "Italian Calacatta Marble",
+                  "Sauna & Steam Suite",
+                  "24/7 Butler Concierge",
+                  "Temperature-Controlled Cellar"
+                ],
+                "floorPlans": {
+                  "id": "fp-dubai-penthouse",
+                  "name": "Sky Duplex Penthouse",
+                  "size": "6,800 sq ft",
+                  "bedrooms": 4,
+                  "bathrooms": 5,
+                  "ceilingHeight": "16.0 ft",
+                  "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
+                  "description": "Double-height living pavilion, private sky terrace infinity pool, and master penthouse suite."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Dubai International Airport",
+                    "category": "Airport",
+                    "distance": "16.5 miles",
+                    "time": "20 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Dubai Marina Yacht Club",
+                    "category": "Marina",
+                    "distance": "0.4 miles",
+                    "time": "5 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Pier 7 Fine Dining",
+                    "category": "Dining",
+                    "distance": "0.6 miles",
+                    "time": "7 mins walk"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "Emirates International School",
+                    "category": "Education",
+                    "distance": "3.2 miles",
+                    "time": "8 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Dubai Marina Mall",
+                    "category": "Shopping",
+                    "distance": "0.5 miles",
+                    "time": "6 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "The Ritz-Carlton Spa",
+                    "category": "Wellness",
+                    "distance": "1.1 miles",
+                    "time": "4 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "monaco-waterfront-estate",
+                "title": "Monaco Waterfront Estate",
+                "location": "Port Hercules, Monaco",
+                "propertiesCount": "96",
+                "estatesCount": "18",
+                "imageUrl": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
+                "imageAlt": "Ultra-luxury modern waterfront villa with private yacht dock in Monaco",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
+                "description": "A rare multi-level waterfront estate situated directly facing the superyacht harbor of Port Hercules. Architecturally designed with cascading sea-view terraces, heated saltwater pool, private wine tasting vault, and direct superyacht tender mooring privileges.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "5",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "6",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "4",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "8900",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Superyacht Mooring Dock",
+                  "Cascading Sea Terraces",
+                  "Saltwater Infinity Pool",
+                  "Wine Tasting Vault",
+                  "Subterranean Quad Garage",
+                  "Bulletproof Security Glazing",
+                  "Private Staff Quarters",
+                  "High-Speed Glass Elevator"
+                ],
+                "floorPlans": {
+                  "id": "fp-monaco-waterfront",
+                  "name": "Waterfront Triplex Villa",
+                  "size": "8,900 sq ft",
+                  "bedrooms": 5,
+                  "bathrooms": 6,
+                  "ceilingHeight": "14.5 ft",
+                  "image": "/images/downloaded/photo-1512917774080-9991f1c4c750.webp",
+                  "description": "Cascading sea-view terraces, private yacht tender dock, and wine tasting vault."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Monaco Heliport",
+                    "category": "Airport",
+                    "distance": "1.2 miles",
+                    "time": "4 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Port Hercules Yacht Marina",
+                    "category": "Marina",
+                    "distance": "0.1 miles",
+                    "time": "2 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Le Louis XV Alain Ducasse",
+                    "category": "Dining",
+                    "distance": "0.8 miles",
+                    "time": "3 mins drive"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "International School of Monaco",
+                    "category": "Education",
+                    "distance": "1.5 miles",
+                    "time": "5 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Carré d'Or Luxury Boutiques",
+                    "category": "Shopping",
+                    "distance": "0.7 miles",
+                    "time": "8 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Thermes Marins Monte-Carlo",
+                    "category": "Wellness",
+                    "distance": "0.6 miles",
+                    "time": "3 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "mayfair-heritage-residence",
+                "title": "Mayfair Heritage Residence",
+                "location": "Mayfair, London, UK",
+                "propertiesCount": "185",
+                "estatesCount": "35",
+                "imageUrl": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
+                "imageAlt": "Prestigious illuminated heritage estate and modern residence in Mayfair",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
+                "description": "A Grade-II listed Mayfair townhouse restoration blending Georgian architectural grandeur with cutting-edge bespoke amenities, private mews courtyard, temperature-controlled library, and private passenger lift accessing all six floors.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "4",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "4",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "2",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "5600",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Grade II Listed Georgian Architecture",
+                  "Private Secondary Mews House",
+                  "Internal 6-Stop Passenger Lift",
+                  "Landscaped Private Courtyard",
+                  "Bespoke Walnut Library",
+                  "Lutron Homeworks Smart Lighting",
+                  "Sommelier Wine Cellar",
+                  "Underfloor Zoned Heating"
+                ],
+                "floorPlans": {
+                  "id": "fp-mayfair-townhouse",
+                  "name": "Six-Floor Georgian Townhouse",
+                  "size": "5,600 sq ft",
+                  "bedrooms": 4,
+                  "bathrooms": 4,
+                  "ceilingHeight": "13.5 ft",
+                  "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
+                  "description": "Restored Georgian reception rooms, private internal elevator, and secluded mews courtyard garden."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "London City Airport",
+                    "category": "Airport",
+                    "distance": "9.8 miles",
+                    "time": "30 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Hyde Park Boating Lake",
+                    "category": "Marina",
+                    "distance": "0.5 miles",
+                    "time": "7 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "The Connaught Dining",
+                    "category": "Dining",
+                    "distance": "0.3 miles",
+                    "time": "4 mins walk"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "Westminster School",
+                    "category": "Education",
+                    "distance": "2.1 miles",
+                    "time": "12 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Bond Street Luxury Shopping",
+                    "category": "Shopping",
+                    "distance": "0.2 miles",
+                    "time": "3 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "The Lansdowne Private Club",
+                    "category": "Wellness",
+                    "distance": "0.4 miles",
+                    "time": "5 mins walk"
+                  }
+                ]
+              },
+              {
+                "id": "lake-como-grand-palazzo",
+                "title": "Lake Como Grand Palazzo",
+                "location": "Bellagio, Lake Como, Italy",
+                "propertiesCount": "112",
+                "estatesCount": "16",
+                "imageUrl": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+                "imageAlt": "Historic palazzo and contemporary villa overlooking Lake Como Italy",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+                "description": "Majestic neoclassical villa on the Bellagio shore of Lake Como with botanical Italian gardens, private boathouse, century-old cypress trees, and breathtaking vistas of the Alpine foothills. Includes restored frescoed salons, detached guest house, and private stone dock.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "6",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "7",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "3",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "9800",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Private Boathouse & Dock",
+                  "Botanical Italian Gardens",
+                  "Original Frescoed Ceilings",
+                  "Lakeside Infinity Pool",
+                  "Detached Guest House Villa",
+                  "Antique Stone Sun Terraces",
+                  "Underground Wine Cellar",
+                  "Private Helicopter Landing Lawn"
+                ],
+                "floorPlans": {
+                  "id": "fp-lake-como-palazzo",
+                  "name": "Neoclassical Palazzo & Boathouse",
+                  "size": "9,800 sq ft",
+                  "bedrooms": 6,
+                  "bathrooms": 7,
+                  "ceilingHeight": "15.0 ft",
+                  "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+                  "description": "Frescoed grand reception hall, detached lakeside guest villa, and private covered stone boathouse."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Milan Malpensa Airport",
+                    "category": "Airport",
+                    "distance": "48 miles",
+                    "time": "55 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Bellagio Private Stone Pier",
+                    "category": "Marina",
+                    "distance": "0.2 miles",
+                    "time": "3 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Mistral Michelin Restaurant",
+                    "category": "Dining",
+                    "distance": "0.9 miles",
+                    "time": "12 mins walk"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "International School of Como",
+                    "category": "Education",
+                    "distance": "18 miles",
+                    "time": "30 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Via Garibaldi Artisan Boutiques",
+                    "category": "Shopping",
+                    "distance": "0.8 miles",
+                    "time": "10 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Villa d'Este Wellness Spa",
+                    "category": "Wellness",
+                    "distance": "12 miles",
+                    "time": "20 mins boat"
+                  }
+                ]
+              },
+              {
+                "id": "st-moritz-alpine-chalet",
+                "title": "St. Moritz Alpine Chalet",
+                "location": "Via Serlas, St. Moritz, Switzerland",
+                "propertiesCount": "74",
+                "estatesCount": "12",
+                "imageUrl": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
+                "imageAlt": "Architectural alpine chalet with panoramic mountain glass walls in St. Moritz",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
+                "description": "Exceptional ski-in / ski-out timber and stone chalet in prestigious St. Moritz with soaring timber beams, panoramic Engadin valley views, private heated ski room, and indoor Nordic wellness spa. Masterfully engineered with geothermal climate systems.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "5",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "5",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "3",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "6900",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Direct Ski-In / Ski-Out",
+                  "Indoor Nordic Spa & Sauna",
+                  "Heated Ski & Gear Room",
+                  "Central Alpine Fireplace",
+                  "Geothermal Eco-Heating",
+                  "Panoramic Mountain Glass",
+                  "Wine Tasting Vault",
+                  "Triple Heated Garage"
+                ],
+                "floorPlans": {
+                  "id": "fp-st-moritz-chalet",
+                  "name": "Ski-In Ski-Out Timber Chalet",
+                  "size": "6,900 sq ft",
+                  "bedrooms": 5,
+                  "bathrooms": 5,
+                  "ceilingHeight": "14.0 ft",
+                  "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
+                  "description": "Exposed timber beams, central alpine fireplace, heated ski room, and indoor Nordic cedar spa."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Samedan Private Jet Airport",
+                    "category": "Airport",
+                    "distance": "4.5 miles",
+                    "time": "10 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Corviglia Ski Lift Terminal",
+                    "category": "Marina",
+                    "distance": "0.1 miles",
+                    "time": "2 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Badrutt's Palace Dining",
+                    "category": "Dining",
+                    "distance": "0.8 miles",
+                    "time": "4 mins drive"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "Lyceum Alpinum Zuoz",
+                    "category": "Education",
+                    "distance": "9.2 miles",
+                    "time": "15 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Via Serlas Luxury Shopping",
+                    "category": "Shopping",
+                    "distance": "0.7 miles",
+                    "time": "8 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Palace Wellness & Spa",
+                    "category": "Wellness",
+                    "distance": "0.8 miles",
+                    "time": "4 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "french-riviera-sunset-villa",
+                "title": "French Riviera Sunset Villa",
+                "location": "Cap d'Antibes, French Riviera, France",
+                "propertiesCount": "135",
+                "estatesCount": "22",
+                "imageUrl": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
+                "imageAlt": "Bespoke contemporary hillside sanctuary overlooking the Mediterranean sea",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
+                "description": "Perched on the prime crest of Cap d'Antibes, this sun-drenched architectural villa offers uninterrupted Mediterranean sunset horizons, minimalist floor-to-ceiling glass walls, expansive pool deck, and centuries-old private olive groves.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "4",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "5",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "2",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "5800",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Unobstructed Sunset Views",
+                  "Infinity Edge Heated Pool",
+                  "Ancient Olive Groves",
+                  "Open-Air Summer Kitchen",
+                  "Private Security Gate",
+                  "Bespoke Master Suite",
+                  "Automated Solar Sunshades",
+                  "Direct Beach Trail"
+                ],
+                "floorPlans": {
+                  "id": "fp-french-riviera-villa",
+                  "name": "Cap d'Antibes Hillside Sanctuary",
+                  "size": "6,200 sq ft",
+                  "bedrooms": 4,
+                  "bathrooms": 4.5,
+                  "ceilingHeight": "13.0 ft",
+                  "image": "/images/downloaded/photo-1613977257363-707ba9348227.webp",
+                  "description": "Cantilevered infinity deck, floor-to-ceiling glass pavilions, and private Mediterranean olive grove."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Nice Côte d'Azur Airport",
+                    "category": "Airport",
+                    "distance": "12.5 miles",
+                    "time": "22 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Port Vauban Yacht Marina",
+                    "category": "Marina",
+                    "distance": "2.1 miles",
+                    "time": "6 mins drive"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Eden-Roc Restaurant",
+                    "category": "Dining",
+                    "distance": "0.9 miles",
+                    "time": "3 mins drive"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "Centre International de Valbonne",
+                    "category": "Education",
+                    "distance": "6.4 miles",
+                    "time": "14 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Boulevard de la Croisette",
+                    "category": "Shopping",
+                    "distance": "6.8 miles",
+                    "time": "15 mins drive"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Cap d'Antibes Tennis Club",
+                    "category": "Wellness",
+                    "distance": "0.8 miles",
+                    "time": "2 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "tokyo-imperial-sky-haven",
+                "title": "Tokyo Imperial Sky Haven",
+                "location": "Roppongi Hills, Tokyo, Japan",
+                "propertiesCount": "88",
+                "estatesCount": "14",
+                "imageUrl": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
+                "imageAlt": "Biophilic architectural penthouse overlooking Tokyo skyline",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
+                "description": "Sophisticated triplex residence towering above Roppongi Hills with private Japanese rooftop zen rock garden, unobstructed views of Tokyo Tower and Mount Fuji, Hinoki wood onsen tub, and discreet multi-tier biometric security.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "3",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "3",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "2",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "4600",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Rooftop Zen Rock Garden",
+                  "Tokyo Tower & Mt. Fuji Views",
+                  "Biometric Private Lift",
+                  "Hinoki Wood Onsen Tub",
+                  "Custom Tatami Tea Room",
+                  "Japanese Whiskey Bar",
+                  "Sub-Zero Chef Kitchen",
+                  "24/7 Bilingual Concierge"
+                ],
+                "floorPlans": {
+                  "id": "fp-tokyo-haven",
+                  "name": "Roppongi Hills Triplex Penthouse",
+                  "size": "5,400 sq ft",
+                  "bedrooms": 3,
+                  "bathrooms": 3.5,
+                  "ceilingHeight": "12.5 ft",
+                  "image": "/images/downloaded/photo-1600607687920-4e2a09cf159d.webp",
+                  "description": "Rooftop zen rock garden, private cypress onsen bath, and panoramic vistas of Tokyo Tower and Mount Fuji."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Haneda International Airport",
+                    "category": "Airport",
+                    "distance": "11.2 miles",
+                    "time": "18 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Tokyo Bay Yacht Terminal",
+                    "category": "Marina",
+                    "distance": "4.2 miles",
+                    "time": "12 mins drive"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "Sukiyabashi Jiro Dining",
+                    "category": "Dining",
+                    "distance": "2.4 miles",
+                    "time": "8 mins drive"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "The American School in Japan",
+                    "category": "Education",
+                    "distance": "7.5 miles",
+                    "time": "20 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Ginza Luxury Shopping District",
+                    "category": "Shopping",
+                    "distance": "2.1 miles",
+                    "time": "7 mins drive"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Aman Spa Tokyo",
+                    "category": "Wellness",
+                    "distance": "2.8 miles",
+                    "time": "9 mins drive"
+                  }
+                ]
+              },
+              {
+                "id": "santorini-cliff-sanctuary",
+                "title": "Santorini Aegean Cliff Sanctuary",
+                "location": "Oia, Santorini 847 02, Greece",
+                "propertiesCount": "112",
+                "estatesCount": "18",
+                "imageUrl": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
+                "imageAlt": "Whitewashed luxury Aegean cliffside villa in Santorini with caldera views",
+                "ctaText": "Explore Property",
+                "mainImage": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
+                "description": "Perched dramatically above the azure waters of the Santorini caldera, this Cycladic architectural marvel features private cave suites, heated infinity hydrotherapy pool, unobstructed sunset vistas, and secluded cliffside helicopter landing privileges.",
+                "OverView": [
+                  {
+                    "id": "bedrooms",
+                    "label": "Bedrooms",
+                    "value": "4",
+                    "icon": "Bed"
+                  },
+                  {
+                    "id": "bathrooms",
+                    "label": "Bathrooms",
+                    "value": "5",
+                    "icon": "Bath"
+                  },
+                  {
+                    "id": "garage",
+                    "label": "Garage",
+                    "value": "2",
+                    "icon": "Car"
+                  },
+                  {
+                    "id": "area",
+                    "label": "Area",
+                    "value": "5100",
+                    "unit": "sq ft",
+                    "icon": "Maximize2"
+                  }
+                ],
+                "amenities": [
+                  "Caldera Sunset Panorama",
+                  "Private Heated Infinity Pool",
+                  "Cave Suite Master Bedroom",
+                  "Cycladic Vaulted Ceilings",
+                  "Private Heliport Access",
+                  "Temperature-Controlled Wine Cellar",
+                  "Al Fresco Cliffside Dining",
+                  "24/7 Dedicated Butler"
+                ],
+                "floorPlans": {
+                  "id": "fp-santorini-cliff",
+                  "name": "Caldera Cliffside Cave Villa",
+                  "size": "5,100 sq ft",
+                  "bedrooms": 4,
+                  "bathrooms": 5,
+                  "ceilingHeight": "11.5 ft",
+                  "image": "/images/downloaded/photo-1570077188670-e3a8d69ac5ff.webp",
+                  "description": "Vaulted whitewashed cave suites, heated infinity hydrotherapy pool, and private sunset observation lounge."
+                },
+                "nearbyPlaces": [
+                  {
+                    "id": "np-airport",
+                    "name": "Santorini International Airport",
+                    "category": "Airport",
+                    "distance": "10.5 miles",
+                    "time": "20 mins drive"
+                  },
+                  {
+                    "id": "np-beach",
+                    "name": "Ammoudi Bay Yacht Pier",
+                    "category": "Marina",
+                    "distance": "0.6 miles",
+                    "time": "8 mins walk"
+                  },
+                  {
+                    "id": "np-dining",
+                    "name": "1800-Floga Caldera Dining",
+                    "category": "Dining",
+                    "distance": "0.2 miles",
+                    "time": "3 mins walk"
+                  },
+                  {
+                    "id": "np-school",
+                    "name": "International Academy of Thira",
+                    "category": "Education",
+                    "distance": "6.8 miles",
+                    "time": "15 mins drive"
+                  },
+                  {
+                    "id": "np-shopping",
+                    "name": "Oia Marble Walking Promenade",
+                    "category": "Shopping",
+                    "distance": "0.1 miles",
+                    "time": "2 mins walk"
+                  },
+                  {
+                    "id": "np-wellness",
+                    "name": "Canaves Spa Sanctuary",
+                    "category": "Wellness",
+                    "distance": "0.4 miles",
+                    "time": "5 mins walk"
+                  }
+                ]
+              }
+            ],
+            "sectionTitles": {
+              "overview": "Overview",
+              "description": "Description",
+              "amenities": "Amenities & Features",
+              "floorPlans": "Floor Plans",
+              "location": "Location & Nearby Places"
+            },
+            "inquiryForm": {
+              "namePlaceholder": "Name",
+              "emailPlaceholder": "Email",
+              "phonePlaceholder": "Phone",
+              "messagePrefix": "Hello, I am interested in",
+              "gdprLabel": "GDPR Agreement *",
+              "gdprText": "I consent to having this website store my submitted information so they can respond to my inquiry.",
+              "submitButtonText": "Send Message",
+              "successMessage": "Thank you! Agent Nathan James will contact you shortly regarding this property."
+            }
+          }
+        }
+      },
+      "services": {
+        "variants": {
+          "DreamsServices1": {
+            "badgeText": "Our Services",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "prefix": "Architectural",
+              "badge": "Services",
+              "icon": "FourPointStar"
+            },
+            "servicesList": [
+              {
+                "id": "service-1",
+                "title": "Designing The Future Of Living",
+                "lines": [
+                  "DESIGNING THE FUTURE OF LIVING"
+                ],
+                "subtitle": "Architectural Masterworks & Sustainable Sanctuaries",
+                "year": "2026",
+                "image": "/images/service-villa.webp"
+              },
+              {
+                "id": "service-2",
+                "title": "Luxury Villa Architecture",
+                "lines": [
+                  "LUXURY VILLA ARCHITECTURE"
+                ],
+                "subtitle": "Custom Residence Design & Structural Mastery",
+                "year": "2026",
+                "image": "/images/service-chalet.webp"
+              },
+              {
+                "id": "service-3",
+                "title": "Waterfront Sanctuary Living",
+                "lines": [
+                  "WATERFRONT SANCTUARY LIVING"
+                ],
+                "subtitle": "Private Yacht Marinas & Coastal Estates",
+                "year": "2026",
+                "image": "/images/service-waterfront.webp"
+              },
+              {
+                "id": "service-4",
+                "title": "Skyline Penthouse Portfolio",
+                "lines": [
+                  "SKYLINE PENTHOUSE PORTFOLIO"
+                ],
+                "subtitle": "Metropolitan Towers & Panoramic Terraces",
+                "year": "2026",
+                "image": "/images/service-penthouse.webp"
+              },
+              {
+                "id": "service-5",
+                "title": "High-Density Residential Towers",
+                "lines": [
+                  "HIGH RESIDENTIAL TOWERS"
+                ],
+                "subtitle": "Urban Master Development & Landmark Arenas",
+                "year": "2026",
+                "image": "/images/service-mansion.webp"
+              },
+              {
+                "id": "service-6",
+                "title": "Japanese Zen Minimalism",
+                "lines": [
+                  "JAPANESE ZEN MINIMALISM"
+                ],
+                "subtitle": "Biophilic Balance & Meditative Courtyards",
+                "year": "2026",
+                "image": "/images/service-japan.webp"
+              }
+            ]
+          }
+        }
+      },
+      "team": {
+        "variants": {
+          "DreamsTeam1": {
+            "title": "OUR TEAMS",
+            "badgeText": "Our Teams",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "prefix": "Meet Our",
+              "badge": "Curators",
+              "icon": "FourPointStar"
+            },
+            "connectButtonText": "Connect",
+            "connectButtonHref": "/contact",
+            "members": [
+              {
+                "id": "julian-vance",
+                "name": "Julian Vance",
+                "position": "Principal Estates Director",
+                "image": "/images/review-sweater.webp",
+                "description": "The sheer caliber of craftsmanship and discretion is unmatched. We curate private off-market sanctuaries for discerning global collectors.",
+                "location": "Mayfair, London & Monaco",
+                "socials": [
+                  {
+                    "platform": "linkedin",
+                    "href": "https://linkedin.com",
+                    "label": "LinkedIn"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://instagram.com",
+                    "label": "Instagram"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://x.com",
+                    "label": "X (Twitter)"
+                  },
+                  {
+                    "platform": "email",
+                    "href": "mailto:julian@luxuryestates.com",
+                    "label": "Direct Email"
+                  }
+                ]
+              },
+              {
+                "id": "brian-hanley",
+                "name": "Brian Hanley",
+                "position": "Managing Partner — Acquisitions",
+                "image": "/images/review-vneck.webp",
+                "description": "Every acquisition is conducted with white-glove precision. We set the gold standard for premier architectural and residential masterworks.",
+                "location": "Beverly Hills & Bel Air, CA",
+                "socials": [
+                  {
+                    "platform": "linkedin",
+                    "href": "https://linkedin.com",
+                    "label": "LinkedIn"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://instagram.com",
+                    "label": "Instagram"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://x.com",
+                    "label": "X (Twitter)"
+                  },
+                  {
+                    "platform": "email",
+                    "href": "mailto:brian@luxuryestates.com",
+                    "label": "Direct Email"
+                  }
+                ]
+              },
+              {
+                "id": "elena-rostova",
+                "name": "Elena Rostova",
+                "position": "Head of Private Wealth & Waterfront",
+                "image": "/images/review-blue.webp",
+                "description": "Curating access to private coastal havens and ultra-prime waterfront villas that never appear on public real estate listings.",
+                "location": "Monaco & French Riviera",
+                "socials": [
+                  {
+                    "platform": "linkedin",
+                    "href": "https://linkedin.com",
+                    "label": "LinkedIn"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://instagram.com",
+                    "label": "Instagram"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://x.com",
+                    "label": "X (Twitter)"
+                  },
+                  {
+                    "platform": "email",
+                    "href": "mailto:elena@luxuryestates.com",
+                    "label": "Direct Email"
+                  }
+                ]
+              },
+              {
+                "id": "marcus-cole",
+                "name": "Marcus Cole",
+                "position": "Lead Architectural Designer",
+                "image": "/images/review-marcus.webp",
+                "description": "A true time-saver. I can focus on my core logic instead of pixel-pushing. Highly recommended.",
+                "location": "Zurich, Switzerland",
+                "socials": [
+                  {
+                    "platform": "linkedin",
+                    "href": "https://linkedin.com",
+                    "label": "LinkedIn"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://instagram.com",
+                    "label": "Instagram"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://x.com",
+                    "label": "X (Twitter)"
+                  },
+                  {
+                    "platform": "email",
+                    "href": "mailto:marcus@luxuryestates.com",
+                    "label": "Direct Email"
+                  }
+                ]
+              },
+              {
+                "id": "sophia-laurent",
+                "name": "Sophia Laurent",
+                "position": "Chief Strategy & Heritage Officer",
+                "image": "/images/testimonial-sarah.webp",
+                "description": "Exceptional market foresight paired with world-class architectural curation. Delivering extraordinary residential value across generations.",
+                "location": "Paris & Lake Como, Italy",
+                "socials": [
+                  {
+                    "platform": "linkedin",
+                    "href": "https://linkedin.com",
+                    "label": "LinkedIn"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://instagram.com",
+                    "label": "Instagram"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://x.com",
+                    "label": "X (Twitter)"
+                  },
+                  {
+                    "platform": "email",
+                    "href": "mailto:sophia@luxuryestates.com",
+                    "label": "Direct Email"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "testimonials": {
+        "variants": {
+          "DreamsTestimonials1": {
+            "breadcrumb": {
+              "title": "Client Testimonials",
+              "subtitle": "Discover how our bespoke acquisitions and architectural sanctuaries inspire our distinguished patrons."
+            },
+            "pageTitle": "Client Testimonials",
+            "pageSubtitle": "Discreetly representing HNWIs, royal families, and multinational corporations across 21 global markets.",
+            "badgeText": "Client Testimonials",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line2Prefix": "Loved By",
+              "line2Badge": "Clients",
+              "icon": "FourPointStar"
+            },
+            "testimonialsList": [
+              {
+                "id": "sarah-anderson",
+                "name": "Sarah Anderson",
+                "role": "Villa Collector & Patron",
+                "avatar": "/images/testimonial-sarah.webp",
+                "rating": 5,
+                "bgColor": "#FEF3B4",
+                "quote": "From the very first private viewing, Dreams understood our architectural vision and secured an extraordinary waterfront villa in Kyoto. The discretion was exemplary."
+              },
+              {
+                "id": "michael-carter",
+                "name": "Michael Carter",
+                "role": "Real Estate Investor",
+                "avatar": "/images/testimonial-michael.webp",
+                "rating": 5,
+                "bgColor": "#DCF2DE",
+                "quote": "Acquiring prime off-market penthouses across global capitals seemed daunting, but their advisory team delivered flawlessly under strict confidentiality."
+              },
+              {
+                "id": "emily-thompson",
+                "name": "Emily Thompson",
+                "role": "Private Estate Owner",
+                "avatar": "/images/testimonial-emily.webp",
+                "rating": 5,
+                "bgColor": "#E7DBF9",
+                "quote": "They did not simply broker an estate; they curated an enduring architectural legacy for our family. Invaluable partners in global luxury real estate."
+              },
+              {
+                "id": "daniel-wilson",
+                "name": "Daniel Wilson",
+                "role": "Family Office Director",
+                "avatar": "/images/testimonial-daniel.webp",
+                "rating": 5,
+                "bgColor": "#F8DECB",
+                "quote": "Their due diligence, structural auditing, and discreet international escrow management set a global gold standard for high-net-worth property acquisitions."
+              },
+              {
+                "id": "sophia-martinez",
+                "name": "Sophia Martinez",
+                "role": "Bespoke Residence Owner",
+                "avatar": "/images/testimonial-sarah.webp",
+                "rating": 5,
+                "bgColor": "#DEF0FA",
+                "quote": "Entrusting our Swiss alpine retreat to Dreams resulted in an effortless acquisition. Every milestone was executed with uncompromising precision."
+              },
+              {
+                "id": "alex-rivera",
+                "name": "Alex Rivera",
+                "role": "Private Wealth Principal",
+                "avatar": "/images/testimonial-michael.webp",
+                "rating": 4.5,
+                "bgColor": "#FDE6E6",
+                "quote": "From day one, their market intelligence and private network opened access to sanctuaries unavailable anywhere else. Exceptional collaboration throughout."
+              }
+            ]
+          }
+        }
+      },
+      "whyChooseUs": {
+        "variants": {
+          "DreamsWhyChooseUs1": {
+            "badgeText": "Why Choose Us",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line1Prefix": "Curating",
+              "line1Badge": "Sanctuarie",
+              "line2": "Of Distinction",
+              "icon": "FourPointStar"
+            },
+            "description": "We bridge the gap between discerning collectors and rare off-market architectural masterworks with unmatched confidentiality.",
+            "image": "/images/why-choose-uss.webp",
+            "imageAlt": "Architectural luxury villa showcasing precision design and natural balance",
+            "features": [
+              {
+                "id": "private-tours",
+                "title": "Private Tours",
+                "description": "Curated walkthroughs and VIP viewings at your personal convenience.",
+                "icon": "PrivateTours"
+              },
+              {
+                "id": "high-yield",
+                "title": "High Yield",
+                "description": "Proven asset appreciation and prime market efficiency for elite portfolios.",
+                "icon": "HighYield"
+              },
+              {
+                "id": "prime-locations",
+                "title": "Prime Locations",
+                "description": "Sanctuaries situated in the world's most sought-after and secure enclaves.",
+                "icon": "PrimeLocations"
+              },
+              {
+                "id": "bespoke-luxury",
+                "title": "Bespoke Luxury",
+                "description": "Architectural mastery engineered for privacy and timeless presence.",
+                "icon": "BespokeLuxury"
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "variants": {
+          "DreamsContact1": {
+            "badgeText": "Get In Touch",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line1": "Private",
+              "line2Badge": "Concierge",
+              "icon": "FourPointStar"
+            },
+            "privateOffice": {
+              "title": "Private Office",
+              "subtitle": "White-glove real estate representation across Beverly Hills, London, Dubai & Monaco."
+            },
+            "contacts": [
+              {
+                "number": "1",
+                "title": "Contact Number",
+                "value": "+1 000000000",
+                "href": "tel:+1000000000"
+              },
+              {
+                "number": "2",
+                "title": "Email",
+                "value": "info@xyz.com",
+                "href": "mailto:info@xyz.com"
+              },
+              {
+                "number": "3",
+                "title": "Location",
+                "value": "3170 Rosewood Lane Unit 200 , Beverly Hills, CA 90210",
+                "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
+              }
+            ],
+            "form": {
+              "title": "Direct Advisory Inquiry",
+              "subtitle": "Submit your private inquiry. Our Managing Partners will respond discreetly within 24 hours.",
+              "submitButton": "Submit"
+            }
+          }
+        }
+      },
+      "enquiryNow": {
+        "variants": {
+          "DreamsEnquiryNow1": {
+            "badgeText": "Private Acquisition",
+            "badgeIcon": "Sparkles",
+            "headline": {
+              "line1": "Exclusive",
+              "line2Badge": "Enquiry",
+              "icon": "FourPointStar"
+            },
+            "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+            "imageAlt": "Ultra-luxury modern architectural mansion with illuminated infinity pool",
+            "form": {
+              "title": "Direct Private Inquiry",
+              "subtitle": "Fill out your acquisition details below. Our senior estate directors will get in touch with discreet speed.",
+              "submitButton": "Submit "
+            }
+          }
+        }
+      },
+      "gallery": {
+        "variants": {
+          "DreamsGallery1": {
+            "title": "Architectural",
+            "badgeText": "Real Estate",
+            "badgeIcon": "Sparkles",
+            "highlightWord": "Masterworks",
+            "items": [
+              {
+                "id": "manhattan-penthouse",
+                "title": "The Manhattan Pinnacle",
+                "subtitle": "Duplex sky residence with private glass terrace",
+                "location": "Billionaires' Row, New York",
+                "creator": "Vance Architectural Group",
+                "year": "2026",
+                "description": "An elevated duplex penthouse commanding 360-degree panoramic skyline vistas across Central Park with private elevator access, double-height ceilings, and bronze-framed thermal glass.",
+                "image": "/images/downloaded/photo-1545324418-cc1a3fa10c00.webp",
+                "alt": "Luxury high-rise residential penthouse overlooking metropolitan skyline at sunset",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[400px] lg:h-[450px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[220px] sm:h-[260px]"
+              },
+              {
+                "id": "beverly-hills-villa",
+                "title": "Beverly Hills Modernist Villa",
+                "subtitle": "Architectural estate with infinity cantilever pool",
+                "location": "Bel Air & Beverly Hills, CA",
+                "creator": "Hanley & Partners Studio",
+                "year": "2026",
+                "description": "Sleek geometric lines, automated zero-edge glass facades, and a cascading cantilevered infinity pool overlooking the Los Angeles basin with private gated motor court.",
+                "image": "/images/downloaded/photo-1600585154340-be6161a56a0c.webp",
+                "alt": "Contemporary luxury architectural villa with illuminated infinity pool at dusk",
+                "colSpanDesktop": "md:col-span-2",
+                "heightDesktop": "md:h-[400px] lg:h-[450px]",
+                "colSpanMobile": "col-span-2",
+                "heightMobile": "h-[270px] sm:h-[320px]"
+              },
+              {
+                "id": "alpine-chalet",
+                "title": "St. Moritz Alpine Glass Chalet",
+                "subtitle": "Tri-level timber & thermal glass ski sanctuary",
+                "location": "St. Moritz, Engadin Valley",
+                "creator": "Alpine Modernist Atelier",
+                "year": "2026",
+                "description": "Curated for private mountain sanctuary living with ski-in access, hand-carved local timber beams, radiant slate flooring, and floor-to-ceiling glass framing snowy glacial peaks.",
+                "image": "/images/downloaded/photo-1600566753376-12c8ab7fb75b.webp",
+                "alt": "Modern architectural alpine chalet surrounded by snow and pine trees",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[400px] lg:h-[450px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[220px] sm:h-[260px]"
+              },
+              {
+                "id": "mayfair-heritage",
+                "title": "Mayfair Contemporary Mansion",
+                "subtitle": "Illuminated Georgian courtyard & private gallery",
+                "location": "Mayfair, London W1",
+                "creator": "Heritage Restoration Guild",
+                "year": "2025",
+                "description": "A masterful fusion of classical limestone heritage and cutting-edge subterranean wellness suites, bespoke wine cellars, and landscaped light-well courtyards.",
+                "image": "/images/downloaded/photo-1600585154526-990dced4db0d.webp",
+                "alt": "Illuminated luxury modern brick and glass mansion at twilight",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[200px] sm:h-[230px]"
+              },
+              {
+                "id": "monaco-waterfront",
+                "title": "Cap d'Antibes Coastal Villa",
+                "subtitle": "Private waterfront estate with superyacht mooring",
+                "location": "French Riviera & Monaco",
+                "creator": "Rostova Waterfront Group",
+                "year": "2026",
+                "description": "Set upon a private Mediterranean promontory, offering direct private beach access, sculpted marble terraces, private helipad, and uninterrupted turquoise sea horizons.",
+                "image": "/images/downloaded/photo-1613490493576-7fde63acd811.webp",
+                "alt": "White contemporary coastal estate villa with infinity pool overlooking ocean",
+                "colSpanDesktop": "md:col-span-2",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-2",
+                "heightMobile": "h-[220px] sm:h-[250px]"
+              },
+              {
+                "id": "lake-como-villa",
+                "title": "Lake Como Historic Villa",
+                "subtitle": "Palazzo with private botanical waterfront park",
+                "location": "Tremezzo, Lake Como",
+                "creator": "Italian Heritage Curators",
+                "year": "2025",
+                "description": "Centuries-old cypress avenues leading to a restored neoclassical palazzo with private boat dock, frescoed salon ceilings, and contemporary glass guest pavilions.",
+                "image": "/images/downloaded/photo-1600596542815-ffad4c1539a9.webp",
+                "alt": "Classic lakeside luxury estate with landscaped terrace and Italian architecture",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[200px] sm:h-[230px]"
+              },
+              {
+                "id": "dubai-sky-penthouse",
+                "title": "Dubai Marina Horizon Penthouse",
+                "subtitle": "Triplex sky mansion with panoramic plunge pool",
+                "location": "Dubai Marina, United Arab Emirates",
+                "creator": "Mirage Architectural Guild",
+                "year": "2026",
+                "description": "Rising 70 storeys above the Arabian Gulf, featuring 30-foot ceilings, automated smart home automation, and an infinity plunge pool overlooking the superyacht marina.",
+                "image": "/images/downloaded/photo-1600607687939-ce8a6c25118c.webp",
+                "alt": "Skyline luxury penthouse with glass terrace and city views",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[200px] sm:h-[230px]"
+              },
+              {
+                "id": "aspen-salon",
+                "title": "Aspen Great Room & Living Salon",
+                "subtitle": "Double-height interior with marble hearth",
+                "location": "Red Mountain, Aspen, Colorado",
+                "creator": "Cole Spatial Interiors",
+                "year": "2026",
+                "description": "Monumental book-matched Calacatta marble hearth, custom acoustic timber millwork, and double-height glass framing majestic views of snowy pine peaks.",
+                "image": "/images/downloaded/photo-1600210492486-724fe5c67fb0.webp",
+                "alt": "Double-height luxury living room with fireplace and floor-to-ceiling windows",
+                "colSpanDesktop": "md:col-span-1",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-1",
+                "heightMobile": "h-[200px] sm:h-[230px]"
+              },
+              {
+                "id": "mallorca-cliffside",
+                "title": "Mallorca Cliffside Masterwork",
+                "subtitle": "Cantilevered stone & glass promontory villa",
+                "location": "Port d'Andratx, Balearic Islands",
+                "creator": "Balearic Architectural Studio",
+                "year": "2026",
+                "description": "Seamlessly sculpted into the sea cliffs, capturing the golden hour sunset across the Mediterranean with multi-tiered infinity decks and submerged viewing suites.",
+                "image": "/images/downloaded/photo-1580587771525-78b9dba3b914.webp",
+                "alt": "Sprawling white contemporary architectural villa overlooking the sea at sunset",
+                "colSpanDesktop": "md:col-span-2",
+                "heightDesktop": "md:h-[260px] lg:h-[300px]",
+                "colSpanMobile": "col-span-2",
+                "heightMobile": "h-[220px] sm:h-[250px]"
+              }
+            ]
+          }
+        }
+      },
+      "footer": {
+        "variants": {
+          "DreamsFooter1": {
+            "logo": {
+              "text": "Dreams",
+              "highlight": "*",
+              "image": "",
+              "alt": "Dreams Luxury Real Estate",
+              "href": "/"
+            },
+            "description": "Curating the world's most prestigious residential sanctuaries, private waterfront estates, and prime architectural masterworks.",
+            "about": {
+              "title": "Navigation",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "About Us",
+                  "href": "/about"
+                },
+                {
+                  "label": "Properties",
+                  "href": "/properties"
+                },
+                {
+                  "label": "Our Clients",
+                  "href": "/clients"
+                },
+                {
+                  "label": "Testimonials",
+                  "href": "/testimonials"
+                },
+                {
+                  "label": "Our Team",
+                  "href": "/team"
+                }
+              ]
+            },
+            "helpful": {
+              "title": "Quick Links",
+              "links": [
+                {
+                  "label": "Gallery",
+                  "href": "/gallery"
+                },
+                {
+                  "label": "Blogs",
+                  "href": "/blog"
+                },
+                {
+                  "label": "FAQs",
+                  "href": "/faqs"
+                },
+                {
+                  "label": "Enquiry Now",
+                  "href": "/enquiry-now",
+                  "isLive": true
+                },
+                {
+                  "label": "Contact Us",
+                  "href": "/contact"
+                }
+              ]
+            },
+            "contact": {
+              "title": "Contact Us",
+              "items": [
+                {
+                  "icon": "Mail",
+                  "text": "concierge@dreamsluxury.com",
+                  "href": "mailto:concierge@dreamsluxury.com"
+                },
+                {
+                  "icon": "Phone",
+                  "text": "+1 (800) 555-DREAM",
+                  "href": "tel:+18005553732"
+                },
+                {
+                  "icon": "MapPin",
+                  "text": "3170 Rosewood Lane Unit 200, Beverly Hills, CA 90210",
+                  "href": "https://maps.google.com/?q=3170+Rosewood+Lane+Unit+200,+Beverly+Hills,+CA+90210"
+                }
+              ]
+            },
+            "socialLinks": [
+              {
+                "platform": "Facebook",
+                "href": "https://facebook.com",
+                "icon": "Facebook"
+              },
+              {
+                "platform": "Instagram",
+                "href": "https://instagram.com",
+                "icon": "Instagram"
+              },
+              {
+                "platform": "Twitter",
+                "href": "https://twitter.com",
+                "icon": "Twitter"
+              },
+              {
+                "platform": "LinkedIn",
+                "href": "https://linkedin.com",
+                "icon": "LinkedIn"
+              }
+            ],
+            "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow",
+            "watermark": "DREAMS"
+          }
+        }
+      },
+      "thankYou": {
+        "variants": {
+          "DreamsThankYou1": {
+            "badgeText": "CONFIRMATION RECEIVED",
+            "headline": {
+              "line1": "Thank You",
+              "line2Badge": "Confirmed",
+              "line2Suffix": "& Received"
+            },
+            "subtitle": "Your inquiry has been successfully registered. A dedicated luxury portfolio advisor will connect with you shortly.",
+            "actionButtons": [
+              {
+                "label": "Explore Residences",
+                "href": "/properties",
+                "primary": true
+              },
+              {
+                "label": "Return to Home",
+                "href": "/",
+                "primary": false
+              }
+            ]
+          }
+        }
+      },
+      "notFound": {
+        "variants": {
+          "DreamsNotFound1": {
+            "code": "404",
+            "badgeText": "ARCHITECTURAL VOID",
+            "headline": {
+              "line1": "Sanctuary",
+              "line2Badge": "Not Found",
+              "line2Suffix": "In Our World"
+            },
+            "subtitle": "The architectural sanctuary, masterwork residence, or private dossier you are seeking cannot be located or is held in private escrow.",
+            "actionButtons": [
+              {
+                "label": "Browse Prime Estates",
+                "href": "/properties",
+                "primary": true
+              },
+              {
+                "label": "Return to Home",
+                "href": "/",
+                "primary": false
+              }
+            ]
+          }
+        }
+      },
+      "clients": {
+        "variants": {
+          "DreamsClients1": {
+            "badgeText": "ESTEEMED PARTNERS",
+            "headline": {
+              "line1": "Our",
+              "line2Badge": "Partners"
+            },
+            "clientsList": [
+              {
+                "id": 1,
+                "name": "Knight Frank",
+                "logo": "/images/clients/knight-Frank.webp"
+              },
+              {
+                "id": 2,
+                "name": "Adani Realty",
+                "logo": "/images/clients/adani.webp"
+              },
+              {
+                "id": 3,
+                "name": "Apex Group",
+                "logo": "/images/clients/apex.webp"
+              },
+              {
+                "id": 4,
+                "name": "DLF Luxury",
+                "logo": "/images/clients/dfl.webp"
+              },
+              {
+                "id": 5,
+                "name": "Ashiana Housing",
+                "logo": "/images/clients/ashiana.webp"
+              },
+              {
+                "id": 6,
+                "name": "ERA Real Estate",
+                "logo": "/images/clients/era.webp"
+              },
+              {
+                "id": 7,
+                "name": "I-Thum World",
+                "logo": "/images/clients/i-thum.webp"
+              },
+              {
+                "id": 8,
+                "name": "Vision Group",
+                "logo": "/images/clients/vision.webp"
+              }
+            ]
+          }
+        }
+      },
+      "faqs": {
+        "variants": {
+          "DreamsFaqs1": {
+            "badgeText": "FAQS & REAL ESTATE ADVISORY",
+            "headline": {
+              "line1": "Frequently",
+              "line2Badge": "Asked",
+              "line2Suffix": "Questions"
+            },
+            "bookingCard": {
+              "avatar": "/images/team-brian.webp",
+              "title": "Book Appointment",
+              "description": "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
+              "buttonText": "Enquiry Now",
+              "buttonHref": "/enquiry-now"
+            },
+            "items": [
+              {
+                "id": 1,
+                "question": "What types of luxury properties does Dreams curate?",
+                "answer": "We curate ultra-prime residential sanctuaries including private waterfront villas, secluded mountain chalets, high-rise penthouses, and bespoke architectural estates across premier global destinations."
+              },
+              {
+                "id": 2,
+                "question": "Do you facilitate confidential off-market acquisitions?",
+                "answer": "Yes, a significant portion of our portfolio consists of discreet, off-market private listings available exclusively to registered buyers under strict non-disclosure agreements."
+              },
+              {
+                "id": 3,
+                "question": "Can international buyers purchase properties through Dreams?",
+                "answer": "Absolutely. Our cross-border legal and wealth advisory partners guide international clients through local title regulations, foreign investment compliance, tax structuring, and residency pathways."
+              },
+              {
+                "id": 4,
+                "question": "How does the private viewing and estate tour process work?",
+                "answer": "We arrange private, discreet on-site tours or high-fidelity immersive virtual walkthroughs accompanied by your personal senior acquisitions advisor at your preferred time."
+              },
+              {
+                "id": 5,
+                "question": "What due diligence is conducted prior to listing an estate?",
+                "answer": "Every sanctuary undergoes rigorous structural audits, environmental assessments, clear title verification, zoning scrutiny, and independent valuation checks before inclusion in our portfolio."
+              },
+              {
+                "id": 6,
+                "question": "Can Dreams oversee property management and escrow after purchase?",
+                "answer": "Yes. Our private concierge desk provides comprehensive asset management, security oversight, architectural maintenance, and turnkey leasing services for all acquired estates."
+              }
+            ]
+          }
+        }
       }
-    ],
-    "copyright": "© 2026 Dreams. All Rights Reserved. Powered by Lestow",
-    "watermark": "DREAMS"
-  },
-  "thankYou": {
-    "badgeText": "CONFIRMATION RECEIVED",
-    "headline": {
-      "line1": "Thank You",
-      "line2Badge": "Confirmed",
-      "line2Suffix": "& Received"
-    },
-    "subtitle": "Your inquiry has been successfully registered. A dedicated luxury portfolio advisor will connect with you shortly.",
-    "actionButtons": [
-      {
-        "label": "Explore Residences",
-        "href": "/properties",
-        "primary": true
-      },
-      {
-        "label": "Return to Home",
-        "href": "/",
-        "primary": false
-      }
-    ]
-  },
-  "notFound": {
-    "code": "404",
-    "badgeText": "ARCHITECTURAL VOID",
-    "headline": {
-      "line1": "Sanctuary",
-      "line2Badge": "Not Found",
-      "line2Suffix": "In Our World"
-    },
-    "subtitle": "The architectural sanctuary, masterwork residence, or private dossier you are seeking cannot be located or is held in private escrow.",
-    "actionButtons": [
-      {
-        "label": "Browse Prime Estates",
-        "href": "/properties",
-        "primary": true
-      },
-      {
-        "label": "Return to Home",
-        "href": "/",
-        "primary": false
-      }
-    ]
-  },
-  "clients": {
-    "badgeText": "ESTEEMED PARTNERS",
-    "headline": {
-      "line1": "Our",
-      "line2Badge": "Partners"
-    },
-    "clientsList": [
-      {
-        "id": 1,
-        "name": "Knight Frank",
-        "logo": "/images/clients/knight-Frank.webp"
-      },
-      {
-        "id": 2,
-        "name": "Adani Realty",
-        "logo": "/images/clients/adani.webp"
-      },
-      {
-        "id": 3,
-        "name": "Apex Group",
-        "logo": "/images/clients/apex.webp"
-      },
-      {
-        "id": 4,
-        "name": "DLF Luxury",
-        "logo": "/images/clients/dfl.webp"
-      },
-      {
-        "id": 5,
-        "name": "Ashiana Housing",
-        "logo": "/images/clients/ashiana.webp"
-      },
-      {
-        "id": 6,
-        "name": "ERA Real Estate",
-        "logo": "/images/clients/era.webp"
-      },
-      {
-        "id": 7,
-        "name": "I-Thum World",
-        "logo": "/images/clients/i-thum.webp"
-      },
-      {
-        "id": 8,
-        "name": "Vision Group",
-        "logo": "/images/clients/vision.webp"
-      }
-    ]
-  },
-  "faqs": {
-    "badgeText": "FAQS & REAL ESTATE ADVISORY",
-    "headline": {
-      "line1": "Frequently",
-      "line2Badge": "Asked",
-      "line2Suffix": "Questions"
-    },
-    "bookingCard": {
-      "avatar": "/images/team-brian.webp",
-      "title": "Book Appointment",
-      "description": "If you have any questions, schedule a 15-minute discovery consultation with our luxury property advisors.",
-      "buttonText": "Enquiry Now",
-      "buttonHref": "/enquiry-now"
-    },
-    "items": [
-      {
-        "id": 1,
-        "question": "What types of luxury properties does Dreams curate?",
-        "answer": "We curate ultra-prime residential sanctuaries including private waterfront villas, secluded mountain chalets, high-rise penthouses, and bespoke architectural estates across premier global destinations."
-      },
-      {
-        "id": 2,
-        "question": "Do you facilitate confidential off-market acquisitions?",
-        "answer": "Yes, a significant portion of our portfolio consists of discreet, off-market private listings available exclusively to registered buyers under strict non-disclosure agreements."
-      },
-      {
-        "id": 3,
-        "question": "Can international buyers purchase properties through Dreams?",
-        "answer": "Absolutely. Our cross-border legal and wealth advisory partners guide international clients through local title regulations, foreign investment compliance, tax structuring, and residency pathways."
-      },
-      {
-        "id": 4,
-        "question": "How does the private viewing and estate tour process work?",
-        "answer": "We arrange private, discreet on-site tours or high-fidelity immersive virtual walkthroughs accompanied by your personal senior acquisitions advisor at your preferred time."
-      },
-      {
-        "id": 5,
-        "question": "What due diligence is conducted prior to listing an estate?",
-        "answer": "Every sanctuary undergoes rigorous structural audits, environmental assessments, clear title verification, zoning scrutiny, and independent valuation checks before inclusion in our portfolio."
-      },
-      {
-        "id": 6,
-        "question": "Can Dreams oversee property management and escrow after purchase?",
-        "answer": "Yes. Our private concierge desk provides comprehensive asset management, security oversight, architectural maintenance, and turnkey leasing services for all acquired estates."
-      }
-    ]
+    }
   }
 }

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon, TwitterIcon, LinkedInIcon, } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsFooterData } from "@/data";
 
 // Social icon map
 const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -72,12 +72,12 @@ export interface FooterData {
 }
 
 // Footer component export
-export default function Footer(): React.JSX.Element {
-  const footer = siteData.footer as FooterData;
+export function Footer({ data, className }: SectionProps<DreamsFooterData> = {}): React.JSX.Element {
+  const footer = (data || site.footer) as unknown as FooterData;
 
   return (
     // Footer container element
-    <footer className="relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-4 md:px-8">
+    <footer className={`relative w-full bg-black text-white pt-16 pb-6 overflow-hidden border-t border-zinc-900 select-none px-4 md:px-8 ${className || ""}`}>
       {/* Background ambient glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(37,99,235,0.16),transparent)] pointer-events-none" />
 
@@ -264,3 +264,5 @@ export default function Footer(): React.JSX.Element {
     </footer>
   );
 }
+
+export default Footer;

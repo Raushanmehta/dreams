@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/common/SmoothScroll";
+import { site } from "@/data";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -35,10 +36,10 @@ export default function RootLayout({
       className={`${roboto.variable} ${poppins.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <Navbar />
+        <Navbar data={site.navbar} />
         <SmoothScroll>
           {children}
-          <Footer />
+          <Footer data={site.footer} />
         </SmoothScroll>
       </body>
     </html>

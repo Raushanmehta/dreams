@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { FourPointStarIcon } from "@/components/icons";
 import TestimonialCard, { type Testimonial } from "@/components/cards/TestimonialCard";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsTestimonialsData } from "@/data";
 import { testimonialAnimations } from "@/utils/animation/testimonial.animation";
 
 export interface TestimonialsSectionData {
@@ -31,11 +31,12 @@ export interface TestimonialSectionProps {
   data?: TestimonialsSectionData;
 }
 
-export default function TestimonialSection({
-  data = siteData.testimonials,
-}: TestimonialSectionProps): React.JSX.Element {
-  const testimonials = data || siteData.testimonials;
-  const testimonialsList = (testimonials.testimonialsList || []) as Testimonial[];
+export function TestimonialSection({
+  data,
+  className,
+}: SectionProps<DreamsTestimonialsData> & TestimonialSectionProps = {}): React.JSX.Element {
+  const testimonials = (data || site.testimonials) as unknown as TestimonialsSectionData;
+  const testimonialsList = (testimonials?.testimonialsList || []) as Testimonial[];
 
   // Duplicate list items
   const INFINITE_TESTIMONIALS = [
@@ -77,7 +78,7 @@ export default function TestimonialSection({
   }, [isPaused]);
 
   return (
-    <section className="relative w-full bg-[#0a0a0a]  px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08]">
+    <section className={`relative w-full bg-[#0a0a0a] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans text-white select-none overflow-hidden border-t border-white/[0.08] ${className || ""}`}>
       {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 -z-10 h-[450px] w-[450px] rounded-full bg-blue-950/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 -z-10 h-[380px] w-[380px] rounded-full bg-emerald-950/20 blur-[120px] pointer-events-none" />
@@ -158,3 +159,5 @@ export default function TestimonialSection({
     </section>
   );
 }
+
+export default TestimonialSection;

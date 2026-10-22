@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import { FourPointStarIcon, ArrowRightIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site, SectionProps, DreamsEnquiryNowData } from "@/data";
 
 export interface EnquiryFormData {
   firstName: string;
@@ -15,8 +15,8 @@ export interface EnquiryFormData {
   message: string;
 }
 
-export default function EnquiryNowSection(): React.JSX.Element {
-  const { enquiryNow } = siteData;
+export function EnquiryNowSection({ data, className }: SectionProps<DreamsEnquiryNowData> = {}): React.JSX.Element {
+  const enquiryNow = (data || site.enquiryNow) as unknown as DreamsEnquiryNowData;
 
   const [formData, setFormData] = useState<EnquiryFormData>({
     firstName: "",
@@ -53,7 +53,7 @@ export default function EnquiryNowSection(): React.JSX.Element {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80">
+    <section className={`relative w-full bg-[#f4f4f2] px-4 md:px-12 py-8 md:py-10 lg:py-20 font-sans select-none border-t border-zinc-200/80 ${className || ""}`}>
       <div className="max-w-7xl mx-auto w-full">
         
         {/* SECTION HEADER Matches Dreams */}
@@ -263,3 +263,5 @@ export default function EnquiryNowSection(): React.JSX.Element {
     </section>
   );
 }
+
+export default EnquiryNowSection;

@@ -6,11 +6,11 @@ import { Sparkles } from "lucide-react";
 import PropertiesCard, { type PropertyDestination } from "@/components/cards/PropertiesCard";
 import BreadCrumb from "@/components/common/BreadCrumb";
 import { FourPointStarIcon } from "@/components/icons";
-import siteData from "@/data/site.json";
+import { site } from "@/data";
 import { propertiesAnimations } from "@/utils/animation/properties.animation";
 
 export default function PropertiesPage() {
-    const { properties } = siteData;
+    const properties = site.properties;
     const propertiesList = properties.propertiesList as PropertyDestination[];
 
     return (
